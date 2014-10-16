@@ -6,8 +6,23 @@
     "font-awesome": "latest",
     "animate.css": "latest",
     "angular": "latest",
+    "angular-animate": "latest",
+    "angular-bootstrap": "latest",
+    "angular-odometer-js": "latest",
     "angular-route": "latest",
-    "angular-payments": "*"
+    "angular-payments": "*",
+    "angular-sanitize": "latest",
+    "angulartics": "latest",
+    "animate.css": "latest",
+    "jquery-waypoints": "latest",
+    "ngDialog": "latest",
+    "odometer": "latest",
+    "SHA-1": "latest",
+    "videogular-buffering": "latest",
+    "videogular-controls": "latest",
+    "videogular-overlay-play": "latest",
+    "videogular-poster": "latest",
+    "videogular-youtube": "latest"
   },
   "resolutions": {
     "angular": "~1.2.0"
