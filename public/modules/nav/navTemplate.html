@@ -1,0 +1,41 @@
+<div id = 'top_bar'>
+	<a href = '/'><img id = 'nav_logo' src = '../../assets/images/nav_logo.png'></a>
+	<nav>
+		<div id = 'browse_tab'>
+			<div class = 'dropdown'>
+				<a href class = 'dropdown-toggle main_item'>
+					Browse Campaigns
+				</a>
+				 <ul class="dropdown-menu">
+	       			<li ng-repeat = 'project in items'>
+     					 <a href>{{project}}</a>
+    				</li>
+ 				 </ul>
+			</div>
+		</div>
+		<div id = 'create_tab'>
+			<a href = '' class = 'main_item' >
+				Create
+			</a>
+		</div>
+		<div id = 'nav_search'>
+			<img src = '../../assets/images/search_icon.png'>
+			<input class = 'dropdown-toggle' type = 'text' ng-model = 'search_term' placeholder = 'Search Projects...'>
+			<br/>
+		<!-- 	<div class="search_menu" ng-hide = '!search_term.length'>
+    				<div class = 'search_item' ng-repeat = 'project in items | filter: term'>
+     					 <a href>{{project}}</a>
+    				</div>
+ 			</div> -->
+		</div>
+	<!-- 	<a class = 'right_align main_item' id = 'cart' href = '' ng-controller = 'CartController' ng-click = "toggleVisibility()" >Cart: {{cart.cartTotal | currency}}</a> -->
+		<div id = 'user_tab'>
+			<a class = 'right_align main_item' ng-hide = 'loggedin' id = 'log_in' href = '/#/login'>
+				Log in/Sign up
+			</a>
+			<a class = 'right_align main_item' ng-show = 'loggedin' id = 'profile' href = '/#/user'>
+				My Profile
+			</a>
+		</div>
+	</nav>
+</div>

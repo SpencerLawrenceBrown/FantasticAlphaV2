@@ -1,0 +1,418 @@
+/* ===========================
+Fantastic Nav Bar
+Copyright 2014
+written by Spencer Brown - spencrbrown@gmail.com
+
+swatch colors
+=============
+ed2852 - 'Fantastic' red
+
+============================== */
+
+/* resets and overrides */
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+img {border: none;}
+
+/* links and font */
+
+a, a:link, a:active, a:visited a:hover {text-decoration: none;}
+
+/* layout */
+
+#top_bar{
+	position: fixed;
+	z-index: 98;
+
+	width: 100%;
+	height: 55px;
+
+	border-bottom: 2px solid #ed2852;
+	background-color: #ed2852;
+
+  -webkit-backface-visibility: hidden;
+}
+
+#top_bar nav{
+	position: absolute;
+
+	width: 100%;
+	height: 54px;
+
+	top: 0px;
+	left: 230px;
+	background-color: black;
+
+
+}
+
+#top_bar nav #browse_tab{
+	position: relative;
+	display: inline-block;
+
+	border-right: 1px solid gray;
+	width: 160px;
+	height: 100%;
+}
+
+#top_bar nav #browse_tab a{
+	width: 100%;
+	border: none;
+	margin: 0;
+}
+
+#top_bar nav #browse_tab ul{
+	width: 160px;
+
+	background-color: white;
+}
+
+#top_bar nav #browse_tab li{
+	width: 100%;
+}
+
+#top_bar nav #browse_tab li a{
+	text-align: left;
+	color: black;
+	width: 100%;
+}
+
+#top_bar nav div{
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+
+	width: 110px;
+	height: 54px;
+	top: 0px;
+
+	text-align: center;
+	padding-top: 17px;
+	margin-left: -.3em;
+
+	font-family: 'Arimo', sans-serif;
+	font-size: .9em;
+
+	color: white;
+	border-right: 1px solid gray;
+		
+
+	-moz-transition:all .1s ease-in;
+    -o-transition:all .1s ease-in;
+    -webkit-transition:all .1s ease-in;
+}
+
+#top_bar nav div:hover{
+   	-moz-box-shadow:    inset 0px -3px 1px #ed2852;
+   	-webkit-box-shadow: inset 0px -3px 1px #ed2852;
+  	box-shadow:         inset 0px -3px 1px #ed2852;
+}
+
+#top_bar nav #nav_search{
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+
+	padding-left: 25px;
+	padding-top: 17px;
+	margin-left: -.3em;
+
+	width: 350px;
+	height: 54px;
+	top: 0px;
+}
+
+#top_bar nav #nav_search img{
+	position: relative;
+	left: -5px;
+	width: 15px;
+}
+
+#top_bar nav #nav_search input{
+	position: relative;
+	color: white;
+	background-color: black;
+	outline: none;
+	border: 0px solid;
+	border-bottom: 1px solid gray;
+}
+
+
+#top_bar nav #nav_search .search_menu{
+	position: absolute;
+	background-color: gray;
+	top: 45px;
+	left: 44px;
+	width: 166px;
+/*	border: 1px dashed black;*/
+}
+
+#top_bar nav #nav_search .search_item{
+	position: relative;
+	width: 100%;
+	height: 25px;
+}
+
+#top_bar nav #nav_search .search_item a{
+	position: relative;
+	left: 5px;
+	top: 2px;
+	color: white;
+}
+
+#top_bar nav #nav_search .search_item:hover{
+	color: white;
+	background-color: #ed2852; 
+}
+
+
+#top_bar nav a#log_in{
+	position: absolute;
+	right: 230px;
+}
+
+#top_bar nav a#profile{
+	position: absolute;
+	right: 230px;
+}
+
+#top_bar nav a#sign_in{
+	position: absolute;
+	right: 340px;
+}
+
+#top_bar nav a#cart{
+	position: absolute;
+	right: 340px;
+}
+
+#cart_div{
+	position: absolute;
+	top: 55px;
+	right: 0px;
+	width: 550px;
+	background-color: #867a9f;
+
+}
+
+#cart_div .cart_dropdown_titles{
+	top: 55px;
+	right: 0px;
+	width: 100%;
+	background-color: #ed2852;
+	color: #EFEFEF;
+	border-bottom: 1px solid white;
+}
+
+#cart_div div{
+	display: inline-block;
+	color: white;
+	border-right: 1px solid;
+}
+
+#cart_div div.item_campaign{
+	width: 75px;
+}
+
+#cart_div div.item_title{
+	width: 100px;
+}
+
+#cart_div div.item_details{
+	width: 190px;
+}
+
+#cart_div div.item_quantity{
+	width: 45px;
+}
+
+#cart_div div.item_price{
+	width: 30px;
+	border: none;
+
+}
+
+#cart_div span.item_rm{
+	position: relative;
+	color: black;
+	left: 30px;
+	border: none;
+	cursor: pointer;
+
+}
+
+#cart_div div span{
+	padding-left: 7px;
+}
+
+#cart_div .cart_item{
+	width: 100%;
+	border-right: none;
+}
+
+#cart_div #cart_dropdown_total{
+	border: none;
+	height: 45px;
+}
+
+#cart_div #cart_dropdown_total div{
+	border: none;
+}
+
+#cart_div #cart_dropdown_total #amount{
+	font-size: 1.3em;
+	float: left;
+}
+
+#cart_div #cart_dropdown_total #label{
+	clear: left;
+	float: left;
+}
+
+#cart_div #checkout_button{
+	position: relative;
+	clear: none;
+	float: right;
+	top: -23px;
+	left: 6px;
+	height: 38px;
+}
+
+#cart_div #checkout_list{
+	position: relative;
+	left: 200px;
+	width: 180px;
+	border: none;
+	margin-top: 10px;
+}
+
+#checkout_form{
+	z-index: 99;
+	position: absolute;
+	top: 35%;
+	width: 270px;
+	height: 350px;
+	display: block;
+	right: 0;
+	left: 0;
+	margin: auto;
+	color: black;
+	background-color: #efefef;
+	border-radius: 10px;
+}
+
+#checkout_form img{
+	position: relative;
+	display: block;
+	margin: auto;
+	top : -40px;
+	width: 80px;
+	border: 2px black;
+}
+
+#checkout_form h3{
+	position: relative;
+	color: black;
+	background-color: #D5D5D5;
+	text-align: center;
+	top: -55px;
+}
+
+#checkout_form_header{
+	background-color: #D5D5D5;
+	width: 100%;
+	height: 100px;
+	border-bottom: 1px solid black;
+	border-radius: 10px;
+}
+
+#checkout_form_content{
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	height: 175px;
+	top: -12px;
+	padding-top: 10px;
+	background-color: #efefef;
+	border-top: 1px solid #AFAFAF;
+	overflow: hidden;
+}
+
+#checkout_form_content input{
+	position: relative;
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+	width: 175px;
+	height: 30px;
+	padding-left: 3px;
+}
+
+#checkout_form_content input{
+	position: relative;
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+	width: 175px;
+	height: 30px;
+}
+
+#checkout_pay_btn{
+	position: relative;
+	display: block;
+	margin: auto;
+	width: 150px;
+	top: -3px;
+}
+
+#checkout_close_btn{
+	position: absolute;
+	top: 5px;
+	right: 7px;
+}
+
+#checkout_items_number{
+	position: relative;
+	top: -9px;
+	left: 90px;
+}
+
+#checkout_fineprint{
+	position: relative;
+	left: 87px;
+	top: -6px;
+	color: gray;
+	font-size: .7em;
+}
+
+#jump_in_div{
+	position: absolute;
+	padding-top: 18px;
+	z-index: 10;
+	height: 160px;
+	width: 270px;
+	color: white;
+	background-color: #ed2852;
+	text-align: center;
+}
+
+.ng-hide-add, .ng-hide-remove {
+    /* ensure visibility during the transition */
+    display: block !important; /* yes, important */
+}
+
+#jump_in_div.ng-hide-remove{
+	left: -100%;
+	-webkit-transition:300ms  ease-out all;
+    -moz-transition:300ms  ease-out all;
+    -o-transition:300ms  ease-out all;
+    transition:300ms ease-out all;
+}
+
+#jump_in_div.ng-hide-remove.ng-hide-remove-active {
+	left: 0;
+}
