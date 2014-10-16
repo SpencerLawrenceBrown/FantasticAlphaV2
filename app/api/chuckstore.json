@@ -1,0 +1,52 @@
+{
+	"incentives" : {
+		"level_0" : {
+			"title" : "free",
+			"contains" : [
+				"Digital 'Buy More' Badge",
+				"Campaign Updates"
+			],
+			"buttonText" : "Join Now",
+			"price" : "0",
+			"project" : "Chuck",
+			"id" : "1"
+		},
+		"level_1" : {
+			"title" : "1",
+			"contains" : [
+				"Production Blog",
+				"Unlocked Rewards",
+				"Future Unlocks"
+			],
+			"buttonText" : "$1 Minimum",
+			"price" : "1",
+			"project" : "Chuck",
+			"id" : "2"
+		},
+		"level_2" : {
+			"title" : "2",
+			"contains" : [
+				"Digital Movie Download",
+				"Digital Storyboard Art",
+				"+ Level 1 Rewards"
+			],
+			"buttonText" : "$5 Minimum",
+			"price" : "5",
+			"project" : "Chuck",
+			"id" : "3"
+		},
+		"level_3" : {
+			"title" : "3",
+			"contains" : [
+				"Ticket Pre-order",
+				"Exclusive T-shirt",
+				"+ Level 1 Rewards",
+				"+ Level 2 Rewards"
+			],
+			"buttonText" : "$10 Minimum",
+			"price" : "10",
+			"project" : "Chuck",
+			"id" : "4"
+		}
+	}
+}
