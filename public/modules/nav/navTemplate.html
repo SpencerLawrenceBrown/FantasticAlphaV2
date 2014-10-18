@@ -1,41 +1,84 @@
-<div id = 'top_bar'>
-	<a href = '/'><img id = 'nav_logo' src = '../../assets/images/nav_logo.png'></a>
-	<nav>
-		<div id = 'browse_tab'>
-			<div class = 'dropdown'>
-				<a href class = 'dropdown-toggle main_item'>
-					Browse Campaigns
+<nav id = 'nav_bar' class="navbar navbar-default navbar-fixed-top" role="navigation">
+<!--
+Nav Template
+Written by: Spencer Brown, copyright 2014
+
+//Description:
+
+Template for the nav bar.
+
+//Component:
+	-Tabs:
+		-Nav tabs contained in div
+			-Browse
+			-Create
+			-User
+		-Search
+			-Search through campaigns. Selection will load that campaign page
+		-Cart
+			-Toggles visibility of the Cart directive
+
+//Map
+CSS:
+	-navBar.css
+Controller:
+	-navController.js
+Used By:
+	-navDirective.js
+Contains:
+	-none
+-->
+	<div class="container-fluid">
+	    <!-- Logo and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="/"><img id = 'nav_logo' src = '../../assets/images/nav_logo.png'></a>
+	    </div>
+	    <!-- Nav items that are hidden when collapsed -->
+	    <div class = 'collapse navbar-collapse' id = 'navbar-collapsed'>
+	    <!--Nav items that stick to the left -->
+	    <ul class = 'nav navbar-nav navbar-left'>
+	    	<li id = 'browse_tab' class = 'dropdown'>
+	    		<a href class = 'dropdown-toggle'>
+	    		Browse Campaigns
 				</a>
-				 <ul class="dropdown-menu">
-	       			<li ng-repeat = 'project in items'>
-     					 <a href>{{project}}</a>
+				<ul id = 'browse_menu' class="dropdown-menu">
+	       			<li class = 'browse_item' ng-repeat = 'campaign in nav.campaigns'>
+     					 <a href>{{campaign}}</a>
     				</li>
- 				 </ul>
-			</div>
-		</div>
-		<div id = 'create_tab'>
-			<a href = '' class = 'main_item' >
-				Create
-			</a>
-		</div>
-		<div id = 'nav_search'>
-			<img src = '../../assets/images/search_icon.png'>
-			<input class = 'dropdown-toggle' type = 'text' ng-model = 'search_term' placeholder = 'Search Projects...'>
-			<br/>
-		<!-- 	<div class="search_menu" ng-hide = '!search_term.length'>
-    				<div class = 'search_item' ng-repeat = 'project in items | filter: term'>
-     					 <a href>{{project}}</a>
-    				</div>
- 			</div> -->
-		</div>
-	<!-- 	<a class = 'right_align main_item' id = 'cart' href = '' ng-controller = 'CartController' ng-click = "toggleVisibility()" >Cart: {{cart.cartTotal | currency}}</a> -->
-		<div id = 'user_tab'>
-			<a class = 'right_align main_item' ng-hide = 'loggedin' id = 'log_in' href = '/#/login'>
-				Log in/Sign up
-			</a>
-			<a class = 'right_align main_item' ng-show = 'loggedin' id = 'profile' href = '/#/user'>
-				My Profile
-			</a>
-		</div>
-	</nav>
-</div>
+	 			</ul>
+			</li>
+			<li id = 'create_tab'>
+				<a href = ''>
+					Create
+				</a>
+			</li>
+			<li id = 'nav_search'>
+				<span id = 'search_icon' class="glyphicon glyphicon-search form-control-feedback"></span>
+				<input class = 'dropdown-toggle' type = 'text' ng-model = 'search_term' placeholder = 'Search Projects...'>
+				<div class="search_menu" ng-hide = '!search_term.length'>
+	    				<div class = 'search_item' ng-click = 'search_term = campaign' ng-repeat = 'campaign in nav.campaigns | filter: search_term'>
+	     					 <a href = ''>{{campaign}}</a>
+	    				</div>
+	 			</div>
+			</li>
+		<!-- 	<a class = 'right_align main_item' id = 'cart' href = '' ng-controller = 'CartController' ng-click = "toggleVisibility()" >Cart: {{cart.cartTotal | currency}}</a> -->
+		</ul>
+		<!-- Nav items that float right -->
+		<ul class="nav navbar-nav navbar-right">
+			<li id = 'user_tab'>
+				<a class = 'right_align main_item' ng-hide = 'loggedin' id = 'log_in' href = '/#/login'>
+					Log in/Sign up
+				</a>
+				<a class = 'right_align main_item' ng-show = 'loggedin' id = 'profile' href = '/#/user'>
+					My Profile
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>

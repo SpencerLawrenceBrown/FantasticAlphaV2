@@ -18,7 +18,7 @@ It handles the nav display and interactivity.
 Used by:
 	-Index.html
 Contains:
-	-NavigationController: Communications with ProjectMetaFactory
+	-NavigationController: Communications with CampaignsMetaFactory
 	-CartDirective: Manages the display of the cart
 */
 

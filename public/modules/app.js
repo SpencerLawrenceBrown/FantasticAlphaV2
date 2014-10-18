@@ -6,4 +6,4 @@ Eventually add lazy loading. This page will also hold the config (Providers for 
 HTTP, and location)
 */
 
-var app = angular.module('FantasticAlphaV2', ['ngRoute','NavDRCT']);
+var app = angular.module('FantasticAlphaV2', ['ngRoute', 'ui.bootstrap', 'NavDRCT']);

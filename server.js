@@ -75,9 +75,8 @@ APIrouter.use(function(req, res, next) {
 });
 
 //Get a simple request for all the projects and return the projects.json file
-APIrouter.get('/projects', function(req, res){
-	res.sendfile('./app/api/projects.json');
-	console.log('complete');
+APIrouter.get('/campaigns-meta', function(req, res){
+	res.sendfile('./app/api/campaignsMeta.json');
 });
 
 APIrouter.get('/userdata', auth, function(req, res){
