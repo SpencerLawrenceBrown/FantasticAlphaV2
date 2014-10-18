@@ -22,7 +22,7 @@ Template for the nav bar.
 CSS:
 	-navBar.css
 Controller:
-	-navController.js
+	-navController.js, referred to as 'nav'
 Used By:
 	-navDirective.js
 Contains:
@@ -44,7 +44,7 @@ Contains:
 	    <!--Nav items that stick to the left -->
 	    <ul class = 'nav navbar-nav navbar-left'>
 	    	<li id = 'browse_tab' class = 'dropdown'>
-	    		<a href class = 'dropdown-toggle'>
+	    		<a id = 'browse_tab_text' href class = 'dropdown-toggle'>
 	    		Browse Campaigns
 				</a>
 				<ul id = 'browse_menu' class="dropdown-menu">

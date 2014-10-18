@@ -73,6 +73,10 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 
 /*=====BROWSE======*/
 
+#nav_bar #browse_tab.open #browse_tab_text{
+	background-color: black;
+}
+
 #nav_bar #browse_menu .browse_item a{
 	text-align: left;
 	color: black;
@@ -127,6 +131,11 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 #nav_bar #nav_search .search_item:hover{
 	color: white;
 	background-color: #ed2852; 
+}
+
+#cart_div{
+	position: absolute;
+	top: 100px;
 }
 
 

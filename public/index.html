@@ -15,8 +15,18 @@
 	<script src="libs/angular-route/angular-route.min.js"></script>
 	<script src="libs/angular-bootstrap/ui-bootstrap.min.js"></script>
 
+</head>
+<body>
+	<fn-nav></fn-nav>
+	<fn-cart></fn-cart>
+<!-- 	<div ng-view></div> -->
 	<!-- My Modules -->
-	
+
+	<!--Cart-->	
+	<script src='modules/cart/cartFactory.js'></script>
+	<script src='modules/cart/cartController.js'></script>
+	<script src='modules/cart/cartDirective.js'></script>
+
 	<!--Nav-->
 	<script src='modules/nav/campaignsMetaFactory.js'></script>
 	<script src='modules/nav/navController.js'></script>
@@ -24,8 +34,5 @@
 
 	<!-- App -->
 	<script src="modules/app.js"></script>
-</head>
-<body>
-	<fn-nav></fn-nav>
 </body>
 </html>

@@ -9,7 +9,7 @@ fn-nav directive. Referred to as 'nav' by fn-nav. i.e. {{nav.foo}}
 
 //Components
 	Function:
-		-No idea
+		-loadCampaigns: Calls the CampaignsMetaFactory to retrieve the campaignss
 
 //Map
 Used by:
@@ -18,10 +18,9 @@ Contains:
 	-campaignMetaFactory.js
 */
 
-angular.module('NavCTRL', ['MetaFCTR']).controller('NavController', [ '$scope', 'CampaignsMetaFactory', function($scope, CampaignsMetaFactory){
+angular.module('NavCTRL', ['MetaFCTR']).controller('NavController', ['CampaignsMetaFactory', function(CampaignsMetaFactory){
 	//Set the campaigns variable to the Factory campaign
 	this.campaigns = CampaignsMetaFactory.campaignsInfo.campaigns;
-	this.test = 'hey';
 
 	//Reload the campaigns from server
 	this.loadCampaigns = function(){

@@ -24,15 +24,15 @@ Contains:
 
 
 angular.module('NavDRCT', ['NavCTRL']).directive('fnNav', function(){
-	// Runs during compile
 	return {
 		restrict: 'E',
 		replace: true, //Fully replaces the fn-nav element
 		transclude: false, //Currently set to false, can't forsee any reason that would change
 		templateUrl: 'modules/nav/navTemplate.html', //Loads the html template
 		controllerAs:'nav', //Refer to the controller as 'nav' so nav.foo
-		controller: 'NavController', //This controller comes from the 'NavCTRL' module that is injected
-		link: function($scope, iElm, iAttrs, controller) {
-		}
+		controller: 'NavController' //This controller comes from the 'NavCTRL' module that is injected
+		//No DOM manipulation yet. If needed, uncomment below
+		// link: function($scope, iElm, iAttrs, controller) {
+		// }
 	};
 });
