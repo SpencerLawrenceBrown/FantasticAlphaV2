@@ -1,0 +1,6 @@
+<div id = 'campaign_content' class = 'container-fluid'>
+Total = {{bar.actual.campaignTotal | currency}}
+Current = {{bar.actual.campaignPaid | currency}}
+<progressbar max="bar.visual.barTotal" value="bar.visual.barPaid"></progressbar>
+<button ng-click="bar.increaseBar(150)"> Click me </button>
+</div>

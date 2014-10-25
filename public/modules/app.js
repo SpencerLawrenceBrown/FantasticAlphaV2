@@ -10,5 +10,17 @@ var app = angular.module('FantasticAlphaV2', [
 	'ngRoute', 
 	'ui.bootstrap', 
 	'NavDRCT',
-	'CartDRCT'
+	'CartDRCT',
+	'StoreDRCT',
+	'BarDRCT'
 ]);
+
+// configure our routes
+app.config(function($routeProvider) {
+		$routeProvider
+			// route for the home page
+			.when('/', {
+				templateUrl : 'modules/campaign/campaignTemplate.html'
+			})
+	});
+

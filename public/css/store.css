@@ -1,0 +1,112 @@
+/* ===========================
+Fantastic Nav Bar
+Copyright 2014
+written by Spencer Brown - spencrbrown@gmail.com
+
+A lot of the css is handled by bootstrap
+These fixes are small customizations
+
+swatch colors
+=============
+ed2852 - 'Fantastic' red
+
+============================== */
+
+/* resets and overrides */
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+img {border: none;}
+
+/* links and font */
+
+a, a:link, a:active, a:visited a:hover {text-decoration: none;}
+
+/* layout */
+
+/* Each incentive box - contains all the incentive information */
+.incentive_box{
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	width: 200px;
+	height: 260px;
+	background-color: white;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+/* Makes the free box have no background color 
+.incentive_box:first{
+	background-color: none;
+} */
+
+.incentive_title{
+	position: relative;
+	color: #ed2852;
+	font-size: 1.5em;
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 15px;
+}
+
+/* Actually objects of the incentive package */
+.incentive_components{
+	position: relative;
+	color: black;
+	font-size: 1.2em;
+	text-align: center;
+}
+
+.incentive_components p{
+	margin: 0;
+	margin-bottom: 5px;
+}
+
+.incentive_components .carry_over{
+	color: #ed2852;
+}
+
+.incentive_components .reward_related{
+	color: gray;
+}
+
+.incentive_buy{
+	position: absolute;
+	bottom: 0px;
+	height: 50px;
+	background-color: #ed2852;
+	color: white;
+	width: 100%;
+	border-radius: 5px;
+}
+
+.incentive_buy .incentive_price{
+	position: relative;
+	float: left;
+	font-size: 1.4em;
+	text-align: center;
+	height: 100%;
+	width: 115px;
+}
+
+.incentive_buy .min_text{
+	font-size: .7em;
+	margin: 0;
+	padding: 0;
+}
+
+.incentive_buy .incentive_checkout{
+	position: relative;
+	float: right;
+	color: white;
+	font-size: 1.18em;
+	border-left: 1px solid white;
+	height: 100%;
+	width: 80px;
+	padding-top: 2px;
+	text-align: center;
+}

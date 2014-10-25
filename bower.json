@@ -23,8 +23,5 @@
     "videogular-overlay-play": "latest",
     "videogular-poster": "latest",
     "videogular-youtube": "latest"
-  },
-  "resolutions": {
-    "angular": "~1.2.0"
   }
 }

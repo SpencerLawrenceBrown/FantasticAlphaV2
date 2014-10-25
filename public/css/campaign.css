@@ -1,0 +1,28 @@
+/* ===========================
+Fantastic Campaign
+Copyright 2014
+written by Spencer Brown - spencrbrown@gmail.com
+
+A lot of the css is handled by bootstrap
+These fixes are small customizations
+
+swatch colors
+=============
+ed2852 - 'Fantastic' red
+
+============================== */
+
+/* resets and overrides */
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+img {border: none;}
+
+/* links and font */
+
+a, a:link, a:active, a:visited a:hover {text-decoration: none;}
+
+/* layout */

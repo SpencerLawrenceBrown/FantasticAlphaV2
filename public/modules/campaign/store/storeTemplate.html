@@ -1,0 +1,29 @@
+<div id = 'store_container' class = 'container-fluid'> 
+	<div id = 'incentive_options'>
+		<div class = 'incentive_box' ng-repeat = 'incentive in store.inventory'>
+		<p class = 'incentive_title'>Level: {{incentive.title}} </p>
+		<div class = 'incentive_components'>
+			 <p class = 'unique' ng-repeat = 'unique in incentive.contains.unique'>
+				{{unique}}
+			</p>
+			<p class = 'carry_over' ng-repeat = 'carry_over in incentive.contains.carry_over'>
+			{{carry_over}}
+			</p>
+			<p class = 'reward_related' ng-repeat = 'reward_related in incentive.contains.reward_related'>
+				{{reward_related}}
+			</p>
+		</div>
+		<div class = 'incentive_buy'>
+			<div class = 'incentive_price'>
+			<div class = 'min_text'> minimum: </div>  
+			{{incentive.price | currency}}
+			</div>
+			<a href = ''><div class = 'incentive_checkout'>
+			add to cart
+			</div></a>
+		</div>
+	</div>
+	<div id = 'detail_box'>
+		{{incentive.description}}
+	</div>
+</div>

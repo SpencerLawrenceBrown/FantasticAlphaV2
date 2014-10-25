@@ -79,6 +79,14 @@ APIrouter.get('/campaigns-meta', function(req, res){
 	res.sendfile('./app/api/campaignsMeta.json');
 });
 
+APIrouter.get('/store-products', function(req, res){
+	res.sendfile('./app/api/chuckstore.json');
+});
+
+APIrouter.get('/bar-data', function(req, res){
+	res.sendfile('./app/api/progressBar.json');
+});
+
 APIrouter.get('/userdata', auth, function(req, res){
 	User.findById(req.user._id, function(err, user){
 		if (err){

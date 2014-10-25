@@ -8,19 +8,30 @@
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/navBar.css">
+	<link rel="stylesheet" type="text/css" href="css/store.css">
 
 	<!-- Libs -->
 	<script src="libs/jquery/dist/jquery.min.js"></script>
-	<script src="libs/angular/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
 	<script src="libs/angular-route/angular-route.min.js"></script>
 	<script src="libs/angular-bootstrap/ui-bootstrap.min.js"></script>
 
 </head>
 <body>
-	<fn-nav></fn-nav>
-	<fn-cart></fn-cart>
-<!-- 	<div ng-view></div> -->
+<!-- 	<fn-nav></fn-nav> -->
+
+	<div ng-view></div>
 	<!-- My Modules -->
+
+	<!--Store-->	
+	<script src='modules/campaign/progress_bar/barFactory.js'></script>
+	<script src='modules/campaign/progress_bar/barController.js'></script>
+	<script src='modules/campaign/progress_bar/barDirective.js'></script>
+
+	<!--Store-->	
+	<script src='modules/campaign/store/storeFactory.js'></script>
+	<script src='modules/campaign/store/storeController.js'></script>
+	<script src='modules/campaign/store/storeDirective.js'></script>
 
 	<!--Cart-->	
 	<script src='modules/cart/cartFactory.js'></script>

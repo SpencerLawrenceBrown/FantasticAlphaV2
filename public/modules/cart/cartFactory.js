@@ -18,6 +18,15 @@ There are multiple campaign shops (may change this) so that the progress bars ar
 		-update quantity
 		-[eventually] retrieve the user's saved cart
 
+	-Each item consists of:
+		-
+		-
+		-
+		-
+		-
+		-
+		-campaign ID
+
 //Map
 	-Usedby:
 		-CartController: as the model
@@ -36,18 +45,18 @@ angular.module('CartFCTR', []).factory('CartFactory', function(){
 		contents: []
 	};
 
-	//Add an item to the cart
-	//The item is a json string containing all the necessary package info
+	/*Add an item to the cart
+	The item is a json string containing all the necessary package info*/
 	CartFactory.addItem = function(item){
-		var id = item.id; //id unique to the package
+		var id = item.item_id; //id unique to the package
 		var cartItem = {}; //make a variable to hold the new item
 		var found = false; // used for search
 
 		//Look through all the cart contents
 		for (var x = 0; x < CartFactory.contents.length; x++){
-			console.log(CartFactory.contents[x].id);
+			console.log(CartFactory.contents[x].item_id);
 			//If an object is found with a matching id, edit that object to increase quantity and price
-			if (CartFactory.contents[x].id === id){
+			if (CartFactory.contents[x].item_id === id){
 				CartFactory.contents[x].quantity += 1;
 				CartFactory.contents[x].totalPrice += item.price;
 				found = true;
@@ -75,17 +84,17 @@ angular.module('CartFCTR', []).factory('CartFactory', function(){
 		}
 	};
 
-	//Remove an item from the cart
-	//The item is a json string containing all the necessary package info
+	/*Remove an item from the cart
+	The item is a json string containing all the necessary package info*/
 	CartFactory.removeItem = function(item){
-		var id = item.id; //id unique to the package
+		var id = item.item_id; //id unique to the package
 		var price = item.price; //get the items price
 		var found = false; // used for search
 
 		//Search the cart for the item
 		for (var x = 0; x < CartFactory.contents.length; x++){
 			//If found reduce quantity by 1
-			if (CartFactory.contents[x].id === id){
+			if (CartFactory.contents[x].item_id === id){
 				CartFactory.contents[x].quantity = CartFactory.contents[x].quantity - 1;
 				CartFactory.contents[x].totalPrice = CartFactory.contents[x].totalPrice - CartFactory.contents[x].info.price;
 				
@@ -111,6 +120,20 @@ angular.module('CartFCTR', []).factory('CartFactory', function(){
 		} else {
 			CartFactory.isEmpty = true;
 		}
+	};
+
+	/*Called by progress bar controller to determine current amount in the cart.
+	This is used to determine the positioning & values of the progress bar.
+	The id is the campaign id.*/
+	CartFactory.computeCampaignTotal = function(id){
+		var campaignTotal = 0;
+
+		for (var x = 0; x < CartFactory.contents.length; x++){
+			if (CartFactory.contents[x].campaignID = id){
+				campaignTotal += CartFactory.contents[x].price;
+			}
+		}
+		return campaignTotal;
 	};
 
 	//Return CartFactory object

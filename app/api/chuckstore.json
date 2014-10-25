@@ -1,52 +1,80 @@
 {
 	"incentives" : {
 		"level_0" : {
-			"title" : "free",
-			"contains" : [
-				"Digital 'Buy More' Badge",
-				"Campaign Updates"
-			],
+			"title" : "Free",
+			"contains" : {
+				"unique" : [
+					"Digital 'Buy More' Badge",
+					"Campaign Updates"
+				],
+				"carry_over" : [
+				],
+				"reward_related" : [
+				]
+			},
 			"buttonText" : "Join Now",
 			"price" : "0",
 			"project" : "Chuck",
-			"id" : "1"
+			"item_id" : "1",
+			"campaign_id" : "1"
 		},
 		"level_1" : {
 			"title" : "1",
-			"contains" : [
-				"Production Blog",
-				"Unlocked Rewards",
-				"Future Unlocks"
-			],
+			"contains" :{
+				"unique" : [
+					"Production Blog",
+					"Unlocked Rewards"
+				],
+				"carry_over" : [
+				],
+				"reward_related" : [
+					"Future Unlocks"
+				]
+			},
 			"buttonText" : "$1 Minimum",
 			"price" : "1",
 			"project" : "Chuck",
-			"id" : "2"
+			"item_id" : "2",
+			"campaign_id" : "1"
 		},
 		"level_2" : {
 			"title" : "2",
-			"contains" : [
+			"contains" : {
+				"unique" : [
 				"Digital Movie Download",
-				"Digital Storyboard Art",
+				"Digital Storyboard Art"
+				],
+				"carry_over" : [
 				"+ Level 1 Rewards"
-			],
+				],
+				"reward_related" : [
+				]
+			},
 			"buttonText" : "$5 Minimum",
 			"price" : "5",
 			"project" : "Chuck",
-			"id" : "3"
+			"item_id" : "3",
+			"campaign_id" : "1"
 		},
 		"level_3" : {
 			"title" : "3",
-			"contains" : [
+			"contains" :  {
+				"unique" : [
 				"Ticket Pre-order",
-				"Exclusive T-shirt",
+				"Exclusive T-shirt"
+				],
+				"carry_over" : [
 				"+ Level 1 Rewards",
 				"+ Level 2 Rewards"
-			],
+				],
+				"reward_related" : [
+				]
+			},
 			"buttonText" : "$10 Minimum",
 			"price" : "10",
 			"project" : "Chuck",
-			"id" : "4"
+			"item_id" : "4",
+			"campaign_id" : "1"
 		}
 	}
 }
