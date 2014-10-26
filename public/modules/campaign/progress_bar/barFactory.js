@@ -79,15 +79,29 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$http', 'CartFac
 	}
 
 	//Public
+	//Load the data from the cart & from the server. It returns the getServerData because it is an asynchronous test.
+	//This should really be using $q. That will be added.
 	BarFactory.getData = function(){
 		getCartData();
 		return getServerData();
 	};
 
-	BarFactory.increaseValue = function(value){
-		BarFactory.actual.campaignPaid += value;
-		BarFactory.visual.barPaid += scaleData(value, BarFactory.actual.campaignTotal, BarFactory.visual.barTotal);
+	//Changes the value of the cart bar. Takes in a negetive number to decrease, positive to increase
+	BarFactory.changeValue = function(value){
+		BarFactory.visual.barCart += scaleData(value, BarFactory.actual.campaignTotal, BarFactory.visual.barTotal);
+		BarFactory.actual.campaignCart += value;
 	};
+
+	//This simulates what the checkout process will be like. When the user checks out,
+	//the paid amount will be updated and the cart will decrease to zero.
+	//Currently the visual is decreased to by .99999 instead of to zero, because if
+	//changed to zero the progress bar animation doesn't work
+	BarFactory.checkout = function(){
+		BarFactory.visual.barPaid += BarFactory.visual.barCart;
+		BarFactory.visual.barCart += -(BarFactory.visual.barCart * .99999);
+		BarFactory.actual.campaignPaid += BarFactory.actual.campaignCart;
+		BarFactory.actual.campaignCart = 0;
+	}
 
 	return BarFactory;
 }]);

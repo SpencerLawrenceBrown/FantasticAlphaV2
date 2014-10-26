@@ -1,6 +1,11 @@
 <div id = 'campaign_content' class = 'container-fluid'>
-Total = {{bar.actual.campaignTotal | currency}}
-Current = {{bar.actual.campaignPaid | currency}}
-<progressbar max="bar.visual.barTotal" value="bar.visual.barPaid"></progressbar>
-<button ng-click="bar.increaseBar(150)"> Click me </button>
+	Total = {{bar.actual.campaignTotal | currency}}
+	Current = {{bar.actual.campaignPaid | currency}}
+	<progress>
+		<bar max="bar.visual.barTotal" value="bar.visual.barPaid"><div odometer-Directive data-odometer = "bar.actual.campaignPaid"></div></bar>
+		<bar type ='success' max="bar.visual.barTotal" value="bar.visual.barCart"><div odometer-Directive data-odometer = "bar.actual.campaignCart"><span style="color:black; white-space:nowrap;">{{bar.actual.campaignCart}} / {{bar.actual.campaignTotal}}</span></div></bar>
+	</progress>
+	<button ng-click="bar.changeBar(150)"> Increase </button>
+	<button ng-click="bar.changeBar(-100)"> Decrease </button>
+	<button ng-click="bar.checkout()"> Checkout </button>
 </div>

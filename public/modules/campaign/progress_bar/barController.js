@@ -30,10 +30,17 @@ angular.module('BarCTRL', ['BarFCTR']).controller('BarController', ['BarFactory'
 		BarFactory.getData();
 	};
 
-	this.increaseBar = function(value){
-		BarFactory.increaseValue(value);
+	//Change the value of the bar
+	this.changeBar = function(value){
+		BarFactory.changeValue(value);
 	};
 
+	//Simulate checkout
+	this.checkout = function(){
+		BarFactory.checkout();
+	}
+
+	//Load the bar factory when the controller is instantiated
 	BarFactory.
 		getData().
 		then(function(){

@@ -12,7 +12,8 @@ var app = angular.module('FantasticAlphaV2', [
 	'NavDRCT',
 	'CartDRCT',
 	'StoreDRCT',
-	'BarDRCT'
+	'BarDRCT',
+	'OdometerDRCT'
 ]);
 
 // configure our routes
