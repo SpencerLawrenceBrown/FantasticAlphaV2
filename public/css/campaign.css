@@ -26,3 +26,21 @@ img {border: none;}
 a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 
 /* layout */
+
+#campaign_content{
+	position: relative;
+	background-color: #efefef;
+	top: 50px;
+	height: 200px;
+}
+
+.circle{
+
+	width: 16px;
+	height: 16px;
+
+	background-color: black;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+}

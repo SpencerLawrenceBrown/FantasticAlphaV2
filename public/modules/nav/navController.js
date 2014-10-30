@@ -32,6 +32,5 @@ angular.module('NavCTRL', ['MetaFCTR']).controller('NavController', ['CampaignsM
 		getAllCampaigns()
 		.then(function(){
 			this.campaigns = CampaignsMetaFactory.campaignsInfo.campaigns;
-			console.log(this.campaigns);
 		}.bind(this));
 }]);

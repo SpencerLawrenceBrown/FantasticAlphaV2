@@ -1,0 +1,90 @@
+/* ===========================
+Fantastic Reward Bar
+Copyright 2014
+written by Spencer Brown - spencrbrown@gmail.com
+
+A lot of the css is handled by bootstrap
+These fixes are small customizations
+
+swatch colors
+=============
+ed2852 - 'Fantastic' red
+
+============================== */
+
+/* resets and overrides */
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+img {border: none;}
+
+/* links and font */
+
+a, a:link, a:active, a:visited a:hover {text-decoration: none;}
+
+/* layout */
+
+.reward_box{
+	position: absolute;
+	width: 160px;
+	height: 45px;
+	top: 58px;
+	left: -71px;
+}
+
+.reward_box .circle{
+	position: absolute;
+}
+
+.reward_box .circle.locked{
+	top: -28px;
+	height: 7px;
+	width: 7px;
+	background-color: black;
+}
+
+.reward_box .circle.unlocked{
+	top: -32px;
+	background-color: white;
+}
+
+.reward_box .reward_content{
+	position: absolute;
+	width: 160px;
+	left: -71px;
+}
+
+.reward_box .reward_text{
+	position: absolute;
+	display: inline-block;
+	margin: auto;
+	left: 0px;
+	width: 100%;
+	text-align: center;
+}
+
+.reward_box .reward_text{
+	position: absolute;
+	display: inline-block;
+	margin: auto;
+	left: 0px;
+	width: 100%;
+}
+
+.reward_box .reward_text.unlocked{
+	color: white;
+	font-size: 1.0em;
+}
+
+.reward_box .reward_text.current{
+	color: black;
+	font-size: 1.2em;
+}
+
+.reward_box .lock{
+	position: absolute;
+	font-size: 1.7em;
+}

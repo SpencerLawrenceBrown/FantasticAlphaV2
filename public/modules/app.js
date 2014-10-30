@@ -13,7 +13,9 @@ var app = angular.module('FantasticAlphaV2', [
 	'CartDRCT',
 	'StoreDRCT',
 	'BarDRCT',
-	'OdometerDRCT'
+	'OdometerDRCT',
+	'CampaignCTRL',
+	'RepeatDRCT'
 ]);
 
 // configure our routes
@@ -21,7 +23,9 @@ app.config(function($routeProvider) {
 		$routeProvider
 			// route for the home page
 			.when('/', {
+				controller : 'CampaignController',
+				controllerAs: 'campaign',
 				templateUrl : 'modules/campaign/campaignTemplate.html'
-			})
-	});
+			});
+});
 

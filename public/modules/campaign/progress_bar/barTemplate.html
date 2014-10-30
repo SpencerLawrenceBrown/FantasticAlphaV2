@@ -1,11 +1,19 @@
 <div id = 'campaign_content' class = 'container-fluid'>
-	Total = {{bar.actual.campaignTotal | currency}}
-	Current = {{bar.actual.campaignPaid | currency}}
-	<progress>
-		<bar max="bar.visual.barTotal" value="bar.visual.barPaid"><div odometer-Directive data-odometer = "bar.actual.campaignPaid"></div></bar>
-		<bar type ='success' max="bar.visual.barTotal" value="bar.visual.barCart"><div odometer-Directive data-odometer = "bar.actual.campaignCart"><span style="color:black; white-space:nowrap;">{{bar.actual.campaignCart}} / {{bar.actual.campaignTotal}}</span></div></bar>
-	</progress>
 	<button ng-click="bar.changeBar(150)"> Increase </button>
 	<button ng-click="bar.changeBar(-100)"> Decrease </button>
-	<button ng-click="bar.checkout()"> Checkout </button>
+	<button class = 'increase' ng-click="bar.checkout()"> Checkout </button>
+	<button>Join the fan base!</button>
+	<progress id = 'progressbar'>
+		<bar max="bar.visual.barTotal" value="bar.visual.barPaid"></bar>
+		<bar type ='success' max="bar.visual.barTotal" value="bar.visual.barCart"></bar>
+		$<div odometer-Directive data-odometer = "bar.actual.campaignPaid"></div>
+		+ $<div odometer-Directive data-odometer = "bar.actual.campaignCart"></div>
+	</progress>
+	<div fn-repeat-completion-watcher fn-context = 'Rewards' class = 'reward_box unlocked' ng-repeat = 'reward in bar.rewards' ng-style = "{'left' : reward.unlock_value}">
+		<div class = 'circle' ng-class = '{locked : bar.actual.campaignPaid < reward.unlock_amount, unlocked : bar.actual.campaignPaid >= reward.unlock_amount}'></div>
+		<div class = 'reward_content'>
+			<div class ="glyphicon glyphicon-lock reward_text lock" ng-show = "reward.progress === 'locked'"></div>
+			<div class = 'reward_text' ng-hide = "reward.progress === 'locked'" ng-class = '{unlocked :  reward.progress === "unlocked", current :  reward.progress === "current"}'>{{reward.name}}</div>
+		</div>
+	</div>
 </div>

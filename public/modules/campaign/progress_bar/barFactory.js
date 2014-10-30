@@ -48,7 +48,9 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$http', 'CartFac
 			barTotal: 100,
 			barPaid: 0,
 			barCart: 0
-		}
+		},
+		//The list of rewards. Every reward has a name, which serves as the text, and a value, which is used to align it
+		rewards : []
 	};
 
 	//--------------------------------------------------------------
@@ -58,7 +60,6 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$http', 'CartFac
 	var getCartData = function (){
 		//TODO - Check the cart to see if there are any campaign items in it
 	};
-
 	//This will receive the data from the server. This is the official campaign values
 	var getServerData = function (){
 		return $http({
@@ -70,9 +71,12 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$http', 'CartFac
 			BarFactory.actual.campaignPaid = data.paid;
 			//Scale the value to fit within 0 to 100 for the progress bar visual
 			BarFactory.visual.barPaid = scaleData(data.paid, data.total, BarFactory.visual.barTotal);
+			BarFactory.rewards = data.rewards;
+			//When created initially, assume a width of 1000.
+			//TODO - update this so that it reads the current DOM
+			BarFactory.calculateRewardPositions(1000);
 		});
 	};
-
 	//takes in a value and a maximum and then scales it relative to the scale factory
 	var scaleData = function(value, max, scale){
 		return value/max * scale;
@@ -85,13 +89,18 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$http', 'CartFac
 		getCartData();
 		return getServerData();
 	};
-
 	//Changes the value of the cart bar. Takes in a negetive number to decrease, positive to increase
 	BarFactory.changeValue = function(value){
 		BarFactory.visual.barCart += scaleData(value, BarFactory.actual.campaignTotal, BarFactory.visual.barTotal);
 		BarFactory.actual.campaignCart += value;
 	};
-
+	//This function calculates where the rewards should be positioned along the bar given the submitted width
+	//It adds another value to the reward object, unlock_value, which is used for the css
+	BarFactory.calculateRewardPositions = function(width){
+		for (var i = 0; i < BarFactory.rewards.length; i++){
+			BarFactory.rewards[i]['unlock_value'] = BarFactory.rewards[i]['unlock_amount']/BarFactory.actual.campaignTotal * width + 'px';
+		}
+	};
 	//This simulates what the checkout process will be like. When the user checks out,
 	//the paid amount will be updated and the cart will decrease to zero.
 	//Currently the visual is decreased to by .99999 instead of to zero, because if

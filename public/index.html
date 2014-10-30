@@ -9,6 +9,8 @@
 	<link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/navBar.css">
 	<link rel="stylesheet" type="text/css" href="css/store.css">
+	<link rel="stylesheet" type="text/css" href="css/rewardBar.css">
+	<link rel="stylesheet" type="text/css" href="css/campaign.css">
 	<link rel="stylesheet" type="text/css" href="css/odometer-theme-plaza.css">
 
 	<!-- Libs -->
@@ -19,10 +21,18 @@
 
 </head>
 <body>
-<!-- 	<fn-nav></fn-nav> -->
 
+	<fn-nav></fn-nav>
 	<div ng-view></div>
+	
 	<!-- My Modules -->
+
+	<!--Helpers-->
+	<script src='modules/helpers/repeatWatcherDirective.js'></script>
+
+	<!--Campaign-->
+	<script src='modules/campaign/campaignFactory.js'></script>
+	<script src='modules/campaign/campaignController.js'></script>
 
 	<!--Progress Bar-->
 	<script src='modules/campaign/progress_bar/odometerDirective.js'></script>	
