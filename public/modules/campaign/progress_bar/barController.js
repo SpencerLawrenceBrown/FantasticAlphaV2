@@ -48,6 +48,10 @@ angular.module('BarCTRL', ['BarFCTR']).controller('BarController', ['BarFactory'
 	this.recalculateRewardPositions= function(newWidth){
 		BarFactory.calculateRewardPositions(newWidth);
 	}
+	//Calls a method that updates the model
+	this.updateCounterPosition= function(newWidth){
+		BarFactory.updateCounterPosition(newWidth);
+	}
 
 	this.log = function(element){
 		console.log(element);

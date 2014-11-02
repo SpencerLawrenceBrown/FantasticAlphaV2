@@ -47,7 +47,8 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$http', 'CartFac
 		//Same as the values in 'BarFactory.actual', but scaled for the progress bar visual
 			barTotal: 100,
 			barPaid: 0,
-			barCart: 0
+			barCart: 0,
+			barCounter: 0
 		},
 		//The list of rewards. Every reward has a name, which serves as the text, and a value, which is used to align it
 		rewards : []
@@ -101,6 +102,10 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$http', 'CartFac
 			BarFactory.rewards[i]['unlock_value'] = BarFactory.rewards[i]['unlock_amount']/BarFactory.actual.campaignTotal * width + 'px';
 		}
 	};
+	BarFactory.updateCounterPosition = function(width){
+		BarFactory.visual.barCounter = scaleData(BarFactory.actual.campaignPaid + BarFactory.actual.campaignCart, BarFactory.actual.campaignTotal, BarFactory.visual.barTotal) * (width/ BarFactory.visual.barTotal) + 'px';
+		console.log(BarFactory.visual.barCounter);
+	}
 	//This simulates what the checkout process will be like. When the user checks out,
 	//the paid amount will be updated and the cart will decrease to zero.
 	//Currently the visual is decreased to by .99999 instead of to zero, because if

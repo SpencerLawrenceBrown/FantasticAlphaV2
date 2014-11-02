@@ -29,9 +29,10 @@ angular.module('BarDRCT', ['BarCTRL']).directive('fnBar', function(){
 		controller: 'BarController',
 		link: function(scope, element, attrs, controller) {
 			//Methods
-			//Calculate the position
-			var recalculatePosition = function(apply){
-				var width = $("#campaign_content #progressbar").width();
+			//Calculate the reward position
+			//The apply signifiies if the function will be called out of the $digest cycle
+			var recalculateRewardPosition = function(apply){
+				var width = $("#campaign_content #progress_bar").width();
 				//Updates the model through the controller
 				controller.recalculateRewardPositions(width);
 				if (apply){
@@ -40,6 +41,7 @@ angular.module('BarDRCT', ['BarCTRL']).directive('fnBar', function(){
 				}
 			};
 			//Update Reward status
+			//The apply signifiies if the function will be called out of the $digest cycle			
 			var updateRewardProgress = function(apply){
 				for(var x = 0; x < controller.rewards.length; x++){
 					//If has a higher amount than has been raised
@@ -67,21 +69,34 @@ angular.module('BarDRCT', ['BarCTRL']).directive('fnBar', function(){
 					scope.$apply();
 				}
 			};
-
+			//Update the counter position
+			//The counter is located at the end of the cart div
+			//The apply signifiies if the function will be called out of the $digest cycle
+			var updateCounterPosition = function(apply){
+				var width = $("#campaign_content #progress_bar").width();
+				controller.updateCounterPosition(width);
+				if (apply){
+					//Since the resize event is out of the angular lifecycle scope$apply calls the $digest and updates the values
+					scope.$apply();
+				}
+			}
 			//Events/Listeners
 			//Listen for when the ng-repeat the contains the rewards is loaded so that they can be manipulated
 			scope.$on('RewardsRepeatLoaded', function(event){
-				recalculatePosition(false);
+				recalculateRewardPosition(false);
 				updateRewardProgress(false);
+				updateCounterPosition(false);
     		});
 
     		$('.increase').click(function(){
     			updateRewardProgress(true);
+    			updateCounterPosition(true);
     		});
 
 			//When the window gets resized, recalculate where the rewards should be
 			$(window).resize(function() {
-				recalculatePosition();
+				recalculateRewardPosition(true);
+				updateCounterPosition(true);
 			});
 		}
 	};
