@@ -41,7 +41,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	margin-bottom: 16px;
 	top: 0px;
 	font-size: 1.6em;
-	color: #ed2852;
+	/*color: #ed2852;*/
 }
 
 #reward_bar_div #progress_and_rewards{
@@ -71,12 +71,38 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 /*Reward counter*/
 #progress_and_rewards #amount_counter{
 	position: relative;
-	width: 120px;
-	top: 15px;
-	background-color: white;
+	height: 25px;
+	width: 200px;
+	top: 5px;
 	-webkit-transition: left 1s; /* For Safari 3.1 to 6.0 */
     transition: left 1s;
+    z-index: 10;
 }
+#progress_and_rewards #amount_counter img{
+	position: absolute;
+	padding-top: 0px;
+}
+#progress_and_rewards #amount_counter #odometers{
+	position: relative;
+	top: 12px;
+	left: 12px;
+	font-size: 1.33em;
+}
+#progress_and_rewards #amount_counter .odometer{
+	position: relative;
+	top: -2px;
+	background-color: white;
+}
+
+#progress_and_rewards #amount_counter .campaign_counter{
+	color: #ed2852;
+}
+
+#progress_and_rewards #amount_counter .cart_counter{
+	color: green;
+}
+
+
 
 /*Each Reward Div*/
 .reward_box{

@@ -113,7 +113,6 @@
   -khtml-border-radius: 0.1em;
   border-radius: 0.1em;
   padding: 0 0.03em;
-  color: #ed2852;
 }
 .odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner, .odometer.odometer-theme-plaza .odometer-digit .odometer-digit-inner {
   left: 0.03em;

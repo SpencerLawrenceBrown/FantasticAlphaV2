@@ -102,8 +102,10 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$http', 'CartFac
 			BarFactory.rewards[i]['unlock_value'] = BarFactory.rewards[i]['unlock_amount']/BarFactory.actual.campaignTotal * width + 'px';
 		}
 	};
+	//This function calculates where the counter bubble should be position along the bar. The number at the end is the width of the bubble/2 in order to center it
+	//This just looks for where along the bar the two bars together are and then calculates that coordinate. 
 	BarFactory.updateCounterPosition = function(width){
-		BarFactory.visual.barCounter = scaleData(BarFactory.actual.campaignPaid + BarFactory.actual.campaignCart, BarFactory.actual.campaignTotal, BarFactory.visual.barTotal) * (width/ BarFactory.visual.barTotal) + 'px';
+		BarFactory.visual.barCounter = scaleData(BarFactory.actual.campaignPaid + BarFactory.actual.campaignCart, BarFactory.actual.campaignTotal, BarFactory.visual.barTotal) * (width/ BarFactory.visual.barTotal) - (200/2) + 'px';
 		console.log(BarFactory.visual.barCounter);
 	}
 	//This simulates what the checkout process will be like. When the user checks out,

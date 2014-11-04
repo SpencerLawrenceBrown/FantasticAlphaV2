@@ -1,8 +1,11 @@
 <div id = 'reward_bar_div' class = 'container-fluid'>
 	<div id = 'progress_and_rewards'>
 		<div id = 'amount_counter' ng-style = "{'left' : bar.visual.barCounter}">
-			$<div odometer-Directive data-odometer = "bar.actual.campaignPaid"></div>
-			+ $<div odometer-Directive data-odometer = "bar.actual.campaignCart"></div>
+			<img src = 'assets/images/money_bubble.png'>
+			<div id = 'odometers'>
+			<span class = 'campaign_counter'>$</span><div class = 'odometer campaign_counter' odometer-Directive data-odometer = "bar.actual.campaignPaid"></div>
+			+ <span class = 'cart_counter'>$</span><div class = 'odometer cart_counter' odometer-Directive data-odometer = "bar.actual.campaignCart"></div>
+			</div>
 		</div>
 		<progress id = 'progress_bar'>
 			<bar id = 'paid_bar' max="bar.visual.barTotal" value="bar.visual.barPaid"></bar>
