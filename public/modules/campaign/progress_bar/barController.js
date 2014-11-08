@@ -52,11 +52,12 @@ angular.module('BarCTRL', ['BarFCTR']).controller('BarController', ['BarFactory'
 	this.updateCounterPosition= function(newWidth){
 		BarFactory.updateCounterPosition(newWidth);
 	}
-
-	this.log = function(element){
-		console.log(element);
-		console.log('test');
+	//Updates the rewards progress
+	this.updateRewardsProgress = function(){
+		BarFactory.updateRewardsProgress();
 	}
+
+	//Initialize
 	//Load the bar factory when the controller is instantiated
 	BarFactory.
 		getData().

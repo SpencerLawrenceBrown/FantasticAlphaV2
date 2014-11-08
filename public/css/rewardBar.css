@@ -41,7 +41,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	margin-bottom: 16px;
 	top: 0px;
 	font-size: 1.6em;
-	/*color: #ed2852;*/
+	color: #ed2852;
 }
 
 #reward_bar_div #progress_and_rewards{

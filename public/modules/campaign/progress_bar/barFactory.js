@@ -20,7 +20,7 @@ Depending on the results it will update the progress bar accordingly.
 		-CartFactory 
 */
 
-angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$http', 'CartFactory', function($http, CartFactory){
+angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$http', '$rootScope', 'CartFactory', function($http, $rootScope, CartFactory){
 	//MODEL
 	/*!IMPORTANT - The total is set to 100. The current progress bar plugin uses that to set the max,
 	thus going forward all the values must be repreportioned relative to 100.
@@ -51,16 +51,13 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$http', 'CartFac
 			barCounter: 0
 		},
 		//The list of rewards. Every reward has a name, which serves as the text, and a value, which is used to align it
-		rewards : []
+		rewards : [],
+		width: 1000
 	};
 
 	//--------------------------------------------------------------
 	//METHODS
-	//Private
-	//This will communicate with the cart to see if the user has any items in the cart. If they do it will be indicated with a second progress bar
-	var getCartData = function (){
-		//TODO - Check the cart to see if there are any campaign items in it
-	};
+	//*Private*//
 	//This will receive the data from the server. This is the official campaign values
 	var getServerData = function (){
 		return $http({
@@ -73,9 +70,8 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$http', 'CartFac
 			//Scale the value to fit within 0 to 100 for the progress bar visual
 			BarFactory.visual.barPaid = scaleData(data.paid, data.total, BarFactory.visual.barTotal);
 			BarFactory.rewards = data.rewards;
-			//When created initially, assume a width of 1000.
-			//TODO - update this so that it reads the current DOM
-			BarFactory.calculateRewardPositions(1000);
+			//Update the positions based on width-Assumes 1000px width initially. The width updated by the barDirective when it changes
+			BarFactory.calculateRewardPositions(BarFactory.width);
 		});
 	};
 	//takes in a value and a maximum and then scales it relative to the scale factory
@@ -83,30 +79,70 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$http', 'CartFac
 		return value/max * scale;
 	}
 
-	//Public
-	//Load the data from the cart & from the server. It returns the getServerData because it is an asynchronous test.
+	//When loaded, check the cart for campaign items
+	var getCartData = function(){
+		BarFactory.changeValue(CartFactory.computeCampaignTotal(1));
+	}
+
+	//Listens for when the cart is updated. Then get the new value of all the items from the campaign in the cart
+	var cartListener = $rootScope.$on('cart:contentsChanged', function(){
+		BarFactory.changeValue(CartFactory.computeCampaignTotal(1));
+	});
+
+	//*Public*//
+	//Load the data from the cart & from the server, then update the rewards progress. It returns the getServerData because it is an asynchronous test.
 	//This should really be using $q. That will be added.
+	//*Data & Value*//
 	BarFactory.getData = function(){
 		getCartData();
 		return getServerData();
 	};
-	//Changes the value of the cart bar. Takes in a negetive number to decrease, positive to increase
+	//Changes the value of the cart bar. Updates counter position accordingly
 	BarFactory.changeValue = function(value){
-		BarFactory.visual.barCart += scaleData(value, BarFactory.actual.campaignTotal, BarFactory.visual.barTotal);
-		BarFactory.actual.campaignCart += value;
+		BarFactory.visual.barCart = scaleData(value, BarFactory.actual.campaignTotal, BarFactory.visual.barTotal);
+		BarFactory.actual.campaignCart = value;
+		BarFactory.updateCounterPosition(BarFactory.width);
 	};
+	//This will update the rewards progress which will change which rewards are visible. This is called on checkout so that rewardss are only shown when paid
+	BarFactory.updateRewardsProgress = function(){
+		for(var x = 0; x < BarFactory.rewards.length; x++){
+			console.log(BarFactory.rewards[x]);
+			console.log(BarFactory.rewards[x].unlock_amount);
+			console.log(BarFactory.actual.campaignPaid);
+			//If has a higher amount than has been raised
+			if (BarFactory.rewards[x].unlock_amount > BarFactory.actual.campaignPaid){
+				//If not the first one
+				if (x > 0){
+					//If the previous one is unlocked then this one is the current reward
+					if (BarFactory.rewards[x-1].progress === 'unlocked'){
+						BarFactory.rewards[x].progress = 'current';
+					} else {
+						BarFactory.rewards[x].progress = 'locked';
+					}
+				//If the first one
+				} else {
+					BarFactory.rewards[x].progress = 'current';
+				}
+			//If has a lower or equal amount than what has been raised
+			} else if (BarFactory.rewards[x].unlock_amount <= BarFactory.actual.campaignPaid){
+				BarFactory.rewards[x].progress = 'unlocked';
+			}
+		}
+	}
+
+	//*Positioning*//
 	//This function calculates where the rewards should be positioned along the bar given the submitted width
 	//It adds another value to the reward object, unlock_value, which is used for the css
 	BarFactory.calculateRewardPositions = function(width){
 		for (var i = 0; i < BarFactory.rewards.length; i++){
 			BarFactory.rewards[i]['unlock_value'] = BarFactory.rewards[i]['unlock_amount']/BarFactory.actual.campaignTotal * width + 'px';
 		}
+		BarFactory.width = width;
 	};
 	//This function calculates where the counter bubble should be position along the bar. The number at the end is the width of the bubble/2 in order to center it
 	//This just looks for where along the bar the two bars together are and then calculates that coordinate. 
 	BarFactory.updateCounterPosition = function(width){
-		BarFactory.visual.barCounter = scaleData(BarFactory.actual.campaignPaid + BarFactory.actual.campaignCart, BarFactory.actual.campaignTotal, BarFactory.visual.barTotal) * (width/ BarFactory.visual.barTotal) - (200/2) + 'px';
-		console.log(BarFactory.visual.barCounter);
+		BarFactory.visual.barCounter = scaleData(BarFactory.actual.campaignPaid + BarFactory.actual.campaignCart, BarFactory.actual.campaignTotal, BarFactory.visual.barTotal) * (width/BarFactory.visual.barTotal) - (200/2) + 'px';
 	}
 	//This simulates what the checkout process will be like. When the user checks out,
 	//the paid amount will be updated and the cart will decrease to zero.
@@ -117,6 +153,7 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$http', 'CartFac
 		BarFactory.visual.barCart += -(BarFactory.visual.barCart * .99999);
 		BarFactory.actual.campaignPaid += BarFactory.actual.campaignCart;
 		BarFactory.actual.campaignCart = 0;
+		BarFactory.updateRewardsProgress();
 	}
 
 	return BarFactory;

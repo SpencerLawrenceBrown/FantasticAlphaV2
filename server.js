@@ -23,7 +23,7 @@ var app = express();
 //Set the port to 8080
 var port = process.env.PORT || 8080;
 
-mongoose.connect(configDB.url); //Connect to database
+//mongoose.connect(configDB.url); //Connect to database
 
 require('./config/passport')(passport); //Pass passport for config
 

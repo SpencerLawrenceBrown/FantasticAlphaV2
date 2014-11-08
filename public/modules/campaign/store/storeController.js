@@ -16,7 +16,7 @@ It bascially functions as a getter and then holds the store contents
 		-StoreFactory
 */
 
-angular.module('StoreCTRL', ['StoreFCTR']).controller('StoreController', ['StoreFactory', function(StoreFactory){
+angular.module('StoreCTRL', ['StoreFCTR']).controller('StoreController', ['$rootScope', 'StoreFactory', function($rootScope, StoreFactory){
 	//Model connection
 	//Enables the directive to watch the factory model
 	this.inventory = StoreFactory.incentives;
@@ -26,9 +26,18 @@ angular.module('StoreCTRL', ['StoreFCTR']).controller('StoreController', ['Store
 		StoreFactory.getIncentives();
 	};
 
+	//Add item to cart
+	this.addItem = function(item){
+		//This will emit an event that will be caught by the cart
+		//Rootscope allows communication across different scope hierarchies
+		$rootScope.$emit('store:addItem', item);
+	};
+
 	StoreFactory.
 		getIncentives().
 		then(function(){
 			this.inventory = StoreFactory.incentives;
 		}.bind(this));
 }]);
+
+//TEST THE CART ACCESS FACTORY

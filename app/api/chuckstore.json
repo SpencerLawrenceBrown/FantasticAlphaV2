@@ -13,10 +13,10 @@
 				]
 			},
 			"buttonText" : "Join Now",
-			"price" : "0",
+			"price" : 0,
 			"project" : "Chuck",
-			"item_id" : "1",
-			"campaign_id" : "1"
+			"item_id" : 1,
+			"campaign_id" : 1
 		},
 		"level_1" : {
 			"title" : "1",
@@ -32,10 +32,10 @@
 				]
 			},
 			"buttonText" : "$1 Minimum",
-			"price" : "1",
+			"price" : 1,
 			"project" : "Chuck",
-			"item_id" : "2",
-			"campaign_id" : "1"
+			"item_id" : 2,
+			"campaign_id" : 1
 		},
 		"level_2" : {
 			"title" : "2",
@@ -51,10 +51,10 @@
 				]
 			},
 			"buttonText" : "$5 Minimum",
-			"price" : "5",
+			"price" : 5,
 			"project" : "Chuck",
-			"item_id" : "3",
-			"campaign_id" : "1"
+			"item_id" : 3,
+			"campaign_id" : 1
 		},
 		"level_3" : {
 			"title" : "3",
@@ -71,10 +71,10 @@
 				]
 			},
 			"buttonText" : "$10 Minimum",
-			"price" : "10",
+			"price" : 10,
 			"project" : "Chuck",
-			"item_id" : "4",
-			"campaign_id" : "1"
+			"item_id" : 4,
+			"campaign_id" : 1
 		}
 	}
 }

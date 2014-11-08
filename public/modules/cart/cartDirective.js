@@ -29,8 +29,8 @@ angular.module('CartDRCT', ['CartCTRL']).directive('fnCart', function(){
 		replace: true, //Fully replaces the fn-nav element
 		transclude: false, //Currently set to false, can't forsee any reason that would change
 		templateUrl: 'modules/cart/cartTemplate.html', //Loads the html template
-		controllerAs:'cart', //Refer to the controller as 'nav' so nav.foo
-		controller: 'CartController' //This controller comes from the 'NavCTRL' module that is injected
+		controllerAs:'cart', //Refer to the controller as 'cart' so cart.foo
+		controller: 'CartController' //This controller comes from the 'CartCTRL' module that is injected
 		//No DOM manipulation yet. If needed, uncomment below
 		// link: function($scope, iElm, iAttrs, controller) {
 		// }
