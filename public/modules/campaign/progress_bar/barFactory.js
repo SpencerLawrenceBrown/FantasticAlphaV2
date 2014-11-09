@@ -106,9 +106,6 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$http', '$rootSc
 	//This will update the rewards progress which will change which rewards are visible. This is called on checkout so that rewardss are only shown when paid
 	BarFactory.updateRewardsProgress = function(){
 		for(var x = 0; x < BarFactory.rewards.length; x++){
-			console.log(BarFactory.rewards[x]);
-			console.log(BarFactory.rewards[x].unlock_amount);
-			console.log(BarFactory.actual.campaignPaid);
 			//If has a higher amount than has been raised
 			if (BarFactory.rewards[x].unlock_amount > BarFactory.actual.campaignPaid){
 				//If not the first one

@@ -15,7 +15,8 @@ var app = angular.module('FantasticAlphaV2', [
 	'BarDRCT',
 	'OdometerDRCT',
 	'CampaignCTRL',
-	'RepeatDRCT'
+	'RepeatDRCT',
+	'VideoCTRL'
 ]);
 
 // configure our routes

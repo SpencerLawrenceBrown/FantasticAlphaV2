@@ -23,16 +23,22 @@ Each time a new campaign page is loaded, the store will make a new call to get t
 angular.module('StoreFCTR', []).factory('StoreFactory', ['$http', function($http){
 
 	var StoreFactory = {
-		incentives:{}
+		incentives:{}, 
+		current_highlight: {}
 	};
 
-	StoreFactory.getIncentives = function (){
+	StoreFactory.getIncentives = function(){
 		return $http({
 			method: "GET",
 			url: "api/store-products"
 		}).success(function(data){
 			StoreFactory.incentives = data.incentives;
 		});
+	};
+
+	StoreFactory.setCurrent = function(index){
+		StoreFactory.current_highlight = StoreFactory.incentives[index];
+		console.log(StoreFactory.current_highlight);
 	};
 
 	return StoreFactory;

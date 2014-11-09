@@ -27,6 +27,22 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 
 /* layout */
 
+/*The Store Container*/
+#store_container{
+	position: relative;
+}
+
+/*All Incentives*/
+#incentive_options{
+	position: relative;
+}
+
+#detail_box{
+	height: 100px;
+	color: #ed2852;
+}
+
+
 /* Each incentive box - contains all the incentive information */
 .incentive_box{
 	position: relative;

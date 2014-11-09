@@ -1,7 +1,8 @@
 {
-	"incentives" : {
-		"level_0" : {
-			"title" : "Free",
+	"incentives" :[
+		{
+			"level" : "Free",
+			"description": "Nerd Herd Intern: Show your support and get a rad badge!",
 			"contains" : {
 				"unique" : [
 					"Digital 'Buy More' Badge",
@@ -18,8 +19,9 @@
 			"item_id" : 1,
 			"campaign_id" : 1
 		},
-		"level_1" : {
-			"title" : "1",
+		{
+			"level" : 1,
+			"description": "Nerd Herd Junior Employee: Gain access to all the unlocked rewards and also the production blog.",
 			"contains" :{
 				"unique" : [
 					"Production Blog",
@@ -37,8 +39,9 @@
 			"item_id" : 2,
 			"campaign_id" : 1
 		},
-		"level_2" : {
-			"title" : "2",
+		{
+			"level" : 2,
+			"description": "Nerd Herd Middle Management: All the perks of Level 1, plus exclusive production artifacts",
 			"contains" : {
 				"unique" : [
 				"Digital Movie Download",
@@ -56,8 +59,9 @@
 			"item_id" : 3,
 			"campaign_id" : 1
 		},
-		"level_3" : {
-			"title" : "3",
+		{
+			"level" : 3,
+			"description": "Nerd Herd C-suite: High up in the herd, every perk from before + tangible goods.",
 			"contains" :  {
 				"unique" : [
 				"Ticket Pre-order",
@@ -76,5 +80,5 @@
 			"item_id" : 4,
 			"campaign_id" : 1
 		}
-	}
+	]
 }

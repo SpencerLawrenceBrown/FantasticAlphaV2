@@ -1,9 +1,9 @@
 <div id = 'store_container' class = 'container-fluid'> 
 	<div id = 'incentive_options'>
 		<div class = 'incentive_box' ng-repeat = 'incentive in store.inventory'>
-			<p class = 'incentive_title'>Level: {{incentive.title}} </p>
-			<div class = 'incentive_components'>
-				 <p class = 'unique' ng-repeat = 'unique in incentive.contains.unique'>
+			<p class = 'incentive_title'>Level: {{incentive.level}} </p>
+			<div class = 'incentive_components' ng-click = 'store.setCurrent($index)'>
+				<p class = 'unique' ng-repeat = 'unique in incentive.contains.unique'>
 					{{unique}}
 				</p>
 				<p class = 'carry_over' ng-repeat = 'carry_over in incentive.contains.carry_over'>
@@ -23,8 +23,9 @@
 					add to cart
 				</div>
 			</div>
+		</div>
 	</div>
 	<div id = 'detail_box'>
-		{{incentive.description}}
+		{{store.model.current_highlight.description}}
 	</div>
 </div>

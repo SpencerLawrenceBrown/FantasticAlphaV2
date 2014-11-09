@@ -18,8 +18,10 @@ It bascially functions as a getter and then holds the store contents
 
 angular.module('StoreCTRL', ['StoreFCTR']).controller('StoreController', ['$rootScope', 'StoreFactory', function($rootScope, StoreFactory){
 	//Model connection
-	//Enables the directive to watch the factory model
+	//Refence to the watch variable
 	this.inventory = StoreFactory.incentives;
+	//This will have to change eventually, but for now it works. Need to figure out how to bind w/o scope
+	this.model = StoreFactory;
 
 	//Reload the inventory
 	this.loadInventory = function(){
@@ -33,11 +35,13 @@ angular.module('StoreCTRL', ['StoreFCTR']).controller('StoreController', ['$root
 		$rootScope.$emit('store:addItem', item);
 	};
 
-	StoreFactory.
-		getIncentives().
-		then(function(){
-			this.inventory = StoreFactory.incentives;
-		}.bind(this));
-}]);
+	//Set the selected item
+	this.setCurrent = function(index){
+		StoreFactory.setCurrent(index);
+	}
 
-//TEST THE CART ACCESS FACTORY
+	StoreFactory.getIncentives().then(function(){
+			this.inventory = StoreFactory.incentives;
+	}.bind(this));
+
+}]);
