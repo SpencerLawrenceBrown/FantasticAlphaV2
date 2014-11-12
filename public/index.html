@@ -7,7 +7,7 @@
 
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/video/videogular.css">
+	<link rel="stylesheet" type="text/css" href="css/video/videogular.css">
 	<link rel="stylesheet" type="text/css" href="css/navBar.css">
 	<link rel="stylesheet" type="text/css" href="css/store.css">
 	<link rel="stylesheet" type="text/css" href="css/rewardBar.css">
@@ -21,13 +21,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
 	<script src="libs/angular-route/angular-route.min.js"></script>
 	<script src="libs/angular-bootstrap/ui-bootstrap.min.js"></script>
-	<!-- Video Player-->
-	<script src="libs/videogular/videogular.min.js"></script>
-	<script src="libs/videogular-poster/poster.min.js"></script>
-	<script src="libs/videogular-controls/controls.min.js"></script>
-	<script src="libs/videogular-buffering/buffering.min.js"></script>
-	<script src="libs/videogular-overlay-play/overlay-play.min.js"></script>
-	<script src="libs/videogular-youtube/youtube.js"></script>
+	<script src="libs/angular-sanitize/angular-sanitize.min.js"></script>
 
 </head>
 <body>
@@ -41,7 +35,8 @@
 	<!--Campaign-->
 	<script src='modules/campaign/campaignFactory.js'></script>
 	<script src='modules/campaign/campaignController.js'></script>
-	<script src='modules/campaign/video/videoController.js'></script>
+	<!--Video-->
+	<script src='modules/campaign/video/videoDirective.js'></script>
 	<!--Progress Bar-->
 	<script src='modules/campaign/progress_bar/odometerDirective.js'></script>	
 	<script src='modules/campaign/progress_bar/odometer.js'></script>

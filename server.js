@@ -87,7 +87,7 @@ APIrouter.get('/bar-data', function(req, res){
 	res.sendfile('./app/api/progressBar.json');
 });
 
-APIrouter.get('/campaign-data', function(req, res){
+APIrouter.get('/chuck-data', function(req, res){
 	res.sendfile('./app/api/chuckcampaign.json');
 });
 

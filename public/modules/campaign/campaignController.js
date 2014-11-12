@@ -9,7 +9,6 @@ This controller will communicate between the campaign view and the campaign fact
 	-References to:
 		-Video url
 		-Copy about Campaign
-		-List of rewards
 		-url for twitter
 		-content for blog
 
@@ -25,16 +24,16 @@ This controller will communicate between the campaign view and the campaign fact
 angular.module('CampaignCTRL', ['CampaignFCTR']).controller('CampaignController', ['CampaignFactory', function(CampaignFactory){
 	//Model connection
 	//Enables the directive to watch the factory model
-	// this.rewards = CampaignFactory.rewards;
+	this.video = CampaignFactory.video;
 
-	// //Reload the inventory
-	// this.loadCampaign = function(){
-	// 	CampaignFactory.getCampaign();
-	// };
+	//Reload the inventory
+	this.loadCampaign = function(){
+		CampaignFactory.getCampaign();
+	};
 
-	// CampaignFactory.
-	// 	loadCampaign().
-	// 	then(function(){
-	// 		this.rewards = CampaignFactory.rewards;
-	// 	}.bind(this));
+	CampaignFactory.
+		loadCampaign().
+		then(function(){
+			this.video = CampaignFactory.video;
+		}.bind(this));
 }]);

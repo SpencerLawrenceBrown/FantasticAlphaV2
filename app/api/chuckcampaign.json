@@ -1,20 +1,4 @@
 {
-	"rewards" : [
-		 {
-			"name" : "Jeffster Music Video",
-			"unlock_amount" : 300
-		},
-		{
-			"name" : "Captain Awesome Workout Video",
-			"unlock_amount" : 1000
-		},
-		{
-			"name" : "John Casey's Guide to Weapon Maintenance",
-			"unlock_amount" : 1800
-		},
-		{
-			"name" : "Intersect: The Text Adventure Game",
-			"unlock_amount" : 2500
-		}
-	]
+	"video" : "https://www.youtube.com/embed/0be4oWklFTs",
+	"video_id": "0be4oWklFTs"
 }

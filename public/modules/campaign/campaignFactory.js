@@ -18,22 +18,25 @@ Basically just loads all the campaign data from the server.
 		-none
 */
 
-angular.module('CampaignFCTR', []).factory('CampaignFactory', ['$http', function($http){
+angular.module('CampaignFCTR', []).factory('CampaignFactory', ['$http', '$sce', function($http, $sce){
 
 	var CampaignFactory = {
-		video:{},
+		video:{
+			url:{},
+			id: ""
+		},
 		copy: {},
-		rewards: [],
 		updates: {}
 	};
 
 	CampaignFactory.loadCampaign = function (){
 		return $http({
 			method: "GET",
-			url: "api/campaign-data"
+			url: "api/chuck-data"
 		}).success(function(data){
-			CampaignFactory.rewards = data.rewards;
-			console.log(CampaignFactory.rewards);
+			//Sets the video as a trusted resource so that iframe will play. Also adds different small controls to change apperance
+			CampaignFactory.video.url = $sce.trustAsResourceUrl(data.video+ "?enablejsapi=1&modestbranding=1&autohide=1&showinfo=0");
+			CampaignFactory.video.id = data.video_id;
 		});
 	};
 
