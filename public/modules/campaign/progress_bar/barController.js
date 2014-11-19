@@ -8,7 +8,7 @@ This controller communicates between the barFactory and the directive.
 //Components
 	-Load model
 	-refresh model
-
+	
 //Map
 	-Used by:
 		-BarDirective

@@ -28,7 +28,6 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 /* layout */
 /*Entire Div*/
 #reward_bar_div{
-	margin-top: 50px;
 	position: relative;
 	height: 175px;
 	background-color: black;
@@ -101,8 +100,6 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 #progress_and_rewards #amount_counter .cart_counter{
 	color: green;
 }
-
-
 
 /*Each Reward Div*/
 .reward_box{

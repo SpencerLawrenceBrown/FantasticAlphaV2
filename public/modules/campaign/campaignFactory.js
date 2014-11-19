@@ -18,27 +18,45 @@ Basically just loads all the campaign data from the server.
 		-none
 */
 
-angular.module('CampaignFCTR', []).factory('CampaignFactory', ['$http', '$sce', function($http, $sce){
-
+angular.module('CampaignFCTR', []).factory('CampaignFactory', ['$routeParams', '$http', '$sce', function($routeParams, $http, $sce){
+	//Model
 	var CampaignFactory = {
 		video:{
 			url:{},
 			id: ""
 		},
-		copy: {},
-		updates: {}
+		info: {},
+		tabs: {}
 	};
 
-	CampaignFactory.loadCampaign = function (){
+	//Methods
+	//Load the campaign data from the server
+	CampaignFactory.loadCampaign = function(){
+		var urlString = "api/campaign-info/" + $routeParams.campaign_id;
 		return $http({
 			method: "GET",
-			url: "api/chuck-data"
+			url: urlString,
 		}).success(function(data){
+			console.log(data);
 			//Sets the video as a trusted resource so that iframe will play. Also adds different small controls to change apperance
-			CampaignFactory.video.url = $sce.trustAsResourceUrl(data.video+ "?enablejsapi=1&modestbranding=1&autohide=1&showinfo=0");
-			CampaignFactory.video.id = data.video_id;
+			CampaignFactory.video.url = $sce.trustAsResourceUrl(data.video_data.video+ "?enablejsapi=1&modestbranding=1&autohide=1&showinfo=0");
+			//Sets the tabs data
+			CampaignFactory.tabs = data.tabs;
 		});
 	};
-
+	//Set the active tab
+	CampaignFactory.setActiveTab = function(index){
+		//Add a switch statement
+		if (index === 0){
+			CampaignFactory.tabs.active = "producer";
+		}
+		else if (index === 1){
+			CampaignFactory.tabs.active = "fan";
+		}
+		else if (index === 2){
+			CampaignFactory.tabs.active = "update";
+		}
+	};
+	
 	return CampaignFactory;
 }]);

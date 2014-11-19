@@ -64,6 +64,13 @@ angular.module('BarDRCT', ['BarCTRL']).directive('fnBar', function(){
 				recalculateRewardPosition(true);
 				updateCounterPosition(true);
 			});
+
+			//When the 'join the fanbase button is clicked, scroll to store'
+			$('#join_the_fanbase button').click(function(){
+				$('html,body').animate({
+		            scrollTop: $('#reward_bar_div').offset().top - 50
+		        }, 600);
+			});
 		}
 	};
 });

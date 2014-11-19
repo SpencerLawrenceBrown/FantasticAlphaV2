@@ -20,7 +20,7 @@ Depending on the results it will update the progress bar accordingly.
 		-CartFactory 
 */
 
-angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$http', '$rootScope', 'CartFactory', function($http, $rootScope, CartFactory){
+angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$routeParams', '$http', '$rootScope', 'CartFactory', function($routeParams, $http, $rootScope, CartFactory){
 	//MODEL
 	/*!IMPORTANT - The total is set to 100. The current progress bar plugin uses that to set the max,
 	thus going forward all the values must be repreportioned relative to 100.
@@ -60,10 +60,12 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$http', '$rootSc
 	//*Private*//
 	//This will receive the data from the server. This is the official campaign values
 	var getServerData = function (){
+		var urlString = "api/campaign-bar/" + $routeParams.campaign_id;
 		return $http({
 			method: "GET",
-			url: "api/bar-data"
+			url: urlString
 		}).success(function(data){
+			console.log('bar: ' + data);
 			//Set the appropriate data
 			BarFactory.actual.campaignTotal = data.total;
 			BarFactory.actual.campaignPaid = data.paid;
@@ -81,12 +83,12 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$http', '$rootSc
 
 	//When loaded, check the cart for campaign items
 	var getCartData = function(){
-		BarFactory.changeValue(CartFactory.computeCampaignTotal(1));
+		BarFactory.changeValue(CartFactory.computeCampaignTotal($routeParams.campaign_id));
 	}
 
 	//Listens for when the cart is updated. Then get the new value of all the items from the campaign in the cart
 	var cartListener = $rootScope.$on('cart:contentsChanged', function(){
-		BarFactory.changeValue(CartFactory.computeCampaignTotal(1));
+		BarFactory.changeValue(CartFactory.computeCampaignTotal($routeParams.campaign_id));
 	});
 
 	//*Public*//

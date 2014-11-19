@@ -1,0 +1,17 @@
+{
+	"details" :{
+		"fullname" : "Spencer Brown",
+		"items" : [
+		{
+			"campaign" : "Chuck",
+			"name" : "Level 1",
+			"quantity" : 2,
+			"components":[
+			{
+				"detail" : "test project"
+			}
+			]
+		}
+		]
+	}
+}

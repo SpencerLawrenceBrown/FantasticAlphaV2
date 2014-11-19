@@ -26,16 +26,17 @@ angular.module('MetaFCTR', []).factory('CampaignsMetaFactory', ['$http', functio
 
 	//Our model
 	var CampaignsMeta = {
-		campaignsInfo: {}
+		allCampaigns: {}
 	};
 
 	//Retrieve all the campaigns
 	CampaignsMeta.getAllCampaigns = function(){
 		return $http({
 			method: 'GET',
-			url: 'api/campaigns-meta'
+			url: 'api/all-campaigns'
 		}).success(function(data){
-			CampaignsMeta.campaignsInfo = data;
+			CampaignsMeta.allCampaigns = data;
+			console.log(CampaignsMeta.allCampaigns);
 		});
 	};
 

@@ -1,5 +1,5 @@
 /* ===========================
-Fantastic Campaign
+Fantastic Auth
 Copyright 2014
 written by Spencer Brown - spencrbrown@gmail.com
 
@@ -25,20 +25,5 @@ img {border: none;}
 
 a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 
-/* layout */
+/* Layout */
 
-#campaign_content{
-	position: relative;
-	background-color: #efefef;
-	top: 50px;
-	overflow: hidden;
-}
-/*This creates the circle object*/
-.circle{
-	width: 16px;
-	height: 16px;
-	background-color: black;
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
-	border-radius: 8px;
-}

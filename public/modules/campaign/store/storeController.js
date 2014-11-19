@@ -16,7 +16,7 @@ It bascially functions as a getter and then holds the store contents
 		-StoreFactory
 */
 
-angular.module('StoreCTRL', ['StoreFCTR']).controller('StoreController', ['$rootScope', 'StoreFactory', function($rootScope, StoreFactory){
+angular.module('StoreCTRL', ['StoreFCTR']).controller('StoreController', ['$routeParams', '$rootScope', 'StoreFactory', function($routeParams, $rootScope, StoreFactory){
 	//Model connection
 	//Refence to the watch variable
 	this.inventory = StoreFactory.incentives;

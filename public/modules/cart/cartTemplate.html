@@ -1,4 +1,4 @@
-<div id = 'cart_div'>
+<div id = 'cart_div' ng-show = 'cart.model.isVisible'>
 <!--
 Cart Template
 Written by: Spencer Brown, copyright 2014
@@ -20,31 +20,31 @@ This is the html for the cart div
 			<th>CONTENTS</th>
 			<th>QTY</th>
 			<th>PRICE</th>
+			<th>RM</th>
 		</thead>
 		<tbody>
 			<tr class = 'cart_item' ng-repeat = 'item in cart.model.contents'>
-				<td class = "item_title">{{item.info.campaign}}</td>
-				<td class = "item_package">{{item.info.title}}</td>
-				<td class = "item_details">{{item.info.contains[0]}}</td>
+				<td class = "item_title">{{item.info.project}}</td>
+				<td class = "item_package">Level {{item.info.level}}</td>
+				<td class = "item_details">{{item.info.contains.unique[0]}}</td>
 				<td class = "item_quantity">{{item.quantity}}</td>
 				<td class = "item_price">{{item.totalPrice | currency}}</td>
 				<td class = "item_rm" ng-click = 'cart.removeItem(cart.model.contents[$index])'>x</td>
 			</tr>
-			<!-- If the cart is empty -->
-			<tr>
-				<em> Your cart is {{cart.test}}. Keep searching, we're sure you'll find something you like!</em>
-			</tr>
 		</tbody>
 	</table>
+	<p id = 'cart_empty_msg' ng-hide = 'cart.model.contents.length'>
+		<em> Your cart is empty. Keep searching, we're sure you'll find something you like!</em>
+	</p>
 	<div id = 'checkout_list'>
 		<div id = 'cart_dropdown_total'>
 			<div id = 'amount'>
-				${{cart.cartTotal}}
+				${{cart.model.totalPrice}}
 			</div>
 			<div id = 'label'>
 				TOTAL
 			</div>
-			<button id = 'checkout_button' class = 'btn btn-primary' ng-disabled = 'cart.empty' ng-click = 'clickToOpen()'>Checkout</button>
+			<button id = 'checkout_button' class = 'btn btn-primary' ng-disabled = 'cart.model.isEmpty' ng-click = 'clickToOpen()'>Checkout</button>
 		</div>
 	</div>
 </div>

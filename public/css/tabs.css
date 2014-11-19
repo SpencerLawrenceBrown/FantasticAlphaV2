@@ -1,0 +1,103 @@
+/* ===========================
+Fantastic Tabs
+Copyright 2014
+written by Spencer Brown - spencrbrown@gmail.com
+
+A lot of the css is handled by bootstrap
+These fixes are small customizations
+
+swatch colors
+=============
+ed2852 - 'Fantastic' red
+
+============================== */
+
+/* resets and overrides */
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+img {border: none;}
+
+/* links and font */
+
+a, a:link, a:active, a:visited a:hover {text-decoration: none;}
+
+/* layout */
+
+#campaign_tabs{
+	position: relative;
+	width: 100%;
+	height: 600px;
+	left:0px;
+    right:0px;
+    margin-left:auto;
+    margin-right:auto;
+	background-color: #efefef;
+}
+
+#tabs_nav{
+	position: relative;
+	width: 100%;
+	height: 10px;
+	top: 40px;
+	border-bottom: 2px solid;
+	border-color: #ed2852;
+}
+
+#tabs_nav div{
+	position: relative;
+	width: 200px;
+	height: 50px;
+	top: -40px;
+	font-size: 1.2em;
+	line-height: 50px;
+	text-align: center;
+	color: black;
+	-moz-transition:all .2s ease-in;
+    -o-transition:all .2s ease-in;
+    -webkit-transition:all .2s ease-in;
+	cursor: pointer;
+}
+
+#tabs_nav div:hover{
+   	-moz-box-shadow:    inset 0px -2px 1px #ed2852;
+   	-webkit-box-shadow: inset 0px -2px 1px #ed2852;
+  	box-shadow:         inset 0px -2px 1px #ed2852;
+	color: #ed2852;
+}
+
+#tabs_nav div.selected_tab{
+	color: white;
+	background-color: #ed2852;
+}
+
+#tabs_nav div.social_tab{
+	float: left;
+}
+
+#tabs_nav div.project_tab{
+	float: left;
+}
+
+.tab_page{
+	position: absolute;
+	clear: both;
+	display: none;
+	top: 51px;
+	left: 40px;
+	height: 700px;
+	width: 1000px;
+	overflow: hidden;
+}
+
+#project_content .m-story a{
+	text-align: center;
+}
+
+/*This makes the tab_page box display*/
+.selected_content{ 
+	display: inline;
+}

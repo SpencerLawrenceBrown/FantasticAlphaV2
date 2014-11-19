@@ -28,6 +28,9 @@ angular.module('StoreDRCT', ['StoreCTRL']).directive('fnStore', function(){
 		controllerAs: 'store',
 		controller: 'StoreController',
 		link: function($scope, iElm, iAttrs, controller) {
+			$("#test").click(function(){
+				console.log('clicked');
+			});
 		}
 	};
 });

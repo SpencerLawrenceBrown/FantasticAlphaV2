@@ -1,5 +1,5 @@
 /* ===========================
-Fantastic Campaign
+Fantastic Video
 Copyright 2014
 written by Spencer Brown - spencrbrown@gmail.com
 
@@ -27,18 +27,20 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 
 /* layout */
 
-#campaign_content{
-	position: relative;
-	background-color: #efefef;
-	top: 50px;
+#video_div{
+	width: 100%;
+	height: 460px;
 	overflow: hidden;
-}
-/*This creates the circle object*/
-.circle{
-	width: 16px;
-	height: 16px;
 	background-color: black;
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
-	border-radius: 8px;
+}
+
+.video_element{
+	position: relative;
+	display: block;
+	margin: auto;
+	outline: none;
+}
+
+#video_poster{
+	height: 100%;
 }

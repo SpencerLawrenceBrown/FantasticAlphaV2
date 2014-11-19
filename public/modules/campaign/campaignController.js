@@ -9,7 +9,7 @@ This controller will communicate between the campaign view and the campaign fact
 	-References to:
 		-Video url
 		-Copy about Campaign
-		-url for twitter
+		-Embed for social
 		-content for blog
 
 //Map
@@ -25,15 +25,21 @@ angular.module('CampaignCTRL', ['CampaignFCTR']).controller('CampaignController'
 	//Model connection
 	//Enables the directive to watch the factory model
 	this.video = CampaignFactory.video;
+	this.tabs = CampaignFactory.tabs;
 
 	//Reload the inventory
 	this.loadCampaign = function(){
 		CampaignFactory.getCampaign();
 	};
 
+	this.setActiveTab = function(index){
+		CampaignFactory.setActiveTab(index);
+	};
+
 	CampaignFactory.
 		loadCampaign().
 		then(function(){
 			this.video = CampaignFactory.video;
+			this.tabs = CampaignFactory.tabs;
 		}.bind(this));
 }]);

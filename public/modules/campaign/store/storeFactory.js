@@ -20,18 +20,19 @@ Each time a new campaign page is loaded, the store will make a new call to get t
 		-CartController: Needs this so that it can add items to the cart
 */
 
-angular.module('StoreFCTR', []).factory('StoreFactory', ['$http', function($http){
-
+angular.module('StoreFCTR', []).factory('StoreFactory', ['$routeParams', '$http', function($routeParams, $http){
 	var StoreFactory = {
 		incentives:{}, 
 		current_highlight: {}
 	};
 
 	StoreFactory.getIncentives = function(){
+		var urlString = "api/campaign-store/" + $routeParams.campaign_id;
 		return $http({
 			method: "GET",
-			url: "api/store-products"
+			url: urlString
 		}).success(function(data){
+			console.log('store data: ' + data);
 			StoreFactory.incentives = data.incentives;
 		});
 	};

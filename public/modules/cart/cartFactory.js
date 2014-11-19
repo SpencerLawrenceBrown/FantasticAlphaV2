@@ -51,6 +51,7 @@ angular.module('CartFCTR', []).factory('CartFactory',['$rootScope', function($ro
 		var id = item.item_id; //id unique to the package
 		var cartItem = {}; //make a variable to hold the new item
 		var found = false; // used for search
+		console.log(item);
 
 		//Look through all the cart contents
 		for (var x = 0; x < CartFactory.contents.length; x++){
@@ -72,8 +73,8 @@ angular.module('CartFCTR', []).factory('CartFactory',['$rootScope', function($ro
 			CartFactory.contents.push(cartItem);
 		}
 		//update cart details
-		CartFactory.cartTotal += item['price'];
-		CartFactory.cartQuantity++;
+		CartFactory.totalPrice += item['price'];
+		CartFactory.totalQuantity++;
 
 		//determine status of cart
 		if (CartFactory.contents.length > 0){
@@ -112,8 +113,8 @@ angular.module('CartFCTR', []).factory('CartFactory',['$rootScope', function($ro
 		}
 
 		//Update all the cart info
-		CartFactory.cartTotal = CartFactory.cartTotal - item.info.price;
-		CartFactory.cartQuantity--;
+		CartFactory.totalPrice = CartFactory.totalPrice - item.info.price;
+		CartFactory.totalQuantity--;
 
 		//Determine cart status
 		if (CartFactory.contents.length > 0){

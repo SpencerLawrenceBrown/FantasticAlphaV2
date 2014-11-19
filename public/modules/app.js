@@ -14,19 +14,44 @@ var app = angular.module('FantasticAlphaV2', [
 	'CartDRCT',
 	'StoreDRCT',
 	'VideoDRCT',
+	'TabsDRCT',
 	'BarDRCT',
 	'OdometerDRCT',
+	'UserFormCTRL',
+	'UserPageCTRL',
 	'RepeatDRCT'
 ]);
 
 // configure our routes
 app.config(function($routeProvider) {
 		$routeProvider
-			// route for the home page
+			//route for home page
 			.when('/', {
+				templateUrl : 'modules/homepage/homeTemplate.html'
+			})
+
+			// route for campaigns
+			.when('/campaign/:campaign_id', {
 				controller : 'CampaignController',
 				controllerAs: 'campaign',
 				templateUrl : 'modules/campaign/campaignTemplate.html'
+			})
+			//Log-in
+			.when('/login', {
+				controller : 'UserFormController',
+				controllerAs : 'auth',
+				templateUrl : 'modules/auth/loginTemplate.html'
+			})
+			//Register
+			.when('/register', {
+				controller : 'UserFormController',
+				controllerAs : 'auth',
+				templateUrl : 'modules/auth/registerTemplate.html'
+			})
+			.when('/user', {
+				controller : 'UserPageController',
+				controllerAs : 'user',
+				templateUrl : 'modules/user/userTemplate.html',
 			});
 });
 

@@ -20,7 +20,7 @@ Contains:
 
 angular.module('NavCTRL', ['MetaFCTR']).controller('NavController', ['CampaignsMetaFactory', function(CampaignsMetaFactory){
 	//Set the campaigns variable to the Factory campaign
-	this.campaigns = CampaignsMetaFactory.campaignsInfo.campaigns;
+	this.campaigns = CampaignsMetaFactory.allCampaigns;
 
 	//Reload the campaigns from server
 	this.loadCampaigns = function(){
@@ -31,6 +31,6 @@ angular.module('NavCTRL', ['MetaFCTR']).controller('NavController', ['CampaignsM
 	CampaignsMetaFactory.
 		getAllCampaigns()
 		.then(function(){
-			this.campaigns = CampaignsMetaFactory.campaignsInfo.campaigns;
+			this.campaigns = CampaignsMetaFactory.allCampaigns;
 		}.bind(this));
 }]);

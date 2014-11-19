@@ -23,7 +23,7 @@ var app = express();
 //Set the port to 8080
 var port = process.env.PORT || 8080;
 
-//mongoose.connect(configDB.url); //Connect to database
+mongoose.connect(configDB.url); //Connect to database
 
 require('./config/passport')(passport); //Pass passport for config
 
@@ -50,9 +50,18 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 //Routing ============================================================
 
-var User 			= require('./app/models/user');
-var Item 			= require('./app/models/item');
-var ItemComponent 	= require('./app/models/itemDetails'); 
+//Models
+//User
+var User 			= require('./app/models/user/user');
+var Item 			= require('./app/models/user/item');
+var ItemComponent 	= require('./app/models/user/itemDetails');
+//Campaign 
+var Campaign 		= require('./app/models/campaign/campaign');
+var Store 			= require('./app/models/campaign/store');
+var Incentive		= require('./app/models/campaign/incentive');
+var ProgressBar 	= require('./app/models/campaign/progress_bar');
+var Reward 			= require('./app/models/campaign/reward');
+var Info 			= require('./app/models/campaign/info');
 
 //Middleware for auth
 var auth = function(req,res,next){
@@ -67,6 +76,7 @@ var auth = function(req,res,next){
 //Database objects
 //API Router----------------------
 var APIrouter = express.Router();
+
 // middleware to use for all requests --This will fire everytime
 APIrouter.use(function(req, res, next) {
 	// do logging
@@ -74,23 +84,187 @@ APIrouter.use(function(req, res, next) {
 	next(); // make sure we go to the next routes and don't stop here
 });
 
-//Get a simple request for all the projects and return the projects.json file
-APIrouter.get('/campaigns-meta', function(req, res){
-	res.sendfile('./app/api/campaignsMeta.json');
+//**General Actions**//
+//Get all the campaigns -- called by Campaigns Meta Factory
+APIrouter.get('/all-campaigns', function(req, res){
+	Campaign.find(function(err, campaigns){
+		if (err){
+			res.send(err);
+		}
+		res.json(campaigns);
+	});
 });
 
-APIrouter.get('/store-products', function(req, res){
-	res.sendfile('./app/api/chuckstore.json');
+//**Campaign Actions**//
+//---Load---
+//Get campaign info -- called by Campaign Factory
+APIrouter.get('/campaign-info/:campaign_id', function(req, res){
+	Campaign.findById(req.params.campaign_id, function(err, campaign){
+		if (err){
+			res.send(err);
+		}
+		res.json(campaign.info[0]);
+	});
+});
+//Get campaign store -- called by Store Factory
+APIrouter.get('/campaign-store/:campaign_id', function(req, res){
+	Campaign.findById(req.params.campaign_id, function(err, campaign){
+		if (err){
+			res.send(err);
+		}
+		res.json(campaign.store[0]);
+	});
+});
+//Get campaign bar -- called by Progress Bar Factory
+APIrouter.get('/campaign-bar/:campaign_id', function(req, res){
+	Campaign.findById(req.params.campaign_id, function(err, campaign){
+		if (err){
+			res.send(err);
+		}
+		res.json(campaign.progress_bar[0]);
+	});
+});
+//---Edit--- [All PUTS: Finds the campaign based on the project name and the campaign number (NOT ID)]
+//Create a new campaign
+APIrouter.post('/new-campaign', function(req, res){
+	var campaign = new Campaign();
+	campaign.project = req.body.project;
+	campaign.campaign_number = req.body.number;
+
+	//Initialize with basic info
+	//Info
+	var info = new Info();
+	info.tabs.updates.title = "Campaign Updates";
+	info.tabs.social.producer.title = "From Producer";
+	info.tabs.social.fans.title = "From Fans";
+	//Store
+	var store = new Store();
+	//Bar
+	var bar = new ProgressBar();
+	bar.total = req.body.total;
+	bar.paid = req.body.paid;
+	//Set
+	campaign.info = info;
+	campaign.store = store;
+	campaign.progress_bar = bar;
+
+	// save the campaign and check for errors
+	campaign.save(function(err) {
+		if (err)
+			res.send(err);
+		res.json(campaign._id);
+	});
+});
+//Add incentives to the store
+APIrouter.put('/add-incentives', function(req, res){
+	//Find a campaign with a matching project and campaign_number
+	Campaign.findOne({project: req.body.project, campaign_number: req.body.number}, function(err, campaign){
+		var deJSONstring = JSON.parse(req.body.incentives);
+		//Add rewards to store
+		for (var i = 0; i < deJSONstring.length; i++){
+			var incentive = new Incentive();
+			incentive.level = deJSONstring[i].level;
+			incentive.description = deJSONstring[i].description;
+			incentive.buttonText = deJSONstring[i].buttonText;
+			incentive.project = campaign.project;
+			incentive.campaign_id = req.body.camp_id;
+			incentive.price = deJSONstring[i].price;
+			incentive.item_id = deJSONstring[i].item_id;
+			incentive.campaign_number = campaign.campaign_number;
+
+			//Add the different types of incentives
+			//Unique
+			if (deJSONstring[i].contains.unique.length > 0){
+				for (var x = 0; x < deJSONstring[i].contains.unique.length; x++){
+					var newUnique = deJSONstring[i].contains.unique[x];
+					incentive.contains.unique.push(newUnique);
+				};
+			};
+			//Carry Over
+			if (deJSONstring[i].contains.carry_over.length > 0){
+				for (var y = 0; y < deJSONstring[i].contains.carry_over.length; y++){
+					var newCarry = deJSONstring[i].contains.carry_over[y];
+					incentive.contains.carry_over.push(newCarry);
+				};
+			};
+			//Reward Related
+			if (deJSONstring[i].contains.reward_related.length > 0){
+				for (var z = 0; z < deJSONstring[i].contains.reward_related.length; z++){
+					var newReward = deJSONstring[i].contains.reward_related[z];
+					incentive.contains.reward_related.push(newReward);
+				};
+			};
+			//Push into store
+			campaign.store[0]["incentives"].push(incentive);
+		};	
+		// save the campaign and check for errors
+		campaign.save(function(err) {
+			if (err)
+				res.send(err);
+			res.json(campaign);
+		});
+	});
+});
+//Add reward to the progress bar
+APIrouter.put('/add-rewards', function(req, res){
+	//Find a campaign with a matching project and campaign_number
+	Campaign.findOne({project: req.body.project, campaign_number: req.body.number}, function(err, campaign){
+		//rewards to the progress bar
+		var deJSONrewards = JSON.parse(req.body.rewards);
+		for (var i = 0; i < deJSONrewards.length; i++){
+			var reward = new Reward();
+			reward.name = deJSONrewards[i].name;
+			reward.unlock_amount = deJSONrewards[i].unlock_amount;
+			reward.progress = deJSONrewards[i].progress;
+			campaign.progress_bar[0]["rewards"].push(reward);
+		};
+		// save the campaign and check for errors
+		campaign.save(function(err) {
+			if (err)
+				res.send(err);
+			res.json(campaign);
+		});
+	});
+});
+//Add campaign updates to the updates blog
+APIrouter.put('/add-updates', function(req, res){
+	//Find a campaign with a matching project and campaign_number
+	Campaign.findOne({project: req.body.project, campaign_number: req.body.number}, function(err, campaign){
+		var deJSONstring = JSON.parse(req.body.updates);
+		for (var i = 0; i < deJSONstring.length; i++){
+			var newUpdate = {
+				entry_number: deJSONstring[i].entry_number,
+				title: deJSONstring[i].title,
+				date: deJSONstring[i].date,
+				greeting: deJSONstring[i].greeting,
+				content: deJSONstring[i].content
+			};
+			campaign.info[0]["tabs"]["updates"]["content"].push(newUpdate);
+		};
+		// save the campaign and check for errors
+		campaign.save(function(err) {
+			if (err)
+				res.send(err);
+			res.json(campaign);
+		});
+	});
+});
+//Add/Update campaign video url
+APIrouter.put('/add-video', function(req, res){
+	//Find a campaign with a matching project and campaign_number
+	Campaign.findOne({project: req.body.project, campaign_number: req.body.number}, function(err, campaign){
+		campaign.info[0]["video_data"]["video"] = req.body.video_url;
+		// save the campaign and check for errors
+		campaign.save(function(err) {
+			if (err)
+				res.send(err);
+			res.json(campaign);
+		});
+	});
 });
 
-APIrouter.get('/bar-data', function(req, res){
-	res.sendfile('./app/api/progressBar.json');
-});
-
-APIrouter.get('/chuck-data', function(req, res){
-	res.sendfile('./app/api/chuckcampaign.json');
-});
-
+//**User Actions**//
+//Get user data
 APIrouter.get('/userdata', auth, function(req, res){
 	User.findById(req.user._id, function(err, user){
 		if (err){
@@ -99,7 +273,7 @@ APIrouter.get('/userdata', auth, function(req, res){
 		res.json(user);
 	});
 });
-
+//Add items to the user's account
 APIrouter.put('/userdata', auth, function(req, res){
 	User.findById(req.user._id, function(err, user){
 		if (err){
@@ -129,9 +303,8 @@ APIrouter.put('/userdata', auth, function(req, res){
 	});
 });
 
-
 //*********************************
-//Frontend Router-------------------
+//Frontend Router------------------
 var Frontrouter = express.Router();
 
 Frontrouter.use(function(req, res, next) {
@@ -139,30 +312,27 @@ Frontrouter.use(function(req, res, next) {
 	console.log(req.method, req.url);
 	next(); // make sure we go to the next routes and don't stop here
 });
-
-//Get a simple request for all the projects and return the projects.json file
+//Returns the home page
 Frontrouter.get('/', function(req, res){
 	res.render('public/index');
 });
-
+//load the user profile
 Frontrouter.get('/profile', function(req, res){
 });
-
-// route to test if the user is logged in or not 
+//route to test if the user is logged in or not 
 Frontrouter.get('/loggedin', function(req, res){ 
 	res.send(req.isAuthenticated() ? req.user : '0'); 
 });
-
+//Log the user out
 Frontrouter.get('/logout', function(req,res){
 	req.logout();
 	res.send(200);
 })
-
+//process the register form
 Frontrouter.post('/register', passport.authenticate('local-signup'), function(req,res){
 	res.send(req.user);
 });
-
-// process the login form
+//process the login form
 Frontrouter.post('/login', passport.authenticate('local-login'), function(req, res){
 	res.send(req.user);
 });

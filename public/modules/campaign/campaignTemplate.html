@@ -19,49 +19,7 @@
 		</p>
 	</div> -->
 	<fn-video></fn-video>
-	<fn-bar></fn-bar>
-	<fn-store></fn-store>
-	<!-- <div id = 'project_info' ng-controller = 'TabController'>
-		<div id = 'info_navbar'>
-			<a>
-				<div class = 'ind_tab social_tab' ng-click = 'setActive(0)' ng-class = '{"selected_tab" : producerActive}' id = 'producers'>
-					from producers
-				</div>
-			</a>
-			<a>
-				<div class = 'ind_tab social_tab' ng-click = 'setActive(1)' ng-class = '{"selected_tab" : fanActive}' id = 'fans'>
-					from fans
-				</div>
-			</a>
-			<a>
-				<div class = 'ind_tab project_tab' ng-click = 'setActive(2)' ng-class = '{"selected_tab" : projectActive}' id = 'updates'>
-					project updates
-				</div>
-			</a>
-		</div>
-		 Social is seperate from Project info because the Tint api loads async and reloading the templates deletes the information. This is a workaround so that the plugin does not have to reload everytime
-		
-		<div class = 'info_content' id = 'producer_content' ng-class = '{"selected_content" : producerActive}'>
-			<script async src="https://d36hc0p18k1aoc.cloudfront.net/public/js/modules/tintembed.js"></script>	
-			<div class="tintup" data-id="fantasticcrew" data-columns="3"  style="height:690px;width:1000px;">
-				<a href="http://www.tintup.com/blog/the-best-twitter-widget" style="width:118px;height:31px;background-image:url(//d33w9bm0n1egwm.cloudfront.net/assets/logos/poweredbytintsmall.png);position:absolute;bottom:10px;right: 20px;text-indent: -9999px;z-index:9;">embed twitter</a>
-			</div>
-		</div>
-		<div class = 'info_content' id = 'fan_content' ng-class = '{"selected_content" : fanActive}'>
-			<script async src="https://d36hc0p18k1aoc.cloudfront.net/public/js/modules/tintembed.js"></script>	
-			<div class="tintup" data-id="fantasticcrew" data-columns="3"  style="height:690px;width:1000px;">
-				<a href="http://www.tintup.com/blog/the-best-twitter-widget" style="width:118px;height:31px;background-image:url(//d33w9bm0n1egwm.cloudfront.net/assets/logos/poweredbytintsmall.png);position:absolute;bottom:10px;right: 20px;text-indent: -9999px;z-index:9;">embed twitter</a>
-			</div>
-		</div>
-		<div class = 'info_content' id = 'project_content' ng-class = '{"selected_content" : projectActive}'>
-			<h3><b>Update 1:Welcome!</b></h3>
-			<p>
-				<h4>Hello Nerdherders!</h4>
-				<br>
-
-We, the creators of Chuck, are pleased to announce our Fantastic campaign! (pun fully intended)
-
-We are working on the Chuck movie and we want to make your experience of the movie the best that is can possibly be. That is why we paired with Fantastic to fund awesome extra content for our fans! Check out the unlocks that we are offering. Want to see something made? Pay what you want to help us get there. Depending on the amount you put in, you will be receive exclusive chuck merchandise. Don’t want to pay or don’t have the funds? That’s cool too. Just hit choose the option labeled ‘Free’. You’ll get a snazzy badge that you can show-off to your friends. Also, send out some tweets and shiz to let others know.</p>
-		</div>
-	</div>  -->
+	<fn-bar campaignId = 'campaign._id'></fn-bar>
+	<fn-store campaignId = 'campaign._id'></fn-store>
+	<fn-tabs></fn-tabs>
 </div>

@@ -7,9 +7,11 @@
 
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/video/videogular.css">
 	<link rel="stylesheet" type="text/css" href="css/navBar.css">
+	<link rel="stylesheet" type="text/css" href="css/auth.css">
 	<link rel="stylesheet" type="text/css" href="css/store.css">
+	<link rel="stylesheet" type="text/css" href="css/tabs.css">
+	<link rel="stylesheet" type="text/css" href="css/video.css">
 	<link rel="stylesheet" type="text/css" href="css/rewardBar.css">
 	<link rel="stylesheet" type="text/css" href="css/campaign.css">
 	<link rel="stylesheet" type="text/css" href="css/cart.css">
@@ -18,25 +20,33 @@
 	<!-- Libs -->
 	<!--General-->
 	<script src="libs/jquery/dist/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+<!-- 	// <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script> -->
+	<script src="libs/angular/angular.min.js"></script>
 	<script src="libs/angular-route/angular-route.min.js"></script>
 	<script src="libs/angular-bootstrap/ui-bootstrap.min.js"></script>
 	<script src="libs/angular-sanitize/angular-sanitize.min.js"></script>
 
 </head>
 <body>
-
 	<fn-nav></fn-nav>
 	<div ng-view></div>
 	
 	<!-- My Modules -->
 	<!--Helpers-->
 	<script src='modules/helpers/repeatWatcherDirective.js'></script>
+	<!--Login/Register-->
+	<script src='modules/auth/authFactory.js'></script>
+	<script src='modules/auth/userFormController.js'></script>
+	<!--User-->
+	<script src='modules/user/userFactory.js'></script>
+	<script src='modules/user/userPageController.js'></script>
 	<!--Campaign-->
 	<script src='modules/campaign/campaignFactory.js'></script>
 	<script src='modules/campaign/campaignController.js'></script>
 	<!--Video-->
 	<script src='modules/campaign/video/videoDirective.js'></script>
+	<!--Tabs-->
+	<script src='modules/campaign/tabs/tabsDirective.js'></script>	
 	<!--Progress Bar-->
 	<script src='modules/campaign/progress_bar/odometerDirective.js'></script>	
 	<script src='modules/campaign/progress_bar/odometer.js'></script>

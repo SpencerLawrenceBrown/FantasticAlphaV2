@@ -1,4 +1,35 @@
 {
-	"video" : "https://www.youtube.com/embed/0be4oWklFTs",
-	"video_id": "0be4oWklFTs"
+	"video_data" : {
+		"video" : "https://www.youtube.com/embed/0be4oWklFTs"
+	},
+	"tabs":{
+		"updates":{
+			"title":"Campaign Updates",
+			"content":[
+				{
+					"entry_number": 1,
+					"title": "Welcome to the Campaign",
+					"date": "November 12th, 2014",
+					"greeting": "Hello Nerdherders!",
+					"content": "We, the creators of Chuck, are pleased to announce our Fantastic campaign! (pun fully intended)We are working on the Chuck movie and we want to make your experience of the movie the best that it can possibly be. That is why we paired with Fantastic to fund awesome extra content for our fans! Check out the unlocks that we are offering. Want to see something made? Pay what you want to help us get there. Depending on the amount you put in, you will be receive exclusive chuck merchandise. Don’t want to pay or don’t have the funds? That’s cool too. Just choose the option labeled ‘Free’. You’ll get a snazzy badge that you can show-off to your friends. Also, send out some tweets to help rally your fellow 'herders around the cause. "
+				},
+				{
+					"entry_number": 2,
+					"title": "The Campaign Continues",
+					"date": "November 15th, 2014",
+					"greeting": "Hello Nerdherders!",
+					"content": "This is a test."
+				} 
+			]
+		},
+		"social":{
+			"producer":{
+				"title": "From Producer"
+			},
+			"fans": {
+				"title": "From Fans"
+			}
+		},
+		"active": "producer"
+	}
 }

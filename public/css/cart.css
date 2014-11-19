@@ -1,5 +1,5 @@
 /* ===========================
-Fantastic Carts
+Fantastic Cart
 Copyright 2014
 written by Spencer Brown - spencrbrown@gmail.com
 
@@ -28,5 +28,62 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 /* layout */
 
 #cart_div{
+	position: absolute;
+	top: 51px;
+	right: 0px;
+	width: 550px;
+	background-color: #867a9f;
+
+}
+
+#cart_div table{
 	position: relative;
+	width: 100%;
+	top: 2px;
+	left:8px;
+}
+
+#cart_div table thead{
+	color: white;
+}
+
+#cart_div .cart_item{
+	width: 100%;
+	border-right: none;
+}
+
+#cart_div #cart_dropdown_total{
+	border: none;
+	height: 45px;
+}
+
+#cart_div #cart_dropdown_total div{
+	border: none;
+}
+
+#cart_div #cart_dropdown_total #amount{
+	font-size: 1.3em;
+	float: left;
+}
+
+#cart_div #cart_dropdown_total #label{
+	clear: left;
+	float: left;
+}
+
+#cart_div #checkout_button{
+	position: relative;
+	clear: none;
+	float: right;
+	top: -23px;
+	left: 6px;
+	height: 38px;
+}
+
+#cart_div #checkout_list{
+	position: relative;
+	left: 200px;
+	width: 180px;
+	border: none;
+	margin-top: 10px;
 }

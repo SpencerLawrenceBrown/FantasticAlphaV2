@@ -1,0 +1,19 @@
+<div id = 'user_page'>
+	<h1> Hello {{user.details.name}}! </h1>
+	<button class = 'btn btn-default' ng-click = 'logout()'>Log out!</button>
+	<br>
+	<br>
+	<h3> Inventory</h3>
+	<div class = 'cart_item' ng-hide = 'user.details.inventory.length'>
+		<em> Your inventory is empty. Looks like you need to <a href = '#/'>BuyMore!</a> (get it?)</em>
+	</div>
+	<div class = 'inventory_item' ng-repeat = 'item in user.details.inventory'>
+		Package Contents:
+		<br>
+		<span class = 'package_info'>Campaign: {{item.campaign}}, Level: {{item.name}}</span>
+		<div class = 'package_components' ng-repeat = 'detail in item.components'>
+			{{item.quantity}}x {{detail.detail}}
+		</div>
+		<br>
+	</div>
+</div>
