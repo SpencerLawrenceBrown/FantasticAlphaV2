@@ -137,6 +137,7 @@ APIrouter.post('/new-campaign', function(req, res){
 	info.tabs.updates.title = "Campaign Updates";
 	info.tabs.social.producer.title = "From Producer";
 	info.tabs.social.fans.title = "From Fans";
+	info,active = 'update';
 	//Store
 	var store = new Store();
 	//Bar
@@ -265,7 +266,7 @@ APIrouter.put('/add-video', function(req, res){
 
 //**User Actions**//
 //Get user data
-APIrouter.get('/userdata', auth, function(req, res){
+APIrouter.get('/user-data', auth, function(req, res){
 	User.findById(req.user._id, function(err, user){
 		if (err){
 			res.send(err);
@@ -274,7 +275,7 @@ APIrouter.get('/userdata', auth, function(req, res){
 	});
 });
 //Add items to the user's account
-APIrouter.put('/userdata', auth, function(req, res){
+APIrouter.put('/user-items', auth, function(req, res){
 	User.findById(req.user._id, function(err, user){
 		if (err){
 			res.send(err);

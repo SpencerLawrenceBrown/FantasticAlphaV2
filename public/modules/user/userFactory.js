@@ -29,11 +29,10 @@ angular.module('UserFCTR', []).factory('UserFactory', ['$http', function($http){
 	UserFactory.loadUserData = function(){
 		return $http({
 			method: 'GET',
-			url: 'api/user-test'
+			url: 'api/user-data'
 		}).success(function(data){
 			UserFactory['name'] =  data.details.fullname;
 			UserFactory['inventory'] = data.details.items;
-			console.log(UserFactory);
 		});
 	};
 

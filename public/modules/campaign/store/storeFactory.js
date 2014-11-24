@@ -32,14 +32,12 @@ angular.module('StoreFCTR', []).factory('StoreFactory', ['$routeParams', '$http'
 			method: "GET",
 			url: urlString
 		}).success(function(data){
-			console.log('store data: ' + data);
 			StoreFactory.incentives = data.incentives;
 		});
 	};
 
 	StoreFactory.setCurrent = function(index){
 		StoreFactory.current_highlight = StoreFactory.incentives[index];
-		console.log(StoreFactory.current_highlight);
 	};
 
 	return StoreFactory;

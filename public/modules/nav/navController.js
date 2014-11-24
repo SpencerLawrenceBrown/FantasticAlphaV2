@@ -18,9 +18,10 @@ Contains:
 	-campaignMetaFactory.js
 */
 
-angular.module('NavCTRL', ['MetaFCTR']).controller('NavController', ['CampaignsMetaFactory', function(CampaignsMetaFactory){
+angular.module('NavCTRL', ['MetaFCTR', 'AuthFCTR']).controller('NavController', ['CampaignsMetaFactory', 'AuthFactory', function(CampaignsMetaFactory, AuthFactory){
 	//Set the campaigns variable to the Factory campaign
 	this.campaigns = CampaignsMetaFactory.allCampaigns;
+	this.auth = AuthFactory;
 
 	//Reload the campaigns from server
 	this.loadCampaigns = function(){

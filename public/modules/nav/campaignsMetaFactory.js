@@ -36,7 +36,6 @@ angular.module('MetaFCTR', []).factory('CampaignsMetaFactory', ['$http', functio
 			url: 'api/all-campaigns'
 		}).success(function(data){
 			CampaignsMeta.allCampaigns = data;
-			console.log(CampaignsMeta.allCampaigns);
 		});
 	};
 

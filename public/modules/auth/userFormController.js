@@ -16,17 +16,17 @@ This controller communicates between the authFactory and the template.
 	-Contains:
 		-AuthFactory
 */
-angular.module('UserFormCTRL', ['AuthFCTR']).controller('userFormController', ['$scope','AuthFactory', function($scope, AuthFactory){
+angular.module('UserFormCTRL', ['AuthFCTR']).controller('UserFormController', ['$rootScope','$scope','AuthFactory', function($rootScope, $scope, AuthFactory){
 	$scope.auth = AuthFactory;
 	$scope.fullname = '';
 	$scope.email = '';
-	$scope.password = '';
+	$scope.password	 = '';
 
 	var getJSON =  function(register){
 		var formData = {
-			email : $scope.email,
-			password : $scope.password,
-			fullname : $scope.fullname
+			email 		: $scope.email,
+			password 	: $scope.password,
+			fullname 	: $scope.fullname
 		};
 		return formData;
 	};
@@ -34,13 +34,18 @@ angular.module('UserFormCTRL', ['AuthFCTR']).controller('userFormController', ['
 	$scope.postForm = function(register){
 		console.log("submit");
 		if (register){
-			$scope.auth.register(getJSON());
+			AuthFactory.register(getJSON());
 		} else {
-			$scope.auth.login(getJSON());
+			AuthFactory.login(getJSON());
 		}
 	};
 
 	$scope.islogged = function(){
 		$scope.auth.checkLoggedIn();
 	};
+	
+	//Listens for when the checkout fails and makes the loginMSG visible
+	var failureListener = $rootScope.$on('checkout:failed', function(){
+		AuthFactory.loginMSG = true;
+	});
 }]);

@@ -37,7 +37,7 @@ Contains:
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="/#"><img id = 'nav_logo' src = '../../assets/images/nav_logo.png'></a>
+	      <a class="navbar-brand" href="/"><img id = 'nav_logo' src = '../../assets/images/nav_logo.png'></a>
 	    </div>
 	    <!-- Nav items that are hidden when collapsed -->
 	    <div class = 'collapse navbar-collapse' id = 'navbar-collapsed'>
@@ -49,7 +49,7 @@ Contains:
 				</a>
 				<ul id = 'browse_menu' class="dropdown-menu">
 	       			<li class = 'browse_item' ng-repeat = 'campaign in nav.campaigns'>
-     					 <a href = '#/campaign/{{campaign._id}}'>{{campaign.project}}</a>
+     					 <a ng-href = '#/campaign/{{campaign._id}}'>{{campaign.project}}</a>
     				</li>
 	 			</ul>
 			</li>
@@ -77,10 +77,10 @@ Contains:
 				</a>
 			</li>
 			<li id = 'user_tab'>
-				<a class = 'right_align main_item' ng-hide = 'loggedin' id = 'log_in' href = '/#/login'>
+				<a class = 'right_align main_item' ng-hide = 'nav.auth.loggedin' id = 'log_in' href = '/#/login'>
 					Log in/Sign up
 				</a>
-				<a class = 'right_align main_item' ng-show = 'loggedin' id = 'profile' href = '/#/user'>
+				<a class = 'right_align main_item' ng-show = 'nav.auth.loggedin' id = 'profile' href = '/#/user'>
 					My Profile
 				</a>
 			</li>

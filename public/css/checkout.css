@@ -1,0 +1,155 @@
+/* ===========================
+Fantastic Checkout
+Copyright 2014
+written by Spencer Brown - spencrbrown@gmail.com
+
+A lot of the css is handled by bootstrap
+These fixes are small customizations
+
+swatch colors
+=============
+ed2852 - 'Fantastic' red
+
+============================== */
+
+/* resets and overrides */
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+img {border: none;}
+
+/* links and font */
+
+a, a:link, a:active, a:visited a:hover {text-decoration: none;}
+
+/* layout */
+
+#checkout_form{
+	z-index: 99;
+	position: absolute;
+	top: 35%;
+	width: 270px;
+	height: 350px;
+	display: block;
+	right: 0;
+	left: 0;
+	margin: auto;
+	color: black;
+	background-color: #efefef;
+	border-radius: 10px;
+}
+
+#checkout_form img{
+	position: relative;
+	display: block;
+	margin: auto;
+	top : -40px;
+	width: 80px;
+	border: 2px black;
+}
+
+#checkout_form h3{
+	position: relative;
+	color: black;
+	background-color: #D5D5D5;
+	text-align: center;
+	top: -55px;
+}
+
+#checkout_form_header{
+	background-color: #D5D5D5;
+	width: 100%;
+	height: 100px;
+	border-bottom: 1px solid black;
+	border-radius: 10px;
+}
+
+#checkout_form_content{
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	height: 175px;
+	top: -12px;
+	padding-top: 10px;
+	background-color: #efefef;
+	border-top: 1px solid #AFAFAF;
+	overflow: hidden;
+}
+
+#checkout_form_content input{
+	position: relative;
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+	width: 175px;
+	height: 30px;
+	padding-left: 3px;
+}
+
+#checkout_form_content input{
+	position: relative;
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+	width: 175px;
+	height: 30px;
+}
+
+#checkout_pay_btn{
+	position: relative;
+	display: block;
+	margin: auto;
+	width: 150px;
+	top: -3px;
+}
+
+#checkout_close_btn{
+	position: absolute;
+	top: 5px;
+	right: 7px;
+}
+
+#checkout_items_number{
+	position: relative;
+	top: -9px;
+	left: 90px;
+}
+
+#checkout_fineprint{
+	position: relative;
+	left: 87px;
+	top: -6px;
+	color: gray;
+	font-size: .7em;
+}
+
+#jump_in_div{
+	position: absolute;
+	padding-top: 18px;
+	z-index: 10;
+	height: 160px;
+	width: 270px;
+	color: white;
+	background-color: #ed2852;
+	text-align: center;
+}
+
+.ng-hide-add, .ng-hide-remove {
+    /* ensure visibility during the transition */
+    display: block !important; /* yes, important */
+}
+
+#jump_in_div.ng-hide-remove{
+	left: -100%;
+	-webkit-transition:300ms  ease-out all;
+    -moz-transition:300ms  ease-out all;
+    -o-transition:300ms  ease-out all;
+    transition:300ms ease-out all;
+}
+
+#jump_in_div.ng-hide-remove.ng-hide-remove-active {
+	left: 0;
+}

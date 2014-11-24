@@ -65,7 +65,6 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$routeParams', '
 			method: "GET",
 			url: urlString
 		}).success(function(data){
-			console.log('bar: ' + data);
 			//Set the appropriate data
 			BarFactory.actual.campaignTotal = data.total;
 			BarFactory.actual.campaignPaid = data.paid;

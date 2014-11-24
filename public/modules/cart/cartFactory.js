@@ -19,13 +19,13 @@ There are multiple campaign shops (may change this) so that the progress bars ar
 		-[eventually] retrieve the user's saved cart
 
 	-Each item consists of:
-		-
-		-
-		-
-		-
-		-
-		-
+		-price
+		-level 
+		-contains
+		-project
 		-campaign ID
+		-item ID
+		-description
 
 //Map
 	-Usedby:
@@ -51,7 +51,6 @@ angular.module('CartFCTR', []).factory('CartFactory',['$rootScope', function($ro
 		var id = item.item_id; //id unique to the package
 		var cartItem = {}; //make a variable to hold the new item
 		var found = false; // used for search
-		console.log(item);
 
 		//Look through all the cart contents
 		for (var x = 0; x < CartFactory.contents.length; x++){
@@ -139,6 +138,19 @@ angular.module('CartFCTR', []).factory('CartFactory',['$rootScope', function($ro
 		}
 		return campaignTotal;
 	};
+
+	/*This clears the factory after a checkout*/
+	CartFactory.checkout = function(){
+		CartFactory.totalQuantity = 0;
+		CartFactory.totalPrice = 0;
+		CartFactory.isEmpty = true;
+		CartFactory.isVisible = false;
+		contents = [];
+	};
+
+	$rootScope.$on('checkout:initiate', function(){
+		$rootScope.emit('cart:contents', CartFactory.contents);
+	});
 
 	//Return CartFactory object
 	return CartFactory;

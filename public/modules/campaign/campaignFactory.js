@@ -37,7 +37,6 @@ angular.module('CampaignFCTR', []).factory('CampaignFactory', ['$routeParams', '
 			method: "GET",
 			url: urlString,
 		}).success(function(data){
-			console.log(data);
 			//Sets the video as a trusted resource so that iframe will play. Also adds different small controls to change apperance
 			CampaignFactory.video.url = $sce.trustAsResourceUrl(data.video_data.video+ "?enablejsapi=1&modestbranding=1&autohide=1&showinfo=0");
 			//Sets the tabs data
