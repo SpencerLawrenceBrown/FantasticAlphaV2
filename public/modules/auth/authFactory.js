@@ -19,7 +19,7 @@ This factory holds the model for authentification. Manages sign in & login.
 		-none
 */
 
-angular.module('AuthFCTR', []).factory('AuthFactory', ['$q', '$timeout', '$http', '$location', function($q, $timeout, $http, $location){
+angular.module('AuthFCTR', []).factory('AuthFactory', ['$q', '$rootScope', '$timeout', '$http', '$location', function($q, $rootScope, $timeout, $http, $location){
 	var deferred = $q.defer();
 
 	var AuthFactory = {
@@ -74,11 +74,16 @@ angular.module('AuthFCTR', []).factory('AuthFactory', ['$q', '$timeout', '$http'
 			headers: {'Content-Type' : 'application/x-www-form-urlencoded'}
 		}).success(function(resp){
 			AuthFactory['loggedin'] = true;
+			AuthFactory['loginMSG'] = false;
 			AuthFactory['email'] = resp.local.email;
 			AuthFactory['password'] = resp.local.password;
 			$location.url('/user');
 		});
 	}
+
+	var checkoutListener = $rootScope.$on('checkout:failed', function(){
+		AuthFactory['loginMSG'] = true;
+	});
 
 	return AuthFactory;
 }]);

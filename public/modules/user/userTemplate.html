@@ -10,10 +10,18 @@
 	<div class = 'inventory_item' ng-repeat = 'item in user.details.inventory'>
 		Package Contents:
 		<br>
-		<span class = 'package_info'>Campaign: {{item.campaign}}, Level: {{item.name}}</span>
-		<div class = 'package_components' ng-repeat = 'detail in item.components'>
-			{{item.quantity}}x {{detail.detail}}
+		<span class = 'package_info'>Campaign: {{item.project}}, Level: {{item.level}}, Description: {{item.description}}</span>
+		
+		<div class = 'package_components' ng-repeat = 'detail in item.components[0].unique'>
+			{{item.quantity}}x {{detail}}
 		</div>
+		<div class = 'package_components' ng-repeat = 'detail in item.components[0].reward_related'>
+			{{item.quantity}}x {{detail}}
+		</div>
+		<div class = 'package_components' ng-repeat = 'detail in item.components[0].carry_over'>
+			{{item.quantity}}x {{detail}}
+		</div>
+		<br>
 		<br>
 	</div>
 </div>

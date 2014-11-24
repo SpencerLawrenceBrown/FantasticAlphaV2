@@ -55,12 +55,16 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 #nav_bar ul li{
 	min-width: 110px;
 	text-align: center;
-
 }
 
 #nav_bar ul li a{
 	color: white;
 }
+
+#nav_bar ul li.disable a{
+	color: gray;
+}
+
 
 #nav_bar ul li a:hover{
 	color: gray;
@@ -157,4 +161,15 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 #top_bar nav a#cart{
 	position: absolute;
 	right: 340px;
-}/*
+}
+
+#homepage{
+	position: absolute;
+	top: 200px;
+	text-align: center;
+	width: 100%;
+	display: block;
+	margin: auto;
+}
+
+/*

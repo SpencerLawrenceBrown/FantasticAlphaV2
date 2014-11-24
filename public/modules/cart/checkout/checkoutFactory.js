@@ -22,7 +22,7 @@ When they click the checkout button, the items will be sent to the user's accoun
 		-none
 */
 
-angular.module('CheckoutFCTR', []).factory('CheckoutFactory',['$http', '$location', '$rootScope' function($http, $location, $rootScope){
+angular.module('CheckoutFCTR', []).factory('CheckoutFactory', ['$http', '$location', '$rootScope', function($http, $location, $rootScope){
 
 	//Create the checkout object
 	var CheckoutFactory = {
@@ -35,28 +35,22 @@ angular.module('CheckoutFCTR', []).factory('CheckoutFactory',['$http', '$locatio
 	};
 
 	//Methods
-	//Fires an event that will trigger the cart to send it's data
-	CheckoutFactory.checkout = function(){
-		$rootScope.emit('checkout:initiate');
-	};
-
-	//When the cart contents are received, initiates the checkout
-	$rootScope.$on('cart:contents', function(event, contents){
-		console.log(contents);
+	//Adds cart data to user account
+	CheckoutFactory.checkout = function(contents){
 		return $http({
 			method: "PUT",
 			url: "api/user-items",
 			data: contents
 		}).success(function(){
 			CheckoutFactory.isVisible = false;
-			$location.url('/user');
-			$rootScope.$emit('checkout:successful');
+			$rootScope.$emit('checkout:successful', contents);
 		}).error(function(){
 			CheckoutFactory.isVisible = false;
 			CheckoutFactory.blockVisible = false;
 			$rootScope.$emit('checkout:failed');
+			$location.url('/login');
 		});
-	});
+	};
 
 	//Return CheckoutFactory object
 	return CheckoutFactory;

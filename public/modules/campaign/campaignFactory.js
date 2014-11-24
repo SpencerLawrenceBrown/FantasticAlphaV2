@@ -41,6 +41,8 @@ angular.module('CampaignFCTR', []).factory('CampaignFactory', ['$routeParams', '
 			CampaignFactory.video.url = $sce.trustAsResourceUrl(data.video_data.video+ "?enablejsapi=1&modestbranding=1&autohide=1&showinfo=0");
 			//Sets the tabs data
 			CampaignFactory.tabs = data.tabs;
+			//Always start with the update tab open
+			CampaignFactory.tabs.active = "update";
 		});
 	};
 	//Set the active tab

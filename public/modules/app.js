@@ -40,13 +40,13 @@ app.config(function($routeProvider, $locationProvider, $httpProvider) {
 		//Log-in
 		.when('/login', {
 			controller : 'UserFormController',
-			controllerAs : 'auth',
+			controllerAs : 'account',
 			templateUrl : 'modules/auth/loginTemplate.html'
 		})
 		//Register
 		.when('/register', {
 			controller : 'UserFormController',
-			controllerAs : 'auth',
+			controllerAs : 'account',
 			templateUrl : 'modules/auth/registerTemplate.html'
 		})
 		.when('/user', {

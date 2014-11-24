@@ -13,13 +13,14 @@ Contains:
 	-CheckoutFactory: Manages the contents of the checkout
 */
 
-angular.module('CheckoutCTRL', ['CheckoutFCTR']).controller('CheckoutController', ['$scope', '$rootScope', 'CheckoutFactory', function($scope, $rootScope, CheckoutFactory){
+angular.module('CheckoutCTRL', ['CheckoutFCTR', 'CartFCTR']).controller('CheckoutController', ['$scope', '$rootScope', 'CheckoutFactory', 'CartFactory', function($scope, $rootScope, CheckoutFactory, CartFactory){
 	//Model
 	this.model = CheckoutFactory;
+	this.cart = CartFactory;
 
 	//Methods
 	//Checkout
 	this.completeCheckout = function(){
-		CheckoutFactory.checkout();
+		CheckoutFactory.checkout(CartFactory.contents);
 	};
 }]);

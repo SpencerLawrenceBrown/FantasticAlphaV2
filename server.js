@@ -280,17 +280,29 @@ APIrouter.put('/user-items', auth, function(req, res){
 		if (err){
 			res.send(err);
 		}
-
 		for (var x = 0; x < req.body.length; x++){
 			var item = new Item();
-			item.campaign = req.body[x].info.campaign;
-			item.name = req.body[x].info.title;
-			item.price = req.body[x].info.price;
-			for (var y = 0; y < req.body[x].info.contains.length; y++){
-				var itemComp = new ItemComponent();
-				itemComp.detail = req.body[x].info.contains[y];
-				item.components.push(itemComp);
-			}
+			item.project = req.body[x].info.project;
+			item.level = req.body[x].info.level;
+			item.description = req.body[x].info.description;
+			item.campaign_id = req.body[x].info.campaign_id;
+			item.item_id = req.body[x].info.item_id;
+			item.campaign_number = req.body[x].info.campaign_number;
+			item.price = req.body[x].info.totalPrice;
+			itemComp = new ItemComponent();
+			//Unique
+			for (var w = 0; w < req.body[x].info.contains.unique.length; w++){
+					itemComp.unique.push(req.body[x].info.contains.unique[w]);
+			};
+			//carry_over
+			for (var y = 0; y < req.body[x].info.contains.carry_over.length; y++){
+					itemComp.carry_over.push(req.body[x].info.contains.carry_over[y]);
+			};
+			//reward_related
+			for (var z = 0; z < req.body[x].info.contains.reward_related.length; z++){
+					itemComp.reward_related.push(req.body[x].info.contains.reward_related[z]);
+			};
+			item.components = itemComp;
 			item.quantity = req.body[x].quantity;
 			user.details.items.push(item);
 		}

@@ -148,8 +148,9 @@ angular.module('CartFCTR', []).factory('CartFactory',['$rootScope', function($ro
 		contents = [];
 	};
 
-	$rootScope.$on('checkout:initiate', function(){
-		$rootScope.emit('cart:contents', CartFactory.contents);
+	//This listens for when the checkout is successful
+	var checkoutListener = $rootScope.$on('checkout:successful', function(){
+		CartFactory.checkout();
 	});
 
 	//Return CartFactory object

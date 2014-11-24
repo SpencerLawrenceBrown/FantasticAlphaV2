@@ -15,9 +15,10 @@ Contains:
 	-CartFactory: Manages the contents of the cart
 */
 
-angular.module('CartCTRL', ['CartFCTR']).controller('CartController', ['$scope', '$rootScope', 'CartFactory', function($scope, $rootScope, CartFactory){
+angular.module('CartCTRL', ['CartFCTR', 'CheckoutFCTR']).controller('CartController', ['$scope', '$rootScope', 'CartFactory', 'CheckoutFactory', function($scope, $rootScope, CartFactory, CheckoutFactory){
 	//Model
 	this.model = CartFactory;
+	this.checkout = CheckoutFactory;
 
 	//Methods
 	//Remove an item from the cart

@@ -90,6 +90,11 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$routeParams', '
 		BarFactory.changeValue(CartFactory.computeCampaignTotal($routeParams.campaign_id));
 	});
 
+	//Listens for when checkout is completed then gets the campaign items from the cart then adds up the new campaign total.
+	var checkoutListener = $rootScope.$on('checkout:successful', function(){
+		BarFactory.checkout();	
+	});
+
 	//*Public*//
 	//Load the data from the cart & from the server, then update the rewards progress. It returns the getServerData because it is an asynchronous test.
 	//This should really be using $q. That will be added.
@@ -152,7 +157,7 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$routeParams', '
 		BarFactory.actual.campaignPaid += BarFactory.actual.campaignCart;
 		BarFactory.actual.campaignCart = 0;
 		BarFactory.updateRewardsProgress();
+		//For testing purposes this does not push to the server. 
 	}
-
 	return BarFactory;
 }]);

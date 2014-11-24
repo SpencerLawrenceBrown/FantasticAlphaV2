@@ -9,8 +9,12 @@ var Detail = require('./itemDetails');
 
 //Item Schema
 var itemSchema = mongoose.Schema({
-	campaign: String,
-	name : String,
+	project: String,
+	campaign_number: Number,
+	campaign_id: Number,
+	item_id: Number,
+	level: Number,
+	description : String,
 	price : Number,
 	components : [Detail.schema],
 	quantity : Number

@@ -8,7 +8,9 @@ var mongoose = require('mongoose'); //Load the mongoose object
 
 //Item Schema
 var itemDetailSchema = mongoose.Schema({
-	detail: String,
+	carry_over: [String],
+	reward_related: [String],
+	unique: [String]
 });
 
 //create the model and expose to app

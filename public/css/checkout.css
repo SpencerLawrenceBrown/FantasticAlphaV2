@@ -27,10 +27,17 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 
 /* layout */
 
-#checkout_form{
+#checkout_bg{
 	z-index: 99;
 	position: absolute;
-	top: 35%;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+}
+
+#checkout_form{
+	position: absolute;
+	top: 25%;
 	width: 270px;
 	height: 350px;
 	display: block;
@@ -135,21 +142,4 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	color: white;
 	background-color: #ed2852;
 	text-align: center;
-}
-
-.ng-hide-add, .ng-hide-remove {
-    /* ensure visibility during the transition */
-    display: block !important; /* yes, important */
-}
-
-#jump_in_div.ng-hide-remove{
-	left: -100%;
-	-webkit-transition:300ms  ease-out all;
-    -moz-transition:300ms  ease-out all;
-    -o-transition:300ms  ease-out all;
-    transition:300ms ease-out all;
-}
-
-#jump_in_div.ng-hide-remove.ng-hide-remove-active {
-	left: 0;
 }
