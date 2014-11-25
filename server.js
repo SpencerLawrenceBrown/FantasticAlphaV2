@@ -12,7 +12,7 @@ var cookieParser 	= require('cookie-parser'); //Cookies
 var session      	= require('express-session'); //Sessions
 var favicon 		= require('serve-favicon'); //Load Favicon
 var modRewrite 		= require('connect-modrewrite'); //Rewrites URLs to load angular views
-
+var http 			= require('http');//Quick Http server
 var configDB = require('./config/database.js'); //Database info
 
 //Create express app
@@ -21,7 +21,7 @@ var app = express();
 //Configuration ======================================================
 
 //Set the port to 8080
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 
 mongoose.connect(configDB.url); //Connect to database
 
