@@ -31,7 +31,9 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 #store_container{
 	position: relative;
 	background-color: #efefef;
+	margin-bottom: 50px;
 }
+
 #store_container h3{
 	color: #ed2852;
 }
