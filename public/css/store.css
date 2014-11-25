@@ -30,7 +30,6 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 /*The Store Container*/
 #store_container{
 	position: relative;
-	height: 400px;
 	background-color: #efefef;
 }
 #store_container h3{
