@@ -27,9 +27,11 @@ angular.module('StoreDRCT', ['StoreCTRL']).directive('fnStore', function(){
 		templateUrl: 'modules/campaign/store/storeTemplate.html',
 		controllerAs: 'store',
 		controller: 'StoreController',
-		link: function($scope, iElm, iAttrs, controller) {
-			$("#test").click(function(){
-				console.log('clicked');
+		link: function(scope, elements, attrs, controller) {
+			$('#incentive_options div').click(function(){
+				$('html,body').animate({
+		            scrollTop: $('#reward_bar_div').offset().top - 50
+		        }, 600);
 			});
 		}
 	};
