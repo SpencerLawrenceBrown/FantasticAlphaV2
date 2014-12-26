@@ -32,7 +32,6 @@ angular.module('UserFormCTRL', ['AuthFCTR']).controller('UserFormController', ['
 	};
 
 	$scope.postForm = function(register){
-		console.log("submit");
 		if (register){
 			AuthFactory.register(getJSON());
 		} else {

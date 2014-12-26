@@ -38,6 +38,7 @@ angular.module('AuthFCTR', []).factory('AuthFactory', ['$q', '$rootScope', '$tim
 			}
 			else{
 				$timeout(function(){deferred.reject();}, 0);
+				AuthFactory.loginMSG = true;
 				$location.url('/login');
 			}
 		});

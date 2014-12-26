@@ -58,6 +58,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	background-color: white;
 	margin-left: 15px;
 	margin-right: 15px;
+	margin-bottom: 15px;
 }
 .incentive_title{
 	position: relative;
