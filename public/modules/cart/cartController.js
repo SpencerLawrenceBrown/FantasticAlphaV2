@@ -17,13 +17,27 @@ Contains:
 
 angular.module('CartCTRL', ['CartFCTR', 'CheckoutFCTR']).controller('CartController', ['$scope', '$rootScope', 'CartFactory', 'CheckoutFactory', function($scope, $rootScope, CartFactory, CheckoutFactory){
 	//Model
+	var storeListen = true;
 	this.model = CartFactory;
 	this.checkout = CheckoutFactory;
 
 	//Methods
-	//Remove an item from the cart
+	//Remove an item from the cart 
 	this.removeItem = function(item){
 		CartFactory.removeItem(item);
+	}
+	//Open the checkout window and close the cart. 
+	this.openCheckout = function(){
+		//CheckoutFactory.checkout();
+		CartFactory.hide();
+	}
+	//Close the div
+	this.closeCart = function(){
+		CartFactory.hide();
+	}
+	//Set the cart to not listen
+	$scope.setListen = function(value){
+		storeListen = value;
 	}
 	// //Gets the total value of the amount in the cart from a particular campaign
 	// this.getItemsTotal = function(campaign_id){
@@ -34,7 +48,9 @@ angular.module('CartCTRL', ['CartFCTR', 'CheckoutFCTR']).controller('CartControl
 	//This listens for an event from the stores that contains the item to be added to the cart
 	//Adds the item to the cart
 	var storeListener = $rootScope.$on('store:addItem', function(event, item){
-		CartFactory.addItem(item);
+		if (storeListen){
+			CartFactory.addItem(item);
+		}
 	});
 
 	//This resets the cart on a successful checkout

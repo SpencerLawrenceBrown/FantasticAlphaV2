@@ -59,6 +59,7 @@ var ItemComponent 	= require('./app/models/user/itemDetails');
 var Campaign 		= require('./app/models/campaign/campaign');
 var Store 			= require('./app/models/campaign/store');
 var Incentive		= require('./app/models/campaign/incentive');
+var Component 		= require('./app/models/campaign/component');
 var ProgressBar 	= require('./app/models/campaign/progress_bar');
 var Reward 			= require('./app/models/campaign/reward');
 var Info 			= require('./app/models/campaign/info');
@@ -175,9 +176,14 @@ APIrouter.put('/add-incentives', function(req, res){
 
 			//Add the different types of incentives
 			//Unique
+			//These use the components for display the information
 			if (deJSONstring[i].contains.unique.length > 0){
 				for (var x = 0; x < deJSONstring[i].contains.unique.length; x++){
-					var newUnique = deJSONstring[i].contains.unique[x];
+					console.log(deJSONstring[i].contains.unique);
+					var newUnique = new Component();
+					newUnique.name = deJSONstring[i].contains.unique[x].name;
+					newUnique.description = deJSONstring[i].contains.unique[x].description;
+					newUnique.type = deJSONstring[i].contains.unique[x].type;
 					incentive.contains.unique.push(newUnique);
 				};
 			};
@@ -255,6 +261,20 @@ APIrouter.put('/add-video', function(req, res){
 	//Find a campaign with a matching project and campaign_number
 	Campaign.findOne({project: req.body.project, campaign_number: req.body.number}, function(err, campaign){
 		campaign.info[0]["video_data"]["video"] = req.body.video_url;
+		// save the campaign and check for errors
+		campaign.save(function(err) {
+			if (err)
+				res.send(err);
+			res.json(campaign);
+		});
+	});
+});
+
+//Add/Update campaign image url
+APIrouter.put('/add-image', function(req, res){
+	//Find a campaign with a matching project and campaign_number
+	Campaign.findOne({project: req.body.project, campaign_number: req.body.number}, function(err, campaign){
+		campaign.info[0]["video_data"]["image"] = req.body.image_url;
 		// save the campaign and check for errors
 		campaign.save(function(err) {
 			if (err)

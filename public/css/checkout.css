@@ -30,6 +30,8 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 #checkout_bg{
 	z-index: 99;
 	position: absolute;
+	left: 0px;
+	/* Top set by jquery in checkoutDirective.js */
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0,0,0,0.4);
@@ -78,15 +80,42 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	position: relative;
 	z-index: 2;
 	width: 100%;
-	height: 175px;
+	height: 160px;
 	top: -12px;
-	padding-top: 10px;
+	padding-top: 7px;
 	background-color: #efefef;
 	border-top: 1px solid #AFAFAF;
 	overflow: hidden;
 }
 
-#checkout_form_content input{
+#checkout_form_content p{
+	position: relative;
+	margin: auto;
+	padding-left: 12px;
+	padding-right: 10px;
+}
+
+#checkout_form_content p#tagline{
+	font-weight: bold;
+	font-size: 15px;
+	text-align: center;
+}
+
+#checkout_form_content p#cart_details{
+	top: 6px;
+}
+
+#checkout_form_content p#thanks{
+	top: 20px;
+	text-align: center;
+}
+
+#checkout_form_content p#signup{
+	top: 52px;
+	text-align: center;
+}
+
+/*#checkout_form_content input{
 	position: relative;
 	display: block;
 	margin: auto;
@@ -103,23 +132,24 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	margin-top: 10px;
 	width: 175px;
 	height: 30px;
-}
+}*/
 
 #checkout_pay_btn{
 	position: relative;
 	display: block;
 	margin: auto;
 	width: 150px;
-	top: -3px;
 }
 
 #checkout_close_btn{
 	position: absolute;
 	top: 5px;
-	right: 7px;
+	left: 7px;
+	cursor: pointer;
+	color: gray;
 }
 
-#checkout_items_number{
+/*#checkout_items_number{
 	position: relative;
 	top: -9px;
 	left: 90px;
@@ -131,15 +161,42 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	top: -6px;
 	color: gray;
 	font-size: .7em;
+}*/
+
+/*#jump_in_div{
+	position: absolute;
+	height: 150px;
+	width: 270px;
+	font-size: 14px; 
+	text-align: center;
+	border-bottom: 1px solid #efefef;
+}
+*/
+#signup_email{
+	position: relative;
+	display: block;
+	margin: auto;
+	height: 35px;
+	width: 230px;
+	top: -5px;
+	padding-left: 5px;
+	outline: none;
+	margin-bottom: 5px;
 }
 
-#jump_in_div{
+.signup_msg{
 	position: absolute;
-	padding-top: 18px;
-	z-index: 10;
-	height: 160px;
-	width: 270px;
-	color: white;
-	background-color: #ed2852;
-	text-align: center;
+	z-index: 2;
+	top: 198px;
+	font-size: 20px;
+}
+
+.signup_msg#signup_error{
+	color: red;
+	left: 57px;
+}
+
+.signup_msg#signup_success{
+	color: green;
+	left: 45px;
 }

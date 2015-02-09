@@ -93,11 +93,17 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	overflow: hidden;
 }
 
-#project_content .m-story a{
-	text-align: center;
-}
-
 /*This makes the tab_page box display*/
 .selected_content{ 
 	display: inline;
+}
+
+.update_post {
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	margin-bottom: 20px;
+}
+
+.update_post h3, h5{
+	text-align: center;
+	margin-bottom: 10px;
 }

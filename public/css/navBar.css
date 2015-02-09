@@ -163,6 +163,9 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	right: 340px;
 }
 
+#cart_tab a{
+	font-size: 18px;
+}
 #homepage{
 	position: absolute;
 	top: 200px;

@@ -30,9 +30,15 @@ angular.module('CartDRCT', ['CartCTRL']).directive('fnCart', function(){
 		transclude: false, //Currently set to false, can't forsee any reason that would change
 		templateUrl: 'modules/cart/cartTemplate.html', //Loads the html template
 		controllerAs:'cart', //Refer to the controller as 'cart' so cart.foo
-		controller: 'CartController' //This controller comes from the 'CartCTRL' module that is injected
+		controller: 'CartController', //This controller comes from the 'CartCTRL' module that is injected
 		//No DOM manipulation yet. If needed, uncomment below
-		// link: function($scope, iElm, iAttrs, controller) {
-		// }
+		link: function(scope, elem, attrs, controller) {
+			$(document).on('click', function(event) {
+				if (!$(event.target).closest('#cart_div').length && !$(event.target).closest('#cart_tab').length ) {
+					controller.closeCart();
+					scope.$apply();
+				}
+			});
+		}
 	};
 });

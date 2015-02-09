@@ -26,9 +26,25 @@ angular.module('CheckoutDRCT', ['CheckoutCTRL']).directive('fnCheckout', functio
 		transclude: false, //Currently set to false, can't forsee any reason that would change
 		templateUrl: 'modules/cart/checkout/checkoutTemplate.html', //Loads the html template
 		controllerAs:'checkout', //Refer to the controller as 'checkout' so checkout.foo
-		controller: 'CheckoutController' //This controller comes from the 'CheckoutCTRL' module that is injected
+		controller: 'CheckoutController', //This controller comes from the 'CheckoutCTRL' module that is injected
 		//No DOM manipulation yet. If needed, uncomment below
-		// link: function($scope, iElm, iAttrs, controller) {
-		// }
+		link: function(scope, elem, attrs, controller) {
+			$(document).on('scroll', function(event) {
+				var scrolled = $(window).scrollTop();
+				$("#checkout_bg").css({'top': scrolled});
+			});
+			$(document).on('click', function(event) {
+				if (!$(event.target).closest('#checkout_form').length) {
+					controller.closeCheckout();
+					scope.$apply();
+				}
+			});
+			$(document).on('click', function(event) {
+				if ($(event.target).closest('button#checkout_button').length) {
+					controller.openCheckout();
+					scope.$apply();
+				}
+			});
+		}
 	};
 });

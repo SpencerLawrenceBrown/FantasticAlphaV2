@@ -55,8 +55,10 @@ angular.module('BarDRCT', ['BarCTRL']).directive('fnBar', function(){
 			//Events/Listeners
 			//Listen for when the ng-repeat the contains the rewards is loaded so that they can be manipulated
 			scope.$on('RewardsRepeatLoaded', function(event){
-				recalculateRewardPosition(false);
-				updateCounterPosition(false);
+				setTimeout(function(){
+					recalculateRewardPosition(true);
+					updateCounterPosition(true);
+				}, 100);
     		});
 
 			//When the window gets resized, recalculate where the rewards should be

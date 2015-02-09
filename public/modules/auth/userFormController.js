@@ -25,8 +25,8 @@ angular.module('UserFormCTRL', ['AuthFCTR']).controller('UserFormController', ['
 	var getJSON =  function(register){
 		var formData = {
 			email 		: $scope.email,
-			password 	: $scope.password,
-			fullname 	: $scope.fullname
+			password 	: "test",
+			fullname 	: "user"
 		};
 		return formData;
 	};

@@ -9,7 +9,8 @@ var mongoose = require('mongoose'); //load mongoose
 var infoSchema = mongoose.Schema({
 	video_data:{
 		//url
-		video: String
+		video: String,
+		image: String
 	},
 	tabs:{
 		updates:{

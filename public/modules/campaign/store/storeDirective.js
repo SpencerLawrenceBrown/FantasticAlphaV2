@@ -26,13 +26,6 @@ angular.module('StoreDRCT', ['StoreCTRL']).directive('fnStore', function(){
 		transclude: false,
 		templateUrl: 'modules/campaign/store/storeTemplate.html',
 		controllerAs: 'store',
-		controller: 'StoreController',
-		link: function(scope, elements, attrs, controller) {
-			$('#incentive_options div').click(function(){
-				$('html,body').animate({
-		            scrollTop: $('#reward_bar_div').offset().top - 50
-		        }, 600);
-			});
-		}
+		controller: 'StoreController'
 	};
 });

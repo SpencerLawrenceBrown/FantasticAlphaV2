@@ -6,6 +6,8 @@
 
 var mongoose = require('mongoose'); //Load the mongoose object
 
+//Component of the incentive
+var Component = require('./component');
 //Campaign Schema
 var incentiveSchema = mongoose.Schema({
 	level: String,
@@ -19,7 +21,7 @@ var incentiveSchema = mongoose.Schema({
 	campaign_number: Number,
 	contains:{
 		//Items unique to this level
-		unique:[String],
+		unique:[Component.schema],
 		//Other levels included in this level
 		carry_over:[String],
 		//Items that are related to the rewards unlocked in the campaign

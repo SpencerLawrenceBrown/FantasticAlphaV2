@@ -53,6 +53,20 @@ angular.module('AuthFCTR', []).factory('AuthFactory', ['$q', '$rootScope', '$tim
 	}
 
 	AuthFactory.register = function(data){
+		// $http({
+		// 	method : 'POST',
+		// 	url : '/register',
+		// 	data : $.param(data),
+		// 	headers : {'Content-Type' : 'application/x-www-form-urlencoded'}
+		// }).success(function(resp){
+		// 	AuthFactory['loggedin'] = true;
+		// 	AuthFactory['email'] = resp.local.email;
+		// 	AuthFactory['password'] = resp.local.password;
+		// 	AuthFactory['name'] = resp.details.fullname;
+		// 	//$location.url('/user');
+		// });
+		
+		//For use with email only
 		$http({
 			method : 'POST',
 			url : '/register',
@@ -60,10 +74,11 @@ angular.module('AuthFCTR', []).factory('AuthFactory', ['$q', '$rootScope', '$tim
 			headers : {'Content-Type' : 'application/x-www-form-urlencoded'}
 		}).success(function(resp){
 			AuthFactory['loggedin'] = true;
-			AuthFactory['email'] = resp.local.email;
-			AuthFactory['password'] = resp.local.password;
-			AuthFactory['name'] = resp.details.fullname;
-			$location.url('/user');
+			AuthFactory['loginMSG'] = false;
+			//$location.url('/user');
+		}).error(function(){
+			AuthFactory['loggedin'] = false;
+			AuthFactory['loginMSG'] = true;
 		});
 	}
 

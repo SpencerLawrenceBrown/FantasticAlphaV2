@@ -72,18 +72,18 @@ Contains:
 		<ul class="nav navbar-nav navbar-right">
 			<!--Cart-->
 			<li id = 'cart_tab'>
-				<a class = 'right_align main_item' href = '' ng-controller = 'CartController as cart' ng-click = "cart.model.isVisible = !cart.model.isVisible" >
+				<a class = 'right_align main_item' href = '' ng-controller = 'CartController as cart' ng-click = "cart.model.isVisible = !cart.model.isVisible" ng-init = "setListen(false)">
 					Cart: {{cart.model.totalPrice | currency}}
 				</a>
 			</li>
-			<li id = 'user_tab'>
+		<!-- 	<li id = 'user_tab'>
 				<a class = 'right_align main_item' ng-hide = 'nav.auth.loggedin' id = 'log_in' href = '/#/login'>
 					Log in/Sign up
 				</a>
 				<a class = 'right_align main_item' ng-show = 'nav.auth.loggedin' id = 'profile' href = '/#/user'>
 					My Profile
 				</a>
-			</li>
+			</li> -->
 		</ul>
 		<fn-cart></fn-cart>
 	</div>

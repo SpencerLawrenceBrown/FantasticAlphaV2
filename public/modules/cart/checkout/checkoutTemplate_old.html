@@ -1,0 +1,27 @@
+<div id = 'checkout_bg' ng-show = 'checkout.model.isVisible'>
+	<div id = 'checkout_form'>
+	<!--
+	Checkout Template
+	Written by: Spencer Brown, copyright 2014
+
+	//Description
+	This is the html for the checkout
+	-->
+		<div id = 'checkout_form_header'>
+			<img class = 'img-circle' src = 'assets/images/cart_logo.png'>
+			<h3><b>Fantastic</b></h3>
+		</div>
+		<div id = 'checkout_form_content'>
+			<div id = 'jump_in_div' ng-show = 'cardName.length > 0 || cardNumber.length > 0 || cardCVC.length > 0 || cardExpire.length > 0'> This campaign does not actually exist!<br><br>Click the 'Pay' button below and the items will be added to your profile page.<br>This one's on us.
+			</div>
+			<input ng-model = 'cardName' placeholder="Name"/>
+			<input ng-model = 'cardNumber' placeholder="Card Number"/>
+			<input ng-model = 'cardExpire' placeholder="Expiration"/> 
+			<input ng-model = 'cardCVC' placeholder="CVC" /> 
+		</div>
+		<span id = 'checkout_items_number'>Total items: {{checkout.cart.totalQuantity}}</span>
+		<button id = 'checkout_pay_btn' class = 'btn btn-success' type="submit" ng-click = "checkout.completeCheckout()">Pay {{checkout.cart.totalPrice | currency}}</button>
+		<button id = 'checkout_close_btn' class = 'close' ng-click = "checkout.model.isVisible = false">x</button>
+		<em id = 'checkout_fineprint'>powered by Stripe</em>
+	</div>
+</div>

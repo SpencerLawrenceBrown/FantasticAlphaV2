@@ -145,13 +145,12 @@ angular.module('CartFCTR', []).factory('CartFactory',['$rootScope', function($ro
 		CartFactory.totalPrice = 0;
 		CartFactory.isEmpty = true;
 		CartFactory.isVisible = false;
-		contents = [];
+		CartFactory.contents = [];
 	};
 
-	//This listens for when the checkout is successful
-	var checkoutListener = $rootScope.$on('checkout:successful', function(){
-		CartFactory.checkout();
-	});
+	CartFactory.hide = function(){
+		CartFactory.isVisible = false;
+	};
 
 	//Return CartFactory object
 	return CartFactory;

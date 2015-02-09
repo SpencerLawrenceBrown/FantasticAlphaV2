@@ -29,37 +29,37 @@ angular.module('VideoDRCT', ['CampaignCTRL']).directive('fnVideo', function(){
 		controller: 'CampaignController',
 		link: function(scope, element, attrs, cont){
 
-			/* Use Youtube IFrame API to control video*/
-			//Code based on: https://developers.google.com/youtube/iframe_api_reference#
+			// /* Use Youtube IFrame API to control video*/
+			// //Code based on: https://developers.google.com/youtube/iframe_api_reference#
 			
-			//This code loads the IFrame Player API code asynchronously.
-		    var tag = document.createElement('script');
-		    tag.src = "https://www.youtube.com/iframe_api";
-		    var firstScriptTag = document.getElementsByTagName('script')[0];
-		    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+			// //This code loads the IFrame Player API code asynchronously.
+		 //    var tag = document.createElement('script');
+		 //    tag.src = "https://www.youtube.com/iframe_api";
+		 //    var firstScriptTag = document.getElementsByTagName('script')[0];
+		 //    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-		    // 3. This function creates an <iframe> (and YouTube player)
-		    //    after the API code downloads.
-		    var player;
-		    window.onYouTubeIframeAPIReady = function() {
-		        player = new YT.Player('video_player', {
-		        	events: {
-		        		'onStateChange': onPlayerStateChange
-		          	}
-		        });
-		    }
+		 //    // 3. This function creates an <iframe> (and YouTube player)
+		 //    //    after the API code downloads.
+		 //    var player;
+		 //    window.onYouTubeIframeAPIReady = function() {
+		 //        player = new YT.Player('video_player', {
+		 //        	events: {
+		 //        		'onStateChange': onPlayerStateChange
+		 //          	}
+		 //        });
+		 //    }
 
-		    onPlayerStateChange = function(event){
-		    	if (event.data == YT.PlayerState.ENDED){
-		    		console.log('ended');
-		    		$('#video_player').fadeIn();
-		    	}
-		    }
+		 //    onPlayerStateChange = function(event){
+		 //    	if (event.data == YT.PlayerState.ENDED){
+		 //    		console.log('ended');
+		 //    		$('#video_player').fadeIn();
+		 //    	}
+		 //    }
 
-		    $('#video_poster').click(function(){
-		    	$('#video_poster').fadeOut();
-		    	player.playVideo();
-		    });
+		 //    $('#video_poster').click(function(){
+		 //    	$('#video_poster').fadeOut();
+		 //    	player.playVideo();
+		 //    });
 		}
 	}
 });

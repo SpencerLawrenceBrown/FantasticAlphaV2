@@ -41,10 +41,11 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	width: 100%;
 	top: 2px;
 	left:8px;
+	color: white;
 }
 
 #cart_div table thead{
-	color: white;
+	color: black;
 }
 
 #cart_div .cart_item{

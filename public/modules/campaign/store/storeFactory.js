@@ -23,7 +23,9 @@ Each time a new campaign page is loaded, the store will make a new call to get t
 angular.module('StoreFCTR', []).factory('StoreFactory', ['$routeParams', '$http', function($routeParams, $http){
 	var StoreFactory = {
 		incentives:{}, 
-		current_highlight: {}
+		current_highlight: {},
+		current_set : false,
+		cart_btn_text : "Add to Cart"
 	};
 
 	StoreFactory.getIncentives = function(){
@@ -37,7 +39,18 @@ angular.module('StoreFCTR', []).factory('StoreFactory', ['$routeParams', '$http'
 	};
 
 	StoreFactory.setCurrent = function(index){
+		if (StoreFactory.current_set == false){
+			StoreFactory.current_set = true;
+		}
+
 		StoreFactory.current_highlight = StoreFactory.incentives[index];
+	};
+
+	StoreFactory.getCurrent = function(){
+		if (StoreFactory.current_set == false){
+			return false;
+		}
+		return StoreFactory.current_highlight;
 	};
 
 	return StoreFactory;

@@ -5,8 +5,16 @@
 			"description": "Nerd Herd Intern: Show your support and get a rad badge!",
 			"contains" : {
 				"unique" : [
-					"Digital 'Buy More' Badge",
-					"Campaign Updates"
+					{
+						"name" : "Digital 'Buy More' Badge", 
+						"description" : "A personalizable and customizable digital badge. Show it off on your profile and embed it in fansites and forums",
+						"type" : "Digital"
+					},
+					{
+						"name" : "Campaign Updates", 
+						"description" : "Receive updates feed on the campaign's progress",
+						"type" : "Digital"
+					}
 				],
 				"carry_over" : [
 				],
@@ -24,8 +32,16 @@
 			"description": "Nerd Herd Junior Employee: Gain access to all the unlocked rewards and also the production blog.",
 			"contains" :{
 				"unique" : [
-					"Production Blog",
-					"Unlocked Rewards"
+					{
+						"name" : "Production Blog", 
+						"description" : "Access to an exclusive update feed on the project's production.",
+						"type" : "Digital"
+					},
+					{
+						"name" : "Unlocked Rewards", 
+						"description" : "Receive all the currently unlocked rewards as well as any unlocked before the campaign ends.",
+						"type" : "Digital"
+					}
 				],
 				"carry_over" : [
 				],
@@ -44,8 +60,16 @@
 			"description": "Nerd Herd Middle Management: All the perks of Level 1, plus exclusive production artifacts",
 			"contains" : {
 				"unique" : [
-				"Digital Movie Download",
-				"Digital Storyboard Art"
+					{
+						"name" : "Digital Movie Download", 
+						"description" : "A digital copy of the movie when it comes out.",
+						"type" : "Digital"
+					},
+					{
+						"name" : "Digital Storyboard Art", 
+						"description" : "A curated collection of exclusive storyboard art from the movie's production.",
+						"type" : "Digital"
+					}
 				],
 				"carry_over" : [
 				"+ Level 1 Rewards"
@@ -64,8 +88,16 @@
 			"description": "Nerd Herd C-suite: High up in the herd, every perk from before + tangible goods.",
 			"contains" :  {
 				"unique" : [
-				"Ticket Pre-order",
-				"Exclusive T-shirt"
+					{
+						"name" : "Ticket Pre-order", 
+						"description" : "A ticket voucher that can be used at your local theater.",
+						"type" : "Physical"
+					},
+					{
+						"name" : "Exclusive T-shirt", 
+						"description" : "One t-shirt. Choose from multiple, exclusive designs.",
+						"type" : "Physical"
+					}
 				],
 				"carry_over" : [
 				"+ Level 1 Rewards",
