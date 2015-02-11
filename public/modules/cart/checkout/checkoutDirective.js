@@ -19,6 +19,7 @@ This pushes items to the user's cart
 		-CheckoutController: Talks to checkout model
 */
 
+
 angular.module('CheckoutDRCT', ['CheckoutCTRL']).directive('fnCheckout', function(){
 	return {
 		restrict: 'E',
