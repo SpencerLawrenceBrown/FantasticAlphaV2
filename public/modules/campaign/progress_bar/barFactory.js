@@ -73,6 +73,8 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$routeParams', '
 			BarFactory.rewards = data.rewards;
 			//Update the positions based on width-Assumes 1000px width initially. The width updated by the barDirective when it changes
 			BarFactory.calculateRewardPositions(BarFactory.width);
+			//Update the in-cart bar to show the current's carts contents
+			getCartData();
 		});
 	};
 	//takes in a value and a maximum and then scales it relative to the scale factory
@@ -82,7 +84,6 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$routeParams', '
 
 	//When loaded, check the cart for campaign items
 	var getCartData = function(){
-		console.log("firing");
 		BarFactory.changeValue(CartFactory.computeCampaignTotal($routeParams.campaign_id));
 	}
 
@@ -101,7 +102,6 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$routeParams', '
 	//This should really be using $q. That will be added.
 	//*Data & Value*//
 	BarFactory.getData = function(){
-		getCartData();
 		return getServerData();
 	};
 	//Changes the value of the cart bar. Updates counter position accordingly
