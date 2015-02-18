@@ -1,4 +1,4 @@
-<div id = 'reward_bar_div' class = 'container-fluid'>
+<div id = 'reward_bar_div' class = 'container-fluid' analytics-on="scrollby">
 	<div id = 'progress_and_rewards'>
 		<div id = 'amount_counter' ng-style = "{'left' : bar.visual.barCounter}">
 			<img src = 'assets/images/money_bubble.png'>
@@ -24,7 +24,7 @@
 		Unlocked Rewards
 	</h1>
 	<div id = 'join_the_fanbase'>
-		<button class = 'btn btn-default'>Join the Fanbase!</button>
+		<button class = 'btn btn-default' analytics-on="click" analytics-event="Clicked fanbase button" >Join the Fanbase!</button>
 		<div id = 'join_text'>
 			to show your support, gain access to rewards, and receive great exclusives.
 		</div>

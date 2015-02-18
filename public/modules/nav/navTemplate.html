@@ -37,14 +37,14 @@ Contains:
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="/#/"><img id = 'nav_logo' src = '../../assets/images/nav_logo.png'></a>
+	      <a class="navbar-brand" href="/#/" analytics-on="click" anayltics-event="Clicked Home Logo"><img id = 'nav_logo' src = '../../assets/images/nav_logo.png'></a>
 	    </div>
 	    <!-- Nav items that are hidden when collapsed -->
 	    <div class = 'collapse navbar-collapse' id = 'navbar-collapsed'>
 	    <!--Nav items that stick to the left -->
 	    <ul class = 'nav navbar-nav navbar-left'>
 	    	<li id = 'browse_tab' class = 'dropdown'>
-	    		<a id = 'browse_tab_text' href class = 'dropdown-toggle'>
+	    		<a id = 'browse_tab_text' href class = 'dropdown-toggle' analytics-on="click" anayltics-event="Clicked Browse Campaign">
 	    		Browse Campaigns
 				</a>
 				<ul id = 'browse_menu' class="dropdown-menu">
@@ -60,7 +60,7 @@ Contains:
 			</li>
 			<li id = 'nav_search'>
 				<span id = 'search_icon' class="glyphicon glyphicon-search form-control-feedback"></span>
-				<input class = 'dropdown-toggle' type = 'text' ng-model = 'search_term' placeholder = 'Search Projects...'>
+				<input class = 'dropdown-toggle' type = 'text' ng-model = 'search_term' placeholder = 'Search Projects...' analytics-on="click" anayltics-event="Clicked Search Input">
 				<div class="search_menu" ng-hide = '!search_term.length'>
 	    				<div class = 'search_item' ng-click = 'search_term = campaign' ng-repeat = 'campaign in nav.campaigns | filter: search_term'>
 	     					 <a ng-href = '#/campaign/{{campaign._id}}'>{{campaign.project}}</a>
@@ -72,7 +72,7 @@ Contains:
 		<ul class="nav navbar-nav navbar-right">
 			<!--Cart-->
 			<li id = 'cart_tab'>
-				<a class = 'right_align main_item' href = '' ng-controller = 'CartController as cart' ng-click = "cart.model.isVisible = !cart.model.isVisible" ng-init = "setListen(false)">
+				<a class = 'right_align main_item' href = '' ng-controller = 'CartController as cart' ng-click = "cart.model.isVisible = !cart.model.isVisible" ng-init = "setListen(false)" analytics-on="click" anayltics-event="Clicked Nav Cart Button">
 					Cart: {{cart.model.totalPrice | currency}}
 				</a>
 			</li>

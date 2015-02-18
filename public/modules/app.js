@@ -7,9 +7,11 @@ HTTP, and location)
 */
 
 var app = angular.module('FantasticAlphaV2', [
+	//Libs
 	'ngRoute',
 	'ngSanitize', 
 	'ui.bootstrap',
+	//Custom
 	'NavDRCT',
 	'CartDRCT',
 	'StoreDRCT',
@@ -20,7 +22,11 @@ var app = angular.module('FantasticAlphaV2', [
 	'UserFormCTRL',
 	'UserPageCTRL',
 	'CheckoutDRCT',
-	'RepeatDRCT'
+	'RepeatDRCT',
+	//Analytics
+	'angulartics',
+	'angulartics.segment.io',
+	'angulartics.scroll'
 ]);
 
 // configure our routes

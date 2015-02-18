@@ -10,7 +10,7 @@
 		<div id = 'checkout_form_header'>
 			<img class = 'img-circle' src = 'assets/images/cart_logo.png'>
 			<h3><b>Fantastic</b></h3>
-			<p id = "checkout_close_btn" ng-click = "checkout.closeCheckout()">X</p>
+			<p id = "checkout_close_btn" ng-click = "checkout.closeCheckout()" analytics-on="click" anayltics-event="Clicked Checkout Close">X</p>
 		</div>
 		<div id = 'checkout_form_content'>
 			<p id = "tagline">This campaign does not exist...yet.</p> 
@@ -21,6 +21,6 @@
 		<input id = "signup_email" type = "email" name = "email" placeholder = "fan@email.com" ng-model = "email">
 		<span class = "signup_msg" id = "signup_success" ng-show = "checkout.auth.loggedin"> Added Successfully! </span>
 		<span class = "signup_msg" id = "signup_error" ng-show = "checkout.auth.loginMSG"> Submission Error! </span>
-		<button id = 'checkout_pay_btn' class = 'btn btn-success' ng-click="checkout.addEmail()">Join Mailing List</button>
+		<button id = 'checkout_pay_btn' class = 'btn btn-success' ng-click="checkout.addEmail()" analytics-on="click" anayltics-event="Clicked Join Mailing List">Join Mailing List</button>
 	</div>
 </div>
