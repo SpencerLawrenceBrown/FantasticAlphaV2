@@ -24,7 +24,6 @@
 			"buttonText" : "Join Now",
 			"price" : 0,
 			"project" : "Chuck",
-			"item_id" : 1,
 			"campaign_id" : 1
 		},
 		{
@@ -52,7 +51,6 @@
 			"buttonText" : "$1 Minimum",
 			"price" : 1,
 			"project" : "Chuck",
-			"item_id" : 2,
 			"campaign_id" : 1
 		},
 		{
@@ -80,7 +78,6 @@
 			"buttonText" : "$5 Minimum",
 			"price" : 5,
 			"project" : "Chuck",
-			"item_id" : 3,
 			"campaign_id" : 1
 		},
 		{
@@ -109,7 +106,6 @@
 			"buttonText" : "$10 Minimum",
 			"price" : 10,
 			"project" : "Chuck",
-			"item_id" : 4,
 			"campaign_id" : 1
 		}
 	]

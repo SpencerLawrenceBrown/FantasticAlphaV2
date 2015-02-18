@@ -48,14 +48,14 @@ angular.module('CartFCTR', []).factory('CartFactory',['$rootScope', function($ro
 	/*Add an item to the cart
 	The item is a json string containing all the necessary package info*/
 	CartFactory.addItem = function(item){
-		var id = item.item_id; //id unique to the package
+		var id = item._id; //id unique to the package
 		var cartItem = {}; //make a variable to hold the new item
 		var found = false; // used for search
 
 		//Look through all the cart contents
 		for (var x = 0; x < CartFactory.contents.length; x++){
 			//If an object is found with a matching id, edit that object to increase quantity and price
-			if (CartFactory.contents[x].info.item_id === id){
+			if (CartFactory.contents[x].info._id === id){
 				CartFactory.contents[x].quantity += 1;
 				CartFactory.contents[x].totalPrice += item.price;
 				found = true;

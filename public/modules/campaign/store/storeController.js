@@ -45,6 +45,7 @@ angular.module('StoreCTRL', ['StoreFCTR']).controller('StoreController', ['$rout
 			}, 3000);
 		}
 		$rootScope.$emit('store:addItem', item);
+
 	};
 
 	//Set the selected item

@@ -58,7 +58,7 @@ angular.module('BarDRCT', ['BarCTRL']).directive('fnBar', function(){
 				setTimeout(function(){
 					recalculateRewardPosition(true);
 					updateCounterPosition(true);
-				}, 100);
+				}, 200);
     		});
 
 			//When the window gets resized, recalculate where the rewards should be

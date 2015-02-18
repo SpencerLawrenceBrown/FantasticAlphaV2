@@ -35,6 +35,8 @@ angular.module('StoreFCTR', []).factory('StoreFactory', ['$routeParams', '$http'
 			url: urlString
 		}).success(function(data){
 			StoreFactory.incentives = data.incentives;
+			StoreFactory.current_set = false;
+			StoreFactory.current_highlight = {};
 		});
 	};
 

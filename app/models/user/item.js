@@ -12,7 +12,6 @@ var itemSchema = mongoose.Schema({
 	project: String,
 	campaign_number: Number,
 	campaign_id: Number,
-	item_id: Number,
 	level: Number,
 	description : String,
 	price : Number,

@@ -82,6 +82,7 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$routeParams', '
 
 	//When loaded, check the cart for campaign items
 	var getCartData = function(){
+		console.log("firing");
 		BarFactory.changeValue(CartFactory.computeCampaignTotal($routeParams.campaign_id));
 	}
 

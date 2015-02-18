@@ -171,7 +171,6 @@ APIrouter.put('/add-incentives', function(req, res){
 			incentive.project = campaign.project;
 			incentive.campaign_id = req.body.camp_id;
 			incentive.price = deJSONstring[i].price;
-			incentive.item_id = deJSONstring[i].item_id;
 			incentive.campaign_number = campaign.campaign_number;
 
 			//Add the different types of incentives
@@ -307,7 +306,6 @@ APIrouter.put('/user-items', auth, function(req, res){
 			item.level = req.body[x].info.level;
 			item.description = req.body[x].info.description;
 			item.campaign_id = req.body[x].info.campaign_id;
-			item.item_id = req.body[x].info.item_id;
 			item.campaign_number = req.body[x].info.campaign_number;
 			item.price = req.body[x].info.totalPrice;
 			itemComp = new ItemComponent();
