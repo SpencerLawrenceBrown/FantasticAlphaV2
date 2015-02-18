@@ -1,4 +1,4 @@
-<div id = 'reward_bar_div' class = 'container-fluid' analytics-on="scrollby">
+<div id = 'reward_bar_div' class = 'container-fluid'>
 	<div id = 'progress_and_rewards'>
 		<div id = 'amount_counter' ng-style = "{'left' : bar.visual.barCounter}">
 			<img src = 'assets/images/money_bubble.png'>
@@ -15,7 +15,7 @@
 			<div class = 'circle' ng-class = '{locked : bar.actual.campaignPaid < reward.unlock_amount, unlocked : bar.actual.campaignPaid >= reward.unlock_amount}'></div>
 			<div class = 'reward_content'>
 				<div class ="glyphicon glyphicon-lock reward_text lock" ng-show = "reward.progress === 'locked'"></div>
-				<div class = 'reward_text' ng-hide = "reward.progress === 'locked'" ng-class = '{unlocked :  reward.progress === "unlocked", current :  reward.progress === "current"}'>{{reward.name}}</div>
+				<div class = 'reward_text' ng-hide = "reward.progress === 'locked'" ng-class = '{unlocked :  reward.progress === "unlocked", current :  reward.progress === "current"}'>{{::reward.name}}</div>
 				<!--TODO: Add a note to notify people to checkout to unlock the next reward-->
 			</div>
 		</div>

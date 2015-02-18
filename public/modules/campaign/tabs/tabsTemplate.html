@@ -1,4 +1,4 @@
-<div id = 'campaign_tabs' analytics-on="scrollby">
+<div id = 'campaign_tabs'>
 	<div id = 'tabs_nav'>
 		<!--
 		<a>
@@ -14,7 +14,7 @@
 		-->
 		<a>
 			<div class = 'ind_tab project_tab' ng-click = 'campaign.setActiveTab(2)' ng-class = '{"selected_tab" : campaign.tabs.active === "update"}' id = 'updates'>
-				{{campaign.tabs.updates.title}}
+				{{::campaign.tabs.updates.title}}
 			</div>
 		</a>
 	</div>
@@ -38,10 +38,10 @@
 	-->
 	<div class = 'tab_page' id = 'project_content' ng-class = '{"selected_content" : campaign.tabs.active === "update"}'>
 		<div class = 'update_post' ng-repeat = "entry in campaign.tabs.updates.content">
-			<h3><b>Update #{{entry.entry_number}}:{{entry.title}}</b></h3>
-			<h5>{{entry.date}}</h5>
-			<p>{{entry.greeting}}</p>
-			<p>{{entry.content}}</p>
+			<h3><b>Update #{{::entry.entry_number}}:{{::entry.title}}</b></h3>
+			<h5>{{::entry.date}}</h5>
+			<p>{{::entry.greeting}}</p>
+			<p>{{::entry.content}}</p>
 		</div>
 	</div>
 </div>
