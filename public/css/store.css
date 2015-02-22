@@ -71,8 +71,8 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	display: inline-block;
 	vertical-align: top;
 	overflow: hidden;
-	width: 230px;
-	height: 280px;
+	width: 196px;
+	height: 240px;
 	background-color: white;
 	margin-left: 15px;
 	margin-right: 15px;
@@ -81,54 +81,71 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	border-radius: 6px;
 	cursor: pointer;
 }
+.incentive_box img{
+	position: relative;
+	width: 40px;
+	height: 40px;
+	border: 1px solid;
+}
 .incentive_box:hover{
 	border: 2px solid rgba(0,0,0,0.5);
-}
-
-.incentive_box:hover .title_background{
-	font-size: 2.3em;
-	background-image: url("/assets/images/banner_star.png");
-	background-size: 115px 115px;
-	background-repeat: no-repeat;
-	background-position: 50% 8px;
 }
 
 .incentive_box.selected{
 	border: 2px solid rgba(0,0,0,0.5);
 }
 
+.incentive_box.hover .title_background{
+	font-size: 2.3em;
+	background-size: 60px 60px;
+	background-repeat: no-repeat;
+	background-position: 50% 10px;
+}
+
+
 .incentive_box.selected .title_background{
 	font-size: 2.3em;
-	background-image: url("/assets/images/banner_star.png");
-	background-size: 115px 115px;
+	background-size: 60px 60px;
 	background-repeat: no-repeat;
-	background-position: 50% 8px;
+	background-position: 50% 10px;
 }
 
 .incentive_title{
 	position: relative;
-	height: 90px;
+	height: 70px;
 	color: #ed2852;
 	font-family: 'Changa One', cursive;
 	font-style: italic;
 	font-weight: 400;
-	font-size: 2.0em;
+	font-size: 1.7em;
 	text-align: center;
 	margin-bottom: 15px;
 }
 
 .title_background{
-	background-image: url("/assets/images/banner_nostar.png");
-	background-size: 96px 96px;
+	background-size: 40px 40px;
 	background-repeat: no-repeat;
-	background-position: 50% 15px;
+	background-position: 50% 30px;
+}
+
+.level_Free .title_background{
+	background-image: url("/assets/images/badge.png");
+}
+.level_1 .title_background{
+	background-image: url("/assets/images/blog.png");
+}
+.level_2 .title_background{
+	background-image: url("/assets/images/video.png");
+}
+.level_3 .title_background{
+	background-image: url("/assets/images/physical.png");
 }
 
 /* Actually objects of the incentive package */
 .incentive_components{
 	position: relative;
 	color: black;
-	font-size: 1.2em;
+	font-size: 1.0em;
 	text-align: center;
 }
 .incentive_components p{

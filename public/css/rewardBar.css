@@ -29,25 +29,16 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 /*Entire Div*/
 #reward_bar_div{
 	position: relative;
-	height: 175px;
+	height: 225px;
 	background-color: black;
 	border-top: 2px solid #ed2852;
-}
-#reward_bar_div h1{
-	position: relative;
-	width: 24%;
-	margin-top: 13px;
-	margin-bottom: 16px;
-	top: 0px;
-	font-size: 1.6em;
-	color: #ed2852;
 }
 
 #reward_bar_div #progress_and_rewards{
 	position: relative;
 	float: right;
-	width: 80%;
-	height: 100%;
+	width: 100%;
+	height: 80%;
 }
 
 
@@ -55,8 +46,8 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 #progress_and_rewards #progress_bar{
 	position: relative;
 	top: 30px;
-	height: 40px;
-	border-radius: 20px;
+	height: 32px;
+	border-radius: 16px;
 }
 
 /*Reward Bars*/
@@ -105,9 +96,9 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 .reward_box{
 	position: absolute;
 	width: 160px;
-	height: 45px;
-	top: 105px;
-	left: -71px;
+	height: 100%;
+	top: 0px;
+	left: 0px;
 }
 
 /* in-bar dot */
@@ -115,15 +106,17 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	position: absolute;
 }
 .reward_box .circle.locked{
-	top: -38px;
+	top: 67px;
 	height: 10px;
 	width: 10px;
+	left: 9px;
 	background-color: black;
 }
 .reward_box .circle.unlocked{
-	top: -41px;
+	top: 63px;
 	height: 16px;
 	width: 16px;
+	left: 9px;
 	background-color: white;
 }
 
@@ -131,16 +124,27 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 .reward_box .reward_content{
 	position: absolute;
 	width: 190px;
-	left: -90px;
+	top: 92px;
+	left: -50%;
 	
 }
 .reward_box .reward_text{
-	position: absolute;
+	position: relative;
 	display: inline-block;
 	margin: auto;
 	left: 0px;
 	width: 100%;
 	text-align: center;
+}
+.reward_box .threshold_text{
+	position: relative;
+	display: inline-block;
+	margin: auto;
+	top: 5px;
+	left: 0px;
+	width: 100%;
+	text-align: center;
+	color: white;
 }
 .reward_box .reward_text.unlocked{
 	color: gray;
@@ -151,34 +155,34 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	font-size: 1.3em;
 }
 .reward_box .lock{
-	position: absolute;
+	position: relative;
+	top: 2px;
 	font-size: 1.7em;
 }
 
-/*Join the Fanbase section */
-#join_the_fanbase{
+/*Header*/
+#reward_bar_div #header_and_help{
 	position: relative;
-	top: 0px;
-	float: left;
-	width: 18%;
-	height: 60%;
-	
-}
-#join_the_fanbase button{
-	position: relative;
-    height: 42px;
-    width: 100%;
-    background: #5C2D53;
-    color: white;
-    font-size: 1.3em;
-    border: none;
-}
-#join_the_fanbase #join_text{
-	position: relative;
-	top: 5px;
 	width: 100%;
-	text-align: center;
-	color: gray;
-	font-size: .8em;
+	top: 0px;
+	padding-top: 10px;
 }
+
+#reward_bar_div #header_and_help h1{
+	position: relative;
+	float: left;
+	width: 30%;
+	font-size: 1.6em;
+	color: #ed2852;
+	margin: 0;
+}
+
+#reward_bar_div #header_and_help p{
+	position: relative;
+	float: left;
+	padding-top: 3px;
+	font-size: 1.0em;
+	color: white;
+}
+
 

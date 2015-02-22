@@ -31,7 +31,9 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	position: relative;
 	background-color: #efefef;
 	top: 50px;
+	width: 940px;
 	overflow: hidden;
+	padding: 0;
 }
 /*This creates the circle object*/
 .circle{

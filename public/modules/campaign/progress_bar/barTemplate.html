@@ -1,4 +1,8 @@
 <div id = 'reward_bar_div' class = 'container-fluid'>
+	<div id="header_and_help">
+		<h1>Unlocked Rewards</h1>
+		<p>New rewards are unlocked when the total amount contributed exceeds the reward threshold.</p>
+	</div>
 	<div id = 'progress_and_rewards'>
 		<div id = 'amount_counter' ng-style = "{'left' : bar.visual.barCounter}">
 			<img src = 'assets/images/money_bubble.png'>
@@ -15,18 +19,16 @@
 			<div class = 'circle' ng-class = '{locked : bar.actual.campaignPaid < reward.unlock_amount, unlocked : bar.actual.campaignPaid >= reward.unlock_amount}'></div>
 			<div class = 'reward_content'>
 				<div class ="glyphicon glyphicon-lock reward_text lock" ng-show = "reward.progress === 'locked'"></div>
-				<div class = 'reward_text' ng-hide = "reward.progress === 'locked'" ng-class = '{unlocked :  reward.progress === "unlocked", current :  reward.progress === "current"}'>{{::reward.name}}</div>
+				<div class = "reward_text" ng-hide = "reward.progress === 'locked'" ng-class = '{unlocked :  reward.progress === "unlocked", current :  reward.progress === "current"}'>{{::reward.name}}</div>
+				<div class = "threshold_text">Unlocked at $20000</div>
 				<!--TODO: Add a note to notify people to checkout to unlock the next reward-->
 			</div>
 		</div>
 	</div>
-	<h1>
-		Unlocked Rewards
-	</h1>
-	<div id = 'join_the_fanbase'>
+<!-- 	<div id = 'join_the_fanbase'>
 		<button class = 'btn btn-default' analytics-on="click" analytics-event="Clicked fanbase button" >Join the Fanbase!</button>
 		<div id = 'join_text'>
 			to show your support, gain access to rewards, and receive great exclusives.
 		</div>
-	</div>
+	</div> -->
 </div>

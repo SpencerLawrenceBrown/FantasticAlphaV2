@@ -53,7 +53,7 @@ Contains:
     				</li>
 	 			</ul>
 			</li>
-			<li id = 'create_tab' class = 'disable'>
+			<!-- <li id = 'create_tab' class = 'disable'>
 				<a href = ''>
 					Create
 				</a>
@@ -66,13 +66,14 @@ Contains:
 	     					 <a ng-href = '#/campaign/{{campaign._id}}'>{{campaign.project}}</a>
 	    				</div>
 	 			</div>
-			</li>
+			</li> -->
 		</ul>
 		<!-- Nav items that float right -->
 		<ul class="nav navbar-nav navbar-right">
 			<!--Cart-->
 			<li id = 'cart_tab'>
 				<a class = 'right_align main_item' href = '' ng-controller = 'CartController as cart' ng-click = "cart.model.isVisible = !cart.model.isVisible" ng-init = "setListen(false)" analytics-on="click" anayltics-event="Clicked Nav Cart Button">
+					<span id = 'cart_icon' class="glyphicon glyphicon-shopping-cart"></span>
 					Cart: {{cart.model.totalPrice | currency}}
 				</a>
 			</li>

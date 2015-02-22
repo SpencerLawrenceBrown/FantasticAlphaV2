@@ -1,5 +1,18 @@
 <div id = "video_div">
+	<h2 id = "campaign_title">{{campaign.video.project}}</h2>
+	<h5 id = "campaign_producer"><a href= "http://www.paramount.com/">Paramount Studios</a></h5>
+
+<!-- 	<iframe class = 'video_element' id = 'video_player' width="817" height="460" ng-src= "{{campaign.video.url}}" allowfullscreen>
+	</iframe> -->
 	<img  class = "video_element" id = 'video_poster' ng-src = '{{campaign.video.image}}'>
-	<iframe class = 'video_element' id = 'video_player' width="817" height="460" ng-src= "{{campaign.video.url}}" allowfullscreen>
-	</iframe>
+	<div id = "campaign_description">
+		<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra accumsan elit id feugiat. Duis mauris enim, bibendum id volutpat eu. </p>
+		<div id = 'join_the_fanbase'>
+		<div id = 'join_text'>
+			200 Nerdherders have joined!
+		</div>
+		<button class = 'btn btn-default' analytics-on="click" analytics-event="Clicked fanbase button" >Join/Contribute</button>
+	</div>
+	</div>
+
 </div>

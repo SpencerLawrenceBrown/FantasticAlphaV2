@@ -30,7 +30,7 @@
 	</div>
 	<!-- Main store component -->
 	<div id = 'incentive_options'>
-		<div class = 'incentive_box' ng-repeat = 'incentive in store.inventory' ng-class = "{selected : store.model.current_highlight == incentive}" ng-click = 'store.setCurrent($index)' analytics-on="click" analytics-event="Selected Level {{incentive.level}}">
+		<div class = 'incentive_box level_{{::incentive.level}}' ng-repeat = 'incentive in store.inventory' ng-class = "{selected : store.model.current_highlight == incentive}" ng-click = 'store.setCurrent($index)' analytics-on="click" analytics-event="Selected Level {{incentive.level}}">
 			<p class = 'incentive_title title_background' >{{::incentive.level}}</p>
 			<div class = 'incentive_components'>
 				<p class = 'unique' ng-repeat = 'unique in incentive.contains.unique'>

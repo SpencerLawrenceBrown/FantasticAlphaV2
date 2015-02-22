@@ -104,7 +104,7 @@ APIrouter.get('/campaign-info/:campaign_id', function(req, res){
 		if (err){
 			res.send(err);
 		}
-		res.json(campaign.info[0]);
+		res.json(campaign);
 	});
 });
 //Get campaign store -- called by Store Factory

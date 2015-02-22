@@ -1,0 +1,46 @@
+/* ===========================
+Fantastic Video
+Copyright 2014
+written by Spencer Brown - spencrbrown@gmail.com
+
+A lot of the css is handled by bootstrap
+These fixes are small customizations
+
+swatch colors
+=============
+ed2852 - 'Fantastic' red
+
+============================== */
+
+/* resets and overrides */
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+img {border: none;}
+
+/* links and font */
+
+a, a:link, a:active, a:visited a:hover {text-decoration: none;}
+
+/* layout */
+
+#video_div{
+	width: 100%;
+	height: 460px;
+	overflow: hidden;
+	background-color: black;
+}
+
+.video_element{
+	position: relative;
+	display: block;
+	margin: auto;
+	outline: none;
+}
+
+#video_poster{
+	height: 100%;
+}
