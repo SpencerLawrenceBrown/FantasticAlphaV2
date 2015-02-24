@@ -95,29 +95,32 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	border: 2px solid rgba(0,0,0,0.5);
 }
 
-.incentive_box.hover .title_background{
-	font-size: 2.3em;
-	background-size: 60px 60px;
+.incentive_box:hover .title_background{
+	top: 60px;
+	font-size: 1.3em;
+	background-size: 50px 50px;
 	background-repeat: no-repeat;
-	background-position: 50% 10px;
+	background-position: 50% 5px;
 }
 
 
 .incentive_box.selected .title_background{
-	font-size: 2.3em;
-	background-size: 60px 60px;
+	top: 60px;
+	font-size: 1.3em;
+	background-size: 50px 50px;
 	background-repeat: no-repeat;
-	background-position: 50% 10px;
+	background-position: 50% 5px;
 }
 
-.incentive_title{
+.incentive_title .title_text{
 	position: relative;
 	height: 70px;
+	top: 50px;
 	color: #ed2852;
 	font-family: 'Changa One', cursive;
 	font-style: italic;
 	font-weight: 400;
-	font-size: 1.7em;
+	font-size: 1.25em;
 	text-align: center;
 	margin-bottom: 15px;
 }
@@ -125,7 +128,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 .title_background{
 	background-size: 40px 40px;
 	background-repeat: no-repeat;
-	background-position: 50% 30px;
+	background-position: 50% 0px;
 }
 
 .level_Free .title_background{
@@ -163,7 +166,9 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	left: -2.5px;
 	bottom: 0px;
 	height: 50px;
-	width: 233px;
+	width: 196px;
+	margin: 0;
+	padding: 0;
 	background-color: #ed2852;
 	color: white;
 }

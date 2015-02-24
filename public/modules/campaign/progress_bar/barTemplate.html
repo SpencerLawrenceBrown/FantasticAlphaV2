@@ -1,7 +1,7 @@
 <div id = 'reward_bar_div' class = 'container-fluid'>
 	<div id="header_and_help">
 		<h1>Unlocked Rewards</h1>
-		<p>New rewards are unlocked when the total amount contributed exceeds the reward threshold.</p>
+		<p>New rewards are only unveiled after completing checkout.</p>
 	</div>
 	<div id = 'progress_and_rewards'>
 		<div id = 'amount_counter' ng-style = "{'left' : bar.visual.barCounter}">
@@ -20,7 +20,9 @@
 			<div class = 'reward_content'>
 				<div class ="glyphicon glyphicon-lock reward_text lock" ng-show = "reward.progress === 'locked'"></div>
 				<div class = "reward_text" ng-hide = "reward.progress === 'locked'" ng-class = '{unlocked :  reward.progress === "unlocked", current :  reward.progress === "current"}'>{{::reward.name}}</div>
-				<div class = "threshold_text">Unlocked at $20000</div>
+				<div class = "threshold_text" ng-show ="reward.progress === 'unlocked'">Fully Funded at ${{::reward.unlock_amount}}!</div>
+				<div class = "threshold_text" ng-show ="reward.progress != 'unlocked'">Produced at ${{::reward.unlock_amount}}</div>
+				<div class = "lock_text" ng-show ="reward.progress === 'locked'">Reward unveiled upon funding of previous</div>
 				<!--TODO: Add a note to notify people to checkout to unlock the next reward-->
 			</div>
 		</div>

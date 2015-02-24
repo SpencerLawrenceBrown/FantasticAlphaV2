@@ -11,6 +11,7 @@ var Component = require('./component');
 //Campaign Schema
 var incentiveSchema = mongoose.Schema({
 	level: String,
+	name: String,
 	description: String,
 	buttonText: String,
 	project: String,
