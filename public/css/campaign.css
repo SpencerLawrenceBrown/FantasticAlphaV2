@@ -31,7 +31,9 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	position: relative;
 	background-color: #efefef;
 	top: 50px;
-	width: 940px;
+	min-width: 940px;
+	max-width: 1160px;
+	width: 80%;
 	overflow: hidden;
 	padding: 0;
 }

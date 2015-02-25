@@ -144,6 +144,52 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	background-image: url("/assets/images/physical.png");
 }
 
+
+/*.level_Free .title_background{
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	background-position: 50% 0px;
+	background-image: url("/assets/images/badge.png");
+}
+.level_1 .title_background{
+	background-size: 7px 7px, 17px 17px, 40px 40px;
+	background-repeat: no-repeat, no-repeat, no-repeat;
+	background-position: 135px 10px, 150px 5px, 50% 0px;
+	background-image: url("/assets/images/plus_gray.png"), url("/assets/images/badge_gray.png"), url("/assets/images/blog.png");
+}
+.level_2 .title_background{
+	background-size: 10px 10px, 20px 20px, 20px 20px, 40px 40px;
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+	background-position: 135px 10px, 150px 5px, 150px 25px, 50% 0px;
+	background-image: url("/assets/images/plus_gray.png"), url("/assets/images/badge_gray.png"), url("/assets/images/blog_gray.png"), url("/assets/images/video.png");
+}
+.level_3 .title_background{
+	background-size: 10px 10px, 20px 20px, 20px 20px, 20px 20px, 40px 40px;
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat , no-repeat;
+	background-position: 135px 10px, 150px 5px, 130px 25px, 150px 25px, 50% 0px;
+	background-image:url("/assets/images/plus_gray.png"), url("/assets/images/badge_gray.png"),  url("/assets/images/blog_gray.png"), url("/assets/images/video_gray.png"),url("/assets/images/physical.png");
+}*/
+
+
+.carry_over.contributor{
+	background-size: 15px 15px, 30px 30px;
+	background-repeat: no-repeat, no-repeat;
+	background-position: 73px 7px, 96px 0px;
+	background-image: url("/assets/images/plus.png"), url("/assets/images/badge.png");
+}
+.carry_over.digital{
+	background-size: 15px 15px, 30px 30px, 30px 30px;
+	background-repeat: no-repeat, no-repeat, no-repeat;
+	background-position: 58px 7px, 82px 0px, 118px 0px;
+	background-image: url("/assets/images/plus.png"), url("/assets/images/badge.png"), url("/assets/images/blog.png");
+}
+.carry_over.tangible{
+	background-size: 15px 15px, 30px 30px, 30px 30px, 30px 30px;
+	background-repeat: no-repeat, no-repeat, no-repeat;
+	background-position: 37px 7px, 60px 0px, 96px 0px, 133px 0px;
+	background-image: url("/assets/images/plus.png"), url("/assets/images/badge.png"), url("/assets/images/blog.png"), url("/assets/images/video.png");
+}
+
 /* Actually objects of the incentive package */
 .incentive_components{
 	position: relative;
@@ -156,8 +202,12 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	margin-bottom: 5px;
 }
 .incentive_components .carry_over{
+	position: relative;
 	color: #ed2852;
+	top: 5px;
+	height: 30px;
 }
+
 .incentive_components .reward_related{
 	color: gray;
 }
