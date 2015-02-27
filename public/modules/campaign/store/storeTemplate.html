@@ -19,10 +19,10 @@
 		</div>
 		<div class = 'detail_extras'>
 			<p ng-repeat = "carry_over in store.model.current_highlight.contains.carry_over">
-				{{carry_over}}
+				+ Level: {{carry_over}}
 			</p>
 			<p ng-repeat = "reward in store.model.current_highlight.contains.reward_related">
-				{{reward}}
+				+ {{reward}}
 			</p>
 			<button class = 'btn btn-default' ng-click = "store.addItem('getCurrent')" analytics-on="click" analytics-event="Added Level {{store.model.current_highlight.level}} to Cart">{{::store.model.cart_btn_text}}</button>
 			<p id = "added_to_cart" ng-show = "store.model.added_display">Item Added to Cart</p>
@@ -32,14 +32,11 @@
 	<div id = 'incentive_options'>
 		<div class = 'incentive_box level_{{::incentive.level}}' ng-repeat = 'incentive in store.inventory' ng-class = "{selected : store.model.current_highlight == incentive}" ng-click = 'store.setCurrent($index)' analytics-on="click" analytics-event="Selected Level {{incentive.level}}">
 			<div class = 'incentive_title title_background'>
-				<p class = "title_text" ng-show = "incentive.level == 'Free'">Level: Fan</p>
-				<p class = "title_text" ng-show = "incentive.level == 1">Level: Contributor</p>
-				<p class = "title_text" ng-show = "incentive.level == 2">Level: Digital</p>
-				<p class = "title_text" ng-show = "incentive.level == 3">Level: Tangible</p>
+				<p class = "title_text">Level: {{incentive.level}}</p>
 			</div>
 			<div class = 'incentive_components'>
 				<p class = 'unique' ng-repeat = 'unique in incentive.contains.unique'>{{::unique.name}}</p>
-				<p class = 'carry_over' ng-class = "{contributor : incentive.level == 1, digital : incentive.level == 2, tangible : incentive.level == 3}"></p>
+				<p class = 'carry_over {{::incentive.level}}'></p>
 				<!-- <p class = 'reward_related' ng-repeat = 'reward_related in incentive.contains.reward_related'>{{::reward_related}}</p> -->
 			</div>
 			<div class = 'incentive_buy'>

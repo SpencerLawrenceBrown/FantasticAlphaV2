@@ -160,8 +160,12 @@ APIrouter.post('/new-campaign', function(req, res){
 });
 //Add incentives to the store
 APIrouter.put('/add-incentives', function(req, res){
+
 	//Find a campaign with a matching project and campaign_number
 	Campaign.findOne({project: req.body.project, campaign_number: req.body.number}, function(err, campaign){
+		//Clear the current contents if they exist
+		campaign.store[0]["incentives"].pull();
+
 		var deJSONstring = JSON.parse(req.body.incentives);
 		//Add rewards to store
 		for (var i = 0; i < deJSONstring.length; i++){
@@ -170,7 +174,7 @@ APIrouter.put('/add-incentives', function(req, res){
 			incentive.description = deJSONstring[i].description;
 			incentive.buttonText = deJSONstring[i].buttonText;
 			incentive.project = campaign.project;
-			incentive.campaign_id = req.body.camp_id;
+//			incentive.campaign_id = req.body.camp_id;
 			incentive.price = deJSONstring[i].price;
 			incentive.campaign_number = campaign.campaign_number;
 
