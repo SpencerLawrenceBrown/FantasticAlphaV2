@@ -22,7 +22,7 @@
             "buttonText": "Join Now",
             "price": 0,
             "project": "Mad Max",
-            "item_id": 5,
+            "item_id": 1,
             "campaign_id": 1
         },
         {
@@ -49,7 +49,7 @@
             "buttonText": "$1 Minimum",
             "price": 1,
             "project": "Mad Max",
-            "item_id": 6,
+            "item_id": 2,
             "campaign_id": 1
         },
         {
@@ -76,7 +76,7 @@
             "buttonText": "$15 Minimum",
             "price": 15,
             "project": "Mad Max",
-            "item_id": 7,
+            "item_id": 3,
             "campaign_id": 1
         },
         {
@@ -104,7 +104,7 @@
             "buttonText": "$50 Minimum",
             "price": 50,
             "project": "Mad Max",
-            "item_id": 8,
+            "item_id": 4,
             "campaign_id": 1
         }
     ]

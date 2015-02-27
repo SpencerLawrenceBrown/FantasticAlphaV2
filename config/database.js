@@ -1,5 +1,5 @@
 //Database access
 module.exports = {
 	//'url' : 'mongodb://127.0.0.1/fantastic-alpha-v2'
-	'url' : 'mongodb://fantasticcrew:#Ellendale2813@proximus.modulusmongo.net:27017/p6Ynosad'
+	'url' : 'mongodb://fantasticcrew:#Ellendale2813@proximus.modulusmongo.net:27017/iJo9sazy'
 };

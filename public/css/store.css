@@ -252,6 +252,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	min-height: 200px;
 	color: #ed2852;
 	text-align: center;
+	background-color: #ed2852;
 }
 
 #detail_box .detail_title{
@@ -272,7 +273,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	font-size: 1.0em;
 	color: black;
 	margin-right: 20px;
-	background-color: white;
+	background-color: rgba(255,255,255,0.4);
 	border-radius: 10px;
 
 }
