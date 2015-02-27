@@ -23,6 +23,7 @@ angular.module('CampaignFCTR', []).factory('CampaignFactory', ['$routeParams', '
 	var CampaignFactory = {
 		video:{
 			project: "",
+			fans: 0,
 			url:{},
 			id: "",
 			image: ""
@@ -48,6 +49,8 @@ angular.module('CampaignFCTR', []).factory('CampaignFactory', ['$routeParams', '
 			CampaignFactory.tabs = data.info[0].tabs;
 			//Set the campaign name
 			CampaignFactory.video.project = data.project;
+			//Set the fan numbers
+			CampaignFactory.video.fans = data.fans;
 			//Always start with the update tab open
 			CampaignFactory.tabs.active = "update";
 		});

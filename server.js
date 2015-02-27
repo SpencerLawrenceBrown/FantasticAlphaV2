@@ -130,6 +130,7 @@ APIrouter.get('/campaign-bar/:campaign_id', function(req, res){
 APIrouter.post('/new-campaign', function(req, res){
 	var campaign = new Campaign();
 	campaign.project = req.body.project;
+	campaign.fans = req.body.fans;
 	campaign.campaign_number = req.body.number;
 
 	//Initialize with basic info

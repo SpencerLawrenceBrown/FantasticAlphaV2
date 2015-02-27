@@ -16,6 +16,8 @@ var campaignSchema = mongoose.Schema({
 	project: String,
 	//Campaign number is NOT the id. This is the number of campaigns under a certain project. So Chuck, campaign #2
 	campaign_number: Number,
+	//Number of fans
+	fans: Number,
 	//Info for the store component
 	store: [Store.schema],
 	//Info the for the progress_bar
