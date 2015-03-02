@@ -1,15 +1,40 @@
-<div id = "video_div">
+<div id = "summary_div">
 	<h2 id = "campaign_title">{{campaign.video.project}}</h2>
 	<h5 id = "campaign_producer"><a href= "http://www.paramount.com/">Paramount Studios</a></h5>
 
 <!-- 	<iframe class = 'video_element' id = 'video_player' width="817" height="460" ng-src= "{{campaign.video.url}}" allowfullscreen>
 	</iframe> -->
-	<img  class = "video_element" id = 'video_poster' ng-src = '{{campaign.video.image}}'>
-	<div id = "campaign_description">
-		<p> Pre-order "{{campaign.video.project}}" tickets and rewards here. Become a member to earn exclusive rewards, and pre-order your ticket to save your seat. Raise enough as a community, and special unlockable become available to everyone who contributes.</p>
-		<div id = 'join_the_fanbase'>
-			<button class = 'btn btn-default' analytics-on="click" analytics-event="Clicked fanbase button" >Join/Contribute</button>
-			<div id = 'join_text'>{{campaign.video.fans}} fans have already joined!</div>
+	<img  class = "visual_element" id = 'video_poster' ng-src = '{{campaign.video.image}}'>
+	<div id = "campaign_info">
+		<div id = "left_column">
+			<div id = "large">Pre-order tickets for "{{campaign.video.project}}" to earn exclusive rewards and receive sweet perks. </div>
+			<div id = "sub">Raise funds as a community to unlock special rewards for everyone who contributes.</div>
+			<fn-bar campaignId = 'campaign._id'></fn-bar>
+		</div>
+		<div id = "right_column">
+			<div id = 'campaign_snapshot'>
+				<div class = "snapshot_figure_left" id = 'campaign_total'>
+					<div>Funds Contributed Overall:</div>
+					<div class = "progress_number"> $950</div>
+				</div>
+				<div class = "snapshot_figure_right" id = 'campaign_tally'>
+					<div>Rewards Funded:</div>
+					<div class = "progress_number">1</div>
+				</div>
+				<div class = "snapshot_figure_left" id = "current_progress">	
+					<div>Funds to Current Goal:</div>
+					<div class = "progress_number">$50</div>
+				</div>
+				<div class = "snapshot_figure_right" id = "campaign_fans">		<div>Fans Joined:</div>	
+					<div class = "progress_number">1251</div>
+				</div>
+			</div> 
+			<div id = 'reward_highlight'>
+				<h2 id = 'reward_header'>Current Goal:</h2>
+				<div id = 'reward_title'>Captain Awesome Workout Video</div>
+				<div id = 'reward_description'>A digital workout video with Captain Awesome.</div>
+				<button class = 'btn btn-default' analytics-on="click" analytics-event="Clicked fanbase button" >Join/Contribute</button>
+			</div>
 		</div>
 	</div>
 </div>

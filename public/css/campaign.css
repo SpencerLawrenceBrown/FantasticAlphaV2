@@ -31,13 +31,15 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	position: relative;
 	background-color: #efefef;
 	top: 50px;
-	min-width: 940px;
+	min-width: 1090px;
 	max-width: 1160px;
-	width: 80%;
+	width: 95%;
 	overflow: hidden;
-	padding: 0;
+	padding-right: 10px;
+	padding-left: 10px;
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
+	background-color: white;
 }
 /*This creates the circle object*/
 .circle{
