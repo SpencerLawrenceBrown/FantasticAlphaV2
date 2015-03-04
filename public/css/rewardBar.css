@@ -29,11 +29,12 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 /*Entire Div*/
 #reward_bar_div{
 	position: relative;
-	top: 40px;
-	height: 230px;
-	padding-left: 5px;
-	padding-right: 5px;
+	top: 0px;
+	height: 270px;
+	padding-left: 15px;
 	background-color: black;
+	padding-right: 15px;
+	padding-top: 20px;
 }
 
 #reward_bar_div #progress_and_rewards{
@@ -146,7 +147,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	left: 0px;
 	width: 100%;
 	text-align: center;
-	color: black;
+	color: white;
 	font-size: 0.9em;
 }
 .reward_box .lock_text{
@@ -167,7 +168,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	font-size: 1.1em;
 }
 .reward_box .reward_text.current{
-	color: black;
+	color: white;
 	font-size: 1.3em;
 }
 .reward_box .lock{
@@ -191,4 +192,5 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	font-size: 1.6em;
 	color: white;
 	margin: 0;
+	padding-left: 8px;
 }

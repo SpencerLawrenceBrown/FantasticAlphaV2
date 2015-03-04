@@ -21,4 +21,34 @@
 	<fn-video></fn-video>
 	<fn-store campaignId = 'campaign._id'></fn-store>
 	<!-- 	<fn-tabs></fn-tabs> -->
+	<div id = "checkout_div">
+		<div id="checkout_box">
+			<div id="payment_header">
+			<img class = 'img-circle' src = 'assets/images/cart_logo.png'>
+			<p>Contribute to the <b>"Chuck: The Movie" Campaign</b></p></div>
+			<div id="level_option">
+				<p>Choose your membership level:</p>
+				<div id = "level_select">
+					<button class = "payment_level">Fan: $0</button>
+					<button class = "payment_level">Contributor: $1</button>
+					<button class = "payment_level">Digital: $5</button>
+					<button class = "payment_level">Tangible: $10</button>
+				</div>
+			</div>
+			<div id="gift_methods">
+				<input type="checkbox" name="checkbox" value="gift"><p>This is a gift; send me a gift code.<p>
+			</div>
+			<div id="payment_email">
+				<input type="email" id="email_input" placeholder="Enter your email address here">
+			</div>
+			<div id="payment_methods">
+				<button class="pay_button" id="credit_button">Pay with Card</button>
+				<button class="pay_button" id="paypal_button">Pay with PayPal</button>
+				<button class="pay_button" id="amazon_button">Pay with Amazon</button>
+			</div>
+		</div>
+		<div id="credit_card_print">
+			All major credit cards accepted. Payments via bank account are also supported by PayPal and Amazon Payments. Payment processing fees will be deducted proportionally from the payment amounts you indicate on your slider(s). Fees typically range between 1.9% and 5% + $0.05 to $0.30 depending on a number of factors including your location, purchase price, and payment method. We deduct VAT, where applicable, in the same manner.
+		</div>
+	</div>
 </div>

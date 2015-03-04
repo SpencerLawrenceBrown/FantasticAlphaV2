@@ -77,3 +77,181 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 #footer_text a{
 	color: #777;
 }
+
+/* Checkout */
+
+#checkout_div{
+	position: relative;
+	width: 100%;
+	height: 400px;
+	background-color: #efefef;
+	border-bottom-right-radius: 9px;
+	border-bottom-left-radius: 9px;
+	margin-bottom: 30px;
+}
+
+#checkout_div #credit_card_print{
+	position: relative;
+	top: 60px;
+	width: 80%;
+	font-size: 0.8em;
+	margin: auto;
+	display: block;
+}
+
+#checkout_div #checkout_box{
+	position: relative;
+	display: block;
+	margin: auto;
+	top: 60px;
+	width: 80%;
+	background-color: white;
+	border: 1px solid gray;
+	border-radius: 3px;
+}
+
+#checkout_box div{
+	position: relative;
+	width: 100%;	
+	border-bottom: 1px solid gray;
+	padding-left: 5px;
+}
+
+#checkout_box #payment_header{
+	height: 45px;
+	top: 0px;
+	margin: 0;
+	padding-top: 6px;
+	font-size: 1.2em;
+	color: black;
+	background-color: #DEDEDE;
+}	
+#checkout_box #payment_header img{
+	position: relative;
+	display: block;
+	margin: auto;
+	top : -26px;
+	width: 40px;
+	border: 2px black;
+}
+#checkout_box #payment_header p{
+	position: relative;
+	top : -30px;
+	width: 400px;
+	border: 2px black;
+}
+#checkout_box #level_option{
+	height: 60px;
+	background-color: #efefef;
+}
+
+#level_option p{
+	float: left;
+	width: 230px;
+	height: 100%;
+	margin: 0;
+	font-size: 1.05em;
+	font-weight: bold;
+	padding-top: 19px;
+}
+
+#level_option #level_select{
+	float: left;
+	height: 35px;
+	width: 600px;
+	top:12px;
+	border-bottom: none;
+}
+#level_select .payment_level{
+	position: relative;
+	display: inline-block;
+	height: 35px;
+	width: 130px;
+	border-radius:10px; 
+	border: 1px solid;
+	border-color: rgba(0,0,0,0.5);
+	background-color: #9E9E9E;
+	color: white;
+	font-size: 1.17em;
+	text-align: center;
+	outline: none;
+	margin-right: 5px;
+	font-weight: bold;
+}
+#level_select .payment_level:hover{
+	background-color: rgba(237,40,82,0.6);
+}
+#level_select .payment_level:active{
+	background-color: #ed2852;
+}
+#checkout_box #gift_methods{
+	height: 40px;
+	background-color: #efefef;
+}
+#gift_methods input{
+	float: left;
+	margin-top: 12px;
+	margin-right: 4px;
+}
+#gift_methods p{
+	float: left;
+	width: 300px;
+	margin-top: 8px;
+	margin-bottom: 3px; 
+}
+#checkout_box #payment_email{
+	height: 60px;
+	background-color: #efefef;
+}
+
+#payment_email #email_input{
+	position: relative;
+	top: 17px;
+	width: 300px;
+}
+
+#checkout_box #payment_methods{
+	height: 70px;
+	background-color: #C9C9C9;
+	border-bottom: none;
+}
+button.pay_button{
+	position: relative;
+	top: 15px;
+    height: 40px;
+    width: 170px;
+    color: black;
+    font-size: 1.0em;
+    border: 1px solid;
+    border-color: rgba(255,255,255,0.0);
+    border-radius: 5px;
+    outline: none;
+    margin-right: 10px;
+}
+
+#payment_methods #credit_button{
+	background-color: #2dabf9;
+	color: white;
+}
+#payment_methods #credit_button:hover{
+	background-color: black;
+	color: #2dabf9;
+}
+#payment_methods #paypal_button{
+	background-color: #ffd900;
+}
+#payment_methods #paypal_button:hover{
+	background-color: black;
+	color: #ffd900;
+}
+#payment_methods #amazon_button{
+	background-color: #ff9900;
+}
+#payment_methods #amazon_button:hover{
+	background-color: black;
+	color: #ff9900;
+}
+#checkout_box #credit_card_print{
+	font-size: 0.7em;
+	border-bottom: none;
+}

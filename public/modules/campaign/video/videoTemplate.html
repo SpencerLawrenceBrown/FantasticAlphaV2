@@ -1,4 +1,4 @@
-<div id = "summary_div">
+<div id = "summary_div" class = "effect7">
 	<h2 id = "campaign_title">{{campaign.video.project}}</h2>
 	<h5 id = "campaign_producer"><a href= "http://www.paramount.com/">Paramount Studios</a></h5>
 
@@ -7,8 +7,10 @@
 	<img  class = "visual_element" id = 'video_poster' ng-src = '{{campaign.video.image}}'>
 	<div id = "campaign_info">
 		<div id = "left_column">
-			<div id = "large">Pre-order tickets for "{{campaign.video.project}}" to earn exclusive rewards and receive sweet perks. </div>
-			<div id = "sub">Raise funds as a community to unlock special rewards for everyone who contributes.</div>
+			<div id = "campaign_tagline">
+				<div id = "large">Pre-order tickets for "{{campaign.video.project}}" to earn exclusive rewards and receive sweet perks. </div>
+	<!-- 			<div id = "sub">Raise funds as a community to unlock special rewards for everyone who contributes.</div> -->
+			</div>
 			<fn-bar campaignId = 'campaign._id'></fn-bar>
 		</div>
 		<div id = "right_column">
@@ -22,8 +24,8 @@
 					<div class = "progress_number">1</div>
 				</div>
 				<div class = "snapshot_figure_left" id = "current_progress">	
-					<div>Funds to Current Goal:</div>
-					<div class = "progress_number">$50</div>
+					<div>Funds to Reach Current Goal:</div>
+					<div class = "progress_number">$5,000</div>
 				</div>
 				<div class = "snapshot_figure_right" id = "campaign_fans">		<div>Fans Joined:</div>	
 					<div class = "progress_number">1251</div>
@@ -33,7 +35,8 @@
 				<h2 id = 'reward_header'>Current Goal:</h2>
 				<div id = 'reward_title'>Captain Awesome Workout Video</div>
 				<div id = 'reward_description'>A digital workout video with Captain Awesome.</div>
-				<button class = 'btn btn-default' analytics-on="click" analytics-event="Clicked fanbase button" >Join/Contribute</button>
+				<div id = 'reward_delivery'>Delivery: August 2015</div>
+				<button class = 'btn btn-default' analytics-on="click" analytics-event="Clicked fanbase button" >Join This Fanbase</button>
 			</div>
 		</div>
 	</div>
