@@ -58,7 +58,7 @@ angular.module('BarDRCT', ['BarCTRL']).directive('fnBar', function(){
 				setTimeout(function(){
 					recalculateRewardPosition(true);
 					updateCounterPosition(true);
-				}, 200);
+				}, 500);
     		});
 
 			//When the window gets resized, recalculate where the rewards should be
@@ -68,11 +68,11 @@ angular.module('BarDRCT', ['BarCTRL']).directive('fnBar', function(){
 			});
 
 			//When the 'join the fanbase button is clicked, scroll to store'
-			// $('#join_the_fanbase button').click(function(){
-			// 	$('html,body').animate({
-		 //            scrollTop: $('#reward_bar_div').offset().top - 50
-		 //        }, 600);
-			// });
+			$('button#join_fanbase').click(function(){
+			$('html,body').animate({
+		            scrollTop: $('#store_container').offset().top - 50
+		         }, 600);
+			});
 		}
 	};
 });
