@@ -28,12 +28,13 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 /* layout */
 
 #cart_div{
-	position: absolute;
-	top: 51px;
+	position: relative;
+	top: 0px;
 	right: 0px;
 	width: 550px;
-	background-color: #867a9f;
-
+	background-color: #efefef;
+	min-height: 130px;
+	padding-left: 0px;
 }
 
 #cart_div table{
@@ -41,7 +42,8 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	width: 100%;
 	top: 2px;
 	left:8px;
-	color: white;
+	color: black;
+
 }
 
 #cart_div table thead{
@@ -51,40 +53,55 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 #cart_div .cart_item{
 	width: 100%;
 	border-right: none;
+	padding-left: 5px;
 }
 
-#cart_div #cart_dropdown_total{
-	border: none;
-	height: 45px;
-}
-
-#cart_div #cart_dropdown_total div{
-	border: none;
-}
-
-#cart_div #cart_dropdown_total #amount{
-	font-size: 1.3em;
-	float: left;
-}
-
-#cart_div #cart_dropdown_total #label{
-	clear: left;
-	float: left;
-}
-
-#cart_div #checkout_button{
-	position: relative;
-	clear: none;
-	float: right;
-	top: -23px;
-	left: 6px;
-	height: 38px;
+#cart_div #cart_empty_msg{
+	padding-left: 7px;
+	padding-top: 8px;
 }
 
 #cart_div #checkout_list{
 	position: relative;
-	left: 200px;
-	width: 180px;
-	border: none;
+	padding-left: 0px;
+	width: 100%;
+	border-top: 1px solid #afafaf;
+	border-bottom: 1px solid #afafaf;
 	margin-top: 10px;
+	padding-top: 10px;
 }
+
+#cart_div #cart_dropdown_total{
+	border: none;
+	height: 35px;
+	padding-left: 5px;
+}
+
+#cart_div #cart_dropdown_total div{
+	width: 50px;
+	border: none;
+	font-size: 1.3em;
+	float: left;
+}
+
+#cart_div #cart_dropdown_total #amount{
+	font-weight: bold;
+}
+
+#cart_div #cart_dropdown_total #label{
+}
+
+#cart_div #checkout_button{
+	position: relative;
+	left: 2px;
+	height: 50px;
+	border: none;
+	border-bottom: none;
+}
+
+#cart_div #checkout_button button{
+	top: 5px;
+	height: 40px;
+	width: 100px;
+}
+

@@ -249,118 +249,82 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 
 /*Detail Box */
 #detail_box{
-	position: relative;
 	min-height: 200px;
-	height: 350px;
-	width: 100%;
 	color: #ed2852;
-	background-color: #efefef;
 	text-align: center;
-	padding: 10px;
-	margin: 0;
-	border-bottom: 2px solid #ed2852;
 }
 
-#detail_box .detail_main{
-	position: relative;
-	width: 75%;
-	height: 100%;
-	float: left;
-	background-color: #efefef;
-}
-
-#detail_box .detail_extras{
-	position: relative;
-	width: 25%;
-	height: 100%;
-	float: left;
-	background-color: white;
-}
-
-/*****Detail Main********/
-
-.detail_main .detail_title{
-	padding-left: 10px;
-	text-align: left;
+#detail_box .detail_level{
 	color: #ed2852;
-	margin-bottom: 3px;
+	text-align: left;
+	padding-left: 20px;
+	margin-bottom: 5px;
 }
 
-.detail_main .detail_des{
-	margin-top: 3px;
-	padding-left: 10px;
+#detail_box .detail_title{
 	text-align: left;
+	padding-left: 20px;
+	margin-bottom: 5px;
+	margin-top: 5px;
 	color: black;
+}
+
+#detail_box div{
+	display: inline-block;
 }
 
 #detail_box .detail_component{
 	position: relative;
-	display: inline-block;
 	vertical-align: top;
-	width: 400px;
-	height: 210px;
+	width: 320px;
+	height: 140px;
 	font-size: 1.0em;
 	color: black;
+	margin-right: 20px;
+	margin-top: 30px;
+	background-color: white;
+	border-radius: 10px;
+
 }
 
-.detail_component .component_content{
-	position: relative;
-	vertical-align: top;
-	float: left;
-	width: 90%;
-	color: black;
-	background-color:white;
-}
-
-.component_content img{
-	width: 40px;
-}
-
-.component_content .component_title{
+#detail_box .detail_component .component_title{
 	position: relative;
 	color: #ed2852;
 }
 
-.component_content.component_des{
+#detail_box .detail_component .component_des{
 	position: relative;
 	text-align: left;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
-.component_content .component_type{
-	position: relative;
+#detail_box .detail_component .component_type{
+	position: absolute;
 	text-align: center;
 	width: 100%;
 	font-style: italic;
-	top: 0px;
-	margin-bottom: 5px;
+	top: 100px;
 }
 
-.component_content .component_note{
-	position: relative;
+#detail_box .detail_component .component_note{
+	position: absolute;
 	text-align: left;
 	margin-left: 5px;
 	font-size: 0.7em;
 	font-style: italic;
-	top: 0px;
+	top: 120px;
 }
-
-.detail_component .component_addition{
-	position: relative;
-	float: left;
-	width: 10%;
-	height: 100%;
-	color: black;
-	font-size: 30px;
-}
-
-
 
 /*Detail Extras */
 #detail_box .detail_extras{
 	position: relative;
 	vertical-align: top;
 	text-align: center;
+	width: 200px;
+	height: 140px;
 	font-size: 1.35em;
+	margin-top: 30px;
 
 }
 

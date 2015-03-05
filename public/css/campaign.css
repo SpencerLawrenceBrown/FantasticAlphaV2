@@ -112,9 +112,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 
 #checkout_box div{
 	position: relative;
-	width: 100%;	
-	border-bottom: 1px solid gray;
-	padding-left: 5px;
+	width: 100%;
 }
 
 #checkout_box #payment_header{
@@ -125,6 +123,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	font-size: 1.2em;
 	color: black;
 	background-color: #DEDEDE;
+	border-bottom: 1px solid gray;
 }	
 #checkout_box #payment_header img{
 	position: relative;
@@ -139,6 +138,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	top : -30px;
 	width: 400px;
 	border: 2px black;
+	padding-left: 5px;
 }
 #checkout_box #level_option{
 	height: 60px;

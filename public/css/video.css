@@ -199,6 +199,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	background-color: black;
 	top: 0px;
 	padding-left: 20px;
+	border-top-right-radius: 5px
 }
 
 #reward_highlight #reward_header{

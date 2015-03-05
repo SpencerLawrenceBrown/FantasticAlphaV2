@@ -4,67 +4,34 @@
 	</div> -->
 	<!--Add Pictures Later, hidden initially-->
 	<div id = 'detail_box' ng-show = 'store.model.current_set'>
-		<div class = "detail_main">
-			<h1 class = "detail_title">Level: Digital</h1>
-			<h2 class = "detail_des">Nerd Herd Junior Employee</h3>
-			<h3 class = "detail_des">Gain access to all the unlocked rewards and also the production blog.</h3>
-			<div class = 'detail_component' ng-repeat="component in store.model.current_highlight.contains.unique" analytics-on="click" analytics-event="Clicked Level {{store.model.current_highlight.level}}, Component {{component.name}}">
-				<div class = "component_content">
-					<img src = "assets/images/details.png">
-					<h3 class = "component_title">{{component.name}}</h3>
-					<p class = "component_des">{{component.description}}</p>
-					<p class = "component_type"> This is a {{component.type}} item.</p>
-					<p class = "component_note" ng-show= "component.type == 'Digital'">
-						A download link will be accessible in your profile page when released.
-					</p>
-					<p class = "component_note" ng-show= "component.type == 'Physical'">
-						This item will be shipped to the provided address when released.
-					</p>
-				</div>
-				<div class = "component_addition" ng-hide = "$last">+</div>
-			</div>
+		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 0"> Level: Fan </h1>
+		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 1"> Level: Contributor </h1>
+		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 2"> Level: Digital </h1>
+		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 3"> Level: Threshold </h1>
+		<h2 class = "detail_title">{{store.model.current_highlight.description}} </h2>
+		<h3 class = "detail_title">{{store.model.current_highlight.description}} </h3>
+		<div class = 'detail_component' ng-repeat="component in store.model.current_highlight.contains.unique" analytics-on="click" analytics-event="Clicked Level {{store.model.current_highlight.level}}, Component {{component.name}}">
+			<h4 class = "component_title">{{component.name}}</h4>
+			<p class = "component_des">{{component.description}}</p>
+			<p class = "component_type"> This is a {{component.type}} item.</p>
+			<p class = "component_note" ng-show= "component.type == 'Digital'">
+				A download link will be accessible in your profile page when released.
+			</p>
+			<p class = "component_note" ng-show= "component.type == 'Physical'">
+				This item will be shipped to the provided address when released.
+			</p>
 		</div>
 		<div class = 'detail_extras'>
 			<p ng-repeat = "carry_over in store.model.current_highlight.contains.carry_over">
-				{{carry_over}}
+				+ Level: {{carry_over}}
 			</p>
 			<p ng-repeat = "reward in store.model.current_highlight.contains.reward_related">
-				{{reward}}
+				+ {{reward}}
 			</p>
-		<!-- 	<button class = 'btn btn-default' ng-click = "store.addItem('getCurrent')" analytics-on="click" analytics-event="Added Level {{store.model.current_highlight.level}} to Cart">{{::store.model.cart_btn_text}}</button>
-			<p id = "added_to_cart" ng-show = "store.model.added_display">Item Added to Cart</p> -->
+			<button class = 'btn btn-default' ng-click = "store.addItem('getCurrent')" analytics-on="click" analytics-event="Added Level {{store.model.current_highlight.level}} to Cart">{{::store.model.cart_btn_text}}</button>
+			<p id = "added_to_cart" ng-show = "store.model.added_display">Item Added to Cart</p>
 		</div>
 	</div>
-	<!-- <div id = 'detail_box' ng-show = 'store.model.current_set'>
-		<div class = "detail_main">
-			<h1 class = "detail_title"> Level Title Filler </h1>
-			<h3 class = "detail_des"> {{store.model.current_highlight.description}} </h3>
-			<div class = 'detail_component' ng-repeat="component in store.model.current_highlight.contains.unique" analytics-on="click" analytics-event="Clicked Level {{store.model.current_highlight.level}}, Component {{component.name}}">
-				<div class = "component_content">
-					<h3 class = "component_title">{{component.name}}</h3>
-					<p class = "component_des">{{component.description}}</p>
-					<p class = "component_type"> This is a {{component.type}} item.</p>
-					<p class = "component_note" ng-show= "component.type == 'Digital'">
-						A download link will be accessible in your profile page when released.
-					</p>
-					<p class = "component_note" ng-show= "component.type == 'Physical'">
-						This item will be shipped to the provided address when released.
-					</p>
-				</div>
-				<div class = "component_addition" ng-hide = "$last">+</div>
-			</div>
-		</div>
-		<div class = 'detail_extras'>
-			<p ng-repeat = "carry_over in store.model.current_highlight.contains.carry_over">
-				{{carry_over}}
-			</p>
-			<p ng-repeat = "reward in store.model.current_highlight.contains.reward_related">
-				{{reward}}
-			</p>
-		<!-- 	<button class = 'btn btn-default' ng-click = "store.addItem('getCurrent')" analytics-on="click" analytics-event="Added Level {{store.model.current_highlight.level}} to Cart">{{::store.model.cart_btn_text}}</button>
-			<p id = "added_to_cart" ng-show = "store.model.added_display">Item Added to Cart</p> -->
-		<!-- </div>
-	</div> --> 
 	<!-- Main store component -->
 	<h3 id='incentive_header'> Membership Levels </h3>
 	<div id = 'incentive_options'>

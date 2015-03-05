@@ -35,6 +35,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	background-color: black;
 	padding-right: 15px;
 	padding-top: 20px;
+	border-top-left-radius: 5px;
 }
 
 #reward_bar_div #progress_and_rewards{

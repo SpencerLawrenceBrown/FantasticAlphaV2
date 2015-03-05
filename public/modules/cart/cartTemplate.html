@@ -1,4 +1,4 @@
-<div id = 'cart_div' ng-show = 'cart.model.isVisible'>
+<div id = 'cart_div'>
 <!--
 Cart Template
 Written by: Spencer Brown, copyright 2014
@@ -38,13 +38,15 @@ This is the html for the cart div
 	</p>
 	<div id = 'checkout_list'>
 		<div id = 'cart_dropdown_total'>
+			<div id = 'label'>
+				Total:
+			</div>
 			<div id = 'amount'>
 				${{cart.model.totalPrice}}
 			</div>
-			<div id = 'label'>
-				TOTAL
-			</div>
-			<button id = 'checkout_button' class = 'btn btn-primary' ng-disabled = 'cart.model.isEmpty' ng-click = 'cart.openCheckout()' analytics-on="click" analytics-event="Clicked Checkout Button">Checkout</button>
 		</div>
 	</div>
+		<div id = "checkout_button">
+			<button id = 'checkout_button' class = 'btn btn-primary' ng-disabled = 'cart.model.isEmpty' ng-click = 'cart.openCheckout()' analytics-on="click" analytics-event="Clicked Checkout Button">Checkout</button>
+		</div>
 </div>
