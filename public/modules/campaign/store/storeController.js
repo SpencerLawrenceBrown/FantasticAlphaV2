@@ -32,9 +32,9 @@ angular.module('StoreCTRL', ['StoreFCTR']).controller('StoreController', ['$rout
 	this.addItem = function(item){
 		//This will emit an event that will be caught by the cart
 		//Rootscope allows communication across different scope hierarchies
-		$('html,body').animate({
-			scrollTop: $('#reward_bar_div').offset().top - 50
-		}, 600);
+		// $('html,body').animate({
+		// 	scrollTop: $('#reward_bar_div').offset().top - 50
+		// }, 600);
 		//If it is called from the details box
 		if (item === "getCurrent"){
 			item = StoreFactory.getCurrent();

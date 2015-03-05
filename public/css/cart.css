@@ -37,6 +37,17 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	padding-left: 0px;
 }
 
+#cart_div #header{
+	position: relative;
+	height: 40px;
+	padding-top: 5px;
+	font-size: 1.4em;
+	font-weight: bold;
+	color: black;
+	padding-left: 6px;
+	border-bottom: 1px solid gray; 
+}
+
 #cart_div table{
 	position: relative;
 	width: 100%;
