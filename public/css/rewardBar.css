@@ -149,7 +149,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	width: 100%;
 	text-align: center;
 	color: white;
-	font-size: 0.9em;
+	font-size: 0.8em;
 }
 .reward_box .lock_text{
 	position: relative;
@@ -166,7 +166,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 }
 .reward_box .reward_text.unlocked{
 	color: gray;
-	font-size: 1.1em;
+	font-size: 1.0em;
 }
 .reward_box .reward_text.current{
 	color: white;

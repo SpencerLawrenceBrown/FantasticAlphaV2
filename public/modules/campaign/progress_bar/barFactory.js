@@ -53,7 +53,9 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$routeParams', '
 		//The list of rewards. Every reward has a name, which serves as the text, and a value, which is used to align it
 		rewards : [],
 		current_reward: {},
+		remaining : 0,
 		unlocked: 0,
+		fans: 1251,
 		width: 1000
 	};
 
@@ -124,6 +126,7 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$routeParams', '
 						BarFactory.unlocked = x;
 						BarFactory.rewards[x].progress = 'current';
 						BarFactory.current_reward = BarFactory.rewards[x];
+						BarFactory.remaining = BarFactory.current_reward.unlock_amount - BarFactory.actual.campaignPaid;
 					} else {
 						BarFactory.rewards[x].progress = 'locked';
 					}
@@ -132,6 +135,8 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$routeParams', '
 					BarFactory.rewards[x].progress = 'current';
 					BarFactory.unlocked = x;
 					BarFactory.current_reward = BarFactory.rewards[x];
+					BarFactory.remaining = BarFactory.current_reward.unlock_amount - BarFactory.actual.campaignPaid;
+
 				}
 			//If has a lower or equal amount than what has been raised
 			} else if (BarFactory.rewards[x].unlock_amount <= BarFactory.actual.campaignPaid){
@@ -163,6 +168,7 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$routeParams', '
 		BarFactory.visual.barCart += -(BarFactory.visual.barCart * .99999);
 		BarFactory.actual.campaignPaid += BarFactory.actual.campaignCart;
 		BarFactory.actual.campaignCart = 0;
+		BarFactory.fans++;
 		BarFactory.updateRewardsProgress();
 		//For testing purposes this does not push to the server. 
 	}
