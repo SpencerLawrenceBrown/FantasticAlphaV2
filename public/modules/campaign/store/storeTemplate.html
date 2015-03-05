@@ -8,7 +8,6 @@
 		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 1"> Level: Rewards </h1>
 		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 2"> Level: Digital </h1>
 		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 3"> Level: Physical </h1>
-		<h2 class = "detail_title">{{store.model.current_highlight.description}} </h2>
 		<h3 class = "detail_title">{{store.model.current_highlight.description}} </h3>
 		<div class = 'detail_component' ng-repeat="component in store.model.current_highlight.contains.unique" analytics-on="click" analytics-event="Clicked Level {{store.model.current_highlight.level}}, Component {{component.name}}">
 			<h4 class = "component_title">{{component.name}}</h4>
