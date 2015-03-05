@@ -341,8 +341,8 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 #detail_box .detail_extras button{
 	position: absolute;
 	height: 50px;
-	width: 120px;
-	left: 40px;
+	width: 140px;
+	left: 30px;
 	bottom: 5px;
 	-webkit-border-radius: 3;
   	-moz-border-radius: 3;

@@ -52,6 +52,8 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$routeParams', '
 		},
 		//The list of rewards. Every reward has a name, which serves as the text, and a value, which is used to align it
 		rewards : [],
+		current_reward: {},
+		unlocked: 0,
 		width: 1000
 	};
 
@@ -119,13 +121,17 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$routeParams', '
 				if (x > 0){
 					//If the previous one is unlocked then this one is the current reward
 					if (BarFactory.rewards[x-1].progress === 'unlocked'){
+						BarFactory.unlocked = x;
 						BarFactory.rewards[x].progress = 'current';
+						BarFactory.current_reward = BarFactory.rewards[x];
 					} else {
 						BarFactory.rewards[x].progress = 'locked';
 					}
 				//If the first one
 				} else {
 					BarFactory.rewards[x].progress = 'current';
+					BarFactory.unlocked = x;
+					BarFactory.current_reward = BarFactory.rewards[x];
 				}
 			//If has a lower or equal amount than what has been raised
 			} else if (BarFactory.rewards[x].unlock_amount <= BarFactory.actual.campaignPaid){

@@ -21,9 +21,10 @@ This controller will communicate between the campaign view and the campaign fact
 		- campaignFactory
 */
 
-angular.module('CampaignCTRL', ['CampaignFCTR']).controller('CampaignController', ['CampaignFactory', function(CampaignFactory){
+angular.module('CampaignCTRL', ['CampaignFCTR', 'BarFCTR']).controller('CampaignController', ['CampaignFactory', 'BarFactory', function(CampaignFactory, BarFactory){
 	//Model connection
 	//Enables the directive to watch the factory model
+	this.bar = BarFactory;
 	this.video = CampaignFactory.video;
 	this.tabs = CampaignFactory.tabs;
 

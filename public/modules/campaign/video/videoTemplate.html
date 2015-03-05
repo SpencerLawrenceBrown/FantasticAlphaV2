@@ -6,6 +6,7 @@
 	</iframe> -->
 	<img  class = "visual_element" id = 'video_poster' ng-src = '{{campaign.video.image}}'>
 	<div id = "campaign_info">
+		{{campaign.rewards.length}}
 		<div id = "left_column">
 			<div id = "campaign_tagline">
 				<div id = "large">Pre-order tickets for "{{campaign.video.project}}" to earn exclusive rewards and receive sweet perks. </div>
@@ -17,15 +18,15 @@
 			<div id = 'campaign_snapshot'>
 				<div class = "snapshot_figure_left" id = 'campaign_total'>
 					<div>Funds Contributed Overall:</div>
-					<div class = "progress_number"> $950</div>
+					<div class = "progress_number">${{campaign.bar.actual.campaignPaid}}</div>
 				</div>
 				<div class = "snapshot_figure_right" id = 'campaign_tally'>
 					<div>Rewards Funded:</div>
-					<div class = "progress_number">1</div>
+					<div class = "progress_number">{{campaign.bar.unlocked}}</div>
 				</div>
 				<div class = "snapshot_figure_left" id = "current_progress">	
-					<div>Funds to Reach Current Goal:</div>
-					<div class = "progress_number">$5,000</div>
+					<div>Funds Needed for Current Goal:</div>
+					<div class = "progress_number">${{campaign.bar.current_reward.unlock_amount}}</div>
 				</div>
 				<div class = "snapshot_figure_right" id = "campaign_fans">		<div>Fans Joined:</div>	
 					<div class = "progress_number">1251</div>
@@ -33,8 +34,8 @@
 			</div> 
 			<div id = 'reward_highlight'>
 				<h2 id = 'reward_header'>Current Goal:</h2>
-				<div id = 'reward_title'>Captain Awesome Workout Video</div>
-				<div id = 'reward_description'>A digital workout video with Captain Awesome.</div>
+				<div id = 'reward_title'>{{campaign.bar.current_reward.name}}</div>
+				<div id = 'reward_description'>{{campaign.bar.current_reward.description}}</div>
 				<div id = 'reward_delivery'>Delivery: August 2015</div>
 				<button class = 'btn btn-default' analytics-on="click" analytics-event="Clicked fanbase button" >Join This Fanbase</button>
 			</div>
