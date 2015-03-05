@@ -70,7 +70,7 @@ angular.module('BarDRCT', ['BarCTRL']).directive('fnBar', function(){
 			//When the 'join the fanbase button is clicked, scroll to store'
 			$('button#join_fanbase').click(function(){
 			$('html,body').animate({
-		            scrollTop: $('#store_container').offset().top - 50
+		            scrollTop: $('#store_container').offset().top - 200
 		         }, 600);
 			});
 		}
