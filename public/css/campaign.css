@@ -41,15 +41,6 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	border-bottom-left-radius: 10px;
 	background-color: white;
 }
-/*This creates the circle object*/
-.circle{
-	width: 16px;
-	height: 16px;
-	background-color: black;
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
-	border-radius: 8px;
-}
 
 #footer{
 	position: relative;

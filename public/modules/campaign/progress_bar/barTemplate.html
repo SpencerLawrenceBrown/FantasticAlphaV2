@@ -15,7 +15,7 @@
 			<bar id = 'cart_bar' max="bar.visual.barTotal" value="bar.visual.barCart" type ='success'></bar>
 		</progress>
 		<div fn-repeat-completion-watcher fn-context = 'Rewards' class = 'reward_box unlocked' ng-repeat = 'reward in bar.rewards' ng-style = "{'left' : reward.unlock_value}">
-			<div class = 'circle' ng-class = '{locked : bar.actual.campaignPaid < reward.unlock_amount, unlocked : bar.actual.campaignPaid >= reward.unlock_amount}'></div>
+			<div class = 'marker' ng-class = '{locked : bar.actual.campaignPaid < reward.unlock_amount, unlocked : bar.actual.campaignPaid >= reward.unlock_amount}'></div>
 			<div class = 'reward_content'>
 				<div class ="glyphicon glyphicon-lock reward_text lock" ng-show = "reward.progress === 'locked'"></div>
 				<div class = "reward_text" ng-hide = "reward.progress === 'locked'" ng-class = '{unlocked :  reward.progress === "unlocked", current :  reward.progress === "current"}'>{{::reward.name}}</div>

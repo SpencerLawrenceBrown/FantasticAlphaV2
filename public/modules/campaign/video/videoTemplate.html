@@ -37,7 +37,8 @@
 				<div id = 'reward_title'>{{campaign.bar.current_reward.name}}</div>
 				<div id = 'reward_description'>{{campaign.bar.current_reward.description}}</div>
 				<div id = 'reward_delivery'>Delivery: August 2015</div>
-				<button id = "join_fanbase" class = 'btn btn-default' analytics-on="click" analytics-event="Clicked fanbase button" >Join This Fanbase</button>
+				<button ng-show="campaign.bar.actual.campaignCart == 0" id = "join_fanbase" class = 'bar_button btn btn-default' analytics-on="click" analytics-event="Clicked fanbase button" >Join This Fanbase</button>
+				<button  ng-show="campaign.bar.actual.campaignCart > 0"id = "checkout_scroll" class = 'bar_button btn btn-default' analytics-on="click" analytics-event="Clicked fanbase button" >Go to Cart</button>
 			</div>
 		</div>
 	</div>

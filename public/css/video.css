@@ -230,20 +230,63 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	font-style: italic;
 }
 
-#reward_highlight button{
+#reward_highlight .bar_button{
 	position: relative;
 	top: 45px;
     height: 60px;
     width: 210px;
-    background: #5C2D53;
     color: white;
     font-size: 1.3em;
     border: 1px solid;
     border-color: rgba(255,255,255,0.0);
     outline: none;
 }
-#reward_highlight button:hover{
+#reward_highlight .bar_button:hover{
     background: white;
-    color: #5C2D53;
     border-color: rgba(0,0,0,1);
+}
+
+.bar_button#join_fanbase{
+	background: #5C2D53;
+}
+.bar_button#join_fanbase:hover{
+	color: #5C2D53;
+}
+.bar_button#checkout_scroll{
+	background-color: green;
+}
+.bar_button#checkout_scroll:before{
+	content: "";
+	position: absolute;
+	top: 24px;
+	left: 25px;
+	width: 30px;
+	height: 30px;
+	z-index: 2;
+	background: url("/assets/images/cart_arrow_white.png") no-repeat;
+	background-size: 12px 12px;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+.bar_button#checkout_scroll:hover:before{
+	content: "";
+	position: absolute;
+	top: 24px;
+	left: 25px;
+	width: 30px;
+	height: 30px;
+	z-index: 2;
+	background: url("/assets/images/cart_arrow_green.png") no-repeat;
+	background-size: 12px 12px;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+.bar_button#checkout_scroll:hover{
+	color: green;
 }

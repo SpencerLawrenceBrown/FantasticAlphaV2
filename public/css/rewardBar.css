@@ -106,21 +106,18 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 }
 
 /* in-bar dot */
-.reward_box .circle{
+.reward_box .marker{
 	position: absolute;
+	top: 58px;
+	height: 26px;
+	width: 2px;
+	left: 0px;
 }
-.reward_box .circle.locked{
-	top: 67px;
-	height: 10px;
-	width: 10px;
-	left: 9px;
+.reward_box .marker.locked{
 	background-color: black;
 }
-.reward_box .circle.unlocked{
-	top: 63px;
-	height: 16px;
-	width: 16px;
-	left: 9px;
+
+.reward_box .marker.unlocked{
 	background-color: white;
 }
 
@@ -129,7 +126,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	position: absolute;
 	width: 190px;
 	top: 92px;
-	left: -50%;
+	left: -57%;
 	
 }
 .reward_box .reward_text{
