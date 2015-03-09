@@ -1,5 +1,24 @@
-<div id = 'homepage'>
-<h3>
-Welcome to the Fantastic Alpha. <br>To begin please select a campaign from the 'browse campaigns' tab.
-</h3>
+<div id = 'homepage' class = "container-fluid">
+	<div id="homepage_banner">
+		<p class="banner_tag">Get more from the upcoming movies, music, or TV shows that you are excited about.</p>
+		<p class="banner_line">1. Pre-order your favorite entertainment.</p>
+		<p class="banner_line">2. Receive fan perks & unlock exclusive content for the fanbase.</p>
+	</div>
+	<div id="homepage_project">
+		<div class="project_portal" ng-repeat = 'campaign in homepage.model.allCampaigns'>
+		<a href="#/campaign/{{campaign._id}}">
+			<div class="project_thumb">
+				<img ng-src = 'assets/images/{{campaign.info[0].video_data.image}}.jpg'>
+			</div>
+			<div class="project_info">
+				<h3 class="project_title">{{campaign.project}}</h3>
+				<h5 class="project_producer">{{campaign.producer}} Paramount Pictures</h5>
+				<p class="project_description">Chuck: The Movie is being made! Pre-order tickets to gain access to behind-the-scenes content and Nerd Herd gear.</p>
+				<h5 class="project_release">Release date: {{campaign.info.release_date}} <em>June 19th, 2015</em></h5>
+				<div class="project_data project_funded">Funds Contributed:<div class="project_number">{{campaign.progress_bar[0].paid | currency}}</div></div>
+				<div class="project_data project_fans">Fans: <div class="project_number">{{campaign.fans}}</div></div>
+			</div>
+		</a>
+		</div>
+	</div>
 </div>

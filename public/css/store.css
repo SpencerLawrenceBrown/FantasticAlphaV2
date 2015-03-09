@@ -277,7 +277,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	position: relative;
 	vertical-align: top;
 	width: 320px;
-	height: 140px;
+	height: 150px;
 	font-size: 1.0em;
 	color: black;
 	margin-right: 20px;
@@ -297,6 +297,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	text-align: left;
 	margin-left: 10px;
 	margin-right: 10px;
+	margin-bottom: 5px;
 }
 
 #detail_box .detail_component .component_type{

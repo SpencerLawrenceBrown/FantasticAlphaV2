@@ -1,0 +1,160 @@
+/* ===========================
+Fantastic Homepage
+Copyright 2015
+written by Spencer Brown - spencrbrown@gmail.com
+
+A lot of the css is handled by bootstrap
+These fixes are small customizations
+
+swatch colors
+=============
+ed2852 - 'Fantastic' red
+
+============================== */
+
+/* resets and overrides */
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+img {border: none;}
+
+/* links and font */
+
+a, a:link, a:active, a:visited a:hover {text-decoration: none;}
+
+/* layout */
+
+#homepage{
+	position: relative;
+	top: 50px;
+	width: 100%;
+	height: 1000px;
+	display: block;
+	margin: auto;
+}
+
+#homepage #homepage_banner{
+	position: relative;
+	height: 400px;
+	width: 100%;
+	text-align: center;
+	font-size: 30px;
+}
+
+#homepage_banner .banner_tag{
+	color: #ed2852;
+	font-size: 1.5em;
+	text-align: left;
+	padding-left: 30px;
+	padding-top: 60px;
+}
+
+#homepage #homepage_project{
+	position: relative;
+	height: 600px;
+	width: 100%;
+}
+
+#homepage_project .project_portal{
+	display: inline-block;
+	position: relative; 
+	width: 300px;
+	height: 400px;
+	float: left;
+	border: 1px solid;
+	border-color: gray;
+	border-radius: 10px;
+	overflow: hidden;
+	margin-right: 30px;
+}
+
+.project_portal a{
+	outline: none;
+	text-decoration: none;
+	color: black;
+}
+
+.project_portal .project_thumb{
+	position: relative;
+	height: 150px;
+	max-width: 300px;
+	overflow: hidden;
+
+}
+.project_thumb img{
+	height: 200px;
+}
+
+.project_portal .project_info{
+	position: relative;
+	padding-left: 5px;
+	text-align: left;
+}
+
+.project_info .project_title{
+	position: relative;
+	margin: 0px;
+	font-size: 1.5em;
+	margin-top: 10px;
+	font-weight: bold;
+	text-align: center;
+}
+.project_info .project_producer{
+	position: relative;
+	margin: 0px;
+	font-size: 1.0em;
+	margin-top: 3px;
+	text-align: center;
+}
+.project_info .project_release{
+	position: relative;
+	margin: 0px;
+	font-size: 0.9em;
+	margin-top: 5px;
+	font-weight: normal;
+}
+.project_info .project_description{
+	position: relative;
+	margin: 0px;
+	font-size: 0.9em;
+	margin-top: 10px;
+	height: 80px;
+}
+
+.project_info .project_data{
+	position: relative;
+	height: 40px;
+	margin: 0px;
+	font-size: 1.0em;
+	margin-top: 8px;
+	float: left;
+}
+
+.project_funded .project_number{
+	color: #ed2852;
+}
+
+.project_fans .project_number{
+	color: #5C2D53;
+}
+
+.project_data .project_number{
+	font-size: 1.8em;
+}
+
+.project_data .project_number{
+	font-size: 1.8em;
+}
+
+.project_info .project_funded{
+	position: relative;
+	width: 200px;
+}
+.project_info .project_fans{
+	position: relative;
+	width: 90px;
+}
+/*

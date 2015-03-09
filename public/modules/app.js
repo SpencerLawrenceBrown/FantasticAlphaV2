@@ -19,10 +19,11 @@ var app = angular.module('FantasticAlphaV2', [
 	'TabsDRCT',
 	'BarDRCT',
 	'OdometerDRCT',
-	'UserFormCTRL',
-	'UserPageCTRL',
 	'CheckoutDRCT',
 	'RepeatDRCT',
+	'UserFormCTRL',
+	'UserPageCTRL',
+	'HomePageCTRL',
 	//Analytics
 	'angulartics',
 	'angulartics.segment.io',
@@ -34,6 +35,8 @@ app.config(function($routeProvider, $locationProvider, $httpProvider) {
 	$routeProvider
 		//route for home page
 		.when('/', {
+			controller : 'HomepageController',
+			controllerAs : 'homepage',
 			templateUrl : 'modules/homepage/homeTemplate.html'
 		})
 

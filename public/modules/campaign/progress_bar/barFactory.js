@@ -55,7 +55,7 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$routeParams', '
 		current_reward: {},
 		remaining : 0,
 		unlocked: 0,
-		fans: 1251,
+		fans: 11417,
 		width: 1000
 	};
 

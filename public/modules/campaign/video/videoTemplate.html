@@ -18,7 +18,7 @@
 			<div id = 'campaign_snapshot'>
 				<div class = "snapshot_figure_left" id = 'campaign_total'>
 					<div>Funds Contributed Overall:</div>
-					<div class = "progress_number">${{campaign.bar.actual.campaignPaid}}</div>
+					<div class = "progress_number">{{campaign.bar.actual.campaignPaid | currency:undefined:0}}</div>
 				</div>
 				<div class = "snapshot_figure_right" id = 'campaign_tally'>
 					<div>Rewards Funded:</div>
@@ -26,7 +26,7 @@
 				</div>
 				<div class = "snapshot_figure_left" id = "current_progress">	
 					<div>Funds Needed for Current Goal:</div>
-					<div class = "progress_number">${{campaign.bar.remaining}}</div>
+					<div class = "progress_number">{{campaign.bar.remaining | currency:undefined:0}}</div>
 				</div>
 				<div class = "snapshot_figure_right" id = "campaign_fans">		<div>Fans Joined:</div>	
 					<div class = "progress_number">{{campaign.bar.fans}}</div>
