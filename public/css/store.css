@@ -187,7 +187,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	background-size: 15px 15px, 30px 30px, 30px 30px, 30px 30px;
 	background-repeat: no-repeat, no-repeat, no-repeat;
 	background-position: 37px 7px, 60px 0px, 96px 0px, 133px 0px;
-	background-image: url("/assets/images/plus.png"), url("/assets/images/badge.png"), url("/assets/images/blog.png"), url("/assets/images/video.png");
+	background-image: url("/assets/images/plus.png"), url("/assets/images/badge.png"), url("/assets/images/blog.png"), url("/assets/images/physical.png");
 }
 
 /* Actually objects of the incentive package */
