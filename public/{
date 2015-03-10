@@ -1,0 +1,100 @@
+{
+    "incentives": [
+        {
+            "level": 0,
+            "title": "Nerd Herd Intern",
+            "description": "Show our sponsors that you support Nerd HQ with this digital badge!",
+            "contains": {
+                "unique": [
+                    {
+                        "name": "Digital 'Nerd Robot' Badge",
+                        "description": "A personalizable and customizable digital badge. Tweet it, share it, and even wear it at the event.",
+                        "type": "Digital"
+                    },
+                    {
+                        "name": "Campaign Updates",
+                        "description": "Receive updates on Nerd HQ's progress",
+                        "type": "Digital"
+                    }
+                ],
+                "carry_over": [],
+                "reward_related": []
+            },
+            "buttonText": "Join Now",
+            "price": 0,
+            "project": "Chuck: The Movie",
+            "item_id": 1,
+            "campaign_id": 1
+        },
+        {
+            "level": 1,
+            "title": "Nerd Herd Junior Employee",
+            "description": "Help unlock the rewards and gain access to a behind-the-scenes production blog.",
+            "contains": {
+                "unique": [
+                    {
+                        "name": "Behind-the-Scenes Blog",
+                        "description": "Access to a twice-weekly update from the Nerd HQ team, with contributions from Zach, Dave, and surprise guests.",
+                        "type": "Digital"
+                    }
+                ],
+                "carry_over": [],
+                "reward_related": []
+            },
+            "buttonText": "$1 Minimum",
+            "price": 1,
+            "project": "Chuck: The Movie",
+            "item_id": 2,
+            "campaign_id": 1
+        },
+        {
+            "level": 2,
+            "title": "Nerd Herd Middle Management",
+            "description": "Behind-the-scenes access and the 2015 Nerd HQ t-shirt sent to you a week before the event",
+            "contains": {
+                "unique": [
+                    {
+                        "name": "2015 Nerd HQ Convention T-Shirt",
+                        "description": "Download-to-own digital version of Chuck: The Movie, available the day it is released.",
+                        "type": "Digital"
+                    }
+                ],
+                "carry_over": [
+                    0,
+                    1
+                ],
+                "reward_related": []
+            },
+            "buttonText": "$ Minimum",
+            "price": 25,
+            "project": "Chuck: The Movie",
+            "item_id": 3,
+            "campaign_id": 1
+        },
+        {
+            "level": 3,
+            "title": "Nerd Herd C-suite",
+            "description": "High up in the herd, every perk from before + tangible goods.",
+            "contains": {
+                "unique": [
+                    {
+                        "name": "Exclusive 2015 Nerd HQ Robot Helmet",
+                        "description": "Fantastic Movie tickets will be sent to you within a week. Once the movie is released, you can exchange it for a cinema ticket at your most convenient theater location. Your seat is always guaranteed!",
+                        "type": "Physical"
+                    }
+                ],
+                "carry_over": [
+                    0,
+                    1,
+                    2
+                ],
+                "reward_related": []
+            },
+            "buttonText": "$10 Minimum",
+            "price": 45,
+            "project": "Chuck: The Movie",
+            "item_id": 4,
+            "campaign_id": 1
+        }
+    ]
+}

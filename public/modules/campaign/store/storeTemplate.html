@@ -4,10 +4,10 @@
 	</div> -->
 	<!--Add Pictures Later, hidden initially-->
 	<div id = 'detail_box' ng-show = 'store.model.current_set'>
-		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 0"> Level: Fan </h1>
-		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 1"> Level: Rewards </h1>
-		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 2"> Level: Digital </h1>
-		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 3"> Level: Physical </h1>
+		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 0"> Package: Support </h1>
+		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 1"> Package: 1 </h1>
+		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 2"> Package: 2 </h1>
+		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 3"> Package: 3 </h1>
 		<h3 class = "detail_title">{{store.model.current_highlight.description}} </h3>
 		<div class = 'detail_component' ng-repeat="component in store.model.current_highlight.contains.unique" analytics-on="click" analytics-event="Clicked Level {{store.model.current_highlight.level}}, Component {{component.name}}">
 			<h4 class = "component_title">{{component.name}}</h4>
@@ -22,8 +22,8 @@
 		</div>
 		<div class = 'detail_extras'>
 			<p ng-repeat = "carry_over in store.model.current_highlight.contains.carry_over">
-				+ Level: <span ng-show = "carry_over == 0">Fan</span>
-				<span ng-show = "carry_over == 1">Rewards</span>
+				+ Level: <span ng-show = "carry_over == 0">Supporter</span>
+				<span ng-show = "carry_over == 1">Pakage</span>
 				<span ng-show = "carry_over == 2">Digital</span>
 				<span ng-show = "carry_over == 3">Physical</span>
 			</p>
@@ -39,10 +39,10 @@
 	<div id = 'incentive_options'>
 		<div class = 'incentive_box level_{{::incentive.level}}' ng-repeat = 'incentive in store.inventory' ng-class = "{selected : store.model.current_highlight == incentive}" ng-click = 'store.setCurrent($index)' analytics-on="click" analytics-event="Selected Level {{incentive.level}}">
 			<div class = 'incentive_title title_background'>
-				<p class = "title_text" ng-show = "incentive.level == 0">Level: Fan</p>
-				<p class = "title_text" ng-show = "incentive.level == 1">Level: Rewards</p>
-				<p class = "title_text" ng-show = "incentive.level == 2">Level: Digital</p>
-				<p class = "title_text" ng-show = "incentive.level == 3">Level: Physical</p>
+				<p class = "title_text" ng-show = "incentive.level == 0">Supporter</p>
+				<p class = "title_text" ng-show = "incentive.level == 1">Package: 1</p>
+				<p class = "title_text" ng-show = "incentive.level == 2">Package: 2</p>
+				<p class = "title_text" ng-show = "incentive.level == 3">Package: 3</p>
 			</div>
 			<div class = 'incentive_components'>
 				<p class = 'unique' ng-repeat = 'unique in incentive.contains.unique'>{{::unique.name}}</p>

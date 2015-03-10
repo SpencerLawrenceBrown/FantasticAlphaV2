@@ -1,15 +1,15 @@
 <div id = "summary_div" class = "effect7">
 	<h2 id = "campaign_title">{{campaign.video.project}}</h2>
-	<h5 id = "campaign_producer"><a href= "http://www.paramount.com/">Paramount Studios</a></h5>
+	<h5 id = "campaign_producer"><a href= "http://www.paramount.com/">Nerd Machine</a></h5>
 
 <!-- 	<iframe class = 'video_element' id = 'video_player' width="817" height="460" ng-src= "{{campaign.video.url}}" allowfullscreen>
 	</iframe> -->
-	<img  class = "visual_element" id = 'video_poster' ng-src = '{{campaign.video.image}}'>
+	<div  class = "visual_element" id = 'video_poster' ></div>
 	<div id = "campaign_info">
 		{{campaign.rewards.length}}
 		<div id = "left_column">
 			<div id = "campaign_tagline">
-				<div id = "large">Pre-order tickets for "{{campaign.video.project}}" to earn exclusive rewards and receive sweet perks. </div>
+				<div id = "large">Pre-order merch for {{campaign.video.project}} to earn exclusive rewards and receive sweet perks. </div>
 	<!-- 			<div id = "sub">Raise funds as a community to unlock special rewards for everyone who contributes.</div> -->
 			</div>
 			<fn-bar campaignId = 'campaign._id'></fn-bar>
@@ -28,7 +28,8 @@
 					<div>Funds Needed for Current Goal:</div>
 					<div class = "progress_number">{{campaign.bar.remaining | currency:undefined:0}}</div>
 				</div>
-				<div class = "snapshot_figure_right" id = "campaign_fans">		<div>Fans Joined:</div>	
+				<div class = "snapshot_figure_right" id = "campaign_fans">
+					<div>Fans Joined:</div>	
 					<div class = "progress_number">{{campaign.bar.fans}}</div>
 				</div>
 			</div> 
