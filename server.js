@@ -74,6 +74,14 @@ var auth = function(req,res,next){
 	}
 }
 
+//Middleware for cache
+var cache = function(req, res, next){
+	res.set("Cache-Control", "public");
+	next();
+}
+
+
+
 //Database objects
 //API Router----------------------
 var APIrouter = express.Router();
@@ -87,7 +95,7 @@ APIrouter.use(function(req, res, next) {
 
 //**General Actions**//
 //Get all the campaigns -- called by Campaigns Meta Factory
-APIrouter.get('/all-campaigns', function(req, res){
+APIrouter.get('/all-campaigns', cache, function(req, res){
 	Campaign.find(function(err, campaigns){
 		if (err){
 			res.send(err);
@@ -99,7 +107,7 @@ APIrouter.get('/all-campaigns', function(req, res){
 //**Campaign Actions**//
 //---Load---
 //Get campaign info -- called by Campaign Factory
-APIrouter.get('/campaign-info/:campaign_id', function(req, res){
+APIrouter.get('/campaign-info/:campaign_id', cache, function(req, res){
 	Campaign.findById(req.params.campaign_id, function(err, campaign){
 		if (err){
 			res.send(err);
@@ -108,7 +116,7 @@ APIrouter.get('/campaign-info/:campaign_id', function(req, res){
 	});
 });
 //Get campaign store -- called by Store Factory
-APIrouter.get('/campaign-store/:campaign_id', function(req, res){
+APIrouter.get('/campaign-store/:campaign_id', cache, function(req, res){
 	Campaign.findById(req.params.campaign_id, function(err, campaign){
 		if (err){
 			res.send(err);
@@ -117,7 +125,7 @@ APIrouter.get('/campaign-store/:campaign_id', function(req, res){
 	});
 });
 //Get campaign bar -- called by Progress Bar Factory
-APIrouter.get('/campaign-bar/:campaign_id', function(req, res){
+APIrouter.get('/campaign-bar/:campaign_id', cache, function(req, res){
 	Campaign.findById(req.params.campaign_id, function(err, campaign){
 		if (err){
 			res.send(err);
