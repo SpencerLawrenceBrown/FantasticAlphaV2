@@ -72,21 +72,34 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	text-decoration: underline;
 }
 
-/*#summary_div .visual_element{
-	position: relative;
-	width: 50%;
-	display: block;
-	margin: auto;
-	outline: none;
-}*/
-
-#summary_div #video_poster{
+#summary_div #visual_div{
 	position: relative;
 	top: 0px;
 	left: 0px;
+	height: 473px;
 	width: 100%;
+	background-color: black;
 	border-top-right-radius: 9px;
 	border-top-left-radius: 9px;
+	overflow: hidden;
+}
+
+#visual_div .visual_element{
+	display: block;
+	margin: auto;
+	outline: none;
+	border: 0;
+}
+
+.visual_element#video_player{
+	position: relative;
+}
+
+.visual_element.video_poster{
+	position: absolute;
+	top: 0px;
+	height: 100%;
+	width: auto;
 }
 
 #summary_div #campaign_info{

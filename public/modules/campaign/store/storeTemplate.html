@@ -46,8 +46,9 @@
 			</div>
 			<div class = 'incentive_components'>
 				<p class = 'unique' ng-repeat = 'unique in incentive.contains.unique'>{{::unique.name}}</p>
-				<p class = 'carry_over' ng-class = "{contributor : incentive.level == 1, digital : incentive.level == 2, tangible : incentive.level == 3}"></p>
-				<!-- <p class = 'reward_related' ng-repeat = 'reward_related in incentive.contains.reward_related'>{{::reward_related}}</p> -->
+					<p class = 'reward_related' ng-repeat = 'reward_related in incentive.contains.reward_related'>+ {{::reward_related}}</p>
+				<p class = 'carry_over' ng-class = "{contributor : incentive.level > 0}"></p>
+			<!-- 	<p class = 'carry_over' ng-class = "{contributor : incentive.level == 1, digital : incentive.level == 2, tangible : incentive.level == 3}"></p> -->
 			</div>
 			<div class = 'incentive_buy'>
 				<div class = 'incentive_price'>

@@ -30,8 +30,8 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 #homepage{
 	position: relative;
 	top: 50px;
-	width: 100%;
-	height: 1000px;
+	min-width: 1060px;
+	max-width: 1160px;
 	display: block;
 	margin: auto;
 }
@@ -40,16 +40,59 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	position: relative;
 	height: 400px;
 	width: 100%;
+	max-width: 1130px;
+	overflow: hidden;
+	text-align: center;
+	font-size: 30px;
+	top: 0px;
+	z-index: 3px;
+}
+
+#homepage_banner #homepage_img{
+	position: absolute;
+	width: 100%;
+	min-height: 365px;
+	left: 0px;
 	text-align: center;
 	font-size: 30px;
 }
 
 #homepage_banner .banner_tag{
+	position: relative;
+	width: 100%;
 	color: #ed2852;
-	font-size: 1.5em;
+	font-size: 1.3em;
+	text-align: center;
+	padding-top: 35px;
+	font-weight: bold;
+	margin-bottom: 55px;
+}
+
+#homepage_banner .banner_line{
+	position: relative;
+	width: 600px;
+	color: white;
+	margin: 0 auto;
+	font-size: 0.87em;
 	text-align: left;
-	padding-left: 30px;
-	padding-top: 60px;
+	margin-bottom: 40px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+}
+
+.banner_line .banner_number{
+	position: relative;
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	color: #ed2852;
+	border: 2px solid #ed2852;
+	float: left;
+	margin-right: 11px;
+	padding-left: 11px;
+	line-height: 34px;
+	font-size: 0.9em;
+	font-weight: bold;
 }
 
 #homepage #homepage_project{
@@ -71,6 +114,11 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	margin-right: 30px;
 }
 
+#homepage_project #homepage_category{
+	position: relative;
+	text-align: center;
+}
+
 .project_portal a{
 	outline: none;
 	text-decoration: none;
@@ -85,6 +133,8 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 
 }
 .project_thumb img{
+	top: 0px;
+	left: -200px;
 	height: 200px;
 }
 
@@ -157,4 +207,10 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	position: relative;
 	width: 90px;
 }
+
+@media screen and (max-width: 1180px){
+	#homepage_banner .banner_tag{
+		font-size: 1.2em;
+	}
+} 
 /*

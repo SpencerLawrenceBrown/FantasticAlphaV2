@@ -1,10 +1,12 @@
 <div id = "summary_div" class = "effect7">
 	<h2 id = "campaign_title">{{campaign.video.project}}</h2>
 	<h5 id = "campaign_producer"><a href= "http://www.paramount.com/">Paramount Studios</a></h5>
-
-<!-- 	<iframe class = 'video_element' id = 'video_player' width="817" height="460" ng-src= "{{campaign.video.url}}" allowfullscreen>
-	</iframe> -->
-	<img  class = "visual_element" id = 'video_poster' ng-src = '{{campaign.video.image}}'>
+	<div id="visual_div">
+		<iframe class = 'visual_element' id = 'video_player' width="840" height="473" ng-src= "{{campaign.video.url}}" allowfullscreen>
+		</iframe>
+		<img  class = "visual_element video_poster" ng-src = '{{campaign.video.image}}'>
+		<img id = "video_overlay" class = "visual_element video_poster" src = '/assets/images/play.png'>
+	</div>
 	<div id = "campaign_info">
 		{{campaign.rewards.length}}
 		<div id = "left_column">

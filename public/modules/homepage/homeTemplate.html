@@ -1,10 +1,13 @@
 <div id = 'homepage' class = "container-fluid">
 	<div id="homepage_banner">
-		<p class="banner_tag">Get more from the upcoming movies, music, or TV shows that you are excited about.</p>
-		<p class="banner_line">1. Pre-order your favorite entertainment.</p>
-		<p class="banner_line">2. Receive fan perks & unlock exclusive content for the fanbase.</p>
+		<img id="homepage_img" src="/assets/images/homepage.jpg">
+		<div class="banner_tag">Get more from the upcoming entertainment that you love</div>
+		<div class="banner_line"><div class="banner_number">1</div> Pre-order your favorite entertainment</div>
+		<div class="banner_line"><span class="banner_number">2</span> Receive exclusive perks for ordering early</div>
+		<div class="banner_line"><span class="banner_number">3</span> Unlock extra content as a fanbase</div>
 	</div>
 	<div id="homepage_project">
+		<h2 id="homepage_category">Featured Projects</h2>
 		<div class="project_portal" ng-repeat = 'campaign in homepage.model.allCampaigns'>
 		<a href="#/campaign/{{campaign._id}}">
 			<div class="project_thumb">

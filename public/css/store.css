@@ -209,7 +209,9 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 }
 
 .incentive_components .reward_related{
-	color: gray;
+	color: #ed2852;
+	font-size: 1.15em;
+	font-weight: bold;
 }
 .incentive_buy{
 	position: absolute;
