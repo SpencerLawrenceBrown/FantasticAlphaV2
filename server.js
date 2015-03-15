@@ -1,6 +1,7 @@
 //Fantastic Alpha Server
 
 //Modules ============================================================
+require('newrelic');
 var express 		= require('express'); //Server
 var mongoose 		= require('mongoose'); //MongoDB
 var bodyParser 		= require('body-parser'); //HTTP Request Parser
@@ -12,15 +13,14 @@ var cookieParser 	= require('cookie-parser'); //Cookies
 var session      	= require('express-session'); //Sessions
 var favicon 		= require('serve-favicon'); //Load Favicon
 var modRewrite 		= require('connect-modrewrite'); //Rewrites URLs to load angular views
-var http 			= require('http');//Quick Http server
-var configDB = require('./config/database.js'); //Database info
+var configDB 		= require('./config/database.js'); //Database info
 
 //Create express app
 var app = express();
 
 //Configuration ======================================================
 
-//Set the port to 8080
+//Set the port to 3000
 var port = process.env.PORT || 3000;
 
 mongoose.connect(configDB.url); //Connect to database
@@ -125,6 +125,8 @@ APIrouter.get('/campaign-bar/:campaign_id', function(req, res){
 		res.json(campaign.progress_bar[0]);
 	});
 });
+
+
 //---Edit--- [All PUTS: Finds the campaign based on the project name and the campaign number (NOT ID)]
 //Create a new campaign
 APIrouter.post('/new-campaign', function(req, res){

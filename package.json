@@ -1,7 +1,8 @@
 {
-  "name": "starter-node-angular",
+  "name": "fantastic-alpha-v2",
   "main": "server.js",
   "dependencies": {
+    "async": "^0.9.0",
     "bcrypt-nodejs": "latest",
     "body-parser": "~1.0.0",
     "connect-flash": "~0.1.1",
@@ -16,5 +17,12 @@
     "passport": "~0.1.17",
     "passport-local": "~0.1.6",
     "serve-favicon": "latest"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-uglify": "^0.5.0",
+    "grunt-contrib-less": "^0.12.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-concat": "^0.5.1"
   }
 }
