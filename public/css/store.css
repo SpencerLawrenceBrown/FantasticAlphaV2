@@ -325,37 +325,42 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	vertical-align: top;
 	text-align: center;
 	width: 200px;
-	height: 140px;
+	height: 150px;
 	font-size: 1.35em;
 	margin-top: 30px;
-	background-color: white;
 	border-radius: 10px;
 
 }
 
 #detail_box .detail_extras p{
-	margin-left: 20px;
-	margin-bottom: 0px;
-	float: left;
-	font-size: 1.0em;
+	position: relative;
+	font-size: 1.1em;
+	top: 35px;
+	font-weight: bold;
+	text-align: center;
 }
 
 
 #detail_box .detail_extras button{
 	position: absolute;
 	height: 50px;
-	width: 140px;
-	left: 30px;
-	bottom: 5px;
+	width: 150px;
+	left: 20px;
+	bottom: 0px;
 	-webkit-border-radius: 3;
   	-moz-border-radius: 3;
-  	border-radius: 3px;
+  	border-radius: 5px;
   	outline: none;
   	box-shadow: none;
  	color: white;
   	font-size: 1em;
   	background: #5cb85c;
   	text-decoration: none;
+}
+
+#detail_box .detail_extras button:hover{
+	color: 	#5cb85c;
+	background-color: white;
 }
 
 #detail_box .detail_extras #added_to_cart{

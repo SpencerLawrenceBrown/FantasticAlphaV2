@@ -21,12 +21,12 @@
 			</p>
 		</div>
 		<div class = 'detail_extras'>
-			<p ng-repeat = "carry_over in store.model.current_highlight.contains.carry_over">
+			<!-- <p ng-repeat = "carry_over in store.model.current_highlight.contains.carry_over">
 				+ Level: <span ng-show = "carry_over == 0">Fan</span>
 				<span ng-show = "carry_over == 1">Rewards</span>
 				<span ng-show = "carry_over == 2">Digital</span>
 				<span ng-show = "carry_over == 3">Physical</span>
-			</p>
+			</p> -->
 			<p ng-repeat = "reward in store.model.current_highlight.contains.reward_related">
 				+ {{reward}}
 			</p>

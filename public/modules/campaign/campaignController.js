@@ -21,18 +21,15 @@ This controller will communicate between the campaign view and the campaign fact
 		- campaignFactory
 */
 
-angular.module('CampaignCTRL', ['CampaignFCTR', 'BarFCTR']).controller('CampaignController', ['CampaignFactory', 'BarFactory', '$scope', function(CampaignFactory, BarFactory, $scope){
+angular.module('CampaignCTRL', ['CampaignFCTR', 'BarFCTR']).controller('CampaignController', ['CampaignFactory', 'BarFactory', '$analytics', '$scope', function(CampaignFactory, BarFactory, $analytics, $scope){
 	//Model connection
 	//Enables the directive to watch the factory model
 	this.bar = BarFactory;
 	this.video = CampaignFactory.video;
 	this.tabs = CampaignFactory.tabs;
+	$scope.url = "";
 
 	//Reload the inventory
-	this.loadCampaign = function(){
-		CampaignFactory.getCampaign();
-	};
-
 	this.setActiveTab = function(index){
 		CampaignFactory.setActiveTab(index);
 	};
@@ -42,5 +39,9 @@ angular.module('CampaignCTRL', ['CampaignFCTR', 'BarFCTR']).controller('Campaign
 		then(function(){
 			this.video = CampaignFactory.video;
 			this.tabs = CampaignFactory.tabs;
+			$scope.url = CampaignFactory.video.url;
+			var path = '/campaign/' + this.video.project;
+			$analytics.pageTrack(path);
+			console.log('firsed');
 		}.bind(this));
 }]);

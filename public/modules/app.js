@@ -26,8 +26,7 @@ var app = angular.module('FantasticAlphaV2', [
 	'HomePageCTRL',
 	//Analytics
 	'angulartics',
-	'angulartics.segment.io',
-	'angulartics.scroll'
+	'angulartics.segment.io'
 ]);
 
 // configure our routes

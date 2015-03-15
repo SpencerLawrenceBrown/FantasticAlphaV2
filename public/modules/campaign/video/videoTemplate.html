@@ -2,7 +2,7 @@
 	<h2 id = "campaign_title">{{campaign.video.project}}</h2>
 	<h5 id = "campaign_producer"><a href= "http://www.paramount.com/">Paramount Studios</a></h5>
 	<div id="visual_div">
-		<iframe class = 'visual_element' id = 'video_player' width="840" height="473" ng-src= "{{campaign.video.url}}" allowfullscreen>
+		<iframe class = 'visual_element' id = 'video_player' width="840" height="473" ng-src= "{{url}}" allowfullscreen>
 		</iframe>
 		<img  class = "visual_element video_poster" ng-src = '{{campaign.video.image}}'>
 		<img id = "video_overlay" class = "visual_element video_poster" src = '/assets/images/play.png'>
@@ -19,15 +19,15 @@
 		<div id = "right_column">
 			<div id = 'campaign_snapshot'>
 				<div class = "snapshot_figure_left" id = 'campaign_total'>
-					<div>Funds Contributed Overall:</div>
+					<div>Total Fan Contributions:</div>
 					<div class = "progress_number">{{campaign.bar.actual.campaignPaid | currency:undefined:0}}</div>
 				</div>
 				<div class = "snapshot_figure_right" id = 'campaign_tally'>
-					<div>Rewards Funded:</div>
+					<div>Rewards Unlocked:</div>
 					<div class = "progress_number">{{campaign.bar.unlocked}}</div>
 				</div>
 				<div class = "snapshot_figure_left" id = "current_progress">	
-					<div>Funds Needed for Current Goal:</div>
+					<div>Next Reward Unlocked In:</div>
 					<div class = "progress_number">{{campaign.bar.remaining | currency:undefined:0}}</div>
 				</div>
 				<div class = "snapshot_figure_right" id = "campaign_fans">		<div>Fans Joined:</div>	
@@ -35,7 +35,7 @@
 				</div>
 			</div> 
 			<div id = 'reward_highlight'>
-				<h2 id = 'reward_header'>Current Goal:</h2>
+				<h2 id = 'reward_header'>Current Reward:</h2>
 				<div id = 'reward_title'>{{campaign.bar.current_reward.name}}</div>
 				<div id = 'reward_description'>{{campaign.bar.current_reward.description}}</div>
 				<div id = 'reward_delivery'>Delivery: August 2015</div>

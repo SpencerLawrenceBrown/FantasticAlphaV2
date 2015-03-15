@@ -7,28 +7,16 @@
 
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/navBar.css">
-	<link rel="stylesheet" type="text/css" href="css/auth.css">
-	<link rel="stylesheet" type="text/css" href="css/store.css">
-	<link rel="stylesheet" type="text/css" href="css/tabs.css">
-	<link rel="stylesheet" type="text/css" href="css/video.css">
-	<link rel="stylesheet" type="text/css" href="css/rewardBar.css">
-	<link rel="stylesheet" type="text/css" href="css/campaign.css">
-	<link rel="stylesheet" type="text/css" href="css/homepage.css">
-	<link rel="stylesheet" type="text/css" href="css/cart.css">
-	<link rel="stylesheet" type="text/css" href="css/checkout.css">
-	<link rel="stylesheet" type="text/css" href="css/user.css">
-	<link rel="stylesheet" type="text/css" href="css/odometer-theme-plaza.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	
 	<!-- Font -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Changa+One:400,400italic' rel='stylesheet' type='text/css'>
 
 	<!-- Libs -->
 	<!--General-->
-	<!-- // <script src="libs/jquery/dist/jquery.min.js"></script> -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<!-- //<script src="libs/angular/angular.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
 	<script src="libs/angular-route/angular-route.min.js"></script>
 	<script src="libs/angular-bootstrap/ui-bootstrap.min.js"></script>
 	<script src="libs/angular-sanitize/angular-sanitize.min.js"></script>
@@ -36,12 +24,12 @@
 	<!-- Analytics -->
 	<script src="libs/angulartics/dist/angulartics.min.js"></script>
 	<script src="libs/angulartics/dist/angulartics-segmentio.min.js"></script>
-	<script src="libs/angulartics/dist/angulartics-scroll.min.js"></script>
+	<!-- // <script src="libs/angulartics/dist/angulartics-scroll.min.js"></script> -->
 	<script type="text/javascript">
-  		window.analytics=window.analytics||[],window.analytics.methods=["identify","group","track","page","pageview","alias","ready","on","once","off","trackLink","trackForm","trackClick","trackSubmit"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var key=window.analytics.methods[i];window.analytics[key]=window.analytics.factory(key)}window.analytics.load=function(t){if(!document.getElementById("analytics-js")){var a=document.createElement("script");a.type="text/javascript",a.id="analytics-js",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.io/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)}},window.analytics.SNIPPET_VERSION="2.0.9",
- 		 window.analytics.load("6zT0qQQDNN");
- 		 window.analytics.page();
-	</script>
+ //  		window.analytics=window.analytics||[],window.analytics.methods=["identify","group","track","page","pageview","alias","ready","on","once","off","trackLink","trackForm","trackClick","trackSubmit"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var key=window.analytics.methods[i];window.analytics[key]=window.analytics.factory(key)}window.analytics.load=function(t){if(!document.getElementById("analytics-js")){var a=document.createElement("script");a.type="text/javascript",a.id="analytics-js",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.io/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)}},window.analytics.SNIPPET_VERSION="2.0.9",
+ // 		 window.analytics.load("6zT0qQQDNN");
+ // 		 window.analytics.page();
+	// </script>
 </head>
 <body>
 	<fn-nav></fn-nav>
@@ -66,46 +54,6 @@
 	</div>
 	
 	<!-- My Modules -->
-	<!--Helpers-->
-	<script src='modules/helpers/repeatWatcherDirective.js'></script>
-	<!--Login/Register-->
-	<script src='modules/auth/authFactory.js'></script>
-	<script src='modules/auth/userFormController.js'></script>
-	<!--User-->
-	<script src='modules/user/userFactory.js'></script>
-	<script src='modules/user/userPageController.js'></script>
-	<!--Campaign-->
-	<script src='modules/campaign/campaignFactory.js'></script>
-	<script src='modules/campaign/campaignController.js'></script>
-	<!--Homepage-->
-	<script src='modules/homepage/homeController.js'></script>
-	<!--Video-->
-	<script src='modules/campaign/video/videoDirective.js'></script>
-	<!--Tabs-->
-	<script src='modules/campaign/tabs/tabsDirective.js'></script>	
-	<!--Progress Bar-->
-	<script src='modules/campaign/progress_bar/odometerDirective.js'></script>	
-	<script src='modules/campaign/progress_bar/odometer.js'></script>
-	<script src='modules/campaign/progress_bar/barFactory.js'></script>
-	<script src='modules/campaign/progress_bar/barController.js'></script>
-	<script src='modules/campaign/progress_bar/barDirective.js'></script>
-	<!--Cart-->	
-	<script src='modules/cart/cartFactory.js'></script>
-	<script src='modules/cart/cartController.js'></script>
-	<script src='modules/cart/cartDirective.js'></script>
-	<!--Checkout-->	
-	<script src='modules/cart/checkout/checkoutFactory.js'></script>
-	<script src='modules/cart/checkout/checkoutController.js'></script>
-	<script src='modules/cart/checkout/checkoutDirective.js'></script>
-	<!--Store-->	
-	<script src='modules/campaign/store/storeFactory.js'></script>
-	<script src='modules/campaign/store/storeController.js'></script>
-	<script src='modules/campaign/store/storeDirective.js'></script>
-	<!--Nav-->
-	<script src='modules/nav/campaignsMetaFactory.js'></script>
-	<script src='modules/nav/navController.js'></script>
-	<script src='modules/nav/navDirective.js'></script>
-	<!-- App -->
-	<script src="modules/app.js"></script>
+	<script src='dist/fantastic.js'></script>
 </body>
 </html>
