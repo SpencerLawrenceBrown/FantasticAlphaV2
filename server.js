@@ -14,6 +14,7 @@ var session      	= require('express-session'); //Sessions
 var favicon 		= require('serve-favicon'); //Load Favicon
 var modRewrite 		= require('connect-modrewrite'); //Rewrites URLs to load angular views
 var configDB 		= require('./config/database.js'); //Database info
+var sendgrid 		= require('sendgrid')("spencerlawrencebrown", "#Flash16"); //Email
 
 //Create express app
 var app = express();
@@ -373,7 +374,19 @@ Frontrouter.get('/logout', function(req,res){
 })
 //process the register form
 Frontrouter.post('/register', passport.authenticate('local-signup'), function(req,res){
-	res.send(req.user);
+		res.send(req.user);
+		console.log(req.user.local.email);
+		//Send email to user
+		sendgrid.send({
+			to:       req.user.local.email,
+			from:     'no-reply@toofantastic.com',
+			fromname: 'Fantastic',
+			subject:  'Thank You for Signing Up!',
+			html: "<h2>Hello!</h2><p>Thank you for using Fantastic and signing up for our newsletter. We are quickly building our alpha and are in discussion with the creators of your favorite entertainment. We will keep you updated as we continue to grow. <br><br>In the meantime, we would love to hear your feedback: </p><p>Best, <br><em>Spencer Brown <br>Co-Founder, Fantastic</p>"
+		}, function(err, json) {
+  			if (err) { return console.error(err); }
+ 			console.log(json);
+		});
 });
 //process the login form
 Frontrouter.post('/login', passport.authenticate('local-login'), function(req, res){
