@@ -1,15 +1,18 @@
 module.exports = function (grunt){
 	grunt.initConfig({
 		concat:{
-			options: {
-				process: function(src, filepath) {
-					return '//####' + filepath + '\n' + src;
-    			}
+			fantastic: {
+					src: ['public/modules/**/*.js'],
+					dest: 'public/dist/fantastic.js'
 			},
-			dist: {
-				//The files to concatenate
-				src: ['public/modules/**/*.js'],
-				dest: 'public/dist/fantastic.js'
+			vendor: {
+				src: ["public/libs/angular-route/angular-route.min.js",
+							"public/libs/angular-bootstrap/ui-bootstrap.min.js",
+							"public/libs/angular-sanitize/angular-sanitize.min.js",
+							"public/libs/angulartics/dist/angulartics.min.js",
+							"public/libs/angulartics/dist/angulartics-segmentio.min.js"
+							],
+				dest: 'public/dist/vendor.js'
 			}
 		},
 		uglify: {
@@ -23,25 +26,35 @@ module.exports = function (grunt){
 				}
 			}
 		},
-		less: {
-			development: {
-				options: {
-					paths: ['public/css']
-				},
-				files:{
-					'public/css/main.css': 'public/css/styles.less'
-				}
-			}
-		},
+		cssmin: {
+			target: {
+				src: ['public/css/*.css'],
+      			dest: 'public/dist/main.min.css',
+     		}
+     	},
+		// less: {
+		// 	development: {
+		// 		options: {
+		// 			paths: ['public/css']
+		// 		},
+		// 		files:{
+		// 			'public/css/main.css': 'public/css/styles.less'
+		// 		}
+		// 	}
+		// },
 		watch: {
-			css: {
-				files: ['public/css/*.less'],
-				tasks: ['less']
-			},
+			// less: {
+			// 	files: ['public/css/*.less'],
+			// 	tasks: ['less']
+			// },
 			js: {
 				files: ['public/modules/**/*.js'],
 				tasks: ['concat', 'uglify']
-			}
+			},
+			css: {
+				files: ['public/css/*.css'],
+				tasks: ['cssmin']
+			},
 		}
 	});
 
@@ -49,6 +62,7 @@ module.exports = function (grunt){
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-	grunt.registerTask('default', ["concat","less", "watch", "uglify"]);
+	grunt.registerTask('default', ["concat", "watch", "uglify", "cssmin"]);
 };
