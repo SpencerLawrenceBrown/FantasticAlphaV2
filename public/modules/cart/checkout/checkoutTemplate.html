@@ -13,11 +13,14 @@
 			<p id = "checkout_close_btn" ng-click = "checkout.closeCheckout()" analytics-on="click" anayltics-event="Clicked Checkout Close">X</p>
 		</div>
 		<div id = 'checkout_form_content'>
-			<p id = "tagline">This campaign does not exist...yet.</p> 
-			<p id = "cart_details">When you close this popup, we will add your cart value to the progress bar.</p>
-			<p id = "thanks">Thank you for helping us test our site.</p>
-			<p id = "signup">Sign up for future updates </p>
+			<p id = "tagline">Thank you for your interest!</p> 
+			<p id = "sub">We'd love to process your order but this campaign is just a test.</p> 
+			<p id = "explain"><span id="logo_text"><em>Fan</em>tastic</span> is still in development and your actions help prove that there is an audience for pre-ordering these awesome perks and exclusive content.</p>
 		</div>
+		<div id = 'checkout_form_follow'>
+			<p>When you close this pop-up, your intended contribution will be added to the rewards progress bar.</p>
+		</div>
+		<p id = "signup">Sign up to be notified when you can <em>actually</em> buy the exclusive content and perks you want!</p>
 		<input id = "signup_email" type = "email" name = "email" placeholder = "fan@email.com" ng-model = "email">
 		<span class = "signup_msg" id = "signup_success" ng-show = "checkout.auth.loggedin"> Added Successfully! </span>
 		<span class = "signup_msg" id = "signup_error" ng-show = "checkout.auth.loginMSG"> Submission Error! </span>

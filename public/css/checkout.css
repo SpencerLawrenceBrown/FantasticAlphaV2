@@ -40,8 +40,8 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 #checkout_form{
 	position: absolute;
 	top: 25%;
-	width: 270px;
-	height: 350px;
+	width: 370px;
+	height: 600px;
 	display: block;
 	right: 0;
 	left: 0;
@@ -80,11 +80,12 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	position: relative;
 	z-index: 2;
 	width: 100%;
-	height: 160px;
+	height: 250px;
 	top: -12px;
 	padding-top: 7px;
 	background-color: #efefef;
 	border-top: 1px solid #AFAFAF;
+	border-bottom: 1px solid #AFAFAF;
 	overflow: hidden;
 }
 
@@ -97,22 +98,57 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 
 #checkout_form_content p#tagline{
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 1.8em;
 	text-align: center;
+	margin-bottom: 3px;
+	color: #ed2852;
 }
 
-#checkout_form_content p#cart_details{
-	top: 6px;
+#checkout_form_content p#sub{
+	font-size: 1.1em;
+	text-align: center;
+	margin-bottom: 10px;
+	font-style: italic;
+}
+
+#checkout_form_content p#explain{
+	position: relative;
+	top: 15px;
+	font-size: 1.28em;
+	text-align: center;
+	font-weight: 600;
+}
+
+#checkout_form_content p#explain #logo_text{
+	color: #ed2852;
 }
 
 #checkout_form_content p#thanks{
-	top: 20px;
 	text-align: center;
 }
 
-#checkout_form_content p#signup{
-	top: 52px;
+#checkout_form p#signup{
 	text-align: center;
+	padding-left: 2px;
+	padding-right: 2px;
+	font-size: 0.95em;
+	top: 35px;
+	position: relative;
+	font-weight: bold;
+}
+
+#checkout_form_follow{
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	height: 60px;
+	padding-top: 7px;
+	background-color: #efefef;
+	border-bottom: 1px solid #AFAFAF;
+	overflow: hidden;
+	text-align: center;
+	font-size: 1.0em;
+	top: -9px;
 }
 
 /*#checkout_form_content input{
@@ -139,6 +175,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	display: block;
 	margin: auto;
 	width: 150px;
+	top: 45px;
 }
 
 #checkout_close_btn{
@@ -178,7 +215,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	margin: auto;
 	height: 35px;
 	width: 230px;
-	top: -5px;
+	top: 35px;
 	padding-left: 5px;
 	outline: none;
 	margin-bottom: 5px;
@@ -187,16 +224,16 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 .signup_msg{
 	position: absolute;
 	z-index: 2;
-	top: 198px;
-	font-size: 20px;
+	top: 408px;
+	font-size: 1.5em;
 }
 
 .signup_msg#signup_error{
 	color: red;
-	left: 57px;
+	left: 107px;
 }
 
 .signup_msg#signup_success{
 	color: green;
-	left: 45px;
+	left: 95px;
 }
