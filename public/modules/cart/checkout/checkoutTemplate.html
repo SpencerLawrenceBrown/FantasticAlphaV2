@@ -15,15 +15,19 @@
 		<div id = 'checkout_form_content'>
 			<p id = "tagline">Thank you for your interest!</p> 
 			<p id = "sub">We'd love to process your order but this campaign is just a test.</p> 
-			<p id = "explain"><span id="logo_text"><em>Fan</em>tastic</span> is still in development and your actions help prove that there is an audience for pre-ordering these awesome perks and exclusive content.</p>
+			<p id = "explain"><span id="logo_text"><em>Fan</em>tastic</span> is still in development and your actions help us show producers that they should offer this awesome content. So show your support, share online, and spread the word!</p>
 		</div>
-		<div id = 'checkout_form_follow'>
-			<p>When you close this pop-up, your intended contribution will be added to the rewards progress bar.</p>
-		</div>
-		<p id = "signup">Sign up to be notified when you can <em>actually</em> buy the exclusive content and perks you want!</p>
+		<p id ="feedback">Thoughts?</p>
+		<button id = 'feedback_btn' class = 'btn'  analytics-on="click" anayltics-event="Clicked Feedback">Give Us Feedback</button>
+		<p id = "signup">Sign up to be stay updated on <span id="logo_text"><em>Fan</em>tastic</span>'s progress and when you can <em>actually</em> pre-order the content you love!</p>
 		<input id = "signup_email" type = "email" name = "email" placeholder = "fan@email.com" ng-model = "email">
-		<span class = "signup_msg" id = "signup_success" ng-show = "checkout.auth.loggedin"> Added Successfully! </span>
-		<span class = "signup_msg" id = "signup_error" ng-show = "checkout.auth.loginMSG"> Submission Error! </span>
-		<button id = 'checkout_pay_btn' class = 'btn btn-success' ng-click="checkout.addEmail()" analytics-on="click" anayltics-event="Clicked Join Mailing List">Join Mailing List</button>
+		<button id = 'checkout_pay_btn' class = 'btn btn-success' ng-click="checkout.addEmail()" analytics-on="click" anayltics-event="Clicked Join Mailing List">
+		<span ng-hide = "checkout.auth.loggedin || checkout.auth.loginMSG"> Join Mailing List</span>
+		<span ng-show = "checkout.auth.loggedin && !checkout.auth.loginMSG"> Add Successful!</span>
+		<span ng-show = "checkout.auth.loginMSG && !checkout.auth.loggedin"> Submission Error! </span>
+		</button>
+		<div id = 'checkout_form_follow'>
+			<p>Close this popup and watch your contribution added to the campaign!</p>
+		</div>
 	</div>
 </div>

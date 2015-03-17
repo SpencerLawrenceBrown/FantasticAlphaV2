@@ -80,6 +80,12 @@ angular.module('BarDRCT', ['BarCTRL']).directive('fnBar', function(){
 		            scrollTop: $('#checkout_div').offset().top - 50
 		         }, 600);
 			});
+			$('button.add_to_cart').click(function(){
+			$('html,body').animate({
+		            scrollTop: $('#reward_bar_div').offset().top - 50
+		         }, 200);
+			$('html,body').clearQueue();
+			});
 		}
 	};
 });

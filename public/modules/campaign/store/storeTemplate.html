@@ -30,7 +30,7 @@
 			<p ng-repeat = "reward in store.model.current_highlight.contains.reward_related">
 				+ {{reward}}
 			</p>
-			<button class = 'btn btn-default' ng-click = "store.addItem('getCurrent')" analytics-on="click" analytics-event="Added Level {{store.model.current_highlight.level}} to Cart">{{store.model.cart_btn_text}}</button>
+			<button class = 'btn btn-default add_to_cart' ng-click = "store.addItem('getCurrent')" analytics-on="click" analytics-event="Added Level {{store.model.current_highlight.level}} to Cart">{{store.model.cart_btn_text}}</button>
 			<p id = "added_to_cart" ng-show = "store.model.added_display">Item Added to Cart</p>
 		</div>
 	</div>

@@ -40,8 +40,8 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 #checkout_form{
 	position: absolute;
 	top: 25%;
-	width: 370px;
-	height: 600px;
+	width: 480px;
+	height: 650px;
 	display: block;
 	right: 0;
 	left: 0;
@@ -97,31 +97,31 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 }
 
 #checkout_form_content p#tagline{
-	font-weight: bold;
-	font-size: 1.8em;
+	font-style: italic;
+	font-size: 1.5em;
 	text-align: center;
 	margin-bottom: 3px;
 	color: #ed2852;
 }
 
 #checkout_form_content p#sub{
-	font-size: 1.1em;
+	font-size: 1.6em;
 	text-align: center;
 	margin-bottom: 10px;
-	font-style: italic;
+	font-weight: bold;
 }
 
 #checkout_form_content p#explain{
 	position: relative;
 	top: 15px;
-	font-size: 1.28em;
+	font-size: 1.27em;
 	text-align: center;
-	font-weight: 600;
 }
 
-#checkout_form_content p#explain #logo_text{
+p #logo_text{
 	color: #ed2852;
 }
+
 
 #checkout_form_content p#thanks{
 	text-align: center;
@@ -129,10 +129,19 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 
 #checkout_form p#signup{
 	text-align: center;
-	padding-left: 2px;
-	padding-right: 2px;
+	padding-left: 20px;
+	padding-right: 20px;
 	font-size: 0.95em;
-	top: 35px;
+	top: 20px;
+	position: relative;
+	font-weight: bold;
+}
+
+
+#checkout_form p#feedback{
+	text-align: center;
+	font-size: 0.95em;
+	top: 0px;
 	position: relative;
 	font-weight: bold;
 }
@@ -144,11 +153,14 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	height: 60px;
 	padding-top: 7px;
 	background-color: #efefef;
-	border-bottom: 1px solid #AFAFAF;
+	border-top: 1px solid #AFAFAF;
 	overflow: hidden;
 	text-align: center;
-	font-size: 1.0em;
-	top: -9px;
+	font-size: 1.2em;
+	top: 50px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-weight: bold;
 }
 
 /*#checkout_form_content input{
@@ -170,12 +182,26 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	height: 30px;
 }*/
 
+#feedback_btn{
+	position: relative;
+	display: block;
+	margin: auto;
+	width: 150px;
+	background-color: #ed2852;
+	color: white;
+	font-size: 1.0em;
+}
+
+#feedback_btn:hover{
+	background-color: #991A35;
+}
+
 #checkout_pay_btn{
 	position: relative;
 	display: block;
 	margin: auto;
 	width: 150px;
-	top: 45px;
+	top: 30px;
 }
 
 #checkout_close_btn{
@@ -215,7 +241,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	margin: auto;
 	height: 35px;
 	width: 230px;
-	top: 35px;
+	top: 20px;
 	padding-left: 5px;
 	outline: none;
 	margin-bottom: 5px;

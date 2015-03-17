@@ -143,6 +143,9 @@ APIrouter.post('/new-campaign', function(req, res){
 	campaign.project = req.body.project;
 	campaign.fans = req.body.fans;
 	campaign.campaign_number = req.body.number;
+	campaign.release_date = req.body.release;
+	campaign.tagline = req.body.tagline;
+	campaign.producer = req.body.producer;
 
 	//Initialize with basic info
 	//Info
