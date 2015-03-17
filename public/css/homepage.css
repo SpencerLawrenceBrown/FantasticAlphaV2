@@ -97,12 +97,18 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 
 #homepage #homepage_project{
 	position: relative;
-	height: 600px;
 	width: 100%;
 }
 
+#homepage_project #wrapper{
+	position: relative;
+	margin: auto;
+	width: 1030px;
+	height: auto;
+	overflow: hidden;
+}
+
 #homepage_project .project_portal{
-	display: inline-block;
 	position: relative; 
 	width: 300px;
 	height: 400px;
@@ -111,10 +117,21 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	border-color: gray;
 	border-radius: 10px;
 	overflow: hidden;
-	margin-right: 30px;
+	margin-bottom: 45px;
+	margin-top: 20px;
 }
 
-#homepage_project #homepage_category{
+.project_portal.middle_pro{
+	margin-left: 65px;
+	margin-right: 65px;
+}
+
+.project_portal.middle_project{
+	margin-left: 65px;
+	margin-right: 65px;
+}
+
+#homepage_category{
 	position: relative;
 	text-align: center;
 }

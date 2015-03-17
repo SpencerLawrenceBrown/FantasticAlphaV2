@@ -6,23 +6,24 @@
 		<div class="banner_line"><span class="banner_number">2</span> Receive exclusive perks for ordering early</div>
 		<div class="banner_line"><span class="banner_number">3</span> Unlock extra content as a fanbase</div>
 	</div>
+	<h2 id="homepage_category">Featured Projects</h2>
 	<div id="homepage_project">
-		<h2 id="homepage_category">Featured Projects</h2>
-
-		<div class="project_portal" ng-repeat = 'campaign in homepage.model.allCampaigns'>
-		<a href="#/campaign/{{campaign._id}}">
-			<div class="project_thumb">
-				<img ng-src = 'assets/images/{{campaign.info[0].video_data.image}}_thumb.jpg'>
+		<div id="wrapper">
+			<div class="project_portal" ng-repeat = 'campaign in homepage.model.allCampaigns' ng-class="{ 'middle_pro': $index == 1, 'middle_project': $index == 4}">
+			<a href="#/campaign/{{campaign._id}}">
+				<div class="project_thumb">
+					<img ng-src = 'assets/images/{{campaign.info[0].video_data.image}}_thumb.jpg'>
+				</div>
+				<div class="project_info">
+					<h3 class="project_title">{{campaign.project}}</h3>
+					<h5 class="project_producer">{{campaign.producer}}</h5>
+					<p class="project_description">{{campaign.tagline}}</p>
+					<h5 class="project_release">Release date: <em>{{campaign.release_date}}</em></h5>
+					<div class="project_data project_funded">Fan Contributions:<div class="project_number">{{campaign.progress_bar[0].paid | currency:undefined:0}}</div></div>
+					<div class="project_data project_fans">Fans: <div class="project_number">{{campaign.fans}}</div></div>
+				</div>
+			</a>
 			</div>
-			<div class="project_info">
-				<h3 class="project_title">{{campaign.project}}</h3>
-				<h5 class="project_producer">{{campaign.producer}}</h5>
-				<p class="project_description">{{campaign.tagline}}</p>
-				<h5 class="project_release">Release date: <em>{{campaign.release_date}}</em></h5>
-				<div class="project_data project_funded">Funds Contributed:<div class="project_number">{{campaign.progress_bar[0].paid | currency:undefined:0}}</div></div>
-				<div class="project_data project_fans">Fans: <div class="project_number">{{campaign.fans}}</div></div>
-			</div>
-		</a>
 		</div>
 	</div>
 </div>
