@@ -237,6 +237,7 @@ APIrouter.put('/add-rewards', function(req, res){
 			reward.name = deJSONrewards[i].name;
 			reward.unlock_amount = deJSONrewards[i].unlock_amount;
 			reward.progress = deJSONrewards[i].progress;
+			reward.description = deJSONrewards[i].description;
 			campaign.progress_bar[0]["rewards"].push(reward);
 		};
 		// save the campaign and check for errors
@@ -385,7 +386,7 @@ Frontrouter.post('/register', passport.authenticate('local-signup'), function(re
 			from:     'no-reply@toofantastic.com',
 			fromname: 'Fantastic',
 			subject:  'Thank You for Signing Up!',
-			html: "<h2>Hello!</h2><p>Thank you for using Fantastic and signing up for our newsletter. We are quickly building our alpha and are in discussion with the creators of your favorite entertainment. We will keep you updated as we continue to grow. <br><br>In the meantime, we would love to hear your feedback: </p><p>Best, <br><em>Spencer Brown <br>Co-Founder, Fantastic</p>"
+			html: "<h2>Hello!</h2><p>Thank you for using Fantastic and signing up for our newsletter. We are quickly building our alpha and are in discussion with the creators of your favorite entertainment. We will keep you updated as we continue to grow. <br><br>In the meantime, we would love to hear your <a href='https://bostonu.qualtrics.com/SE/?SID=SV_9mJixKq69MAEwLP'>feedback</a>.</p><p>Best, <br><em>Spencer Brown <br>Co-Founder, Fantastic</p>"
 		}, function(err, json) {
   			if (err) { return console.error(err); }
  			console.log(json);

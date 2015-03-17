@@ -17,8 +17,8 @@
 		<div fn-repeat-completion-watcher fn-context = 'Rewards' class = 'reward_box unlocked' ng-repeat = 'reward in bar.rewards' ng-style = "{'left' : reward.unlock_value}">
 			<div class = 'marker' ng-class = '{locked : bar.actual.campaignPaid < reward.unlock_amount, unlocked : bar.actual.campaignPaid >= reward.unlock_amount}'></div>
 			<div class = 'reward_content'>
-				<!-- <div class ="glyphicon glyphicon-lock reward_text lock" ng-show = "reward.progress === 'locked'"></div> -->
-				<div class = "reward_text unlocked"  ng-class = '{current :  reward.progress === "current"}'>{{::reward.name}}</div>
+				<div class ="glyphicon glyphicon-lock reward_text lock" ng-show = "reward.progress === 'locked'"></div>
+				<div class = "reward_text"  ng-class = '{unlocked: reward.progress == "unlocked", current :  reward.progress === "current"}' ng-hide = "reward.progress === 'locked'">{{::reward.name}}</div>
 				<div class = "threshold_text" ng-show ="reward.progress === 'unlocked'">Unlocked at ${{::reward.unlock_amount}}!</div>
 				<div class = "threshold_text" ng-show ="reward.progress != 'unlocked'">Unlocked at ${{::reward.unlock_amount}}</div>
 				<div class = "lock_text" ng-show ="reward.progress === 'locked'">Reward unveiled <br>upon funding of previous</div>

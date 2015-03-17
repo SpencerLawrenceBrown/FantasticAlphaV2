@@ -273,6 +273,7 @@ angular.module('CampaignCTRL', ['CampaignFCTR', 'BarFCTR']).controller('Campaign
 	this.bar = BarFactory;
 	this.video = CampaignFactory.video;
 	this.tabs = CampaignFactory.tabs;
+	this.project = CampaignFactory.campaign;
 	$scope.url = "";
 
 	//Reload the inventory
@@ -283,6 +284,7 @@ angular.module('CampaignCTRL', ['CampaignFCTR', 'BarFCTR']).controller('Campaign
 	CampaignFactory.
 		loadCampaign().
 		then(function(){
+			this.project = CampaignFactory.campaign;
 			this.video = CampaignFactory.video;
 			this.tabs = CampaignFactory.tabs;
 			$scope.url = CampaignFactory.video.url;
@@ -314,9 +316,11 @@ Basically just loads all the campaign data from the server.
 angular.module('CampaignFCTR', []).factory('CampaignFactory', ['$routeParams', '$http', '$sce', function($routeParams, $http, $sce){
 	//Model
 	var CampaignFactory = {
+		campaign:{
+			producer: "",
+			fans: 0
+		},
 		video:{
-			project: "",
-			fans: 0,
 			url:{},
 			id: "",
 			image: ""
@@ -333,17 +337,15 @@ angular.module('CampaignFCTR', []).factory('CampaignFactory', ['$routeParams', '
 			method: "GET",
 			url: urlString,
 		}).success(function(data){
-			console.log(data.project);
+			CampaignFactory.campaign.producer = data.producer;
+			CampaignFactory.campaign.fans = data.fans;
+			CampaignFactory.campaign.project = data.project;
 			//Sets the video as a trusted resource so that iframe will play. Also adds different small controls to change apperance
 			CampaignFactory.video.url = $sce.trustAsResourceUrl(data.info[0].video_data.video+ "?enablejsapi=1&modestbranding=1&autohide=1&showinfo=0");
 			//Set the path for the campaign image
 			CampaignFactory.video.image = "assets/images/" + data.info[0].video_data.image + ".jpg";
 			//Sets the tabs data
 			CampaignFactory.tabs = data.info[0].tabs;
-			//Set the campaign name
-			CampaignFactory.video.project = data.project;
-			//Set the fan numbers
-			CampaignFactory.video.fans = data.fans;
 			//Always start with the update tab open
 			CampaignFactory.tabs.active = "update";
 		});

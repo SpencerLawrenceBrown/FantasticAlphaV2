@@ -124,7 +124,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 /*Below bar content */
 .reward_box .reward_content{
 	position: absolute;
-	width: 190px;
+	width: 180px;
 	top: 92px;
 	left: -57%;
 	

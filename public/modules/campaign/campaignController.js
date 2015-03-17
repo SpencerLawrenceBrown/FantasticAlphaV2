@@ -27,6 +27,7 @@ angular.module('CampaignCTRL', ['CampaignFCTR', 'BarFCTR']).controller('Campaign
 	this.bar = BarFactory;
 	this.video = CampaignFactory.video;
 	this.tabs = CampaignFactory.tabs;
+	this.project = CampaignFactory.campaign;
 	$scope.url = "";
 
 	//Reload the inventory
@@ -37,6 +38,7 @@ angular.module('CampaignCTRL', ['CampaignFCTR', 'BarFCTR']).controller('Campaign
 	CampaignFactory.
 		loadCampaign().
 		then(function(){
+			this.project = CampaignFactory.campaign;
 			this.video = CampaignFactory.video;
 			this.tabs = CampaignFactory.tabs;
 			$scope.url = CampaignFactory.video.url;

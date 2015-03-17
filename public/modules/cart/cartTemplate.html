@@ -28,8 +28,11 @@ This is the html for the cart div
 		<tbody>
 			<tr class = 'cart_item' ng-repeat = 'item in cart.model.contents'>
 				<td class = "item_title">{{::item.info.project}}</td>
-				<td class = "item_package">Level {{::item.info.level}}</td>
-				<td class = "item_details">{{::item.info.contains.unique[0].name}}</td>
+				<td class = "item_package" ng-show = "item.info.level == 0">Level: Fan</td>
+				<td class = "item_package" ng-show = "item.info.level == 1">Level: Rewards</td>
+				<td class = "item_package" ng-show = "item.info.level == 2">Level: Digital</td>
+				<td class = "item_package" ng-show = "item.info.level == 3">Level: Physical</td>
+				<td class = "item_details">{{::item.info.contains.unique[0].name}} + more</td>
 				<td class = "item_quantity">{{item.quantity}}</td>
 				<td class = "item_price">{{item.totalPrice | currency}}</td>
 				<td class = "item_rm" ng-click = 'cart.removeItem(cart.model.contents[$index])' analytics-on="click" analytics-event="Removed {{item.info.project}} Level {{item.info.level}} from Cart">x</td>
@@ -50,6 +53,6 @@ This is the html for the cart div
 		</div>
 	</div>
 		<div id = "checkout_button">
-			<button id = 'checkout_button' class = 'btn btn-primary' ng-disabled = 'cart.model.isEmpty' ng-click = 'cart.openCheckout()' analytics-on="click" analytics-event="Clicked Checkout Button">Checkout</button>
+			<button id = 'checkout_button' class = 'btn btn-primary' ng-disabled = 'cart.model.isEmpty' ng-click = 'cart.openCheckout()' analytics-on="click" analytics-event="Clicked Checkout Button. Contents: {{cart.model}}">Checkout</button>
 		</div>
 </div>

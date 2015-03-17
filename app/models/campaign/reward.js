@@ -10,7 +10,8 @@ var mongoose = require('mongoose'); //Load the mongoose object
 var rewardSchema = mongoose.Schema({
 	name: String,
 	unlock_amount: Number,
-	progress: String
+	progress: String,
+	description: String
 });
 
 //create the model and expose to app

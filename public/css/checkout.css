@@ -39,7 +39,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 
 #checkout_form{
 	position: absolute;
-	top: 25%;
+	top: 100px;
 	width: 480px;
 	height: 650px;
 	display: block;
