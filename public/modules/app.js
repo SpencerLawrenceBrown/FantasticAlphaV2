@@ -45,6 +45,9 @@ app.config(function($routeProvider, $locationProvider, $httpProvider) {
 			controllerAs: 'campaign',
 			templateUrl : 'modules/campaign/campaignTemplate.html'
 		})
+		.when('/faq', {
+			templateUrl: 'modules/works/worksTemplate.html'
+		})
 		//Log-in
 		.when('/login', {
 			controller : 'UserFormController',

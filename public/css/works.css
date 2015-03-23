@@ -1,0 +1,63 @@
+/* ===========================
+Fantastic FAQ
+Copyright 2015
+written by Spencer Brown - spencrbrown@gmail.com
+
+A lot of the css is handled by bootstrap
+These fixes are small customizations
+
+swatch colors
+=============
+ed2852 - 'Fantastic' red
+
+============================== */
+
+/* resets and overrides */
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+img {border: none;}
+
+/* links and font */
+
+a, a:link, a:active, a:visited a:hover {text-decoration: none;}
+
+/* layout */
+
+#works_container{
+	position: relative;
+	top: 100px;
+	height: 900px;
+	width: 870px;
+	margin: 0 auto;
+}
+
+#works_container h1{
+	font-size: 56px;
+}
+
+#works_content{
+	position: relative;
+	height: 650px;
+	background-color: #efefef;
+	padding-left: 15px;
+	padding-top: 10px;
+	border-radius: 7px;
+}
+
+#works_content .main{
+	font-weight: bold;
+}
+
+#works_content .works_text{
+	position: relative;
+	padding-left: 50px;
+	width: 800px;
+}
+
+#works_content .works_title{
+	color: #ed2852;
+}
