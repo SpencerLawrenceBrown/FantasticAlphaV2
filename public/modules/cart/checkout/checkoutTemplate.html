@@ -10,7 +10,7 @@
 		<div id = 'checkout_form_header'>
 			<img class = 'img-circle' src = 'assets/images/cart_logo.png'>
 			<h3><b>Fantastic</b></h3>
-			<p id = "checkout_close_btn" ng-click = "checkout.closeCheckout()" analytics-on="click" anayltics-event="Clicked Checkout Close">X</p>
+			<p id = "checkout_close_btn" ng-click = "checkout.closeCheckout()" analytics-on="click" analytics-category="Checkout" anayltics-event="Clicked Checkout Close">X</p>
 		</div>
 		<div id = 'checkout_form_content'>
 			<p id = "tagline">Thank you for your interest!</p> 
@@ -18,10 +18,10 @@
 			<p id = "explain"><span id="logo_text"><em>Fan</em>tastic</span> is still in development and your actions help us show producers that they should offer this awesome content. So show your support, share online, and spread the word!</p>
 		</div>
 		<p id ="feedback">Thoughts?</p>
-		<a href ="https://bostonu.qualtrics.com/SE/?SID=SV_9mJixKq69MAEwLP" target="_blank"><button id = 'feedback_btn' class = 'btn'  analytics-on="click" anayltics-event="Clicked Feedback">Give Us Feedback</button></a>
+		<a href ="https://bostonu.qualtrics.com/SE/?SID=SV_9mJixKq69MAEwLP" target="_blank"><button id = 'feedback_btn' class = 'btn'  analytics-on="click" analytics-category="Checkout" anayltics-event="Clicked Feedback">Give Us Feedback</button></a>
 		<p id = "signup">Sign up to be stay updated on <span id="logo_text"><em>Fan</em>tastic</span>'s progress and when you can <em>actually</em> pre-order the content you love!</p>
 		<input id = "signup_email" type = "email" name = "email" placeholder = "fan@email.com" ng-model = "email">
-		<button id = 'checkout_pay_btn' class = 'btn btn-success' ng-click="checkout.addEmail()" analytics-on="click" anayltics-event="Clicked Join Mailing List">
+		<button id = 'checkout_pay_btn' class = 'btn btn-success' ng-click="checkout.addEmail()" analytics-on="click" analytics-category="Checkout" anayltics-event="Clicked Join Mailing List">
 		<span ng-hide = "checkout.auth.loggedin || checkout.auth.loginMSG"> Join Mailing List</span>
 		<span ng-show = "checkout.auth.loggedin && !checkout.auth.loginMSG"> Add Successful!</span>
 		<span ng-show = "checkout.auth.loginMSG && !checkout.auth.loggedin"> Submission Error! </span>

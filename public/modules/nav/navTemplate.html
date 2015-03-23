@@ -37,19 +37,19 @@ Contains:
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="/#/" analytics-on="click" anayltics-event="Clicked Home Logo"><img id = 'nav_logo' src = '../../assets/images/nav_logo.png'></a>
+	      <a class="navbar-brand" href="/#/" analytics-on="click" analytics-category="Nav" anayltics-event="Clicked Logo"><img id = 'nav_logo' src = '../../assets/images/nav_logo.png'></a>
 	    </div>
 	    <!-- Nav items that are hidden when collapsed -->
 	    <div class = 'collapse navbar-collapse' id = 'navbar-collapsed'>
 	    <!--Nav items that stick to the left -->
 	    <ul class = 'nav navbar-nav navbar-left'>
 	    	<li id = 'browse_tab' class = 'dropdown'>
-	    		<a id = 'browse_tab_text' href class = 'dropdown-toggle' analytics-on="click" anayltics-event="Clicked Browse Campaign">
+	    		<a id = 'browse_tab_text' href class = 'dropdown-toggle' analytics-on="click" analytics-category="Nav" anayltics-event="Clicked Browse Campaigns">
 	    		Browse Campaigns
 				</a>
 				<ul id = 'browse_menu' class="dropdown-menu">
 	       			<li class = 'browse_item' ng-repeat = 'campaign in nav.campaigns'>
-     					 <a ng-href = '#/campaign/{{campaign._id}}'>{{campaign.project}}</a>
+     					 <a ng-href = '#/campaign/{{campaign._id}}' analytics-category="Nav" analytics-event="Clicked Project Link" analytics-label="{{campaign.project}}">{{campaign.project}}</a>
     				</li>
 	 			</ul>
 			</li>

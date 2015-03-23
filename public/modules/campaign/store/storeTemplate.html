@@ -8,8 +8,8 @@
 		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 1"> Level: Rewards </h1>
 		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 2"> Level: Digital </h1>
 		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 3"> Level: Physical </h1>
-		<h3 class = "detail_title">{{store.model.current_highlight.description}} </h3>
-		<div class = 'detail_component' ng-repeat="component in store.model.current_highlight.contains.unique" analytics-on="click" analytics-event="Clicked Level {{store.model.current_highlight.level}}, Component {{component.name}}">
+		<h3 class = "detail_title" analytics-on="hover" analytics-event="Hovered detail_title" analytics-category = "Store-Detail" analytics-label="{{campaign.project.project}}, Level {{store.model.current_highlight.level}}">{{store.model.current_highlight.description}} </h3>
+		<div class = 'detail_component' ng-repeat="component in store.model.current_highlight.contains.unique" analytics-on="click" analytics-event="Clicked Component Bubble"  analytics-label="{{campaign.project.project}}, Level {{store.model.current_highlight.level}}, Component {{component.name}}" analytics-categpry="Store-Detail">
 			<h4 class = "component_title">{{component.name}}</h4>
 			<p class = "component_des">{{component.description}}</p>
 			<p class = "component_type"> This is a {{component.type}} item.</p>
@@ -30,14 +30,14 @@
 			<p ng-repeat = "reward in store.model.current_highlight.contains.reward_related">
 				+ {{reward}}
 			</p>
-			<button class = 'btn btn-default add_to_cart' ng-click = "store.addItem('getCurrent')" analytics-on="click" analytics-event="Added Level {{store.model.current_highlight.level}} to Cart">{{store.model.cart_btn_text}}</button>
+			<button class = 'btn btn-default add_to_cart' ng-click = "store.addItem('getCurrent')" analytics-on="click" analytics-event="Added Item To Cart" analytics-category="Store-Detail" analytics-label="{{campaign.project.project}}, Level {{store.model.current_highlight.level}}">{{store.model.cart_btn_text}}</button>
 			<p id = "added_to_cart" ng-show = "store.model.added_display">Item Added to Cart</p>
 		</div>
 	</div>
 	<!-- Main store component -->
 	<h3 id='incentive_header'> Membership Levels </h3>
 	<div id = 'incentive_options'>
-		<div class = 'incentive_box level_{{::incentive.level}}' ng-repeat = 'incentive in store.inventory' ng-class = "{selected : store.model.current_highlight == incentive}" ng-click = 'store.setCurrent($index)' analytics-on="click" analytics-event="Selected Level {{incentive.level}}">
+		<div class = 'incentive_box level_{{::incentive.level}}' ng-repeat = 'incentive in store.inventory' ng-class = "{selected : store.model.current_highlight == incentive}" ng-click = 'store.setCurrent($index)' analytics-on="click" analytics-event="Click Level Bubble" analytics-category="Store-Main" analytics-label="{{campaign.project.project}}, Level {{incentive.level}}">
 			<div class = 'incentive_title title_background'>
 				<p class = "title_text" ng-show = "incentive.level == 0">Level: Fan</p>
 				<p class = "title_text" ng-show = "incentive.level == 1">Level: Rewards</p>

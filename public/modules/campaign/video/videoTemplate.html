@@ -5,7 +5,7 @@
 		<iframe class = 'visual_element' id = 'video_player' width="840" height="473" ng-src= "{{url}}" allowfullscreen>
 		</iframe>
 		<img  class = "visual_element video_poster" ng-src = '{{campaign.video.image}}'>
-		<img id = "video_overlay" class = "visual_element video_poster" src = '/assets/images/play.png'>
+		<img id = "video_overlay" class = "visual_element video_poster" src = '/assets/images/play.png' analytics-on="click" analytics-event="Clicked Play" analytics-category="Video" analytics-label="{{campaign.project.project}}">
 	</div>
 	<div id = "campaign_info">
 		{{campaign.rewards.length}}
@@ -31,15 +31,15 @@
 					<div class = "progress_number">{{campaign.bar.remaining | currency:undefined:0}}</div>
 				</div>
 				<div class = "snapshot_figure_right" id = "campaign_fans">		<div>Fans Joined:</div>	
-					<div class = "progress_number">{{campaign.project.fans}}</div>
+					<div class = "progress_number">{{campaign.project.fans | number }}</div>
 				</div>
 			</div> 
 			<div id = 'reward_highlight'>
 				<h2 id = 'reward_header'>Current Reward:</h2>
 				<div id = 'reward_title'>{{campaign.bar.current_reward.name}}</div>
 				<div id = 'reward_description'>{{campaign.bar.current_reward.description}}</div>
-				<button ng-show="campaign.bar.actual.campaignCart == 0" id = "join_fanbase" class = 'bar_button btn btn-default' analytics-on="click" analytics-event="Clicked fanbase button" >Join This Fanbase</button>
-				<button  ng-show="campaign.bar.actual.campaignCart > 0"id = "checkout_scroll" class = 'bar_button btn btn-default' analytics-on="click" analytics-event="Clicked fanbase button" >Go to Cart</button>
+				<button ng-show="campaign.bar.actual.campaignCart == 0" id = "join_fanbase" class = 'bar_button btn btn-default' analytics-on="click" analytics-event="Clicked Fanbase Button" analytics-category="Store-Button" analytics-label = "{{campaign.project.project}}">Join This Fanbase</button>
+				<button  ng-show="campaign.bar.actual.campaignCart > 0"id = "checkout_scroll" class = 'bar_button btn btn-default' analytics-on="click" analytics-event="Clicked Go To Cart Button" analytics-category="Store-Button" analytics-label = "{{campaign.project.project}}">Go to Cart</button>
 			</div>
 		</div>
 	</div>
