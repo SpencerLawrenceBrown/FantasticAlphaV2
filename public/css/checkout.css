@@ -39,9 +39,9 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 
 #checkout_form{
 	position: absolute;
-	top: 100px;
+	top: 95px;
 	width: 480px;
-	height: 650px;
+	height: 600px;
 	display: block;
 	right: 0;
 	left: 0;
@@ -80,7 +80,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	position: relative;
 	z-index: 2;
 	width: 100%;
-	height: 250px;
+	height: 200px;
 	top: -12px;
 	padding-top: 7px;
 	background-color: #efefef;
@@ -114,7 +114,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 #checkout_form_content p#explain{
 	position: relative;
 	top: 15px;
-	font-size: 1.27em;
+	font-size: 1.1em;
 	text-align: center;
 }
 
@@ -210,6 +210,7 @@ p #logo_text{
 	left: 7px;
 	cursor: pointer;
 	color: gray;
+	font-size: 1.5em;
 }
 
 /*#checkout_items_number{
