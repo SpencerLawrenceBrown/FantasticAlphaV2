@@ -53,6 +53,6 @@ This is the html for the cart div
 		</div>
 	</div>
 		<div id = "checkout_button">
-			<button id = 'checkout_button' class = 'btn btn-primary' ng-disabled = 'cart.model.isEmpty' ng-click = 'cart.openCheckout()' analytics-on="click" analytics-category="Cart" analytics-event="Clicked Checkout Button" analytics-label="Cart Contents: {{cart.model}}">Checkout</button>
+			<button id = 'checkout_button' class = 'btn btn-primary' ng-disabled = 'cart.model.isEmpty' ng-click = 'cart.openCheckout()' analytics-on="click" analytics-category="Cart" analytics-event="Clicked Checkout Button" analytics-label="Cart Contents: {{cart.model}}" analytics-value="{{cart.model.totalPrice}}">Checkout</button>
 		</div>
 </div>
