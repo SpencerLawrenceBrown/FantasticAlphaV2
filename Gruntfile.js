@@ -29,24 +29,28 @@ module.exports = function (grunt){
 		cssmin: {
 			target: {
 				src: ['public/css/*.css'],
-      			dest: 'public/dist/main.min.css',
+      			dest: 'public/dist/main.min.css'
+     		},
+     		mobile: {
+     			src:['public/css/mobile.css'],
+     			dest: 'public/dist/mobile.min.css'
      		}
      	},
-		// less: {
-		// 	development: {
-		// 		options: {
-		// 			paths: ['public/css']
-		// 		},
-		// 		files:{
-		// 			'public/css/main.css': 'public/css/styles.less'
-		// 		}
-		// 	}
-		// },
+		less: {
+			development: {
+				options: {
+					paths: ['public/css/mobile']
+				},
+				files:{
+					'public/css/mobile.css': 'public/css/styles.less'
+				}
+			}
+		},
 		watch: {
-			// less: {
-			// 	files: ['public/css/*.less'],
-			// 	tasks: ['less']
-			// },
+			less: {
+				files: ['public/css/mobile/*.less'],
+				tasks: ['less']
+			},
 			js: {
 				files: ['public/modules/**/*.js'],
 				tasks: ['concat', 'uglify']

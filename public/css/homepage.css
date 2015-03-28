@@ -245,9 +245,8 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	width: 90px;
 }
 
-@media screen and (max-width: 1180px){
+@media screen and (min-width: 677px) and (max-width: 1180px){
 	#homepage_banner .banner_tag{
 		font-size: 1.2em;
 	}
 } 
-/*

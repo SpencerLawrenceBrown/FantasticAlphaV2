@@ -44,7 +44,8 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 
 #footer{
 	position: relative;
-	width: 100%;
+	min-width: 1090px;
+	max-width: 100%;
 	top: 60px;
 	color: #777;
 	background-color: #424143;
