@@ -17,6 +17,8 @@ Author: Spencer Brown 2015
   #homepage #homepage_banner {
     height: auto;
     border-radius: 0px;
+    margin-top: 0px;
+    border-bottom: 1px solid #ed2852;
   }
   #homepage #homepage_banner #opacity,
   #homepage #homepage_banner #homepage_img {
@@ -68,6 +70,7 @@ Author: Spencer Brown 2015
     border-bottom: 1px solid #ed2852;
     -webkit-backface-visibility: hidden;
     position: relative;
+    margin-bottom: 0px;
   }
   #nav_bar .container-fluid {
     padding-right: 0px;
