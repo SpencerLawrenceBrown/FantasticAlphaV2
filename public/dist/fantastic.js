@@ -284,6 +284,8 @@ angular.module('CampaignCTRL', ['CampaignFCTR', 'BarFCTR']).controller('Campaign
 		CampaignFactory.setActiveTab(index);
 	};
 
+	$("meta[name='viewport']").attr('content', 'width=1100px initial-scale=0.3');
+
 	CampaignFactory.
 		loadCampaign().
 		then(function(){
@@ -1484,6 +1486,7 @@ This controller manages the homepage and connects to the campaign meta factory
 angular.module('HomePageCTRL', ['MetaFCTR']).controller('HomepageController', [ 'CampaignsMetaFactory', function(MetaFactory){
 	//Model connection
 	this.model = MetaFactory;
+	$("meta[name='viewport']").attr('content', 'width=device-width, initial-scale=1');
 }]);
 /*
 Campaigns Meta Factory

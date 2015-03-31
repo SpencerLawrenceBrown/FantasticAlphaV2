@@ -1,0 +1,59 @@
+/*
+Fantastic Cart Styles - Mobile
+Author: Spencer Brown 2015
+*/
+
+@media screen and (max-width: 677px){
+
+	#checkout_div{
+		height: auto;
+
+		#credit_card_print{
+			height: 160px;
+			text-align: justify;
+			width: 300px;
+			font-size: .65em;
+		}
+
+		#checkout_box{
+			width: 95%;
+			top: 40px;
+
+			#payment_header{
+				height: 50px;
+				font-size: 1.1em;
+				
+				p{
+					top: -25px;
+				}
+			}
+
+			#cart_div{
+				table{
+					thead{
+						font-size: 0.6em;
+					}
+					tbody{
+						font-size: 0.8em;
+
+						.cart_item{
+							padding-top: 4px;
+							td{
+								width: 12px;
+								&.item_title{
+									width: 10px
+								}
+								&.item_price{
+									width: 8px;
+								}
+								&.item_quantity{
+									width: 6px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
