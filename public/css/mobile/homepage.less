@@ -12,31 +12,36 @@ Author: Spencer Brown 2015
 		top: 0px;
 
 		#homepage_banner{
+			position: relative;
 			height: auto;
 			border-radius: 0px;
 			margin-top: 0px;
 			border-bottom: 1px solid #ed2852; 
 
 			#opacity, #homepage_img{
-				display: none
+				display: none;
 			}
 
-			.banner_tag{
-				font-size: 0.85em;
+			.banner_head{
+				position: relative;
+				font-size: 1.5em;
 				padding: 10px;
 				margin-bottom: 10px;
 			}
 
-			#banner_left{
+			#banner_sub{
 				position: relative;
 				left: 0px;
 				top: 0px;
 				padding-left: 7px;
 				padding-right: 7px;
+				font-size: 0.65em;
+				margin-bottom: 40px;
 
 				.banner_line{
 					width: 100%;
 					margin-bottom: 20px;
+					color: black;
 
 					.banner_copy{
 						color: black;
@@ -56,9 +61,42 @@ Author: Spencer Brown 2015
 					}
 				}
 			}
+
+			#homepage_signup{
+				position: relative;
+				top: 0px;
+				h4{
+					display: none;
+				}
+				#signup{
+					color: black;
+					font-size: .45em;
+					padding-left: 5px;
+					padding-right: 5px;
+				}
+				#signup_input{
+					width: 100%;
+					text-align: center;
+					margin-bottom: 5px;
+					#signup_email{
+						margin: auto;
+						margin-bottom: 5px;
+						float: none;
+					}
+					#checkout_pay_btn{
+						float: none;
+					}
+				}
+				#signup_small{
+					color: black;
+				}
+			}
 		}
 
 		#homepage_project{
+			width: 100%;
+			min-width: 320px;
+			
 			#wrapper{
 				width: 100%;
 

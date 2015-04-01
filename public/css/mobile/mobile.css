@@ -15,6 +15,7 @@ Author: Spencer Brown 2015
     top: 0px;
   }
   #homepage #homepage_banner {
+    position: relative;
     height: auto;
     border-radius: 0px;
     margin-top: 0px;
@@ -24,29 +25,33 @@ Author: Spencer Brown 2015
   #homepage #homepage_banner #homepage_img {
     display: none;
   }
-  #homepage #homepage_banner .banner_tag {
-    font-size: 0.85em;
+  #homepage #homepage_banner .banner_head {
+    position: relative;
+    font-size: 1.5em;
     padding: 10px;
     margin-bottom: 10px;
   }
-  #homepage #homepage_banner #banner_left {
+  #homepage #homepage_banner #banner_sub {
     position: relative;
     left: 0px;
     top: 0px;
     padding-left: 7px;
     padding-right: 7px;
+    font-size: 0.65em;
+    margin-bottom: 40px;
   }
-  #homepage #homepage_banner #banner_left .banner_line {
+  #homepage #homepage_banner #banner_sub .banner_line {
     width: 100%;
     margin-bottom: 20px;
+    color: black;
   }
-  #homepage #homepage_banner #banner_left .banner_line .banner_copy {
+  #homepage #homepage_banner #banner_sub .banner_line .banner_copy {
     color: black;
     font-size: 0.55em;
     clear: left;
     text-align: center;
   }
-  #homepage #homepage_banner #banner_left .banner_line .banner_number {
+  #homepage #homepage_banner #banner_sub .banner_line .banner_number {
     float: none;
     margin: 0 auto;
     font-size: 0.7em;
@@ -54,6 +59,39 @@ Author: Spencer Brown 2015
     height: 30px;
     padding-left: 8px;
     line-height: 24px;
+  }
+  #homepage #homepage_banner #homepage_signup {
+    position: relative;
+    top: 0px;
+  }
+  #homepage #homepage_banner #homepage_signup h4 {
+    display: none;
+  }
+  #homepage #homepage_banner #homepage_signup #signup {
+    color: black;
+    font-size: .45em;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  #homepage #homepage_banner #homepage_signup #signup_input {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  #homepage #homepage_banner #homepage_signup #signup_input #signup_email {
+    margin: auto;
+    margin-bottom: 5px;
+    float: none;
+  }
+  #homepage #homepage_banner #homepage_signup #signup_input #checkout_pay_btn {
+    float: none;
+  }
+  #homepage #homepage_banner #homepage_signup #signup_small {
+    color: black;
+  }
+  #homepage #homepage_project {
+    width: 100%;
+    min-width: 320px;
   }
   #homepage #homepage_project #wrapper {
     width: 100%;
@@ -76,61 +114,72 @@ Author: Spencer Brown 2015
     -webkit-backface-visibility: hidden;
     position: relative;
     margin-bottom: 0px;
+    height: auto;
   }
   #nav_bar .container-fluid {
     padding-right: 0px;
     padding-left: 0px;
   }
-  #nav_bar .container-fluid .navbar-header {
+  #nav_bar .container-fluid #nav_wrapper {
+    width: 100%;
+  }
+  #nav_bar .container-fluid #logo_tab {
     position: relative;
     height: 40px;
     width: 100%;
     margin-left: 0px;
+    left: 0px;
+    padding-top: 5px;
   }
-  #nav_bar .container-fluid .navbar-header a {
+  #nav_bar .container-fluid #logo_tab a {
     display: block;
     margin: 0 auto;
     padding: 0;
     float: none;
     text-align: center;
   }
-  #nav_bar .container-fluid .navbar-header a img {
+  #nav_bar .container-fluid #logo_tab a img {
     margin: 0;
-    top: -3px;
+    top: 0px;
     left: 0;
-    height: 45px;
+    height: 37px;
   }
-  #nav_bar .container-fluid .navbar-nav {
+  #nav_bar .container-fluid #nav_items {
     margin: 0;
   }
-  #nav_bar .container-fluid .navbar-left li {
+  #nav_bar .container-fluid #nav_items li {
     float: left;
     width: 50%;
+    font-size: 0.9em;
   }
-  #nav_bar .container-fluid .navbar-left li p {
+  #nav_bar .container-fluid #nav_items li p {
     margin: auto;
     text-align: center;
-    font-size: 0.9em;
+    font-size: 0.92em;
     width: 140px;
+    line-height: 20px;
   }
-  #nav_bar .container-fluid .navbar-left li#browse_tab p {
+  #nav_bar .container-fluid #nav_items li#browse_tab {
+    margin-right: 0px;
+  }
+  #nav_bar .container-fluid #nav_items li#browse_tab p {
     background-image: url("/assets/images/nav_list.png");
     background-repeat: no-repeat;
     background-size: 10px;
-    background-position-x: 0px;
+    background-position-x: -2px;
     background-position-y: 50%;
   }
-  #nav_bar .container-fluid .navbar-left li#browse_tab #browse_menu li {
+  #nav_bar .container-fluid #nav_items li#browse_tab #browse_menu li {
     width: 100%;
     height: 40px;
   }
-  #nav_bar .container-fluid .navbar-left li#browse_tab #browse_menu li a {
+  #nav_bar .container-fluid #nav_items li#browse_tab #browse_menu li a {
     border: none;
     color: white;
     font-size: 1.2em;
     line-height: 26px;
   }
-  #nav_bar .container-fluid .navbar-left li#help_tab a {
+  #nav_bar .container-fluid #nav_items li#help_tab a {
     border: none;
   }
 }
@@ -146,6 +195,13 @@ Author: Spencer Brown 2015
     overflow: hidden;
     background-color: white;
     padding: 0;
+  }
+  #footer {
+    width: 100%;
+    min-width: 320px;
+  }
+  #footer #footer_wrapper {
+    width: 100%;
   }
 }
 /*

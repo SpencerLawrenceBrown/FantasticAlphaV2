@@ -98,11 +98,15 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 #nav_items li a{
 	height: 100%;
 	color: white;
+	background-color: transparent !important;
+}
+
+#nav_items li.disable a{
+	color: gray;
 }
 
 #nav_items li a:hover{
 	color: gray;
-	background-color: none;
 }
 
 
