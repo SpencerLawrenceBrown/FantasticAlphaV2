@@ -28,49 +28,89 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 /* layout */
 
 #nav_bar{
-	background: black;
-	border-bottom: 1px solid #ed2852;
+	background: none;
 	-webkit-backface-visibility: hidden;
 	height: 70px;
+	position: absolute;
+	top: 0px;
+	z-index: 10;
+	width: 100%;
 }
 
 /*Makes the navbar-header touch the left side of the window*/
 #nav_bar .container-fluid{
 	padding-left: 0px;
 	padding-right: 0px;
+	height: 100%;
+}
+
+/*This is hidden on the homepage by the image but shows up on the other pages */
+#nav_bar #background_color{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background-color: black;
+	border-bottom: 2px solid #ed2852;
 }
 
 /*Centers the nav*/
 #nav_bar #nav_wrapper{
 	position: relative;
-	width: 800px;
+	width: 639px;
 	margin: auto;
+	height: 100%;
+	z-index: 5;
 }
 
 #nav_bar #logo_tab{
 	position: absolute;
+	padding-top: 17px;
+	left: 222px;
+	height: 100%;
+	z-index: 5;
 }
 
 #nav_bar #logo_tab img{
 	position: relative;
 	top: 0px;
 	left: 0px;
-	width: 250px;
+	width: 200px;
 }
 
 #nav_bar #nav_items{
 	position: relative;
+	height: 100%;
 }
 
 #nav_items li{
 	display: inline-block;
 	min-width: 160px;
+	font-size: 1.05em;
+	font-family: 'Raleway', sans-serif;
+	height: 100%;
 }
 
 #nav_items li#browse_tab{
-	margin-right: 200px;
+	margin-right: 260px;
 }
 
+#nav_items li a{
+	height: 100%;
+	color: white;
+}
+
+#nav_items li a:hover{
+	color: gray;
+	background-color: none;
+}
+
+
+#nav_items li a p{
+	line-height: 42px;
+	margin-bottom: 0px;
+	text-align: center;
+}
 /*All the nav tabs */
 
 #nav_bar ul li a{
@@ -81,15 +121,6 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 
 #nav_bar ul li a p{
 	margin-bottom: 0px;
-}
-
-#nav_bar ul li.disable a{
-	color: gray;
-}
-
-
-#nav_bar ul li a:hover{
-	color: gray;
 }
 
 /*Add the white line to the left items*/

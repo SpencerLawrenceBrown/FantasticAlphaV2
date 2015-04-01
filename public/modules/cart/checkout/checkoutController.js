@@ -38,7 +38,7 @@ angular.module('CheckoutCTRL', ['CheckoutFCTR', 'CartFCTR', 'AuthFCTR']).control
 	};
 	//Add an email to the mailing list
 	this.addEmail = function(){
-		console.log($scope.email);
+		console.log("Email:" + $scope.email);
 		var formData = {
 			email 		: $scope.email,
 			password 	: "test",

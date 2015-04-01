@@ -29,25 +29,23 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 
 #homepage{
 	position: relative;
-	top: 50px;
-	min-width: 1060px;
-	max-width: 1160px;
+	top: 0px;
+	width: 100%;
 	display: block;
 	margin: auto;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 #homepage #homepage_banner{
 	position: relative;
-	height: 400px;
 	width: 100%;
-	max-width: 1130px;
-	overflow: hidden;
 	text-align: center;
 	font-size: 30px;
 	top: 0px;
 	z-index: 3px;
-	margin-top: 15px;
-	border-radius: 10px;
+	max-height: 650px;
+	overflow: hidden;
 }
 
 #homepage_banner #opacity{
@@ -56,45 +54,41 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	left: 0px;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0,0,0,0.1);
+	background-color: rgba(0,0,0,0.7);
 	z-index: 4;
 }
 
 #homepage_banner #homepage_img{
-	position: absolute;
-	width: 100%;
-	min-height: 365px;
-	left: 0px;
-	text-align: center;
-	font-size: 30px;
-}
-
-#homepage_banner .banner_tag{
 	position: relative;
 	width: 100%;
-	color: #ed2852;
-	font-size: 1.3em;
-	text-align: center;
-	padding-top: 35px;
-	font-weight: bold;
-	margin-bottom: 55px;
-	z-index: 5;
+	top: 0px;
+	left: 0px;
 }
 
-#homepage_banner #banner_left{
+#homepage_banner .banner_head{
 	position: absolute;
-	left: 90px;
-	top: 140px;
+	width: 100%;
+	color: #ed2852;
+	font-size: 1.8em;
+	text-align: center;
+	font-weight: bold;
+	z-index: 5;
+	top: 25%;
+}
+
+#homepage_banner #banner_sub{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 40%;
 	z-index: 5;
 }
 
 #homepage_banner .banner_line{
 	position: relative;
-	width: 600px;
 	color: white;
 	margin: 0 auto;
 	font-size: 0.87em;
-	text-align: left;
 	margin-bottom: 40px;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
@@ -116,10 +110,53 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	font-weight: bold;
 	z-index: 5;
 }
+#homepage_banner #homepage_signup{
+	position: absolute;
+	z-index: 5;
+	top: 75%;
+	width: 100%;
+}
+
+#homepage_signup h4{
+	color: #ed2852;
+	font-size: 1.0em;
+	font-weight: 300;
+}
+
+#homepage_signup #signup{
+	text-align: center;
+	color: white;
+	font-size: 0.5em;
+}
+
+#homepage_signup #signup_input{
+	width: 425px;
+	margin: auto;
+	margin-bottom: 20px;
+}
+
+#signup_input #signup_email{
+	width: 250px;
+	height: 55px;
+	margin-right: 25px;
+	font-size: 0.6em;
+	float: left;
+	top: 0px;
+}
+
+#signup_input #checkout_pay_btn{
+	width: 150px;
+	height: 55px;
+	float: left;
+	top: 0px;
+	border-radius: 0px;
+}
 
 #homepage #homepage_project{
 	position: relative;
-	width: 100%;
+	min-width: 1060px;
+	max-width: 1160px;
+	margin: auto;
 }
 
 #homepage_project #wrapper{

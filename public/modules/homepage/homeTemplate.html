@@ -1,13 +1,27 @@
 <div id = 'homepage' class = "container-fluid">
 	<div id="homepage_banner">
 	<div id="opacity"></div>
-		<img id="homepage_img" src="/assets/images/homepage.jpg">
-		<div class="banner_tag">Get more from the upcoming entertainment that you love</div>
-		<div id = "banner_left">
-			<div class="banner_line"><div class="banner_number">1</div><p class="banner_copy">Pre-order your favorite entertainment</p></div>
+		<img id="homepage_img" src="/assets/images/home.jpg">
+		<div class="banner_head">For The Fans</div>
+		<div id = "banner_sub">
+			<div class="banner_line"><p>Pre-order your Favorite Movies to get Exclusive Rewards and Content</p></div>
+			<!-- <div class="banner_line"><div class="banner_number">1</div><p class="banner_copy">Pre-order your favorite entertainment</p></div>
 			<div class="banner_line"><div class="banner_number">2</div><p class="banner_copy">Receive exclusive perks for ordering early</p></div>
 			<div class="banner_line"><div class="banner_number">3</div><p class="banner_copy">Unlock extra content as a fanbase</p></div>
+			</div> -->
+		</div>
+		<div id="homepage_signup">
+			<h4>Updates</h4>
+			<p id = "signup">Sign up with your email address to receive news and updates about your favorite movies on <em>Fan</em>tastic</p>
+			<div id = "signup_input">
+			<input id = "signup_email" type = "email" name = "email" placeholder = "fan@email.com" ng-model = "email">
+			<button id = 'checkout_pay_btn' class = 'btn btn-success' ng-click="homepage.addEmail()" analytics-on="click" analytics-category="Homepage" anayltics-event="Clicked Join Mailing List">
+			<span ng-hide = "homepage.auth.loggedin || homepage.auth.loginMSG"> Stay Updated! </span>
+			<span ng-show = "homepage.auth.loggedin && !homepage.auth.loginMSG"> Add Successful!</span>
+			<span ng-show = "homepage.auth.loginMSG && !homepage.auth.loggedin"> Submission Error! </span>
+			</button>
 			</div>
+		</div>
 	</div>
 	<h2 id="homepage_category">Upcoming Releases</h2>
 	<div id="homepage_project">
