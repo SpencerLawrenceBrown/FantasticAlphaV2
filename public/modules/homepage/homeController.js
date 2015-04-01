@@ -20,4 +20,6 @@ angular.module('HomePageCTRL', ['MetaFCTR']).controller('HomepageController', [ 
 	//Model connection
 	this.model = MetaFactory;
 	$("meta[name='viewport']").attr('content', 'width=device-width, initial-scale=1');
+
+
 }]);

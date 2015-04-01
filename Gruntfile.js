@@ -32,7 +32,7 @@ module.exports = function (grunt){
       			dest: 'public/dist/main.min.css'
      		},
      		mobile: {
-     			src:['public/css/mobile.css'],
+     			src:['public/css/mobile/mobile.css'],
      			dest: 'public/dist/mobile.min.css'
      		}
      	},
@@ -42,7 +42,7 @@ module.exports = function (grunt){
 					paths: ['public/css/mobile']
 				},
 				files:{
-					'public/css/mobile.css': 'public/css/styles.less'
+					'public/css/mobile/mobile.css': 'public/css/styles.less'
 				}
 			}
 		},
@@ -57,8 +57,12 @@ module.exports = function (grunt){
 			},
 			css: {
 				files: ['public/css/*.css'],
-				tasks: ['cssmin']
+				tasks: ['cssmin:target']
 			},
+			mobile:{
+				files: ['public/css/mobile/mobile.css'],
+				tasks: ['cssmin:mobile']
+			}
 		}
 	});
 

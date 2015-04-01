@@ -69,7 +69,7 @@ Author: Spencer Brown 2015
 Fantastic Nav Styles - Mobile
 Author: Spencer Brown 2015
 */
-@media screen and (max-device-width: 677px) {
+@media screen and (max-width: 677px) {
   #nav_bar {
     background: black;
     border-bottom: 1px solid #ed2852;
@@ -83,6 +83,8 @@ Author: Spencer Brown 2015
   }
   #nav_bar .container-fluid .navbar-header {
     height: 40px;
+    width: 100%;
+    margin-left: 0px;
   }
   #nav_bar .container-fluid .navbar-header a {
     display: block;
@@ -309,5 +311,44 @@ Author: Spencer Brown 2015
   }
   #checkout_div #checkout_box #cart_div table tbody .cart_item td.item_quantity {
     width: 6px;
+  }
+}
+/*
+Fantastic FAQ Styles - Mobile
+*/
+@media screen and (max-width: 677px) {
+  #works_container {
+    top: 0px;
+    width: 100%;
+    height: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  #works_container h1 {
+    font-size: 3.0em;
+  }
+  #works_container #works_content {
+    height: auto;
+    padding-left: 10px;
+    padding-top: 10px;
+    border-radius: 0px;
+  }
+  #works_container #works_content .works_text {
+    padding-left: 0px;
+    padding-right: 10px;
+    width: 100%;
+    height: auto;
+    text-align: justify;
+  }
+  #works_container #works_content .works_text h4 {
+    text-align: left;
+  }
+  #works_content .works_text {
+    position: relative;
+    padding-left: 50px;
+    width: 90%;
+  }
+  #works_content .works_title {
+    color: #ed2852;
   }
 }

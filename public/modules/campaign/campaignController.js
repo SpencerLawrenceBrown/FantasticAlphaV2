@@ -35,7 +35,7 @@ angular.module('CampaignCTRL', ['CampaignFCTR', 'BarFCTR']).controller('Campaign
 		CampaignFactory.setActiveTab(index);
 	};
 
-	$("meta[name='viewport']").attr('content', 'width=1100px initial-scale=0.3');
+	$("meta[name='viewport']").attr('content', 'width=600px, initial-scale=0.3');
 
 	CampaignFactory.
 		loadCampaign().

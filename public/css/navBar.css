@@ -31,34 +31,56 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	background: black;
 	border-bottom: 1px solid #ed2852;
 	-webkit-backface-visibility: hidden;
+	height: 70px;
 }
-
-/*Nav Logo*/
 
 /*Makes the navbar-header touch the left side of the window*/
 #nav_bar .container-fluid{
 	padding-left: 0px;
+	padding-right: 0px;
 }
 
-#nav_bar .navbar-header{
-	background-color: #ed2852;
-}
-
-/*Align the photo in the header*/
-#nav_bar img{
+/*Centers the nav*/
+#nav_bar #nav_wrapper{
 	position: relative;
-	top: -18px;
-	left: 10px;
+	width: 800px;
+	margin: auto;
+}
+
+#nav_bar #logo_tab{
+	position: absolute;
+}
+
+#nav_bar #logo_tab img{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 250px;
+}
+
+#nav_bar #nav_items{
+	position: relative;
+}
+
+#nav_items li{
+	display: inline-block;
+	min-width: 160px;
+}
+
+#nav_items li#browse_tab{
+	margin-right: 200px;
 }
 
 /*All the nav tabs */
-#nav_bar ul li{
-	min-width: 110px;
-	text-align: center;
-}
 
 #nav_bar ul li a{
 	color: white;
+	padding-bottom: 15px;
+	padding-bottom: 15px;
+}
+
+#nav_bar ul li a p{
+	margin-bottom: 0px;
 }
 
 #nav_bar ul li.disable a{
@@ -86,8 +108,8 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	color: black;
 }
 
-/*=====SEARCH======*/
-#nav_bar #nav_search{
+/*/*=====SEARCH======*/
+/*#nav_bar #nav_search{
 	padding-top: 15px;
 	width: 250px;
 }
@@ -109,7 +131,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 }
 
 /*Dropdown menu populated with search auto-fill*/
-#nav_bar #nav_search .search_menu{
+/*#nav_bar #nav_search .search_menu{
 	position: absolute;
 	background-color: gray;
 	top: 40px;
@@ -135,10 +157,10 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 #nav_bar #nav_search .search_item:hover{
 	color: white;
 	background-color: #ed2852; 
-}
+}/*/
 
 /*=====CART======*/
-
+/*
 #cart_tab a{
 	font-size: 18px;
 }
@@ -149,7 +171,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	left: -2px;
 	font-size: 16px;
 }
-
+*/
 /*#cart_div{
 	position: absolute;
 	top: 100px;
