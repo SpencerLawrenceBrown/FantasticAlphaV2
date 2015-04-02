@@ -27,7 +27,17 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 
 /* layout */
 
-#works_container{
+#nav_back{
+	position: absolute;
+	height: 70px;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	background-color: black;
+	border-bottom: 2px solid #ed2852;
+}
+
+#works_wrapper{
 	position: relative;
 	top: 100px;
 	height: 900px;
@@ -35,7 +45,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	margin: 0 auto;
 }
 
-#works_container h1{
+#works_wrapper h1{
 	font-size: 56px;
 }
 

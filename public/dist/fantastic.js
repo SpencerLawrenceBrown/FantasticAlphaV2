@@ -475,7 +475,7 @@ angular.module('BarDRCT', ['BarCTRL']).directive('fnBar', function(){
 			//Calculate the reward position
 			//The apply signifiies if the function will be called out of the $digest cycle
 			var recalculateRewardPosition = function(apply){
-				var width = $("#campaign_content #progress_bar").width();
+				var width = $("#campaign_wrapper #progress_bar").width();
 				//Updates the model through the controller
 				controller.recalculateRewardPositions(width);
 				if (apply){
@@ -487,7 +487,7 @@ angular.module('BarDRCT', ['BarCTRL']).directive('fnBar', function(){
 			//The counter is located at the end of the cart div
 			//The apply signifiies if the function will be called out of the $digest cycle
 			var updateCounterPosition = function(apply){
-				var width = $("#campaign_content #progress_bar").width();
+				var width = $("#campaign_wrapper #progress_bar").width();
 				controller.updateCounterPosition(width);
 				controller.updateRewardsProgress();
 				if (apply){
@@ -1010,6 +1010,12 @@ angular.module('CartCTRL', ['CartFCTR', 'CheckoutFCTR']).controller('CartControl
 	//Remove an item from the cart 
 	this.removeItem = function(item){
 		CartFactory.removeItem(item);
+	}
+
+	this.completeCheckout = function(){
+		console.log("clicke");
+		CheckoutFactory.canCheckout = true;
+		CheckoutFactory.checkout(CartFactory.contents);
 	}
 	//Open the checkout window and close the cart. 
 	this.openCheckout = function(){

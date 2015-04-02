@@ -26,6 +26,12 @@ angular.module('CartCTRL', ['CartFCTR', 'CheckoutFCTR']).controller('CartControl
 	this.removeItem = function(item){
 		CartFactory.removeItem(item);
 	}
+
+	this.completeCheckout = function(){
+		console.log("clicke");
+		CheckoutFactory.canCheckout = true;
+		CheckoutFactory.checkout(CartFactory.contents);
+	}
 	//Open the checkout window and close the cart. 
 	this.openCheckout = function(){
 		//CheckoutFactory.checkout();
