@@ -69,6 +69,10 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	background-color: #ed2852;
 }
 
+.fb_iframe_widget{
+	top: 6px;
+}
+
 #footer #footer_wrapper{
 	position: relative;
 	display: block;

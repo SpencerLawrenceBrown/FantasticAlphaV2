@@ -37,25 +37,36 @@
 	// </script>
 </head>
 <body>
+	<!--Facebook-->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
 	<fn-nav></fn-nav>
 	<fn-checkout></fn-checkout>
 	<div ng-view></div>
 	<div id = "footer">
-		<div id = "pre_footer"></div>
+		<div id = "pre_footer">
+				<div class="fb-like" data-href="https://www.facebook.com/letsfantastic" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+		</div>
 		<div id ="footer_wrapper">
 			<ul class="footer_list">
 				<li class="list_header">Company</li>
-				<li>About</li>
-				<li>Contact Us</li>
+				<li><a href="http://www.letsfantastic.com/#howitworks-section">About</a></li>
+				<li><a href="http://www.letsfantastic.com/#about-us-section">Team</a></li>
 			</ul>
 			<ul class="footer_list">
 				<li class="list_header">Help</li>
-				<li>Support</li>
-				<li>FAQ</li>
+				<li><a href="/#/faq">FAQ</a></li>
+				<li><a href="http://www.letsfantastic.com/#contact-section">Contact Us</a></li>
+
 			</ul>
 		</div>
-		<p id = "footer_text">© 2015 Too Fantastic. All rights reserved. &nbsp;&nbsp;<a>Terms of Service</a> | <a>Privacy Policy</a></p>
-	</div>
+		<p id = "footer_text">© 2015 Fantastic. All rights reserved. &nbsp;&nbsp;<a>Terms of Service</a> | <a>Privacy Policy</a></p>
 	
 	<!-- My Modules -->
 	<script src='dist/fantastic.js'></script>

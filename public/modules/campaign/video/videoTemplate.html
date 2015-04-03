@@ -11,7 +11,7 @@
 		{{campaign.rewards.length}}
 		<div id = "left_column">
 			<div id = "campaign_tagline">
-				<div id = "large">Pre-order tickets for "{{campaign.project.project}}" to earn exclusive rewards and receive sweet perks. </div>
+				<div id = "large">Pre-order tickets for "{{campaign.project.project}}" to earn exclusive perks and unlock extra content. </div>
 	<!-- 			<div id = "sub">Raise funds as a community to unlock special rewards for everyone who contributes.</div> -->
 			</div>
 			<fn-bar campaignId = 'campaign._id'></fn-bar>
@@ -23,11 +23,11 @@
 					<div class = "progress_number">{{campaign.bar.actual.campaignPaid | currency:undefined:0}}</div>
 				</div>
 				<div class = "snapshot_figure_right" id = 'campaign_tally'>
-					<div>Rewards Unlocked:</div>
+					<div>Unlocks Reached:</div>
 					<div class = "progress_number">{{campaign.bar.unlocked}}</div>
 				</div>
 				<div class = "snapshot_figure_left" id = "current_progress">	
-					<div>Next Reward Unlocked In:</div>
+					<div>Next Unlock Reached In:</div>
 					<div class = "progress_number">{{campaign.bar.remaining | currency:undefined:0}}</div>
 				</div>
 				<div class = "snapshot_figure_right" id = "campaign_fans">		<div>Fans Joined:</div>	
@@ -35,7 +35,7 @@
 				</div>
 			</div> 
 			<div id = 'reward_highlight'>
-				<h2 id = 'reward_header'>Current Reward:</h2>
+				<h2 id = 'reward_header'>Current Unlock:</h2>
 				<div id = 'reward_title'>{{campaign.bar.current_reward.name}}</div>
 				<div id = 'reward_description'>{{campaign.bar.current_reward.description}}</div>
 				<button ng-show="campaign.bar.actual.campaignCart == 0" id = "join_fanbase" class = 'bar_button btn btn-default' analytics-on="click" analytics-event="Clicked Fanbase Button" analytics-category="Store-Button" analytics-label = "{{campaign.project.project}}">Join This Fanbase</button>

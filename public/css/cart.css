@@ -37,12 +37,6 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	padding-left: 0px;
 }
 
-#test_button{
-	position: absolute;
-	top:-700px;
-	left: 40px;
-}
-
 #cart_div #header{
 	position: relative;
 	height: 40px;

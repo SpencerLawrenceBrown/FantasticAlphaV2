@@ -4,10 +4,10 @@
 	</div> -->
 	<!--Add Pictures Later, hidden initially-->
 	<div id = 'detail_box' ng-show = 'store.model.current_set'>
-		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 0"> Level: Fan </h1>
-		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 1"> Level: Rewards </h1>
-		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 2"> Level: Digital </h1>
-		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 3"> Level: Physical </h1>
+		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 0">Fan</h1>
+		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 1">Contributor</h1>
+		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 2"> Download Pre-order</h1>
+		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 3"> Ticket Pre-order</h1>
 		<h3 class = "detail_title" analytics-on="hover" analytics-event="Hovered detail_title" analytics-category = "Store-Detail" analytics-label="{{campaign.project.project}}, Level {{store.model.current_highlight.level}}">{{store.model.current_highlight.description}} </h3>
 		<h3 class = "detail_note visible-xs-block">Includes:</h3>
 		<div class = 'detail_component' ng-repeat="component in store.model.current_highlight.contains.unique" analytics-on="click" analytics-event="Clicked Component Bubble"  analytics-label="{{campaign.project.project}}, Level {{store.model.current_highlight.level}}, Component {{component.name}}" analytics-categpry="Store-Detail">
@@ -40,10 +40,10 @@
 	<div id = 'incentive_options'>
 		<div class = 'incentive_box level_{{::incentive.level}}' ng-repeat = 'incentive in store.inventory' ng-class = "{selected : store.model.current_highlight == incentive}" ng-click = 'store.setCurrent($index)' analytics-on="click" analytics-event="Click Level Bubble" analytics-category="Store-Main" analytics-label="{{campaign.project.project}}, Level {{incentive.level}}">
 			<div class = 'incentive_title title_background'>
-				<p class = "title_text" ng-show = "incentive.level == 0">Level: Fan</p>
-				<p class = "title_text" ng-show = "incentive.level == 1">Level: Rewards</p>
-				<p class = "title_text" ng-show = "incentive.level == 2">Level: Digital</p>
-				<p class = "title_text" ng-show = "incentive.level == 3">Level: Physical</p>
+				<p class = "title_text" ng-show = "incentive.level == 0">Fan</p>
+				<p class = "title_text" ng-show = "incentive.level == 1">Contributor</p>
+				<p class = "title_text" ng-show = "incentive.level == 2">Download Pre-order</p>
+				<p class = "title_text" ng-show = "incentive.level == 3">Ticket Pre-order</p>
 			</div>
 			<div class = 'incentive_components'>
 				<p class = 'unique' ng-repeat = 'unique in incentive.contains.unique'>{{::unique.name}}</p>
