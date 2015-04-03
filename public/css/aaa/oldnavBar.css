@@ -2,11 +2,14 @@
 Fantastic Nav Bar
 Copyright 2014
 written by Spencer Brown - spencrbrown@gmail.com
+
 A lot of the css is handled by bootstrap
 These fixes are small customizations
+
 swatch colors
 =============
 ed2852 - 'Fantastic' red
+
 ============================== */
 
 /* resets and overrides */
@@ -25,69 +28,103 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 /* layout */
 
 #nav_bar{
+	background: none;
+	-webkit-backface-visibility: hidden;
+	height: 70px;
 	position: absolute;
 	top: 0px;
-	left: 0px;
-	width: 100%;
-	background: black;
-	border-bottom: 2px solid #ed2852;
-	-webkit-backface-visibility: hidden;
 	z-index: 10;
+	width: 100%;
 }
-
-/*Nav Logo*/
 
 /*Makes the navbar-header touch the left side of the window*/
 #nav_bar .container-fluid{
 	padding-left: 0px;
+	padding-right: 0px;
+	height: 100%;
 }
 
-#nav_bar .navbar-header{
-	background-color: #ed2852;
-	width: 200px;
-	padding-left: 5px;
+/*This is hidden on the homepage by the image but shows up on the other pages */
+#nav_bar #background_color{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background-color: black;
+	border-bottom: 2px solid #ed2852;
 }
 
-/*Align the photo in the header*/
-#nav_bar img{
+/*Centers the nav*/
+#nav_bar #nav_wrapper{
 	position: relative;
-	top: -18px;
-	left: 10px;
+	width: 639px;
+	margin: auto;
+	height: 100%;
+	z-index: 5;
 }
 
-/*All the nav tabs */
-#nav_bar ul li{
-	min-width: 110px;
+#nav_bar #logo_tab{
+	position: absolute;
+	padding-top: 17px;
+	left: 222px;
+	height: 100%;
+	z-index: 5;
+}
+
+#nav_bar #logo_tab img{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 200px;
+}
+
+#nav_bar #nav_items{
+	position: relative;
+	height: 100%;
+}
+
+#nav_items li{
+	display: inline-block;
+	min-width: 160px;
+	font-size: 1.05em;
+	font-family: 'Raleway', sans-serif;
+	height: 100%;
+}
+
+#nav_items li#browse_tab{
+	margin-right: 260px;
+}
+
+#nav_items li a{
+	height: 100%;
+	color: white;
+	background-color: transparent !important;
+}
+
+#nav_items li.disable a{
+	color: gray;
+}
+
+#nav_items li a:hover{
+	color: gray;
+}
+
+
+#nav_items li a p{
+	line-height: 42px;
+	margin-bottom: 0px;
 	text-align: center;
 }
+/*All the nav tabs */
 
-#nav_bar ul li #browse_tab_text{
-	font-family: 'Raleway', sans-serif;
+#nav_bar ul li a{
 	color: white;
-	padding-top: 0px;
-	padding-bottom: 0px;
-	line-height: 50px;
-	height: 50px;
+	padding-bottom: 15px;
+	padding-bottom: 15px;
+}
+
+#nav_bar ul li a p{
 	margin-bottom: 0px;
-}
-
-#nav_bar ul li #help_tab_text{
-	font-family: 'Raleway', sans-serif;
-	color: white;
-	padding-top: 0px;
-	padding-bottom: 0px;
-	line-height: 50px;
-	height: 50px;
-	margin-bottom: 0px;
-}
-
-#nav_bar ul li.disable a{
-	color: gray;
-}
-
-
-#nav_bar ul li a:hover{
-	color: gray;
 }
 
 /*Add the white line to the left items*/
@@ -106,12 +143,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	color: black;
 }
 
-#nav_bar #help_tab a{
-	border-right:none;
-}
-
-
-/*=====SEARCH======*/
+/*/*=====SEARCH======*/
 /*#nav_bar #nav_search{
 	padding-top: 15px;
 	width: 250px;
@@ -131,7 +163,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	outline: none;
 	border: 0px solid;
 	border-bottom: 1px solid gray;
-}*/
+}
 
 /*Dropdown menu populated with search auto-fill*/
 /*#nav_bar #nav_search .search_menu{
@@ -160,11 +192,11 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 #nav_bar #nav_search .search_item:hover{
 	color: white;
 	background-color: #ed2852; 
-}*/
+}/*/
 
 /*=====CART======*/
-
-/*#cart_tab a{
+/*
+#cart_tab a{
 	font-size: 18px;
 }
 
@@ -184,14 +216,17 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	position: absolute;
 	right: 230px;
 }
+
 #top_bar nav a#profile{
 	position: absolute;
 	right: 230px;
 }
+
 #top_bar nav a#sign_in{
 	position: absolute;
 	right: 340px;
 }
+
 #top_bar nav a#cart{
 	position: absolute;
 	right: 340px;

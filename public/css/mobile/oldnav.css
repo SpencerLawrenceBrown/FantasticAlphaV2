@@ -4,22 +4,30 @@ Author: Spencer Brown 2015
 */
 
 @media screen and (max-width: 677px) {
+
 	#nav_bar{
 		background: black;
 		border-bottom: 1px solid #ed2852;
 		-webkit-backface-visibility: hidden;
 		position: relative;
 		margin-bottom: 0px;
+		height: auto;
 		
 		.container-fluid{
 			padding-right: 0px;
 			padding-left: 0px;
 
-			.navbar-header{
+			#nav_wrapper{
+				width: 100%;
+			}
+
+			#logo_tab{
+				position: relative;
 				height: 40px;
 				width: 100%;
 				margin-left: 0px;
-				padding-left: 0px;
+				left: 0px;
+				padding-top: 5px;
 
 				a{
 				display: block;
@@ -30,41 +38,39 @@ Author: Spencer Brown 2015
 
 					img{
 						margin: 0;
-						top: -3px;
+						top: 0px;
 						left: 0;
-						height: 45px;
+						height: 37px;
 					}
 				}
 			}
 
-			.navbar-nav{
+			#nav_items{
 				margin: 0;
-			}
-
-			.navbar-left{
 				
 				li{
 				float: left;
 				width: 50%;
+				font-size: 0.9em;
 
-					a{
-						padding: 0px;
-					}
+				
 
 					p{
 						margin: auto;
 						text-align: center;
-						font-size: 0.8em;
+						font-size: 0.92em;
 						width: 140px;
+						line-height: 20px;
 					}
 				
 
 					&#browse_tab{
+						margin-right: 0px;
 					 	p{
 							background-image: url("/assets/images/nav_list.png");
 							background-repeat: no-repeat;
 							background-size: 10px;
-							background-position-x: 0px;
+							background-position-x: -2px;
 							background-position-y: 50%;
 						}
 
