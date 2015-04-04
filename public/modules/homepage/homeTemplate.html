@@ -27,7 +27,7 @@
 	<h2 id="homepage_category">Upcoming Releases</h2>
 	<div id="homepage_project">
 		<div id="wrapper">
-			<div class="project_portal" ng-repeat = 'campaign in homepage.model.allCampaigns | orderBy:$$hashKey:reverse' ng-class="{ 'middle_pro': $index == 1, 'middle_project': $index == 4}"analytics-on="click" analytics-category="Homepage" analytics-event="Clicked Bubble" analytics-label="{{campaign.project}}">
+			<div class="project_portal" ng-repeat = 'campaign in homepage.model.allCampaigns' ng-class="{ 'middle_pro': $index == 1, 'middle_project': $index == 4}"analytics-on="click" analytics-category="Homepage" analytics-event="Clicked Bubble" analytics-label="{{campaign.project}}">
 			<a href="#/campaign/{{campaign._id}}">
 				<div class="project_thumb">
 					<img ng-src = 'assets/images/{{campaign.info[0].video_data.image}}_thumb.jpg'>
