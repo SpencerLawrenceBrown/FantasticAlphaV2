@@ -35,9 +35,12 @@
 				</div>
 			</div> 
 			<div id = 'reward_highlight'>
-				<h2 id = 'reward_header'>Current Unlock:</h2>
-				<div id = 'reward_title'>{{campaign.bar.current_reward.name}}</div>
-				<div id = 'reward_description'>{{campaign.bar.current_reward.description}}</div>
+				<h2 id = 'reward_header' ng-hide="campaign.show">Current Unlock:</h2>
+				<h2 id = 'reward_header' ng-show="campaign.show">Unlock Details:</h2>
+				<div id = 'reward_title' ng-hide="campaign.show">{{campaign.bar.current_reward.name}}</div>
+				<div id = 'reward_title' ng-show="campaign.show">{{campaign.bar.hover_reward.name}}</div>
+				<div id = 'reward_description' ng-hide="campaign.show">{{campaign.bar.current_reward.description}}</div>
+				<div id = 'reward_description' ng-show="campaign.show">{{campaign.bar.hover_reward.description}}</div>
 				<button ng-show="campaign.bar.actual.campaignCart == 0" id = "join_fanbase" class = 'bar_button btn btn-default' analytics-on="click" analytics-event="Clicked Fanbase Button" analytics-category="Store-Button" analytics-label = "{{campaign.project.project}}">Join This Fanbase</button>
 				<button  ng-show="campaign.bar.actual.campaignCart > 0"id = "checkout_scroll" class = 'bar_button btn btn-default' analytics-on="click" analytics-event="Clicked Go To Cart Button" analytics-category="Store-Button" analytics-label = "{{campaign.project.project}}">Go to Cart</button>
 			</div>

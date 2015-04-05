@@ -16,7 +16,7 @@
 		</progress>
 		<div fn-repeat-completion-watcher fn-context = 'Rewards' class = 'reward_box unlocked' ng-repeat = 'reward in bar.rewards' ng-style = "{'left' : reward.unlock_value}">
 			<div class = 'marker' ng-class = '{locked : bar.actual.campaignPaid < reward.unlock_amount, unlocked : bar.actual.campaignPaid >= reward.unlock_amount}'></div>
-			<div class = 'reward_content' analytics-on="hover" analytics-category="Progress Bar" analytics-event="Hovered Reward Info: {{reward.name}}" anayltics-label="{{campaign.project.project}}">
+			<div class = 'reward_content' ng-mouseenter="campaign.setHoverUnlock($index)" ng-mouseleave="campaign.show = false" analytics-on="hover" analytics-category="Progress Bar" analytics-event="Hovered Reward Info: {{reward.name}}" anayltics-label="{{campaign.project.project}}">
 				<div class ="glyphicon glyphicon-lock reward_text lock" ng-show = "reward.progress === 'locked'"></div>
 				<div class = "reward_text"  ng-class = '{unlocked: reward.progress == "unlocked", current :  reward.progress === "current"}' ng-hide = "reward.progress === 'locked'" analytics-on="click" analytics-category="Progress Bar" analytics-event="Clicked Reward Info: {{reward.name}}" anayltics-label="{{campaign.project.project}}">{{::reward.name}}</div>
 				<div class = "threshold_text" ng-show ="reward.progress === 'unlocked'">Unlocked at ${{::reward.unlock_amount}}!</div>

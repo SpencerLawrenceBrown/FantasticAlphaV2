@@ -53,6 +53,7 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$routeParams', '
 		//The list of rewards. Every reward has a name, which serves as the text, and a value, which is used to align it
 		rewards : [],
 		current_reward: {},
+		hover_reward: {},
 		remaining : 0,
 		unlocked: 0,
 		fans: 11417,
@@ -142,6 +143,20 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$routeParams', '
 			} else if (BarFactory.rewards[x].unlock_amount <= BarFactory.actual.campaignPaid){
 				BarFactory.rewards[x].progress = 'unlocked';
 			}
+		}
+	}
+
+	BarFactory.setHover = function(index){
+		//If trying to hover a locked item
+		if(BarFactory.rewards[index].progress == 'locked'){
+			BarFactory.hover_reward = {
+					name: "Locked",
+					unlock_amount: 0,
+					progress: 'locked',
+					description: "Reach the unlock amount to view this unlock."
+			}
+		} else {
+			BarFactory.hover_reward = BarFactory.rewards[index];
 		}
 	}
 

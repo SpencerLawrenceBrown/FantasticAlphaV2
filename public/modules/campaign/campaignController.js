@@ -28,12 +28,21 @@ angular.module('CampaignCTRL', ['CampaignFCTR', 'BarFCTR']).controller('Campaign
 	this.video = CampaignFactory.video;
 	this.tabs = CampaignFactory.tabs;
 	this.project = CampaignFactory.campaign;
+	this.show = false;
+
 	$scope.url = "";
+
 
 	//Reload the inventory
 	this.setActiveTab = function(index){
 		CampaignFactory.setActiveTab(index);
 	};
+
+	//Set Hovered Unlock
+	this.setHoverUnlock = function(index){
+		this.show = true;
+		BarFactory.setHover(index);
+	}
 
 	$("meta[name='viewport']").attr('content', 'width=600px, initial-scale=0.3');
 

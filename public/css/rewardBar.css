@@ -127,8 +127,12 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	width: 180px;
 	top: 92px;
 	left: -57%;
-	
 }
+
+.reward_box .reward_content:hover .reward_text{
+	color: #ed2852;
+}
+
 .reward_box .reward_text{
 	position: relative;
 	display: inline-block;

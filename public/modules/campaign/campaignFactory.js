@@ -28,7 +28,8 @@ angular.module('CampaignFCTR', []).factory('CampaignFactory', ['$routeParams', '
 		video:{
 			url:{},
 			id: "",
-			image: ""
+			image: "",
+			highlighted: {}
 		},
 		info: {},
 		tabs: {}
