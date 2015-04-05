@@ -22,7 +22,7 @@ var app = express();
 //Configuration ======================================================
 
 //Set the port to 3000
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 80;
 
 mongoose.connect(configDB.url); //Connect to database
 
