@@ -42,7 +42,7 @@ Contains:
 	    		<p>BROWSE CAMPAIGNS</p>
 				</a>
 				<ul id = 'browse_menu' class="dropdown-menu">
-	       			<li class = 'browse_item' ng-repeat = 'campaign in nav.campaigns'>
+	       			<li class = 'browse_item' ng-repeat = 'campaign in nav.campaigns | orderBy:$$hashKey:reverse'>
      					 <a ng-href = '#/campaign/{{campaign._id}}' analytics-category="Nav" analytics-event="Clicked Project Link" analytics-label="{{campaign.project}}">{{campaign.project}}</a>
     				</li>
 	 			</ul>
