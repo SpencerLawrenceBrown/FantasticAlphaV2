@@ -17,6 +17,7 @@
     "newrelic": "^1.17.2",
     "passport": "~0.1.17",
     "passport-local": "~0.1.6",
+    "sendgrid": "^1.6.0",
     "serve-favicon": "latest"
   },
   "devDependencies": {
