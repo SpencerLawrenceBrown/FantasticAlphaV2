@@ -174,8 +174,13 @@ APIrouter.post('/new-campaign', function(req, res){
 });
 //Add incentives to the store
 APIrouter.put('/add-incentives', function(req, res){
+
 	//Find a campaign with a matching project and campaign_number
 	Campaign.findOne({project: req.body.project, campaign_number: req.body.number}, function(err, campaign){
+		//Clear the current contents if they exist
+		campaign.store[0]["incentives"].pull();
+		campaign.store[0]["incentives"].length = 0;
+
 		var deJSONstring = JSON.parse(req.body.incentives);
 		//Add rewards to store
 		for (var i = 0; i < deJSONstring.length; i++){
@@ -301,6 +306,15 @@ APIrouter.put('/add-image', function(req, res){
 
 
 //**User Actions**//
+//Get user data
+APIrouter.get('/campaign-data', function(req, res){
+	Campaign.findOne({project: req.query.project, campaign_number: req.query.number}, function(err, campaign){
+		if (err){
+			res.send(err);
+		}
+		res.json(campaign);
+	});
+});
 //Get user data
 APIrouter.get('/user-data', auth, function(req, res){
 	User.findById(req.user._id, function(err, user){

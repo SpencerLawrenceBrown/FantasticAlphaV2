@@ -194,5 +194,14 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	font-size: 1.6em;
 	color: white;
 	margin: 0;
+}
+
+#reward_bar_div #header_and_help p{
+	position: relative;
+	float: left;
+	padding-top: 3px;
+	font-size: 1.0em;
+	color: white;
+	margin: 0;
 	padding-left: 8px;
 }

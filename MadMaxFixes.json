@@ -1,0 +1,111 @@
+{
+    "incentives": [
+        {
+            "level": "Fan",
+            "description": "Main Force Patrol Cadet: Show your support and get your MFP badge!",
+            "contains": {
+                "unique": [
+                    {
+                        "name": "Digital Main Force Patrol Badge",
+                        "description": "A personalizable and customizable digital badge. Show it off on your profile and embed it in fansites and forums.",
+                        "type": "Digital"
+                    },
+                    {
+                        "name": "Campaign Updates",
+                        "description": "Receive updates feed on the campaign's progress.",
+                        "type": "Digital"
+                    }
+                ],
+                "carry_over": [],
+                "reward_related": []
+            },
+            "buttonText": "Join Now",
+            "price": 0,
+            "project": "Mad Max",
+            "item_id": 1,
+            "campaign_id": 1
+        },
+        {
+            "level": "Contributor",
+            "description": "Main Force Patrol Officer: Gain access to all the unlocked rewards and also the production blog.",
+            "contains": {
+                "unique": [
+                    {
+                        "name": "Production Blog",
+                        "description": "Access to a twice-weekly update from the production team, with contributions from the actors, directors and other members of the film crew.",
+                        "type": "Digital"
+                    },
+                    {
+                        "name": "Unlocked Rewards",
+                        "description": "Receive all the currently unlocked rewards as well as any unlocked before the campaign ends.",
+                        "type": "Digital"
+                    }
+                ],
+                "carry_over": [],
+                "reward_related": [
+                    "Future Unlocks"
+                ]
+            },
+            "buttonText": "$1 Minimum",
+            "price": 1,
+            "project": "Mad Max",
+            "item_id": 2,
+            "campaign_id": 1
+        },
+        {
+            "level": "Digital",
+            "description": "Thunderdome Champion: All the perks of Contributor Level, plus exclusive production extras",
+            "contains": {
+                "unique": [
+                    {
+                        "name": "Digital Movie Download",
+                        "description": "Download-to-own digital version of Mad Max: Fury Road, available the day it is released.",
+                        "type": "Digital"
+                    },
+                    {
+                        "name": "Download From The Original Trilogy",
+                        "description": "Download-to-own digital version of one of the remastered films from the original trilogy. Select your desired film at checkout.",
+                        "type": "Digital"
+                    }
+                ],
+                "carry_over": [
+                    "Contributor"
+                ],
+                "reward_related": []
+            },
+            "buttonText": "$15 Minimum",
+            "price": 15,
+            "project": "Mad Max",
+            "item_id": 3,
+            "campaign_id": 1
+        },
+        {
+            "level": "Tangible",
+            "description": "Road Warrior: Every perk from before + tangible goods.",
+            "contains": {
+                "unique": [
+                    {
+                        "name": "Ticket Pre-order",
+                        "description": "Ticket vouchers will be sent to you within a week. Two weeks before the movie premieres, you can exchange it for a cinema ticket at your most convenient theater location. Your seat is always guaranteed!",
+                        "type": "Physical"
+                    },
+                    {
+                        "name": "Exclusive MFP Jacket",
+                        "description": "Standard Issue Main Officer Patrol Jacket.",
+                        "type": "Physical"
+                    }
+                ],
+                "carry_over": [
+                    "Contributor",
+                    "Digital"
+                ],
+                "reward_related": []
+            },
+            "buttonText": "$50 Minimum",
+            "price": 50,
+            "project": "Mad Max",
+            "item_id": 4,
+            "campaign_id": 1
+        }
+    ]
+}

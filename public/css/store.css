@@ -135,13 +135,13 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 .level_0 .title_background{
 	background-image: url("/assets/images/badge.png");
 }
-.level_1 .title_background{
+.level_Contributor .title_background{
 	background-image: url("/assets/images/blog.png");
 }
-.level_2 .title_background{
+.level_Digital .title_background{
 	background-image: url("/assets/images/video.png");
 }
-.level_3 .title_background{
+.level_Tangible .title_background{
 	background-image: url("/assets/images/physical.png");
 }
 
@@ -172,19 +172,19 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 }*/
 
 
-.carry_over.contributor{
+.carry_over.Contributor{
 	background-size: 15px 15px, 30px 30px;
 	background-repeat: no-repeat, no-repeat;
 	background-position: 73px 7px, 96px 0px;
 	background-image: url("/assets/images/plus.png"), url("/assets/images/badge.png");
 }
-.carry_over.digital{
+.carry_over.Digital{
 	background-size: 15px 15px, 30px 30px, 30px 30px;
 	background-repeat: no-repeat, no-repeat, no-repeat;
 	background-position: 58px 7px, 82px 0px, 118px 0px;
 	background-image: url("/assets/images/plus.png"), url("/assets/images/badge.png"), url("/assets/images/blog.png");
 }
-.carry_over.tangible{
+.carry_over.Tangible{
 	background-size: 15px 15px, 30px 30px, 30px 30px, 30px 30px;
 	background-repeat: no-repeat, no-repeat, no-repeat;
 	background-position: 37px 7px, 60px 0px, 96px 0px, 133px 0px;
@@ -255,6 +255,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	min-height: 200px;
 	color: #ed2852;
 	text-align: center;
+	background-color: #ed2852;
 }
 
 #detail_box .detail_level{
