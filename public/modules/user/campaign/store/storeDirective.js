@@ -24,7 +24,7 @@ angular.module('StoreDRCT', ['StoreCTRL']).directive('fnStore', function(){
 		restrict: 'E',
 		replace: true,
 		transclude: false,
-		templateUrl: 'modules/campaign/store/storeTemplate.html',
+		templateUrl: 'modules/user/campaign/store/storeTemplate.html',
 		controllerAs: 'store',
 		controller: 'StoreController'
 	};

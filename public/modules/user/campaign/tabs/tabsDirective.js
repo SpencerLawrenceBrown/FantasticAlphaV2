@@ -25,7 +25,7 @@ angular.module('TabsDRCT', ['CampaignCTRL']).directive('fnTabs', function(){
 		restrict: 'E',
 		replace: true,
 		transclude: false,
-		templateUrl: 'modules/campaign/tabs/tabsTemplate.html',
+		templateUrl: 'modules/user/campaign/tabs/tabsTemplate.html',
 		controllerAs: 'campaign',
 		controller: 'CampaignController',
 		link: function(scope, element, attrs, cont){

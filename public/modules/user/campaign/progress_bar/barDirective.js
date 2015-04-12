@@ -24,7 +24,7 @@ angular.module('BarDRCT', ['BarCTRL']).directive('fnBar', function(){
 		restrict: 'E',
 		replace: true,
 		transclude: false,
-		templateUrl: 'modules/campaign/progress_bar/barTemplate.html',
+		templateUrl: 'modules/user/campaign/progress_bar/barTemplate.html',
 		controllerAs: 'bar',
 		controller: 'BarController',
 		link: function(scope, element, attrs, controller) {

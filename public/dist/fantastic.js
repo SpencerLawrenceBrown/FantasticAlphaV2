@@ -43,7 +43,7 @@ app.config(function($routeProvider, $locationProvider, $httpProvider) {
 		.when('/campaign/:campaign_id', {
 			controller : 'CampaignController',
 			controllerAs: 'campaign',
-			templateUrl : 'modules/campaign/campaignTemplate.html'
+			templateUrl : 'modules/user/campaign/campaignTemplate.html'
 		})
 		.when('/faq', {
 			templateUrl: 'modules/works/worksTemplate.html'
@@ -52,13 +52,13 @@ app.config(function($routeProvider, $locationProvider, $httpProvider) {
 		.when('/login', {
 			controller : 'UserFormController',
 			controllerAs : 'account',
-			templateUrl : 'modules/auth/loginTemplate.html'
+			templateUrl : 'modules/helpers/auth/loginTemplate.html'
 		})
 		//Register
 		.when('/register', {
 			controller : 'UserFormController',
 			controllerAs : 'account',
-			templateUrl : 'modules/auth/registerTemplate.html'
+			templateUrl : 'modules/helpers/auth/registerTemplate.html'
 		})
 		.when('/user', {
 			controller : 'UserPageController',
@@ -247,6 +247,200 @@ angular.module('UserFormCTRL', ['AuthFCTR']).controller('UserFormController', ['
 		AuthFactory.loginMSG = true;
 	});
 }]);
+/*
+NGRepeat Watcher Directive
+Written by: Spencer Brown, copyright 2014
+
+//Description:
+This directive watches an ng-repeat element and fires an event when it finishes loading. This is necessary to
+know in order to perform DOM manipulation on the elements of the ng-repeat
+
+//Components:
+	-emits an event when the ngrepeat load is completed
+
+//Map:
+	-Usedby:
+		-barTemplate.html
+	-Listened for by:
+		-barDirective.js
+	-contains:
+		-none
+*/
+
+angular.module('RepeatDRCT', []).directive('fnRepeatCompletionWatcher', function(){
+	return{
+		restrict: 'A',
+		replace: false,
+		transclude: false,
+		link: function(scope, element, attrs){
+			//If the last element in the ng-repeat, emit an event
+			if (scope.$last){
+				var eventName = attrs.fnContext + "RepeatLoaded";
+				scope.$emit(eventName);
+			}
+		}
+	}
+});
+
+/*
+Homepage Controller
+Written by: Spencer Brown, copyright 2015
+
+//Description
+This controller manages the homepage and connects to the campaign meta factory
+
+//Components
+	-References to:
+		-campaignMetaFactory
+
+//Map
+	-Used by:
+		-App Routing
+	-Contains:
+		-none
+*/
+
+angular.module('HomePageCTRL', ['MetaFCTR', 'AuthFCTR']).controller('HomepageController', [ 'CampaignsMetaFactory', 'AuthFactory', '$scope', function(MetaFactory, AuthFactory, $scope){
+	//Model connection
+	this.model = MetaFactory;
+	this.auth = AuthFactory;
+	$scope.email = "";
+
+	//Fixes mobile viewport
+	$("meta[name='viewport']").attr('content', 'width=device-width, initial-scale=1');
+
+	//Add an email to the mailing list
+	this.addEmail = function(){
+		console.log("Email:" + $scope.email);
+		var formData = {
+			email 		: $scope.email,
+			password 	: "test",
+			fullname 	: "user"
+		};
+		AuthFactory.register(formData);
+		$scope.email = "";
+	};	
+
+}]);
+/*
+Campaigns Meta Factory
+Written by: Spencer Brown, copyright 2014
+
+//Description
+This factory serves as the model for the nav bar. It will make a call
+to the server to retrieve all necessary information about all existing campaigns.
+Currently (V2) it will mostly retrieve campaign name and campaign link.
+
+//Components
+	-CampaignsMeta object (model)
+		-Will contain a list of all the campaigns and their details
+		-Will be returned by the factory
+	-Functions
+		-getAllCampaigns: Calls the API to get the campaign meta
+		...Add more here if necessary...
+
+//Map
+Used by:
+	-NavController.js
+Contains:
+	-CampaignsMeta model [All navigation information]
+*/
+
+angular.module('MetaFCTR', []).factory('CampaignsMetaFactory', ['$http', function($http){
+
+	//Our model
+	var CampaignsMeta = {
+		allCampaigns: {}
+	};
+
+	//Retrieve all the campaigns
+	CampaignsMeta.getAllCampaigns = function(){
+		return $http({
+			method: 'GET',
+			url: 'api/all-campaigns'
+		}).success(function(data){
+			CampaignsMeta.allCampaigns = data;
+			console.log(CampaignsMeta.allCampaigns);
+		});
+	};
+
+	return CampaignsMeta;
+}])
+/*
+Nav Bar Controller
+Written by: Spencer Brown, copyright 2014
+--Fun Fact: written while eating a steak in dorm room at UCT in Cape Town--\
+
+//Description
+This controller maintains communcation between the ProjectMetaFactory and the
+fn-nav directive. Referred to as 'nav' by fn-nav. i.e. {{nav.foo}}
+
+//Components
+	Function:
+		-loadCampaigns: Calls the CampaignsMetaFactory to retrieve the campaignss
+
+//Map
+Used by:
+	-navDirective.js
+Contains:
+	-campaignMetaFactory.js
+*/
+
+angular.module('NavCTRL', ['MetaFCTR', 'AuthFCTR']).controller('NavController', ['CampaignsMetaFactory', 'AuthFactory', function(CampaignsMetaFactory, AuthFactory){
+	//Set the campaigns variable to the Factory campaign
+	this.campaigns = CampaignsMetaFactory.allCampaigns;
+	this.auth = AuthFactory;
+
+	//Reload the campaigns from server
+	this.loadCampaigns = function(){
+		CampaignsMetaFactory.getAllCampaigns();
+	};
+
+	//On initialization, load campaigns, binds for <IE9
+	CampaignsMetaFactory.
+		getAllCampaigns()
+		.then(function(){
+			this.campaigns = CampaignsMetaFactory.allCampaigns;
+		}.bind(this));
+}]);
+/* 
+Nav Bar Directive
+Written by: Spencer Brown, copyright 2014
+
+//Description
+This directive holds the nav bar directive.
+It handles the nav display and interactivity.
+
+//Components
+	-Nav Logo: links to homepage & contains logo image
+	-Tabs:
+		-Browse Campaigns: Contains links to all projects
+		-Create Campaign: For creators **NOT IMPLEMENTED**
+		-Search Campaigns: Search existing campaigns
+		-Cart: Access to cart
+		-Login/Register: Links to login page
+//Map
+Used by:
+	-Index.html
+Contains:
+	-NavigationController: Communications with CampaignsMetaFactory
+	-CartDirective: Manages the display of the cart
+*/
+
+
+angular.module('NavDRCT', ['NavCTRL']).directive('fnNav', function(){
+	return {
+		restrict: 'E',
+		replace: true, //Fully replaces the fn-nav element
+		transclude: false, //Currently set to false, can't forsee any reason that would change
+		templateUrl: 'modules/nav/navTemplate.html', //Loads the html template
+		controllerAs:'nav', //Refer to the controller as 'nav' so nav.foo
+		controller: 'NavController' //This controller comes from the 'NavCTRL' module that is injected
+		//No DOM manipulation yet. If needed, uncomment below
+		// link: function($scope, iElm, iAttrs, controller) {
+		// }
+	};
+});
 /*
 Campaign Controller
 Written by: Spencer Brown, copyright 2014
@@ -477,7 +671,7 @@ angular.module('BarDRCT', ['BarCTRL']).directive('fnBar', function(){
 		restrict: 'E',
 		replace: true,
 		transclude: false,
-		templateUrl: 'modules/campaign/progress_bar/barTemplate.html',
+		templateUrl: 'modules/user/campaign/progress_bar/barTemplate.html',
 		controllerAs: 'bar',
 		controller: 'BarController',
 		link: function(scope, element, attrs, controller) {
@@ -844,7 +1038,7 @@ angular.module('StoreDRCT', ['StoreCTRL']).directive('fnStore', function(){
 		restrict: 'E',
 		replace: true,
 		transclude: false,
-		templateUrl: 'modules/campaign/store/storeTemplate.html',
+		templateUrl: 'modules/user/campaign/store/storeTemplate.html',
 		controllerAs: 'store',
 		controller: 'StoreController'
 	};
@@ -888,6 +1082,7 @@ angular.module('StoreFCTR', []).factory('StoreFactory', ['$routeParams', '$http'
 			StoreFactory.incentives = data.incentives;
 			StoreFactory.current_set = false;
 			StoreFactory.current_highlight = {};
+			console.log(StoreFactory.incentives);
 		});
 	};
 
@@ -936,7 +1131,7 @@ angular.module('TabsDRCT', ['CampaignCTRL']).directive('fnTabs', function(){
 		restrict: 'E',
 		replace: true,
 		transclude: false,
-		templateUrl: 'modules/campaign/tabs/tabsTemplate.html',
+		templateUrl: 'modules/user/campaign/tabs/tabsTemplate.html',
 		controllerAs: 'campaign',
 		controller: 'CampaignController',
 		link: function(scope, element, attrs, cont){
@@ -969,7 +1164,7 @@ angular.module('VideoDRCT', ['CampaignCTRL']).directive('fnVideo', function(){
 		restrict: 'E',
 		replace: true,
 		transclude: false,
-		templateUrl: 'modules/campaign/video/videoTemplate.html',
+		templateUrl: 'modules/user/campaign/video/videoTemplate.html',
 		controllerAs: 'campaign',
 		controller: 'CampaignController',
 		link: function(scope, element, attrs, cont){
@@ -1115,7 +1310,7 @@ angular.module('CartDRCT', ['CartCTRL']).directive('fnCart', function(){
 		restrict: 'E',
 		replace: true, //Fully replaces the fn-nav element
 		transclude: false, //Currently set to false, can't forsee any reason that would change
-		templateUrl: 'modules/cart/cartTemplate.html', //Loads the html template
+		templateUrl: 'modules/user/cart/cartTemplate.html', //Loads the html template
 		controllerAs:'cart', //Refer to the controller as 'cart' so cart.foo
 		controller: 'CartController', //This controller comes from the 'CartCTRL' module that is injected
 		//No DOM manipulation yet. If needed, uncomment below
@@ -1364,7 +1559,7 @@ angular.module('CheckoutDRCT', ['CheckoutCTRL']).directive('fnCheckout', functio
 		restrict: 'E',
 		replace: true, //Fully replaces the fn-checkout element
 		transclude: false, //Currently set to false, can't forsee any reason that would change
-		templateUrl: 'modules/cart/checkout/checkoutTemplate.html', //Loads the html template
+		templateUrl: 'modules/user/cart/checkout/checkoutTemplate.html', //Loads the html template
 		controllerAs:'checkout', //Refer to the controller as 'checkout' so checkout.foo
 		controller: 'CheckoutController', //This controller comes from the 'CheckoutCTRL' module that is injected
 		//No DOM manipulation yet. If needed, uncomment below
@@ -1461,200 +1656,6 @@ angular.module('CheckoutFCTR', []).factory('CheckoutFactory', ['$http', '$locati
 	//Return CheckoutFactory object
 	return CheckoutFactory;
 }]);
-/*
-NGRepeat Watcher Directive
-Written by: Spencer Brown, copyright 2014
-
-//Description:
-This directive watches an ng-repeat element and fires an event when it finishes loading. This is necessary to
-know in order to perform DOM manipulation on the elements of the ng-repeat
-
-//Components:
-	-emits an event when the ngrepeat load is completed
-
-//Map:
-	-Usedby:
-		-barTemplate.html
-	-Listened for by:
-		-barDirective.js
-	-contains:
-		-none
-*/
-
-angular.module('RepeatDRCT', []).directive('fnRepeatCompletionWatcher', function(){
-	return{
-		restrict: 'A',
-		replace: false,
-		transclude: false,
-		link: function(scope, element, attrs){
-			//If the last element in the ng-repeat, emit an event
-			if (scope.$last){
-				var eventName = attrs.fnContext + "RepeatLoaded";
-				scope.$emit(eventName);
-			}
-		}
-	}
-});
-
-/*
-Homepage Controller
-Written by: Spencer Brown, copyright 2015
-
-//Description
-This controller manages the homepage and connects to the campaign meta factory
-
-//Components
-	-References to:
-		-campaignMetaFactory
-
-//Map
-	-Used by:
-		-App Routing
-	-Contains:
-		-none
-*/
-
-angular.module('HomePageCTRL', ['MetaFCTR', 'AuthFCTR']).controller('HomepageController', [ 'CampaignsMetaFactory', 'AuthFactory', '$scope', function(MetaFactory, AuthFactory, $scope){
-	//Model connection
-	this.model = MetaFactory;
-	this.auth = AuthFactory;
-	$scope.email = "";
-
-	//Fixes mobile viewport
-	$("meta[name='viewport']").attr('content', 'width=device-width, initial-scale=1');
-
-	//Add an email to the mailing list
-	this.addEmail = function(){
-		console.log("Email:" + $scope.email);
-		var formData = {
-			email 		: $scope.email,
-			password 	: "test",
-			fullname 	: "user"
-		};
-		AuthFactory.register(formData);
-		$scope.email = "";
-	};	
-
-}]);
-/*
-Campaigns Meta Factory
-Written by: Spencer Brown, copyright 2014
-
-//Description
-This factory serves as the model for the nav bar. It will make a call
-to the server to retrieve all necessary information about all existing campaigns.
-Currently (V2) it will mostly retrieve campaign name and campaign link.
-
-//Components
-	-CampaignsMeta object (model)
-		-Will contain a list of all the campaigns and their details
-		-Will be returned by the factory
-	-Functions
-		-getAllCampaigns: Calls the API to get the campaign meta
-		...Add more here if necessary...
-
-//Map
-Used by:
-	-NavController.js
-Contains:
-	-CampaignsMeta model [All navigation information]
-*/
-
-angular.module('MetaFCTR', []).factory('CampaignsMetaFactory', ['$http', function($http){
-
-	//Our model
-	var CampaignsMeta = {
-		allCampaigns: {}
-	};
-
-	//Retrieve all the campaigns
-	CampaignsMeta.getAllCampaigns = function(){
-		return $http({
-			method: 'GET',
-			url: 'api/all-campaigns'
-		}).success(function(data){
-			CampaignsMeta.allCampaigns = data;
-			console.log(CampaignsMeta.allCampaigns);
-		});
-	};
-
-	return CampaignsMeta;
-}])
-/*
-Nav Bar Controller
-Written by: Spencer Brown, copyright 2014
---Fun Fact: written while eating a steak in dorm room at UCT in Cape Town--\
-
-//Description
-This controller maintains communcation between the ProjectMetaFactory and the
-fn-nav directive. Referred to as 'nav' by fn-nav. i.e. {{nav.foo}}
-
-//Components
-	Function:
-		-loadCampaigns: Calls the CampaignsMetaFactory to retrieve the campaignss
-
-//Map
-Used by:
-	-navDirective.js
-Contains:
-	-campaignMetaFactory.js
-*/
-
-angular.module('NavCTRL', ['MetaFCTR', 'AuthFCTR']).controller('NavController', ['CampaignsMetaFactory', 'AuthFactory', function(CampaignsMetaFactory, AuthFactory){
-	//Set the campaigns variable to the Factory campaign
-	this.campaigns = CampaignsMetaFactory.allCampaigns;
-	this.auth = AuthFactory;
-
-	//Reload the campaigns from server
-	this.loadCampaigns = function(){
-		CampaignsMetaFactory.getAllCampaigns();
-	};
-
-	//On initialization, load campaigns, binds for <IE9
-	CampaignsMetaFactory.
-		getAllCampaigns()
-		.then(function(){
-			this.campaigns = CampaignsMetaFactory.allCampaigns;
-		}.bind(this));
-}]);
-/* 
-Nav Bar Directive
-Written by: Spencer Brown, copyright 2014
-
-//Description
-This directive holds the nav bar directive.
-It handles the nav display and interactivity.
-
-//Components
-	-Nav Logo: links to homepage & contains logo image
-	-Tabs:
-		-Browse Campaigns: Contains links to all projects
-		-Create Campaign: For creators **NOT IMPLEMENTED**
-		-Search Campaigns: Search existing campaigns
-		-Cart: Access to cart
-		-Login/Register: Links to login page
-//Map
-Used by:
-	-Index.html
-Contains:
-	-NavigationController: Communications with CampaignsMetaFactory
-	-CartDirective: Manages the display of the cart
-*/
-
-
-angular.module('NavDRCT', ['NavCTRL']).directive('fnNav', function(){
-	return {
-		restrict: 'E',
-		replace: true, //Fully replaces the fn-nav element
-		transclude: false, //Currently set to false, can't forsee any reason that would change
-		templateUrl: 'modules/nav/navTemplate.html', //Loads the html template
-		controllerAs:'nav', //Refer to the controller as 'nav' so nav.foo
-		controller: 'NavController' //This controller comes from the 'NavCTRL' module that is injected
-		//No DOM manipulation yet. If needed, uncomment below
-		// link: function($scope, iElm, iAttrs, controller) {
-		// }
-	};
-});
 /*
 User Factory
 Written by: Spencer Brown, copywrite 2014

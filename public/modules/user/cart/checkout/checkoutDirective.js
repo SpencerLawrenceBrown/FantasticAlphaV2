@@ -25,7 +25,7 @@ angular.module('CheckoutDRCT', ['CheckoutCTRL']).directive('fnCheckout', functio
 		restrict: 'E',
 		replace: true, //Fully replaces the fn-checkout element
 		transclude: false, //Currently set to false, can't forsee any reason that would change
-		templateUrl: 'modules/cart/checkout/checkoutTemplate.html', //Loads the html template
+		templateUrl: 'modules/user/cart/checkout/checkoutTemplate.html', //Loads the html template
 		controllerAs:'checkout', //Refer to the controller as 'checkout' so checkout.foo
 		controller: 'CheckoutController', //This controller comes from the 'CheckoutCTRL' module that is injected
 		//No DOM manipulation yet. If needed, uncomment below

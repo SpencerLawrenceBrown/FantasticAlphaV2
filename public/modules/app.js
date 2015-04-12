@@ -43,7 +43,7 @@ app.config(function($routeProvider, $locationProvider, $httpProvider) {
 		.when('/campaign/:campaign_id', {
 			controller : 'CampaignController',
 			controllerAs: 'campaign',
-			templateUrl : 'modules/campaign/campaignTemplate.html'
+			templateUrl : 'modules/user/campaign/campaignTemplate.html'
 		})
 		.when('/faq', {
 			templateUrl: 'modules/works/worksTemplate.html'
@@ -52,13 +52,13 @@ app.config(function($routeProvider, $locationProvider, $httpProvider) {
 		.when('/login', {
 			controller : 'UserFormController',
 			controllerAs : 'account',
-			templateUrl : 'modules/auth/loginTemplate.html'
+			templateUrl : 'modules/helpers/auth/loginTemplate.html'
 		})
 		//Register
 		.when('/register', {
 			controller : 'UserFormController',
 			controllerAs : 'account',
-			templateUrl : 'modules/auth/registerTemplate.html'
+			templateUrl : 'modules/helpers/auth/registerTemplate.html'
 		})
 		.when('/user', {
 			controller : 'UserPageController',

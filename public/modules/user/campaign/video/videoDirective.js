@@ -24,7 +24,7 @@ angular.module('VideoDRCT', ['CampaignCTRL']).directive('fnVideo', function(){
 		restrict: 'E',
 		replace: true,
 		transclude: false,
-		templateUrl: 'modules/campaign/video/videoTemplate.html',
+		templateUrl: 'modules/user/campaign/video/videoTemplate.html',
 		controllerAs: 'campaign',
 		controller: 'CampaignController',
 		link: function(scope, element, attrs, cont){
