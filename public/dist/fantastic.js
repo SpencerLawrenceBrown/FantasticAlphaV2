@@ -888,6 +888,7 @@ angular.module('StoreFCTR', []).factory('StoreFactory', ['$routeParams', '$http'
 			StoreFactory.incentives = data.incentives;
 			StoreFactory.current_set = false;
 			StoreFactory.current_highlight = {};
+			console.log(StoreFactory.incentives);
 		});
 	};
 
