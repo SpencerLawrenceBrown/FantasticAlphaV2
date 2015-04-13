@@ -28,7 +28,7 @@ module.exports = function (grunt){
 		},
 		cssmin: {
 			target: {
-				src: ['public/css/*.css'],
+				src: ['public/css/user/*.css', 'public/css/*.css'],
       			dest: 'public/dist/main.min.css'
      		},
      		mobile: {
@@ -56,7 +56,7 @@ module.exports = function (grunt){
 				tasks: ['concat', 'uglify']
 			},
 			css: {
-				files: ['public/css/*.css'],
+				files: ['public/css/*.css', 'public/css/user/*.css'],
 				tasks: ['cssmin:target']
 			},
 			mobile:{

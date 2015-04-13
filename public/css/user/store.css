@@ -135,13 +135,13 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 .level_0 .title_background{
 	background-image: url("/assets/images/badge.png");
 }
-.level_Contributor .title_background{
+.level_1 .title_background{
 	background-image: url("/assets/images/blog.png");
 }
-.level_Digital .title_background{
+.level_2 .title_background{
 	background-image: url("/assets/images/video.png");
 }
-.level_Tangible .title_background{
+.level_3 .title_background{
 	background-image: url("/assets/images/physical.png");
 }
 
