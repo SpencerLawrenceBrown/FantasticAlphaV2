@@ -6,8 +6,8 @@
 	<div id = 'detail_box' ng-show = 'store.model.current_set'>
 		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 0">Fan</h1>
 		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 1">Contributor</h1>
-		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 2"> Download Pre-order</h1>
-		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 3"> Ticket Pre-order</h1>
+		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 2">Download Pre-order</h1>
+		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 3">Box Set Pre-order</h1>
 		<h3 class = "detail_title" analytics-on="hover" analytics-event="Hovered detail_title" analytics-category = "Store-Detail" analytics-label="{{campaign.project.project}}, Level {{store.model.current_highlight.level}}">{{store.model.current_highlight.description}} </h3>
 		<h3 class = "detail_note visible-xs-block">Includes:</h3>
 		<div class = 'detail_component' ng-repeat="component in store.model.current_highlight.contains.unique" analytics-on="click" analytics-event="Clicked Component Bubble"  analytics-label="{{campaign.project.project}}, Level {{store.model.current_highlight.level}}, Component {{component.name}}" analytics-categpry="Store-Detail">
