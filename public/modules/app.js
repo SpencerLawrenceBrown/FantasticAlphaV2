@@ -38,7 +38,11 @@ app.config(function($routeProvider, $locationProvider, $httpProvider) {
 			controllerAs : 'homepage',
 			templateUrl : 'modules/homepage/homeTemplate.html'
 		})
-
+		.when('/create', {
+			controller : 'HomepageController',
+			controllerAs : 'homepage',
+			templateUrl : 'modules/studio/creation/creationTemplate.html'
+		})
 		// route for campaigns
 		.when('/campaign/:campaign_id', {
 			controller : 'CampaignController',
