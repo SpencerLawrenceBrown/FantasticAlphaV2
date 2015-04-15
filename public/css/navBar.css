@@ -61,7 +61,8 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	text-align: center;
 }
 
-#nav_bar ul li #browse_tab_text{
+
+#nav_bar ul li #tab_text{
 	font-family: 'Raleway', sans-serif;
 	color: white;
 	padding-top: 0px;
@@ -71,24 +72,14 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	margin-bottom: 0px;
 }
 
-#nav_bar ul li #help_tab_text{
-	font-family: 'Raleway', sans-serif;
-	color: white;
-	padding-top: 0px;
-	padding-bottom: 0px;
-	line-height: 50px;
-	height: 50px;
-	margin-bottom: 0px;
+#nav_bar ul li #tab_text:hover{
+	color: gray;
 }
 
 #nav_bar ul li.disable a{
 	color: gray;
 }
 
-
-#nav_bar ul li a:hover{
-	color: gray;
-}
 
 /*Add the white line to the left items*/
 #nav_bar ul.navbar-left a{
@@ -97,7 +88,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 
 /*=====BROWSE======*/
 
-#nav_bar #browse_tab.open #browse_tab_text{
+#nav_bar #browse_tab.open #tab_text{
 	background-color: black;
 }
 
@@ -108,6 +99,14 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 
 #nav_bar #about_tab a{
 	border-right:none;
+}
+
+/*=====STUDIO======*/
+
+#nav_bar #analytics_tab{
+	position: absolute;
+	right: 0px;
+	border-right: 0px;
 }
 
 
