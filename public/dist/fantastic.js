@@ -455,7 +455,7 @@ This is just for the demo of the analytics
 */
 
 angular.module('AnalyticsCTRL', []).controller('AnalyticsController', ['$scope', function($scope){
-
+	$scope.analy = false;
 	$scope.backers = false;
 	$scope.current = false;
 	$scope.daily= false;

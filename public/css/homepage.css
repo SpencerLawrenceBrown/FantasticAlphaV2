@@ -319,7 +319,12 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	left: 0px;
 	z-index: 1;
 }
-
+.analytics_overview{
+	position: absolute;
+	top: 53px;
+	left: 0px;
+	z-index: 1;
+}
 #analytics .trigger{
 	position: absolute;
 	width: 30px;
@@ -365,4 +370,16 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	left: 695px;
 	width: 30px;
 	height: 30px;
+}
+.trigger#overview{
+	top:50px;
+	left: 0px;
+	width: 135px;
+	height: 60px;
+}
+.trigger#ana{
+	top:50px;
+	left: 135px;
+	width: 135px;
+	height: 60px;
 }
