@@ -24,6 +24,7 @@ var app = angular.module('FantasticAlphaV2', [
 	'UserFormCTRL',
 	'UserPageCTRL',
 	'HomePageCTRL',
+	'AnalyticsCTRL',
 	//Analytics
 	'angulartics',
 	'angulartics.segment.io'
@@ -38,10 +39,10 @@ app.config(function($routeProvider, $locationProvider, $httpProvider) {
 			controllerAs : 'homepage',
 			templateUrl : 'modules/homepage/homeTemplate.html'
 		})
-		.when('/create', {
-			controller : 'HomepageController',
-			controllerAs : 'homepage',
-			templateUrl : 'modules/studio/creation/creationTemplate.html'
+		.when('/studio', {
+			controller : 'AnalyticsController',
+			controllerAs : 'analytics',
+			templateUrl : 'modules/studio/analytics/demoTemplate.html'
 		})
 		// route for campaigns
 		.when('/campaign/:campaign_id', {

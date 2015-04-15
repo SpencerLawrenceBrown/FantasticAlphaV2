@@ -17,7 +17,7 @@ This controller manages the view of the user's page. The user's page lists the f
 		-AuthFactory
 */
 
-angular.module('UserPageCTRL', ['UserFCTR', 'AuthFCTR']).controller('UserPageController', ['$scope', 'UserFactory','AuthFactory', function($scope, UserFactory, AuthFactory){
+angular.module('UserPageCTRL', ['AuthFCTR', 'UserFCTR']).controller('UserPageController', ['$scope', 'AuthFactory', 'UserFactory', function($scope, AuthFactory, UserFactory){
 	this.auth = AuthFactory;
 	this.details = UserFactory;
 	
