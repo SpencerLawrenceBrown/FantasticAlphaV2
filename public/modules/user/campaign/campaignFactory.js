@@ -18,7 +18,7 @@ Basically just loads all the campaign data from the server.
 		-none
 */
 
-angular.module('CampaignFCTR', []).factory('CampaignFactory', ['$routeParams', '$http', '$sce', function($routeParams, $http, $sce){
+angular.module('CampaignFCTR', []).factory('CampaignFactory', ['$routeParams', '$http', '$sce', '$rootScope', function($routeParams, $http, $sce, $rootScope){
 	//Model
 	var CampaignFactory = {
 		campaign:{
@@ -69,6 +69,11 @@ angular.module('CampaignFCTR', []).factory('CampaignFactory', ['$routeParams', '
 			CampaignFactory.tabs.active = "update";
 		}
 	};
+
+	var checkoutListener = $rootScope.$on('checkout:successful', function(){
+		CampaignFactory.campaign.fans++;	
+	});
+
 	
 	return CampaignFactory;
 }]);

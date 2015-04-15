@@ -183,7 +183,6 @@ angular.module('BarFCTR', ['CartFCTR']).factory('BarFactory', ['$routeParams', '
 		BarFactory.visual.barCart += -(BarFactory.visual.barCart * .99999);
 		BarFactory.actual.campaignPaid += BarFactory.actual.campaignCart;
 		BarFactory.actual.campaignCart = 0;
-		BarFactory.fans++;
 		BarFactory.updateRewardsProgress();
 		//For testing purposes this does not push to the server. 
 	}
