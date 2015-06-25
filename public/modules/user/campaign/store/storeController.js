@@ -19,7 +19,9 @@ It bascially functions as a getter and then holds the store contents
 angular.module('StoreCTRL', ['StoreFCTR']).controller('StoreController', ['$routeParams', '$rootScope', '$scope',  'StoreFactory', function($routeParams, $rootScope, $scope, StoreFactory){
 	//Model connection
 	//Refence to the watch variable
-	this.inventory = StoreFactory.incentives;
+	this.home = StoreFactory.home_incentives;
+	this.team = StoreFactory.team_incentives;
+	this.stadium = StoreFactory.stadium_incentives;
 	//This will have to change eventually, but for now it works. Need to figure out how to bind w/o scope
 	this.model = StoreFactory;
 
@@ -49,13 +51,15 @@ angular.module('StoreCTRL', ['StoreFCTR']).controller('StoreController', ['$rout
 	};
 
 	//Set the selected item
-	this.setCurrent = function(index){
-		StoreFactory.setCurrent(index);
+	this.setCurrent = function(incentive){
+		StoreFactory.setCurrent(incentive);
 		this.model.added_display = false;
 	}
 
 	StoreFactory.getIncentives().then(function(){
-			this.inventory = StoreFactory.incentives;
+		this.home = StoreFactory.home_incentives;
+		this.team = StoreFactory.team_incentives;
+		this.stadium = StoreFactory.stadium_incentives;
 	}.bind(this));
 
 }]);

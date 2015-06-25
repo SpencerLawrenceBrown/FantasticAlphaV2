@@ -173,13 +173,13 @@ APIrouter.post('/new-campaign', function(req, res){
 	});
 });
 //Add incentives to the store
-APIrouter.put('/add-incentives', function(req, res){
+APIrouter.put('/add-incentives-home', function(req, res){
 
 	//Find a campaign with a matching project and campaign_number
 	Campaign.findOne({project: req.body.project, campaign_number: req.body.number}, function(err, campaign){
 		//Clear the current contents if they exist
-		campaign.store[0]["incentives"].pull();
-		campaign.store[0]["incentives"].length = 0;
+		campaign.store[0]["home_incentives"].pull();
+		campaign.store[0]["home_incentives"].length = 0;
 
 		var deJSONstring = JSON.parse(req.body.incentives);
 		//Add rewards to store
@@ -221,7 +221,123 @@ APIrouter.put('/add-incentives', function(req, res){
 				};
 			};
 			//Push into store
-			campaign.store[0]["incentives"].push(incentive);
+			campaign.store[0]["home_incentives"].push(incentive);
+		};	
+		// save the campaign and check for errors
+		campaign.save(function(err) {
+			if (err)
+				res.send(err);
+			res.json(campaign);
+		});
+	});
+});
+APIrouter.put('/add-incentives-team', function(req, res){
+
+	//Find a campaign with a matching project and campaign_number
+	Campaign.findOne({project: req.body.project, campaign_number: req.body.number}, function(err, campaign){
+		//Clear the current contents if they exist
+		campaign.store[0]["team_incentives"].pull();
+		campaign.store[0]["team_incentives"].length = 0;
+
+		var deJSONstring = JSON.parse(req.body.incentives);
+		//Add rewards to store
+		for (var i = 0; i < deJSONstring.length; i++){
+			var incentive = new Incentive();
+			incentive.level = deJSONstring[i].level;
+			incentive.description = deJSONstring[i].description;
+			incentive.buttonText = deJSONstring[i].buttonText;
+			incentive.project = campaign.project;
+			incentive.campaign_id = req.body.camp_id;
+			incentive.price = deJSONstring[i].price;
+			incentive.campaign_number = campaign.campaign_number;
+
+			//Add the different types of incentives
+			//Unique
+			//These use the components for display the information
+			if (deJSONstring[i].contains.unique.length > 0){
+				for (var x = 0; x < deJSONstring[i].contains.unique.length; x++){
+					console.log(deJSONstring[i].contains.unique);
+					var newUnique = new Component();
+					newUnique.name = deJSONstring[i].contains.unique[x].name;
+					newUnique.description = deJSONstring[i].contains.unique[x].description;
+					newUnique.type = deJSONstring[i].contains.unique[x].type;
+					incentive.contains.unique.push(newUnique);
+				};
+			};
+			//Carry Over
+			if (deJSONstring[i].contains.carry_over.length > 0){
+				for (var y = 0; y < deJSONstring[i].contains.carry_over.length; y++){
+					var newCarry = deJSONstring[i].contains.carry_over[y];
+					incentive.contains.carry_over.push(newCarry);
+				};
+			};
+			//Reward Related
+			if (deJSONstring[i].contains.reward_related.length > 0){
+				for (var z = 0; z < deJSONstring[i].contains.reward_related.length; z++){
+					var newReward = deJSONstring[i].contains.reward_related[z];
+					incentive.contains.reward_related.push(newReward);
+				};
+			};
+			//Push into store
+			campaign.store[0]["team_incentives"].push(incentive);
+		};	
+		// save the campaign and check for errors
+		campaign.save(function(err) {
+			if (err)
+				res.send(err);
+			res.json(campaign);
+		});
+	});
+});
+APIrouter.put('/add-incentives-stadium', function(req, res){
+
+	//Find a campaign with a matching project and campaign_number
+	Campaign.findOne({project: req.body.project, campaign_number: req.body.number}, function(err, campaign){
+		//Clear the current contents if they exist
+		campaign.store[0]["stadium_incentives"].pull();
+		campaign.store[0]["stadium_incentives"].length = 0;
+
+		var deJSONstring = JSON.parse(req.body.incentives);
+		//Add rewards to store
+		for (var i = 0; i < deJSONstring.length; i++){
+			var incentive = new Incentive();
+			incentive.level = deJSONstring[i].level;
+			incentive.description = deJSONstring[i].description;
+			incentive.buttonText = deJSONstring[i].buttonText;
+			incentive.project = campaign.project;
+			incentive.campaign_id = req.body.camp_id;
+			incentive.price = deJSONstring[i].price;
+			incentive.campaign_number = campaign.campaign_number;
+
+			//Add the different types of incentives
+			//Unique
+			//These use the components for display the information
+			if (deJSONstring[i].contains.unique.length > 0){
+				for (var x = 0; x < deJSONstring[i].contains.unique.length; x++){
+					console.log(deJSONstring[i].contains.unique);
+					var newUnique = new Component();
+					newUnique.name = deJSONstring[i].contains.unique[x].name;
+					newUnique.description = deJSONstring[i].contains.unique[x].description;
+					newUnique.type = deJSONstring[i].contains.unique[x].type;
+					incentive.contains.unique.push(newUnique);
+				};
+			};
+			//Carry Over
+			if (deJSONstring[i].contains.carry_over.length > 0){
+				for (var y = 0; y < deJSONstring[i].contains.carry_over.length; y++){
+					var newCarry = deJSONstring[i].contains.carry_over[y];
+					incentive.contains.carry_over.push(newCarry);
+				};
+			};
+			//Reward Related
+			if (deJSONstring[i].contains.reward_related.length > 0){
+				for (var z = 0; z < deJSONstring[i].contains.reward_related.length; z++){
+					var newReward = deJSONstring[i].contains.reward_related[z];
+					incentive.contains.reward_related.push(newReward);
+				};
+			};
+			//Push into store
+			campaign.store[0]["stadium_incentives"].push(incentive);
 		};	
 		// save the campaign and check for errors
 		campaign.save(function(err) {

@@ -58,6 +58,76 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	text-align: center;
 	font-size: 18px;
 }
+
+#calendar_box{
+	position: relative;
+	height: 80px;
+}
+
+#calendar_box ul.pagination{
+	margin: 0px;
+	width: 100%;
+}
+
+#calendar_box ul.pagination{
+	margin: 0px;
+	width: 100%;
+}
+
+#calendar_box ul.pagination li a{
+	margin: 0px;
+	width: 21%;
+	height: 80px;
+	padding: 0px;
+}
+
+#calendar_box ul.pagination li a.arrow{
+	margin: 0px;
+	width: 8%;
+}
+
+#calendar_box ul.pagination li a div.info{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	color: black;
+}
+
+#calendar_box ul.pagination li a div.info .date{
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+#calendar_box ul.pagination li a div.info .time{
+	position: absolute;
+	top: 40px;
+	left: 5px;
+	font-size: 12px;
+}
+#calendar_box ul.pagination li a div.info .location{
+	position: absolute;
+	top: 55px;
+	left: 5px;
+	font-size: 12px;
+}
+#calendar_box ul.pagination li a div.info .team{
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	font-weight: bold;
+}
+#calendar_box ul.pagination li a div.info .logo{
+	position: relative;
+	display: block;
+	margin: auto;
+	height: 80px;
+	opacity: 0.2;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+
 /*All Incentives*/
 #incentive_options{
 	position: relative;

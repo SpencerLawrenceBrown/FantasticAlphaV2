@@ -15,6 +15,7 @@ var app = angular.module('FantasticAlphaV2', [
 	'NavDRCT',
 	'CartDRCT',
 	'StoreDRCT',
+	'IncentiveDRCT',
 	'VideoDRCT',
 	'TabsDRCT',
 	'BarDRCT',
@@ -955,6 +956,47 @@ angular.module('OdometerDRCT', []).directive('odometerDirective', function(){
   };
 });
 /*
+Incentive Directive
+Written by: Spencer Brown, copyright 2015
+
+//Description
+This hold the information for each incentive.
+It is populated by the store factory. There will be DOM manipulation!
+
+//Components
+	-Different divs (buttons?) for each store item.
+	-An area for description of the items
+
+//Controller: StoreController
+
+//Map
+	-Usedby:
+		-campaignTemplate.html
+	-Contains:
+		-StoreController
+*/
+
+angular.module('IncentiveDRCT',[]).directive('fnIncentive', function(){
+	return {
+		restrict: 'E',
+		replace: true,
+		transclude: false,
+		templateUrl: 'modules/user/campaign/store/incentiveTemplate.html',
+		scope:{
+			incentives:"=tier",
+			visible:"=",
+			label:"=",
+			current:"=",
+			header:"@title",
+			choose:"&",
+			add:"&"
+		},
+		link: function(scope, element, attrs){
+			console.log(scope);
+		}
+	};
+});
+/*
 Store Controller
 Written by: Spencer Brown, copyright 2014
 
@@ -975,7 +1017,9 @@ It bascially functions as a getter and then holds the store contents
 angular.module('StoreCTRL', ['StoreFCTR']).controller('StoreController', ['$routeParams', '$rootScope', '$scope',  'StoreFactory', function($routeParams, $rootScope, $scope, StoreFactory){
 	//Model connection
 	//Refence to the watch variable
-	this.inventory = StoreFactory.incentives;
+	this.home = StoreFactory.home_incentives;
+	this.team = StoreFactory.team_incentives;
+	this.stadium = StoreFactory.stadium_incentives;
 	//This will have to change eventually, but for now it works. Need to figure out how to bind w/o scope
 	this.model = StoreFactory;
 
@@ -1005,13 +1049,15 @@ angular.module('StoreCTRL', ['StoreFCTR']).controller('StoreController', ['$rout
 	};
 
 	//Set the selected item
-	this.setCurrent = function(index){
-		StoreFactory.setCurrent(index);
+	this.setCurrent = function(incentive){
+		StoreFactory.setCurrent(incentive);
 		this.model.added_display = false;
 	}
 
 	StoreFactory.getIncentives().then(function(){
-			this.inventory = StoreFactory.incentives;
+		this.home = StoreFactory.home_incentives;
+		this.team = StoreFactory.team_incentives;
+		this.stadium = StoreFactory.stadium_incentives;
 	}.bind(this));
 
 }]);
@@ -1071,7 +1117,12 @@ Each time a new campaign page is loaded, the store will make a new call to get t
 
 angular.module('StoreFCTR', []).factory('StoreFactory', ['$routeParams', '$http', function($routeParams, $http){
 	var StoreFactory = {
-		incentives:{}, 
+		home_incentives:{}, 
+		team_incentives:{}, 
+		stadium_incentives:{},
+		home_select : false,
+		team_select : false,
+		stadium_select : false, 
 		current_highlight: {},
 		current_set : false,
 		cart_btn_text : "Add to Cart"
@@ -1083,25 +1134,40 @@ angular.module('StoreFCTR', []).factory('StoreFactory', ['$routeParams', '$http'
 			method: "GET",
 			url: urlString
 		}).success(function(data){
-			StoreFactory.incentives = data.incentives;
+			StoreFactory.home_incentives = data.home_incentives;
+			StoreFactory.team_incentives = data.team_incentives;
+			StoreFactory.stadium_incentives = data.stadium_incentives;
 			StoreFactory.current_set = false;
 			StoreFactory.current_highlight = {};
-			console.log(StoreFactory.incentives);
+			console.log(StoreFactory);
 		});
 	};
 
-	StoreFactory.setCurrent = function(index){
+	StoreFactory.setCurrent = function(incentive){
 		if (StoreFactory.current_set == false){
 			StoreFactory.current_set = true;
 		}
-
-		StoreFactory.current_highlight = StoreFactory.incentives[index];
+		function checkIncentive(array, incentive){
+			var found = false;
+			//Check for it
+			for (i = 0; i<array.length; i++){
+				if (array[i] == incentive){
+					StoreFactory.current_highlight = array[i];
+					found = true;
+				}
+			}
+			return found;
+		}
+		StoreFactory.home_select = checkIncentive(StoreFactory.home_incentives, incentive);
+		StoreFactory.team_select = checkIncentive(StoreFactory.team_incentives,incentive);
+		StoreFactory.stadium_select = checkIncentive(StoreFactory.stadium_incentives, incentive);
 	};
 
 	StoreFactory.getCurrent = function(){
 		if (StoreFactory.current_set == false){
 			return false;
 		}
+		console.log(StoreFactory.current_highlight);
 		return StoreFactory.current_highlight;
 	};
 

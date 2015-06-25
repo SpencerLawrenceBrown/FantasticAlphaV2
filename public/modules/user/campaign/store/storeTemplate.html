@@ -3,63 +3,9 @@
 		<p><b>How it works:</b> When a reward is unlocked, every paying member gains access to it. Unlock rewards by becoming a member and pushing the bar forward!</p>
 	</div> -->
 	<!--Add Pictures Later, hidden initially-->
-	<div id = 'detail_box' ng-show = 'store.model.current_set'>
-		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 0">Fan</h1>
-		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 1">Contributor</h1>
-		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 2">Download Pre-order</h1>
-		<h1 class = "detail_level" ng-show = "store.model.current_highlight.level == 3">Box Set Pre-order</h1>
-		<h3 class = "detail_title" analytics-on="hover" analytics-event="Hovered detail_title" analytics-category = "Store-Detail" analytics-label="{{campaign.project.project}}, Level {{store.model.current_highlight.level}}">{{store.model.current_highlight.description}} </h3>
-		<h3 class = "detail_note visible-xs-block">Includes:</h3>
-		<div class = 'detail_component' ng-repeat="component in store.model.current_highlight.contains.unique" analytics-on="click" analytics-event="Clicked Component Bubble"  analytics-label="{{campaign.project.project}}, Level {{store.model.current_highlight.level}}, Component {{component.name}}" analytics-categpry="Store-Detail">
-			<h4 class = "component_title">{{component.name}}</h4>
-			<p class = "component_des">{{component.description}}</p>
-			<p class = "component_type"> This is a {{component.type}} item.</p>
-			<p class = "component_note" ng-show= "component.type == 'Digital'">
-				A download link will be accessible in your profile page when released.
-			</p>
-			<p class = "component_note" ng-show= "component.type == 'Physical'">
-				This item will be shipped to the provided address when released.
-			</p>
-		</div>
-		<div class = 'detail_extras'>
-			<!-- <p ng-repeat = "carry_over in store.model.current_highlight.contains.carry_over">
-				+ Level: <span ng-show = "carry_over == 0">Fan</span>
-				<span ng-show = "carry_over == 1">Rewards</span>
-				<span ng-show = "carry_over == 2">Digital</span>
-				<span ng-show = "carry_over == 3">Physical</span>
-			</p> -->
-			<p ng-repeat = "reward in store.model.current_highlight.contains.reward_related">
-				+ {{reward}}
-			</p>
-			<button class = 'btn btn-default add_to_cart' ng-click = "store.addItem('getCurrent')" analytics-on="click" analytics-event="Added Item To Cart" analytics-category="Store-Detail" analytics-label="{{campaign.project.project}}, Level {{store.model.current_highlight.level}}">{{store.model.cart_btn_text}}</button>
-			<p id = "added_to_cart" ng-show = "store.model.added_display">Item Added to Cart</p>
-		</div>
-	</div>
-	<!-- Main store component -->
-	<h3 id='incentive_header'> Membership Levels </h3>
-	<div id = 'incentive_options'>
-		<div class = 'incentive_box level_{{::incentive.level}}' ng-repeat = 'incentive in store.inventory' ng-class = "{selected : store.model.current_highlight == incentive}" ng-click = 'store.setCurrent($index)' analytics-on="click" analytics-event="Click Level Bubble" analytics-category="Store-Main" analytics-label="{{campaign.project.project}}, Level {{incentive.level}}">
-			<div class = 'incentive_title title_background'>
-				<p class = "title_text" ng-show = "incentive.level == 0">Fan</p>
-				<p class = "title_text" ng-show = "incentive.level == 1">Contributor</p>
-				<p class = "title_text" ng-show = "incentive.level == 2">Download Pre-order</p>
-				<p class = "title_text" ng-show = "incentive.level == 3">Box Set Pre-order</p>
-			</div>
-			<div class = 'incentive_components'>
-				<p class = 'unique' ng-repeat = 'unique in incentive.contains.unique'>{{::unique.name}}</p>
-					<p class = 'reward_related' ng-repeat = 'reward_related in incentive.contains.reward_related'>+ {{::reward_related}}</p>
-				<p class = 'carry_over' ng-class = "{contributor : incentive.level > 0}"></p>
-			<!-- 	<p class = 'carry_over' ng-class = "{contributor : incentive.level == 1, digital : incentive.level == 2, tangible : incentive.level == 3}"></p> -->
-			</div>
-			<div class = 'incentive_buy'>
-				<div class = 'incentive_price'>
-					<div class = 'min_text'> Contribute:</div>  
-					{{::incentive.price | currency}}
-				</div>
-			<!--	<div class = 'incentive_checkout' ng-click = 'store.addItem(incentive)'>
-					add to cart
-				</div> -->
-			</div>
-		</div>
-	</div>
+	<fn-incentive tier='store.home' visible='store.model.home_select' current='store.model.current_highlight' label='store.model.cart_btn_text' title='Home Experiences' choose='store.setCurrent(value)' add="store.addItem(value)"></fn-incentive>
+
+	<fn-incentive tier='store.team' visible='store.model.team_select'  current='store.model.current_highlight' label='store.model.cart_btn_text' title='Game Day Experiences' choose='store.setCurrent(value)' add="store.addItem(value)"></fn-incentive>
+
+	<fn-incentive tier='store.stadium' visible='store.model.stadium_select' current='store.model.current_highlight' label='store.model.cart_btn_text' title='Team Experiences' choose='store.setCurrent(value)' add="store.addItem(value)"></fn-incentive>
 </div>

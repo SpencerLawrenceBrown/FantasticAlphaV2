@@ -15,6 +15,7 @@ var app = angular.module('FantasticAlphaV2', [
 	'NavDRCT',
 	'CartDRCT',
 	'StoreDRCT',
+	'IncentiveDRCT',
 	'VideoDRCT',
 	'TabsDRCT',
 	'BarDRCT',

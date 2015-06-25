@@ -11,7 +11,9 @@ var Incentive = require('./incentive');
 
 //Campaign Schema
 var storeSchema = mongoose.Schema({
-	incentives:[Incentive.schema]
+	home_incentives:[Incentive.schema],
+	team_incentives:[Incentive.schema],
+	stadium_incentives:[Incentive.schema]
 });
 
 //create the model and expose to app
