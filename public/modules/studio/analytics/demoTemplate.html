@@ -1,0 +1,20 @@
+<div id="analytics" class = "container-fluid">
+	<img class="analytics_overview" src="/assets/images/analytics_overview.jpg">
+	<img ng-show = "analy" class="analytics" src="/assets/images/analytics.jpg">
+	<img ng-show="backers && analy" class="analytics" src="/assets/images/analytics_backers.jpg">
+	<img ng-show="current && analy" class="analytics" src="/assets/images/analytics_current.jpg">
+	<img ng-show="daily && analy" class="analytics" src="/assets/images/analytics_daily.jpg">
+	<img ng-show="map && analy" class="analytics" src="/assets/images/analytics_map.jpg">
+	<img ng-show="perks && analy" class="analytics" src="/assets/images/analytics_perks.jpg">
+	<img ng-show="projection && analy" class="analytics" src="/assets/images/analytics_projection.jpg">
+	<img ng-show="trend && analy" class="analytics" src="/assets/images/analytics_trend.jpg">
+	<div class="trigger" id="backers" ng-mouseenter="backers = true" ng-mouseleave="backers = false"></div>
+	<div class="trigger" id="current" ng-mouseover="current = true" ng-mouseleave="current = false"></div>
+	<div class="trigger" id="daily" ng-mouseover="daily = true" ng-mouseleave="daily = false"></div>
+	<div class="trigger" id="map" ng-mouseover="map = true" ng-mouseleave="map = false"></div>
+	<div class="trigger" id="perks" ng-mouseover="perks = true" ng-mouseleave="perks = false"></div>
+	<div class="trigger" id="projection" ng-mouseover="projection = true" ng-mouseleave="projection = false"></div>
+	<div class="trigger" id="trend" ng-mouseover="trend = true" ng-mouseleave="trend = false"></div>
+	<div class="trigger" id="overview" ng-click="analy = false"></div>
+	<div class="trigger" id="ana" ng-click="analy = true"></div>
+</div>

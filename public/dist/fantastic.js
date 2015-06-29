@@ -27,6 +27,7 @@ var app = angular.module('FantasticAlphaV2', [
 	'UserFormCTRL',
 	'UserPageCTRL',
 	'HomePageCTRL',
+	'AnalyticsCTRL',
 	//Analytics
 	'angulartics',
 	'angulartics.segment.io'
@@ -41,10 +42,10 @@ app.config(function($routeProvider, $locationProvider, $httpProvider) {
 			controllerAs : 'homepage',
 			templateUrl : 'modules/homepage/homeTemplate.html'
 		})
-		.when('/create', {
-			controller : 'HomepageController',
-			controllerAs : 'homepage',
-			templateUrl : 'modules/studio/creation/creationTemplate.html'
+		.when('/studio', {
+			controller : 'AnalyticsController',
+			controllerAs : 'analytics',
+			templateUrl : 'modules/studio/analytics/demoTemplate.html'
 		})
 		// route for campaigns
 		.when('/campaign/:campaign_id', {
@@ -448,6 +449,24 @@ angular.module('NavDRCT', ['NavCTRL']).directive('fnNav', function(){
 		// }
 	};
 });
+/*
+Analytics Controller
+Written by: Spencer Brown, copyright 2014
+
+//Description
+This is just for the demo of the analytics
+*/
+
+angular.module('AnalyticsCTRL', []).controller('AnalyticsController', ['$scope', function($scope){
+	$scope.analy = false;
+	$scope.backers = false;
+	$scope.current = false;
+	$scope.daily= false;
+	$scope.map = false;
+	$scope.perks = false;
+	$scope.projections = false;
+	$scope.trend = false;
+}]);
 /*
 Campaign Controller
 Written by: Spencer Brown, copyright 2014

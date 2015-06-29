@@ -299,3 +299,87 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 		font-size: 1.2em;
 	}
 } 
+
+/*Analyitcs Demo*/
+#analytics{
+	position: relative;
+	height: 3000px;
+	width: 1200px;
+	margin: 0 auto;
+}
+.analytics{
+	position: absolute;
+	top: 53px;
+	left: 0px;
+	z-index: 2;
+}
+.analytics_base{
+	position: absolute;
+	top: 53px;
+	left: 0px;
+	z-index: 1;
+}
+.analytics_overview{
+	position: absolute;
+	top: 53px;
+	left: 0px;
+	z-index: 1;
+}
+#analytics .trigger{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	z-index: 3;
+}
+.trigger#backers{
+	top: 1050px;
+	left: 222px;
+	width: 43px;
+	height: 240px;
+}
+.trigger#current{
+	top: 525px;
+	left: 695px;
+}
+.trigger#daily{
+	top:1080px;
+	left: 795px;
+	width: 43px;
+	height: 210px;
+}
+.trigger#map{
+	top:1510px;
+	left: 542px;
+	width: 55px;
+	height: 55px;
+}
+.trigger#perks{
+	top:2220px;
+	left: 130px;
+	width: 90px;
+	height: 180px;
+}
+.trigger#projection{
+	top:320px;
+	left: 1060px;
+	width: 30px;
+	height: 30px;
+}
+.trigger#trend{
+	top:410px;
+	left: 695px;
+	width: 30px;
+	height: 30px;
+}
+.trigger#overview{
+	top:50px;
+	left: 0px;
+	width: 135px;
+	height: 60px;
+}
+.trigger#ana{
+	top:50px;
+	left: 135px;
+	width: 135px;
+	height: 60px;
+}
