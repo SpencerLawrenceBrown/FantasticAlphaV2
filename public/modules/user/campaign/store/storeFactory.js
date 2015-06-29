@@ -30,7 +30,10 @@ angular.module('StoreFCTR', []).factory('StoreFactory', ['$routeParams', '$http'
 		stadium_select : false, 
 		current_highlight: {},
 		current_set : false,
-		cart_btn_text : "Add to Cart"
+		cart_btn_text : "Add to Cart",
+		tab: true,
+		button: "Submit Comment",
+		textbox: ""
 	};
 
 	StoreFactory.getIncentives = function(){

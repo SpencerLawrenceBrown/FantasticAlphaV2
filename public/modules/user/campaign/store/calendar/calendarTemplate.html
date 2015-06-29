@@ -1,0 +1,30 @@
+<div id = "calendar_div">
+    <div id = "calendar_wrapper">
+        <div id = "calendar">
+            <div class="header">
+                <span>{{cal.model.calendar.month}}</span>
+            </div>
+            <div class="week_label">
+                <span class="day">Sun</span>
+                <span class="day">Mon</span>
+                <span class="day">Tue</span>
+                <span class="day">Wed</span>
+                <span class="day">Thu</span>
+                <span class="day">Fri</span>
+                <span class="day">Sat</span>
+            </div>
+            <div class="week" ng-repeat="week in cal.model.calendar.weeks">
+                <span class="day" ng-class="{'different-month': !day.isCurrentMonth, selected: day.choosen}" ng-click="cal.select(day)" ng-repeat="day in week.days">{{day.number}}</span>
+            </div>
+        </div>
+    </div>
+    <div id = "details">
+        <div class = "info">
+            <div class = "date">{{cal.model.selectedDate.date}}</div>
+            <div class = "team">vs. {{cal.model.selectedDate.game.Opponent}}</div>
+            <div class = "location">{{cal.model.selectedDate.game.Status}}</div>
+            <div class = "stadium">{{cal.model.selectedDate.game.Location}}</div>
+            <div class = "time">{{cal.model.selectedDate.game.Time}}</div>
+        </div>
+    </div>
+</div>

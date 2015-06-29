@@ -1,0 +1,85 @@
+[
+   {
+        "level": 0,
+        "description": "Some recognition for your loyalty.",
+        "contains": {
+            "unique": [
+                {
+                    "name": "+ Social Shoutout",
+                    "description": "We’ll give you a shout out on one of our social media outlets, your choice!",
+                    "type": "Digital"
+                }
+            ],
+            "carry_over": [],
+            "reward_related": []
+        },
+        "buttonText": "$1 Minimum",
+        "price": 5,
+        "project": "Dodgers 2015 Season",
+        "item_id": 70,
+        "campaign_id": 1
+    },
+    {
+        "level": 1,
+        "description": "A whole new breed of gameday posters.",
+        "contains": {
+            "unique": [
+                {
+                    "name": "+ Exclusive Gameday Poster",
+                    "description": "Collectable art prints for each game of the season.",
+                    "type": "Physical"
+                }
+            ],
+            "carry_over": [],
+            "reward_related": [
+            ]
+        },
+        "buttonText": "$5 Minimum",
+        "price": 10,
+        "project": "Dodgers 2015 Season",
+        "item_id": 71,
+        "campaign_id": 1
+    },
+    {
+        "level": 2,
+        "description": "Bring home a memory, everytime.",
+        "contains": {
+            "unique": [
+                {
+                    "name": "+ Commemorative Game Ball",
+                    "description": "Get a unique baseball imprinted with ‘LA Dodgers vs. the day’s opposition', a FanTastic exclusive!",
+                    "type": "Physical"
+                }
+            ],
+            "carry_over": [],
+            "reward_related": []
+        },
+        "buttonText": "Join Now",
+        "price": 25,
+        "project": "Dodgers 2015 Season",
+        "item_id": 72,
+        "campaign_id": 1
+    },
+
+    {
+        "level": 3,
+        "description": "Bring home the blood, sweat, and tears from your favorite player.",
+        "contains": {
+            "unique": [
+                {
+                    "name": "+ Game-worn Jersey",
+                    "description": "Go home with your favorite player’s Jersey. Quick, just one per player!",
+                    "type": "Physical"
+                }
+            ],
+            "carry_over": [],
+            "reward_related": [
+            ]
+        },
+        "buttonText": "$10 Minimum",
+        "price": 250,
+        "project": "Dodgers 2015 Season",
+        "item_id": 73,
+        "campaign_id": 1
+    }
+]

@@ -1,0 +1,84 @@
+[
+   {
+        "level": 0,
+        "description": "Hear from your favorite player.",
+        "contains": {
+            "unique": [
+                {
+                    "name": "+ Video Messsage",
+                    "description": "Get a personalized video message from your favorite player.",
+                    "type": "Digital"
+                }
+            ],
+            "carry_over": [],
+            "reward_related": []
+        },
+        "buttonText": "$1 Minimum",
+        "price": 50,
+        "project": "Dodgers 2015 Season",
+        "item_id": 63,
+        "campaign_id": 1
+    },
+    {
+        "level": 1,
+        "description": "Communicate with your favorite player.",
+        "contains": {
+            "unique": [
+                {
+                    "name": "+ Phone Call",
+                    "description": "Shoot the breeze with your favorite player, from the comfort of your own couch!",
+                    "type": "In-person"
+                }
+            ],
+            "carry_over": [],
+            "reward_related": []
+        },
+        "buttonText": "Join Now",
+        "price": 500,
+        "project": "Dodgers 2015 Season",
+        "item_id": 64,
+        "campaign_id": 1
+    },
+    {
+        "level": 2,
+        "description": "Your own personal meet & greet.",
+        "contains": {
+            "unique": [
+                {
+                    "name": "+ Meet & Sign",
+                    "description": "Meet your favorite player at dodger stadium, and get an autographed game jersey.",
+                    "type": "In-person"
+                }
+            ],
+            "carry_over": [],
+            "reward_related": [
+            ]
+        },
+        "buttonText": "$5 Minimum",
+        "price": 800,
+        "project": "Dodgers 2015 Season",
+        "item_id": 65,
+        "campaign_id": 1
+    },
+    {
+        "level": 3,
+        "description": "A once-in-a-lifetime oppurtunity to learn from the best.",
+        "contains": {
+            "unique": [
+                {
+                    "name": "+ Pointers from a Pro",
+                    "description": "A round of batting practice with a Dodger of your choice.",
+                    "type": "In-person"
+                }
+            ],
+            "carry_over": [],
+            "reward_related": [
+            ]
+        },
+        "buttonText": "$10 Minimum",
+        "price": 1500,
+        "project": "Dodgers 2015 Season",
+        "item_id": 66,
+        "campaign_id": 1
+    }
+]

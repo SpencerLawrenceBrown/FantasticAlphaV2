@@ -11,11 +11,13 @@ var app = angular.module('FantasticAlphaV2', [
 	'ngRoute',
 	'ngSanitize', 
 	'ui.bootstrap',
+	'angularMoment',
 	//Custom
 	'NavDRCT',
 	'CartDRCT',
 	'StoreDRCT',
 	'IncentiveDRCT',
+	'CalDRCT',
 	'VideoDRCT',
 	'TabsDRCT',
 	'BarDRCT',

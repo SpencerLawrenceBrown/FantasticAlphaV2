@@ -1,0 +1,21 @@
+[
+    {
+        "name": "The True Blue Interview",
+        "description": "Every month we'll interview the players (or GM, coach, staff) with questions sourced from the fans.",
+        "unlock_amount": 60000,
+        "progress": "locked"
+    },
+    {
+        "name": "Farm Systems Prospects Report",
+        "description": "A video report made with the LA Dodgers farm system prospects, with highlights, bios and more.",
+        "unlock_amount": 150000,
+        "progress": "locked"
+    },
+    {
+        "name": "The Dodgers Stadium Tour",
+        "description": "Vote on a player or legend to take you on a video tour of Dodgers Stadium. Relive the history!",
+        "unlock_amount": 260000,
+        "progress": "locked"
+    }
+]
+"55914b4139d5a2f087e1e542"

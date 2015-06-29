@@ -1,6 +1,7 @@
 <div id = 'incentive_box'>
 	<h3 id='incentive_header'>{{::header}}</h3>
 	<div id = 'detail_box' ng-show = 'visible'>
+		
 		<h1 class = "detail_level" ng-show = "current.level == 0">Fan</h1>
 		<h1 class = "detail_level" ng-show = "current.level == 1">Contributor</h1>
 		<h1 class = "detail_level" ng-show = "current.level == 2">Download Pre-order</h1>
@@ -18,6 +19,7 @@
 				This item will be shipped to the provided address when released.
 			</p>
 		</div>
+		<ng-transclude></ng-transclude>
 		<div class = 'detail_extras'>
 			<!-- <p ng-repeat = "carry_over in store.model.current_highlight.contains.carry_over">
 				+ Level: <span ng-show = "carry_over == 0">Fan</span>

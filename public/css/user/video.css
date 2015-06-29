@@ -31,7 +31,6 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	position: relative;
 	width: 100%;
 	overflow: hidden;
-	border-bottom: 2px solid #ed2852;
 }
 
 #summary_div #campaign_title{

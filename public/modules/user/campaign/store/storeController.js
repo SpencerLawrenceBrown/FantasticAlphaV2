@@ -24,12 +24,12 @@ angular.module('StoreCTRL', ['StoreFCTR']).controller('StoreController', ['$rout
 	this.stadium = StoreFactory.stadium_incentives;
 	//This will have to change eventually, but for now it works. Need to figure out how to bind w/o scope
 	this.model = StoreFactory;
+	this.tab = StoreFactory.tab;
 
 	//Reload the inventory
 	this.loadInventory = function(){
 		StoreFactory.getIncentives();
 	};
-
 	//Add item to cart
 	this.addItem = function(item){
 		//This will emit an event that will be caught by the cart
@@ -50,6 +50,22 @@ angular.module('StoreCTRL', ['StoreFCTR']).controller('StoreController', ['$rout
 
 	};
 
+	this.change = function(input){
+		console.log(input);
+		if (input == 1){
+			console.log("hi");
+			StoreFactory.tab = true;
+		} else {
+			StoreFactory.tab = false;
+		}
+		console.log(StoreFactory.tab);
+	}
+
+	this.submit = function(){
+		StoreFactory.button = "Comment Submitted!";
+		StoreFactory.textbox = "";
+	}
+
 	//Set the selected item
 	this.setCurrent = function(incentive){
 		StoreFactory.setCurrent(incentive);
@@ -60,6 +76,7 @@ angular.module('StoreCTRL', ['StoreFCTR']).controller('StoreController', ['$rout
 		this.home = StoreFactory.home_incentives;
 		this.team = StoreFactory.team_incentives;
 		this.stadium = StoreFactory.stadium_incentives;
+		this.tab = StoreFactory.tab;
 	}.bind(this));
 
 }]);

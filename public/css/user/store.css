@@ -59,73 +59,89 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	font-size: 18px;
 }
 
-#calendar_box{
+#store_container .store_tab{
+	  position: relative;
+  width: 50%;
+  height: 40px;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  font-size: 20px;
+  line-height: 40px;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  margin-bottom: 10px;
+  cursor: pointer;
+  /* background-color: white; */
+}
+
+#store_container .store_tab#left_tab{
+	  border-right: 1px solid #ed2852;
+}
+
+#store_container .store_tab.active{
+	  color: #ed2852;
+  background-color: #d1d1d1;
+  border-bottom-color: #ed2852;
+  border-top-color: #ed2852;
+  font-weight: bold;
+  /* background-color: white; */
+}
+
+/*Social*/
+#social #community_header{
 	position: relative;
-	height: 80px;
+	top: -21px;
+  padding-left: 50px;
+}
+#social #comment_div{
+  top: 0px;
+  width: 420px;
+  height: 270px;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-#calendar_box ul.pagination{
-	margin: 0px;
-	width: 100%;
+#social #comment_div h4{
+	text-align: center;
 }
-
-#calendar_box ul.pagination{
-	margin: 0px;
-	width: 100%;
+#social #comment_div #textbox{
+	position: relative;	
+	top: 3px;
+	  width: 420px;
+	  height: 100px;
+  /* height: 400px; */
+  left: 16px;
+  padding-left: 5px;
 }
-
-#calendar_box ul.pagination li a{
-	margin: 0px;
-	width: 21%;
-	height: 80px;
-	padding: 0px;
-}
-
-#calendar_box ul.pagination li a.arrow{
-	margin: 0px;
-	width: 8%;
-}
-
-#calendar_box ul.pagination li a div.info{
+#social #comment_div #box_button{
 	position: relative;
-	height: 100%;
-	width: 100%;
-	color: black;
+	top: 4px;
+	left: 16px;
+	width: 160px;
+}
+#social #social_feed{
+	  position: relative;
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+#social #reddit_img{
+	position: relative;
+	top: -15px;
+	float: left;
+  	margin-left: 10px;
+}
+#social #social_img{
+	position: relative;
+	top: 7px;
 }
 
-#calendar_box ul.pagination li a div.info .date{
-	position: absolute;
-	top: 5px;
-	left: 5px;
-}
-#calendar_box ul.pagination li a div.info .time{
-	position: absolute;
+#social{
+	position: relative;
 	top: 40px;
-	left: 5px;
-	font-size: 12px;
 }
-#calendar_box ul.pagination li a div.info .location{
-	position: absolute;
-	top: 55px;
-	left: 5px;
-	font-size: 12px;
-}
-#calendar_box ul.pagination li a div.info .team{
-	position: absolute;
-	top: 5px;
-	right: 10px;
-	font-weight: bold;
-}
-#calendar_box ul.pagination li a div.info .logo{
-	position: relative;
-	display: block;
-	margin: auto;
-	height: 80px;
-	opacity: 0.2;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-
 
 
 /*All Incentives*/
@@ -142,7 +158,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	vertical-align: top;
 	overflow: hidden;
 	width: 196px;
-	height: 310px;
+	height: 210px;
 	background-color: white;
 	margin-left: 15px;
 	margin-right: 15px;
@@ -342,11 +358,8 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	color: black;
 }
 
-#detail_box div{
-	display: inline-block;
-}
-
 #detail_box .detail_component{
+	/*display: inline-block;
 	position: relative;
 	vertical-align: top;
 	width: 320px;
@@ -356,7 +369,19 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	margin-right: 20px;
 	margin-top: 30px;
 	background-color: white;
-	border-radius: 10px;
+	border-radius: 10px;*/
+	  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  width: 250px;
+  height: 227px;
+  font-size: 1em;
+  color: #000;
+  margin-right: 20px;
+  /* margin-top: 30px; */
+  background-color: #fff;
+  border-radius: 2px;
+  	margin-top: 10px;
 
 }
 
@@ -392,10 +417,11 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 /*Detail Extras */
 #detail_box .detail_extras{
 	position: relative;
+	display: inline-block;
 	vertical-align: top;
 	text-align: center;
-	width: 200px;
-	height: 150px;
+	width: 150px;
+	height: 208px;
 	font-size: 1.35em;
 	margin-top: 30px;
 	border-radius: 10px;
@@ -415,7 +441,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	position: absolute;
 	height: 50px;
 	width: 150px;
-	left: 27px;
+	left: 0px;
 	bottom: 0px;
 	-webkit-border-radius: 3;
   	-moz-border-radius: 3;
@@ -443,4 +469,168 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	font-weight: bold;
 	color: #5cb85c;
 
+}
+
+
+#calendar_div{
+	position: relative;
+	display: inline-block;
+	height: 220px;
+	margin-top: 10px;
+}
+
+#calendar_div #details{
+position: relative;
+  float: left;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+#calendar_div #details div.info{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	color: black;
+	text-align: left;
+	padding-top: 41px;
+}
+
+#calendar_div #details div.info .date{
+	position: relative;
+	width: 100%;
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+#calendar_div #details div.info .time{
+	position: relative;
+	font-size: 18px;
+}
+#calendar_div #details div.info .location{
+	position: relative;
+	font-size: 18px;
+}
+#calendar_div #details div.info .stadium{
+	position: relative;
+	font-size: 18px;
+}
+#calendar_div #details div.info .team{
+	position: relative;
+	font-weight: bold;
+	font-size: 25px;
+}
+#calendar_div #details div.info .logo{
+	position: relative;
+	display: block;
+	margin: auto;
+	height: 80px;
+	opacity: 0.2;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#calendar_wrapper{
+	float: left;
+	width: 300px;
+	height: 220px;
+}
+
+#calendar {
+    display:block;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    background:white;
+    width:300px;
+    border:solid 1px #CCC;
+    margin: auto;
+    margin-bottom:10px;
+    
+    @secondary-colour:#2875C7;
+    @spacing:10px;
+    @icon-width:40px;
+    @header-height:40px;
+}
+#calendar div.header {
+        float:left;
+        width:100%;
+        background:#2875C7;
+        height:40px;
+        color:white;
+}
+#calendar div.header *{ 
+	height:40px;
+    line-height:40px !important;
+    display:inline-block;
+    vertical-align:middle;
+}
+#calendar div.header span { 
+    float:left;
+    width:100%;
+    font-weight:bold;
+    text-transform:uppercase;
+  	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+    padding-left:50px;
+    text-align:center;
+    padding-right:40px;
+    color:inherit;
+}
+
+#calendar div.week_label span.day {
+        float:left;
+        width:14.265%%;
+        text-align:center;
+        height:30px;
+    	line-height:30px !important;
+   		display:inline-block;
+   		vertical-align:middle;
+        background:white;
+        color:#ed2852;
+
+        }
+
+#calendar div.week {
+        float:left;
+        width:100%;
+        border-top:solid 1px #CCC;
+ }
+#calendar div.week:first-child {
+            border-top:none;
+}
+#calendar div.week span.day {
+            float:left;
+            width:14.265%%;
+            box-sizing:border-box;
+		-moz-box-sizing:border-box;
+            border-left:solid 1px #CCC;
+            font-size:0.75em;
+            text-align:center;
+            	height:30px;
+    line-height:30px !important;
+    display:inline-block;
+    vertical-align:middle;
+            background:white;
+            cursor:pointer;
+            color:black;
+            }
+
+#calendar div.week span.day:first-child {
+                border-left:none;
+            }
+            
+#calendar div.week span.day.today {
+                background:#E3F2FF;
+            }
+            
+#calendar div.week span.day.different-month {
+                color:#C0C0C0;
+            }
+            
+#calendar div.week span.day.selected {
+                background:#2875C7;
+                color:white;
+            }
+        
+#calendar div.week.names>span {
+            color:#2875C7;
+            font-weight:bold;
 }

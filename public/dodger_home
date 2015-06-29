@@ -1,0 +1,99 @@
+[
+   {
+        "level": 0,
+        "description": "Keep informed about the your favorite team.",
+        "contains": {
+            "unique": [
+                {
+                    "name": "+ Insider Access",
+                    "description": "Early access to team news, behind the scene locker room videos, and discounts on certain games.",
+                    "type": "Digital"
+                }
+            ],
+            "carry_over": [],
+            "reward_related": []
+        },
+        "buttonText": "$1 Minimum",
+        "price": 5,
+        "project": "Dodgers 2015 Season",
+        "item_id": 62,
+        "campaign_id": 1
+    },
+    {
+        "level": 1,
+        "description": "Improve how you watch the game at home.",
+        "contains": {
+            "unique": [
+                {
+                    "name": "+ Monthly Fan Pack",
+                    "description": "Get a box filled with Dodgers loot every month. Includes Monthly Review DVD, poster, PDF teamsheets, postcard, and a surprise from us!",
+                    "type": "Physical"
+                }
+            ],
+            "carry_over": [],
+            "reward_related": []
+        },
+        "buttonText": "Join Now",
+        "price": 30,
+        "project": "Dodgers 2015 Season",
+        "item_id": 61,
+        "campaign_id": 1
+    }
+]
+    {
+        "level": 2,
+        "description": "All the perks of Contributor plus exclusive production artifacts & a digital download.",
+        "contains": {
+            "unique": [
+                {
+                    "name": "Digital Movie Download",
+                    "description": "Direct download of the 'Straight Outta Compton' movie, available the day it is released.",
+                    "type": "Digital"
+                },
+                {
+                    "name": "The Birth of Street Knowledge",
+                    "description": "Photography book documenting members of N.W.A in the period leading up to the release of their first album.",
+                    "type": "Physical"
+                }
+            ],
+            "carry_over": [],
+            "reward_related": [
+                "Unlocks",
+                "Production Blog"
+            ]
+        },
+        "buttonText": "$5 Minimum",
+        "price": 25,
+        "project": "Straight Outta Compton",
+        "item_id": 63,
+        "campaign_id": 1
+    },
+    {
+        "level": 3,
+        "description": "All the perks of Contributor plus exclusive merchandise & a ticket pre-order.",
+        "contains": {
+            "unique": [
+                {
+                    "name": "Ticket Pre-order",
+                    "description": "Fantastic Movie tickets will be sent to you within a week. Once the movie is released, you can exchange it for a ticket at your local theater. Your seat is always guaranteed!",
+                    "type": "Physical"
+                },
+                {
+                    "name": "Exclusive T-shirt",
+                    "description": "One t-shirt. Choose one of four designs, each of a different original member of N.W.A.",
+                    "type": "Physical"
+                }
+            ],
+            "carry_over": [],
+            "reward_related": [
+                "Unlocks",
+                "Production Blog"
+            ]
+        },
+        "buttonText": "$10 Minimum",
+        "price": 40,
+        "project": "Straight Outta Compton",
+        "item_id": 64,
+        "campaign_id": 1
+    }
+]

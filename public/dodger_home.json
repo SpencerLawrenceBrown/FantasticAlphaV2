@@ -1,0 +1,42 @@
+[
+   {
+        "level": 0,
+        "description": "Keep informed about the your favorite team.",
+        "contains": {
+            "unique": [
+                {
+                    "name": "+ Insider Access",
+                    "description": "Early access to team news, behind the scene locker room videos, and discounts on certain games.",
+                    "type": "Digital"
+                }
+            ],
+            "carry_over": [],
+            "reward_related": []
+        },
+        "buttonText": "$1 Minimum",
+        "price": 5,
+        "project": "Dodgers 2015 Season",
+        "item_id": 62,
+        "campaign_id": 1
+    },
+    {
+        "level": 1,
+        "description": "Improve how you watch the game at home.",
+        "contains": {
+            "unique": [
+                {
+                    "name": "+ Monthly Fan Pack",
+                    "description": "Get a box filled with Dodgers loot every month. Includes Monthly Review DVD, poster, PDF teamsheets, postcard, and a surprise from us!",
+                    "type": "Physical"
+                }
+            ],
+            "carry_over": [],
+            "reward_related": []
+        },
+        "buttonText": "Join Now",
+        "price": 30,
+        "project": "Dodgers 2015 Season",
+        "item_id": 61,
+        "campaign_id": 1
+    }
+]

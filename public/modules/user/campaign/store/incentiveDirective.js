@@ -23,7 +23,7 @@ angular.module('IncentiveDRCT',[]).directive('fnIncentive', function(){
 	return {
 		restrict: 'E',
 		replace: true,
-		transclude: false,
+		transclude: true,
 		templateUrl: 'modules/user/campaign/store/incentiveTemplate.html',
 		scope:{
 			incentives:"=tier",
@@ -35,7 +35,6 @@ angular.module('IncentiveDRCT',[]).directive('fnIncentive', function(){
 			add:"&"
 		},
 		link: function(scope, element, attrs){
-			console.log(scope);
 		}
 	};
 });

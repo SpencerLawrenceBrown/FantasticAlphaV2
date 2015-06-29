@@ -3,9 +3,28 @@
 		<p><b>How it works:</b> When a reward is unlocked, every paying member gains access to it. Unlock rewards by becoming a member and pushing the bar forward!</p>
 	</div> -->
 	<!--Add Pictures Later, hidden initially-->
-	<fn-incentive tier='store.home' visible='store.model.home_select' current='store.model.current_highlight' label='store.model.cart_btn_text' title='Home Experiences' choose='store.setCurrent(value)' add="store.addItem(value)"></fn-incentive>
+	<div id = "left_tab" class = "store_tab" ng-click= "store.change(0)" ng-class = "{active:!store.model.tab}">
+		Store
+	</div>
+	<div class = "store_tab" ng-click= "store.change(1)" ng-class = "{active:store.model.tab}">
+		Social
+	</div>
+	<div id = "social" ng-show = "store.model.tab">
+		<h3 id="community_header">Community Buzz:</h3>
+				<img id="reddit_img" src = "/../../assets/images/dodgers_embed.png">
+		<div id="comment_div">
+			<h4 = "header">Something to say?</h4>
+			<textarea id="textbox" type="text" ng-model="store.model.textbox"></textarea>
+			<button class="bar_button btn btn-default" id="box_button" ng-click="store.submit()">{{store.model.button}}</button>
+		</div>
+		<h2 id="social_feed">Social Feed</h2>
+		<img id="social_img" src = "/../../assets/images/social.png" style="width:100%;">
+	</div>
+	<div id = "store" ng-hide = "store.model.tab">
+		<fn-incentive tier='store.home' visible='store.model.home_select' current='store.model.	current_highlight' label='store.model.cart_btn_text' title='Home Experiences' choose='store.setCurrent(value)' add="store.addItem(value)" style="border-bottom: 3px solid #145E8C;"><fn-calendar></fn-calendar></fn-incentive>
 
-	<fn-incentive tier='store.team' visible='store.model.team_select'  current='store.model.current_highlight' label='store.model.cart_btn_text' title='Game Day Experiences' choose='store.setCurrent(value)' add="store.addItem(value)"></fn-incentive>
+		<fn-incentive tier='store.team' visible='store.model.team_select'  current='store.model.current_highlight' label='store.model.cart_btn_text' title='Game Day Experiences' choose='store.setCurrent(value)' add="store.addItem(value)" style="border-bottom: 3px solid #D91A2A;"></fn-incentive>
 
-	<fn-incentive tier='store.stadium' visible='store.model.stadium_select' current='store.model.current_highlight' label='store.model.cart_btn_text' title='Team Experiences' choose='store.setCurrent(value)' add="store.addItem(value)"></fn-incentive>
+		<fn-incentive tier='store.stadium' visible='store.model.stadium_select' current='store.model.current_highlight' label='store.model.cart_btn_text' title='Team Experiences' choose='store.setCurrent(value)' add="store.addItem(value)"></fn-incentive>
+	</div>
 </div>
