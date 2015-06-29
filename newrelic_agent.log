@@ -985,3 +985,9 @@
 {"v":0,"level":30,"name":"newrelic","hostname":"SpencerBrown-PC","pid":12560,"time":"2015-04-06T01:42:37.177Z","msg":"Starting New Relic for Node.js connection process."}
 {"v":0,"level":30,"name":"newrelic","hostname":"SpencerBrown-PC","pid":12560,"time":"2015-04-06T01:42:39.897Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/927290/applications/5350786","component":"new_relic_response"}
 {"v":0,"level":30,"name":"newrelic","hostname":"SpencerBrown-PC","pid":12560,"time":"2015-04-06T01:42:39.900Z","msg":"Connected to collector-139.newrelic.com:443 with agent run ID 22981460969324827.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Minis-Mac-mini-2.local","pid":20837,"time":"2015-06-29T21:25:42.214Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Minis-Mac-mini-2.local","pid":20837,"time":"2015-06-29T21:25:45.335Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/927290/applications/5350786","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Minis-Mac-mini-2.local","pid":20837,"time":"2015-06-29T21:25:45.336Z","msg":"Connected to collector-139.newrelic.com:443 with agent run ID 24646641636255414.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Minis-Mac-mini-2.local","pid":20926,"time":"2015-06-29T22:41:36.497Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Minis-Mac-mini-2.local","pid":20926,"time":"2015-06-29T22:41:39.448Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/927290/applications/5350786","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Minis-Mac-mini-2.local","pid":20926,"time":"2015-06-29T22:41:39.449Z","msg":"Connected to collector-139.newrelic.com:443 with agent run ID 24646641636511712.","component":"collector_api"}
