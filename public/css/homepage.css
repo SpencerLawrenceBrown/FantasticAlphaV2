@@ -348,10 +348,10 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	height: 210px;
 }
 .trigger#map{
-	top:1510px;
-	left: 542px;
-	width: 55px;
-	height: 55px;
+  top: 1666px;
+  left: 331px;
+  width: 40px;
+  height: 40px;
 }
 .trigger#perks{
 	top:2220px;
