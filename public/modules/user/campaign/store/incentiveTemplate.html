@@ -2,7 +2,10 @@
 	<h3 id='incentive_header'>{{::header}}</h3>
 	<div id = 'detail_box' ng-show = 'visible'>
 		
-		<h1 class = "detail_level">{{current.level}}</h1>
+		<h1 class = "detail_level" ng-show = "current.level == 0">Fan</h1>
+		<h1 class = "detail_level" ng-show = "current.level == 1">True Blue</h1>
+		<h1 class = "detail_level" ng-show = "current.level == 2">All-Star</h1>
+		<h1 class = "detail_level" ng-show = "current.level == 3">Hall of Famer</h1>
 		<h3 class = "detail_title" analytics-on="hover" analytics-event="Hovered detail_title" analytics-category = "Store-Detail" analytics-label="{{campaign.project.project}}, Level {{current.level}}">{{current.description}} </h3>
 		<h3 class = "detail_note visible-xs-block">Includes:</h3>
 		<div class = 'detail_component' ng-repeat="component in current.contains.unique" analytics-on="click" analytics-event="Clicked Component Bubble"  analytics-label="{{campaign.project.project}}, Level {{current.level}}, Component {{component.name}}" analytics-categpry="Store-Detail">
@@ -34,7 +37,10 @@
 	<div id = 'incentive_options'>
 		<div class = 'incentive_box level_{{::incentive.level}}' ng-repeat = 'incentive in incentives' ng-class = "{selected : current == incentive}" ng-click = 'choose({value:incentive})' analytics-on="click" analytics-event="Click Level Bubble" analytics-category="Store-Main" analytics-label="{{campaign.project.project}}, Level {{incentive.level}}">
 			<div class = 'incentive_title title_background'>
-				<p class = "title_text">{{incentive.level}}</p>
+				<p class = "title_text" ng-show = "incentive.level == 0">Fan</p>
+				<p class = "title_text" ng-show = "incentive.level == 1">True Blue</p>
+				<p class = "title_text" ng-show = "incentive.level == 2">All-Star</p>
+				<p class = "title_text" ng-show = "incentive.level == 3">Hall of Famer</p>
 			</div>
 			<div class = 'incentive_components'>
 				<p class = 'unique' ng-repeat = 'unique in incentive.contains.unique'>{{::unique.name}}</p>

@@ -219,7 +219,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	background-position: 50% 0px;
 }
 
-.level_0 .title_background{
+/*.level_0 .title_background{
 	background-image: url("/assets/images/badge.png");
 }
 .level_1 .title_background{
@@ -230,7 +230,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 }
 .level_3 .title_background{
 	background-image: url("/assets/images/physical.png");
-}
+}*/
 
 
 /*.level_Free .title_background{
