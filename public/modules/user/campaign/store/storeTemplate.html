@@ -10,6 +10,10 @@
 		Social
 	</div>
 	<div id = "social" ng-show = "store.model.tab">
+		<h3 id="vote_header">Tell us what you want in next month's box!</h3>
+		<div id = "vote_wrapper">
+				<img id="vote_img" src = "/../../assets/images/vote.png">
+			</div>
 		<h3 id="community_header">Community Buzz:</h3>
 				<img id="reddit_img" src = "/../../assets/images/dodgers_embed.png">
 		<div id="comment_div">
@@ -21,10 +25,10 @@
 		<img id="social_img" src = "/../../assets/images/social.png" style="width:100%;">
 	</div>
 	<div id = "store" ng-hide = "store.model.tab">
-		<fn-incentive tier='store.home' visible='store.model.home_select' current='store.model.	current_highlight' label='store.model.cart_btn_text' title='Home Experiences' choose='store.setCurrent(value)' add="store.addItem(value)" style="border-bottom: 3px solid #145E8C;"><fn-calendar></fn-calendar></fn-incentive>
+		<fn-incentive tier='store.home' visible='store.model.home_select' current='store.model.	current_highlight' label='store.model.cart_btn_text' title='Home Rewards' choose='store.setCurrent(value)' add="store.addItem(value)" style="border-bottom: 3px solid #145E8C;"></fn-incentive>
 
-		<fn-incentive tier='store.team' visible='store.model.team_select'  current='store.model.current_highlight' label='store.model.cart_btn_text' title='Game Day Experiences' choose='store.setCurrent(value)' add="store.addItem(value)" style="border-bottom: 3px solid #D91A2A;"></fn-incentive>
+		<fn-incentive tier='store.team' visible='store.model.team_select'  current='store.model.current_highlight' label='store.model.cart_btn_text' title='Game Day Rewards' choose='store.setCurrent(value)' add="store.addItem(value)" style="border-bottom: 3px solid #D91A2A;"><fn-calendar></fn-calendar></fn-incentive>
 
-		<fn-incentive tier='store.stadium' visible='store.model.stadium_select' current='store.model.current_highlight' label='store.model.cart_btn_text' title='Team Experiences' choose='store.setCurrent(value)' add="store.addItem(value)"></fn-incentive>
+		<fn-incentive tier='store.stadium' visible='store.model.stadium_select' current='store.model.current_highlight' label='store.model.cart_btn_text' title='Team Rewards' choose='store.setCurrent(value)' add="store.addItem(value)"></fn-incentive>
 	</div>
 </div>

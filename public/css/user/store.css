@@ -89,6 +89,32 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 }
 
 /*Social*/
+
+#social #vote_header{
+	position: relative;
+	text-align: center;
+}
+
+#social #vote_wrapper{
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  float: left;
+  cursor: pointer;
+}
+
+#social #vote_img{
+  position: relative;
+  width: 60%;
+  display: block;
+  margin: auto;
+  margin-bottom: 40px;
+    cursor: pointer;
+}
+
+
+
+
 #social #community_header{
 	position: relative;
 	top: -21px;

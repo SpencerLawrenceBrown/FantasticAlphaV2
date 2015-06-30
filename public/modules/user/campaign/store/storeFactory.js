@@ -31,7 +31,7 @@ angular.module('StoreFCTR', []).factory('StoreFactory', ['$routeParams', '$http'
 		current_highlight: {},
 		current_set : false,
 		cart_btn_text : "Add to Cart",
-		tab: true,
+		tab: false,
 		button: "Submit Comment",
 		textbox: ""
 	};
