@@ -132,6 +132,7 @@ a, a:link, a:active, a:visited a:hover {text-decoration: none;}
 	top: -15px;
 	float: left;
   	margin-left: 10px;
+  	width: 55%;
 }
 #social #social_img{
 	position: relative;
