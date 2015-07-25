@@ -10,7 +10,9 @@ module.exports = function (grunt){
 							"public/libs/angular-bootstrap/ui-bootstrap.min.js",
 							"public/libs/angular-sanitize/angular-sanitize.min.js",
 							"public/libs/angulartics/dist/angulartics.min.js",
-							"public/libs/angulartics/dist/angulartics-segmentio.min.js"
+							"public/libs/angulartics/dist/angulartics-segmentio.min.js",
+							"node_modules/moment/moment.js",
+							"node_modules/angular-moment/angular-moment.js"
 							],
 				dest: 'public/dist/vendor.js'
 			}
