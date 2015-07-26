@@ -1489,7 +1489,7 @@ This controller manages the homepage and connects to the campaign meta factory
 		-none
 */
 
-angular.module('HomePageCTRL', ['MetaFCTR', 'AuthFCTR']).controller('HomepageController', [ 'CampaignsMetaFactory', 'AuthFactory', '$scope', function(MetaFactory, AuthFactory, $scope){
+angular.module('HomePageCTRL', ['MetaFCTR', 'AuthFCTR']).controller('HomepageController', [ 'CampaignsMetaFactory', 'AuthFactory', '$scope', '$location', function(MetaFactory, AuthFactory, $scope, $location){
 	//Model connection
 	this.model = MetaFactory;
 	this.auth = AuthFactory;

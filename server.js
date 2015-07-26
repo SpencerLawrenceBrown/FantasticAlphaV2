@@ -1,7 +1,7 @@
 //Fantastic Alpha Server
 
 //Modules ============================================================
-require('newrelic');
+//require('newrelic');
 var express 		= require('express'); //Server
 var mongoose 		= require('mongoose'); //MongoDB
 var bodyParser 		= require('body-parser'); //HTTP Request Parser

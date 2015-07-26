@@ -37,4 +37,5 @@ angular.module('HomePageCTRL', ['MetaFCTR', 'AuthFCTR']).controller('HomepageCon
 		$scope.email = "";
 	};	
 
+	$location.path('/campaign/5521b22284b3e8741cd5d951');
 }]);
