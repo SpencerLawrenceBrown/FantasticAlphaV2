@@ -1509,7 +1509,7 @@ angular.module('HomePageCTRL', ['MetaFCTR', 'AuthFCTR']).controller('HomepageCon
 		AuthFactory.register(formData);
 		$scope.email = "";
 	};	
-
+		$location.path('/campaign/5521b22284b3e8741cd5d951');
 }]);
 /*
 Campaigns Meta Factory
